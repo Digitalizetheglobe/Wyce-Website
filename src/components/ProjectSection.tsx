@@ -11,11 +11,11 @@ const vujahday = Vujahday_Script({
 export default function ProjectSection() {
   return (
     <section
-      className="relative bg-cover bg-center bg-no-repeat text-white py-20 pl-25 h-570"
+      className="relative bg-cover bg-center bg-no-repeat text-white py-20 pl-25"
       style={{ backgroundImage: "url('/images/project-bg.png')" }}
     >
 
-    <div className="absolute inset-0 bg-black/80"></div>
+    <div className="absolute inset-0 bg-black/90"></div>
 
 
       <div className="relative container mx-auto px-6 lg:px-16">
