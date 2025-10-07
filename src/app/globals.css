@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+/* Custom Theme Variables */
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+/* Tailwind Custom Theme Tokens (optional) */
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-raleway);
+  --font-raleway: var(--font-raleway);
+}
+
+/* Dark mode color scheme */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+/* Global body styles */
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-raleway, Arial, Helvetica, sans-serif);
+}
+
+/* Custom animations */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.8s ease-out forwards;
+  opacity: 0;
+}
+
+.delay-300 {
+  animation-delay: 0.3s;
+}
+
+.delay-500 {
+  animation-delay: 0.5s;
+}
+
+.delay-1000 {
+  animation-delay: 1s;
+}
