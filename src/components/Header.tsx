@@ -21,7 +21,7 @@ export default function Header() {
           </div>
 
           {/* Navigation Menu */}
-          <nav className="hidden md:flex items-center space-x-10 text-[23px]">
+          <nav className="hidden md:flex items-center space-x-10 text-[16px]">
             <Link href="/" className="text-white hover:text-gray-300 transition-colors">
               Home
             </Link>
