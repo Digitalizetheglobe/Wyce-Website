@@ -11,7 +11,7 @@ const vujahday = Vujahday_Script({
 export default function AboutSection() {
   return (
     <section
-      className="relative bg-cover bg-center bg-no-repeat text-white py-20"
+      className="relative bg-cover bg-center bg-no-repeat text-white py-20 bg-black/100"
       style={{ backgroundImage: "url('/images/bg-image.png')" }}
     >
 

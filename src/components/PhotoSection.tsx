@@ -9,56 +9,51 @@ const vujahday = Vujahday_Script({
   weight: "400",
 });
 
-// Blog card data
-const blogCards = [
+// Property card data
+const propertyCards = [
   {
     id: 1,
     image: "/images/project-1.png",
-    date: "September 13, 2025",
-    category: "Real Estate 1",
-    title: "Top 5 Hidden Resale Value Factors In Pune Real Estate",
-    description: "It was popularised in the 1960s with the release with the release with deskwith desk....... Read More",
-    author: "by Engineers Horizon"
+    title: "Modern Family Flat",
+    price: "₹ 95,000",
+    location: "168 old town road",
+    rating: "4.5"
   },
   {
     id: 2,
     image: "/images/project-2.png",
-    date: "September 13, 2025",
-    category: "Real Estate 2",
-    title: "Top 5 Hidden Resale Value Factors In Pune Real Estate",
-    description: "It was popularised in the 1960s with the release with the release with deskwith desk....... Read More",
-    author: "by Engineers Horizon"
+    title: "Luxury Apartment",
+    price: "₹ 1,25,000",
+    location: "45 new city center",
+    rating: "4.8"
   },
   {
     id: 3,
     image: "/images/project-3.png",
-    date: "September 13, 2025",
-    category: "Real Estate 3",
-    title: "Top 5 Hidden Resale Value Factors In Pune Real Estate",
-    description: "It was popularised in the 1960s with the release with the release with deskwith desk....... Read More",
-    author: "by Engineers Horizon"
+    title: "Cozy Studio Space",
+    price: "₹ 65,000",
+    location: "92 garden view road",
+    rating: "4.2"
   },
   {
     id: 4,
     image: "/images/project-4.png",
-    date: "September 13, 2025",
-    category: "Real Estate 4",
-    title: "Top 5 Hidden Resale Value Factors In Pune Real Estate",
-    description: "It was popularised in the 1960s with the release with the release with deskwith desk....... Read More",
-    author: "by Engineers Horizon"
+    title: "Premium Penthouse",
+    price: "₹ 2,50,000",
+    location: "15 skyline avenue",
+    rating: "4.9"
   },
   {
     id: 5,
     image: "/images/project-1.png",
-    date: "September 13, 2025",
-    category: "Real Estate 5",
-    title: "Top 5 Hidden Resale Value Factors In Pune Real Estate",
-    description: "It was popularised in the 1960s with the release with the release with deskwith desk....... Read More",
-    author: "by Engineers Horizon"
+    title: "Modern Family Flat",
+    price: "₹ 95,000",
+    location: "168 old town road",
+    rating: "4.5"
   }
 ];
 
-export default function BlogSection() {
+export default function PhotoSection() {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const [isUserInteracting, setIsUserInteracting] = useState(false);
   const [hasScrolled, setHasScrolled] = useState(false);
@@ -131,8 +126,8 @@ export default function BlogSection() {
         {/* SECTION HEADER */}
         <div className="mb-16 ">
           <p className={`text-[#B7AC88] mb-8 flex items-center gap-3  ${vujahday.className}`}>
-            <span className="inline-block w-10 h-[1px] bg-[#B7AC88]"></span>
-            <span className="text-[40px] leading-[42px] font-normal">Blogs & Articles</span>
+            <span className="inline-block w-12 h-[1px] bg-[#B7AC88]"></span>
+            <span className="text-[40px] leading-[42px] font-normal">Booking Photos</span>
           </p>
         </div>
 
@@ -151,13 +146,13 @@ export default function BlogSection() {
                 isMounted && hasScrolled ? 'pl-0' : 'pl-0'
               }`}
             >
-              {blogCards.map((card) => (
+              {propertyCards.map((card) => (
                 <div
                   key={card.id}
-                  className="flex-shrink-0 w-[30%] bg-white overflow-hidden shadow-lg"
+                  className="flex-shrink-0 w-[30%] bg-white overflow-hidden"
                 >
                   {/* Card Image */}
-                  <div className="relative h-48 w-full">
+                  <div className="relative h-64 w-full">
                     <Image
                       src={card.image}
                       alt={card.title}
@@ -166,37 +161,32 @@ export default function BlogSection() {
                     />
                   </div>
                   
-                  {/* Card Content */}
-                  <div className="p-6 bg-gray-800 text-white">
-                    {/* Date and Category */}
-                    <div className="flex justify-between items-center mb-3">
-                      <div className="flex items-center gap-2 text-sm text-gray-300">
-                        <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                          <path fillRule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clipRule="evenodd" />
-                        </svg>
-                        {card.date}
-                      </div>
-                      <span className="text-sm text-[#B7AC88] font-medium">
-                        {card.category}
+                  {/* Card Content - Black background section */}
+                  <div className="p-6 bg-[#121212] text-white">
+                    {/* Title and Price Row */}
+                    <div className="flex justify-between items-center mb-4">
+                      <h3 className="text-lg font-bold text-white">
+                        {card.title}
+                      </h3>
+                      <span className="text-lg font-bold text-white">
+                        {card.price}
                       </span>
                     </div>
                     
-                    {/* Title */}
-                    <h3 className="text-lg font-semibold mb-3 line-clamp-2">
-                      {card.title}
-                    </h3>
-                    
-                    {/* Description */}
-                    <p className="text-sm text-gray-300 mb-4 line-clamp-3">
-                      {card.description}
-                    </p>
-                    
-                    {/* Author */}
-                    <div className="flex items-center gap-2 text-sm text-gray-400">
-                      <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clipRule="evenodd" />
-                      </svg>
-                      {card.author}
+                    {/* Location and Rating Row */}
+                    <div className="flex justify-between items-center">
+                      <div className="flex items-center gap-2 text-sm text-white">
+                        <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                          <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
+                        </svg>
+                        {card.location}
+                      </div>
+                      <div className="flex items-center gap-1 text-sm text-white">
+                        <svg className="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                        </svg>
+                        {card.rating}
+                      </div>
                     </div>
                   </div>
                 </div>
