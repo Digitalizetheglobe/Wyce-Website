@@ -3,21 +3,21 @@
 export default function CounterSection() {
   return (
     <section 
-      className="py-1"
+      className="py-8 sm:py-12 md:py-16"
       style={{ backgroundColor: "#121212" }}
     >
-      <div className="container mx-auto px-6 lg:px-16">
-        <div className="flex flex-col md:flex-row items-center justify-center gap-15 md:gap-45">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-16">
+        <div className="flex flex-col md:flex-row items-center justify-center gap-8 sm:gap-12 md:gap-20 lg:gap-45">
           {/* First Counter */}
           <div className="text-center">
             <div 
-              className="text-6xl md:text-7xl font-bold mb-4"
+              className="text-5xl sm:text-6xl md:text-7xl font-bold mb-3 md:mb-4"
               style={{ color: "#B7AC88" }}
             >
               3
             </div>
             <div 
-              className="text-lg md:text-xl"
+              className="text-base sm:text-lg md:text-xl"
               style={{ color: "#B7AC88" }}
             >
               Iconic Cities
@@ -27,7 +27,7 @@ export default function CounterSection() {
           {/* Divider Line */}
           <div className="hidden md:block">
             <div 
-              className="w-0.5 h-28"
+              className="w-0.5 h-20 md:h-28"
               style={{ backgroundColor: "#B7AC88" }}
             ></div>
           </div>
@@ -35,13 +35,13 @@ export default function CounterSection() {
           {/* Second Counter */}
           <div className="text-center">
             <div 
-              className="text-6xl md:text-7xl font-bold mb-4"
+              className="text-5xl sm:text-6xl md:text-7xl font-bold mb-3 md:mb-4"
               style={{ color: "#B7AC88" }}
             >
               8k+
             </div>
             <div 
-              className="text-lg md:text-xl"
+              className="text-base sm:text-lg md:text-xl"
               style={{ color: "#B7AC88" }}
             >
               Happy Families
@@ -51,7 +51,7 @@ export default function CounterSection() {
           {/* Divider Line */}
           <div className="hidden md:block">
             <div 
-              className="w-0.5 h-28"
+              className="w-0.5 h-20 md:h-28"
               style={{ backgroundColor: "#B7AC88" }}
             ></div>
           </div>
@@ -59,13 +59,13 @@ export default function CounterSection() {
           {/* Third Counter */}
           <div className="text-center">
             <div 
-              className="text-6xl md:text-7xl font-bold mb-4"
+              className="text-5xl sm:text-6xl md:text-7xl font-bold mb-3 md:mb-4"
               style={{ color: "#B7AC88" }}
             >
               9+
             </div>
             <div 
-              className="text-lg md:text-xl"
+              className="text-base sm:text-lg md:text-xl px-4"
               style={{ color: "#B7AC88" }}
             >
               Decades of Collective<br />Experience
