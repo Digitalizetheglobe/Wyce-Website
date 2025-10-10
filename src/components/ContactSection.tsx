@@ -88,8 +88,8 @@ export default function ContactSection() {
               ></textarea>
               <button
                 type="submit"
-                className="w-full bg-[#B7AC88] text-black font-semibold py-2.5 sm:py-3 text-sm sm:text-base rounded-[4px] hover:bg-[#a49970] transition-all"
-              >
+                className="w-full bg-[#B7AC88] text-black font-semibold py-2.5 sm:py-3 text-sm sm:text-base rounded-[4px] hover:bg-[#a49970] transition-all cursor-pointer">
+              
                 SEND
               </button>
             </div>
@@ -102,16 +102,20 @@ export default function ContactSection() {
               <svg className="w-6 h-6 sm:w-8 sm:h-8 text-white font-bold flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                 <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
               </svg>
-              <p className="text-sm sm:text-base lg:text-xl break-words">+91 00000 00000 | +91 00000 00000</p>
+              <p className="text-sm sm:text-base lg:text-xl break-words">+91 75497 99799</p>
             </div>
 
             {/* Social Icons */}
             <div className="flex items-center gap-4 sm:gap-5">
-              {["facebook", "twitter", "instagram", "youtube"].map((icon, i) => (
-                <a key={i} href="#" className="text-white hover:text-[#B7AC88] transition-colors">
-                  <i className={`fa-brands fa-${icon} text-2xl sm:text-3xl`}></i>
-                </a>
-              ))}
+              <a href="https://www.instagram.com/wyce_corp/" target="_blank" rel="noopener noreferrer" className="text-white hover:text-[#B7AC88] transition-colors">
+                <i className="fa-brands fa-instagram text-2xl sm:text-3xl"></i>
+              </a>
+              <a href="https://www.linkedin.com/company/105801954/admin/dashboard/" target="_blank" rel="noopener noreferrer" className="text-white hover:text-[#B7AC88] transition-colors">
+                <i className="fa-brands fa-linkedin text-2xl sm:text-3xl"></i>
+              </a>
+              <a href="https://www.youtube.com/@WYCECorp" target="_blank" rel="noopener noreferrer" className="text-white hover:text-[#B7AC88] transition-colors">
+                <i className="fa-brands fa-youtube text-2xl sm:text-3xl"></i>
+              </a>
             </div>
 
             {/* Address */}

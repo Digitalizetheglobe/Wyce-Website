@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { Vujahday_Script } from "next/font/google";
 
 const vujahday = Vujahday_Script({
@@ -48,9 +49,9 @@ export default function ProjectSection() {
             </p>
             
             {/* CTA Button */}
-            <button className="border border-[#B7AC88] text-[#B7AC88] border-2 px-8 sm:px-12 py-2 text-sm sm:text-base font-bold hover:bg-[#B7AC88] hover:text-black transition-all">
+            <Link href="/wyce-exclucity" className="inline-block border border-[#B7AC88] text-[#B7AC88] border-2 px-8 sm:px-12 py-2 text-sm sm:text-base font-bold hover:bg-[#B7AC88] hover:text-black transition-all">
                 Read More
-            </button>
+            </Link>
           </div>
 
           {/* RIGHT SIDE - IMAGE */}
