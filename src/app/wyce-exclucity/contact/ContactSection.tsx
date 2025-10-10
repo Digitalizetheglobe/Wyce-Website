@@ -131,7 +131,7 @@ export default function ContactUs() {
               ))}
 
               <motion.label
-                className="col-span-1 sm:col-span-2 flex items-start gap-2 text-gray-300 text-xs sm:text-sm"
+                className="col-span-full flex items-start gap-2 text-gray-300 text-xs sm:text-sm w-full"
                 variants={{
                   hidden: { opacity: 0, y: 10 },
                   visible: { opacity: 1, y: 0 },
@@ -141,7 +141,7 @@ export default function ContactUs() {
                   type="checkbox" 
                   className="mt-1 w-4 h-4 flex-shrink-0 cursor-pointer accent-[#B7AC88]" 
                 />
-                <span>
+                <span className="flex-1">
                   I agree with the terms and Privacy Policy and I declare that I
                   have read the information that is required in accordance.
                 </span>
@@ -149,7 +149,7 @@ export default function ContactUs() {
 
               {/* Button */}
               <motion.div
-                className="col-span-1 sm:col-span-2 flex justify-center mt-2"
+                className="col-span-full flex justify-center mt-2 w-full"
                 variants={{
                   hidden: { opacity: 0, scale: 0.9 },
                   visible: { opacity: 1, scale: 1 },
@@ -161,7 +161,7 @@ export default function ContactUs() {
                   className="bg-gradient-to-r from-[#B7AC88] to-[#1F1403] 
                               text-white px-6 sm:px-8 py-2.5 sm:py-3 rounded-full shadow-md 
                               hover:scale-105 active:scale-95 transition-transform 
-                              text-sm sm:text-base font-medium w-full sm:w-auto"
+                              text-sm sm:text-base font-medium w-full sm:w-auto max-w-md"
                 >
                   Book Site Visit
                 </button>

@@ -52,7 +52,7 @@ export default function FAQPage() {
          <section className="w-full text-white py-10 md:py-16" style={{background: 'linear-gradient(180deg, #090909 0%, #B7AC88 100%)'}}>
         {/* Header Section */}
         <div className="text-center max-w-2xl mx-auto mb-10">
-          <h2 className="text-2xl md:text-3xl font-semibold mb-3">FAQ's</h2>
+          <h2 className="text-2xl md:text-3xl font-semibold mb-3">FAQ&apos;s</h2>
           <p className="text-gray-200 text-sm md:text-base">
             At WYCE Corp, we believe a home is more than bricks and beams —
             it&apos;s the space where your most beautiful moments begin.
