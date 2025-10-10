@@ -115,21 +115,21 @@ export default function AmenitiesCarousel() {
   ];
 
   return (
-    <div className="w-full flex flex-col items-center py-12 relative">
+    <div className="w-full flex flex-col items-center py-12 relative px-4 sm:px-6 lg:px-8">
       {/* Heading */}
       <div className="w-full text-center mb-12 mt-20">
         <h2 className="text-3xl md:text-4xl font-bold text-[#B7AC88] font-Raleway">
           Premium Amenities
         </h2>
-        <p className="text-white-400 max-w-4xl mx-auto mt-4 font-raleway text-2xl">
+        <p className="text-white-400 max-w-4xl mx-auto mt-4 font-raleway text-lg sm:text-xl md:text-2xl px-4">
           Experience Elevated Living WYCE Exclucity properties come packed with lifestyle-enhancing
           features that cater to all age groups.
         </p>
       </div>
 
       {/* Carousel Container */}
-      <div className="relative w-[1400px] overflow-hidden">
-        <div className="grid grid-cols-4 gap-8 transition-all duration-500 ease-in-out">
+      <div className="relative w-full max-w-[1400px] overflow-hidden">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 transition-all duration-500 ease-in-out">
           {visibleGroups.map((group, gIndex) => (
             <div key={gIndex} className="flex flex-col gap-6">
               {group.map((item, i) => (
@@ -142,7 +142,7 @@ export default function AmenitiesCarousel() {
                     alt={item.text}
                     className="w-20 h-20 bg-gradient-to-b from-[#B7AC88] to-[#47351B] rounded-full p-3 object-contain"
                   />
-                  <span className="text-xl font-medium font-Raleway text-[#B7AC88]">
+                  <span className="text-base sm:text-lg md:text-xl font-medium font-Raleway text-[#B7AC88]">
                     {item.text}
                   </span>
                 </div>

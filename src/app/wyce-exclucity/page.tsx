@@ -16,7 +16,7 @@ export const metadata = {
 
 export default function WyceExclucityPage() {
   return (
-    <main className="bg-black">
+    <main className="bg-black overflow-x-hidden">
 
       <Hero />
       <AboutProject />

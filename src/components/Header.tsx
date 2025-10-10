@@ -90,16 +90,27 @@ export default function Header() {
               Career
             </Link>
           </nav>
-
-          {/* Contact Us Button - Desktop */}
           <div className="hidden lg:flex items-center">
-            <button className="border-2 lg:border-[3px] border-white border-solid text-white px-3 sm:px-4 py-1.5 sm:py-2 text-sm lg:text-base hover:bg-white hover:text-black transition-colors flex items-center cursor-pointer">
+            <Link
+              href="/contact"
+              className="border-2 lg:border-[3px] border-white border-solid text-white px-3 sm:px-4 py-1.5 sm:py-2 text-sm lg:text-base hover:bg-white hover:text-black transition-colors flex items-center cursor-pointer"
+            >
               <span className="hidden xl:inline">Contact Us</span>
               <span className="xl:hidden">Contact</span>
-              <svg className="ml-1 h-3 w-3 sm:h-4 sm:w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              <svg
+                className="ml-1 h-3 w-3 sm:h-4 sm:w-4"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M9 5l7 7-7 7"
+                />
               </svg>
-            </button>
+            </Link>
           </div>
 
           {/* Mobile menu button */}

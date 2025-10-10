@@ -19,17 +19,18 @@ export default function Footer() {
             </div>
             <div className="flex space-x-3">
               {[
-                "fa-twitter",
-                "fa-youtube",
-                "fa-facebook-f",
-                "fa-instagram",
-              ].map((icon, idx) => (
+                { icon: "fa-linkedin", href: "https://www.instagram.com/wyce_corp/" },
+                { icon: "fa-youtube", href: "https://www.youtube.com/@WYCECorp" },
+                { icon: "fa-instagram", href: "https://www.instagram.com/wyce_corp/" },
+              ].map((social, idx) => (
                 <a
                   key={idx}
-                  href="#"
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-9 h-9 flex items-center justify-center rounded-md text-white hover:bg-[#B7AC88] hover:text-black transition-colors gradient-background bg-gradient-to-b from-[#1F1403] to-[#B7AC88]"
                 >
-                  <i className={`fab ${icon} text-sm`}></i>
+                  <i className={`fab ${social.icon} text-sm`}></i>
                 </a>
               ))}
             </div>
@@ -50,7 +51,7 @@ export default function Footer() {
 
           {/* Center Section - Links */}
           <div className="flex flex-col items-start md:items-left space-y-3 px-6">
-            {["Home", "About", "Services", "Contact", "Privacy Policy"].map((link, idx) => (
+            {["Wyce Exclicity", "Privacy Policy", "FAQs", "Publication", "Privacy Policy"].map((link, idx) => (
               <Link
                 key={idx}
                 href="#"
@@ -63,8 +64,8 @@ export default function Footer() {
 
           {/* Right Section - Contact */}
           <div className="space-y-3 text-lg text-white pl-6">
-            <p>+91 00000 00000</p>
-            <p>wyce@gmail.com</p>
+            <p>+91 75497 99799</p>
+            <p>info@wycecory.com</p>
             <p>
               Plot No 123 bawdhan, near <br />
               16 no bus stop, pune <br />

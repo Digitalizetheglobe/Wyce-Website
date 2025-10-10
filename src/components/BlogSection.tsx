@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { Vujahday_Script } from "next/font/google";
 import { useEffect, useRef, useState } from "react";
 
@@ -14,47 +15,52 @@ const blogCards = [
   {
     id: 1,
     image: "/images/project-1.png",
-    date: "September 13, 2025",
-    category: "Real Estate 1",
-    title: "Top 5 Hidden Resale Value Factors In Pune Real Estate",
-    description: "It was popularised in the 1960s with the release with the release with deskwith desk....... Read More",
-    author: "by Engineers Horizon"
+    date: "October 5, 2024",
+    category: "Real Estate",
+    title: "🏡 The Quiet Side of Luxury: Why WYCE Believes Thoughtfulness Is the New Opulence",
+    description: "Luxury has always been linked with what's visible — high ceilings, imported fittings, grand entrances. But true luxury is not about what you see. It's about what you feel when you step inside.",
+    author: "by WYCE Team",
+    slug: "quiet-side-of-luxury"
   },
   {
     id: 2,
     image: "/images/project-2.png",
-    date: "September 13, 2025",
-    category: "Real Estate 2",
-    title: "Top 5 Hidden Resale Value Factors In Pune Real Estate",
-    description: "It was popularised in the 1960s with the release with the release with deskwith desk....... Read More",
-    author: "by Engineers Horizon"
+    date: "October 3, 2024",
+    category: "Real Estate",
+    title: "🌇 Space Is the New Luxury: Inside WYCE's 11-Acre Vision for the Select Few",
+    description: "In most cities today, luxury living has started to mean living small but paying big. WYCE saw this shift and decided to build differently — to create homes that give people back what they've lost: space.",
+    author: "by WYCE Team",
+    slug: "space-new-luxury"
   },
   {
     id: 3,
     image: "/images/project-3.png",
-    date: "September 13, 2025",
-    category: "Real Estate 3",
-    title: "Top 5 Hidden Resale Value Factors In Pune Real Estate",
-    description: "It was popularised in the 1960s with the release with the release with deskwith desk....... Read More",
-    author: "by Engineers Horizon"
+    date: "September 28, 2024",
+    category: "Real Estate",
+    title: "🌿 Beyond Green Walls: How WYCE Designs Homes That Breathe",
+    description: "Almost every developer claims to build eco-friendly homes. But most of it stops at token gestures. WYCE goes beyond that by designing a lifestyle that breathes, not just buildings that look green.",
+    author: "by WYCE Team",
+    slug: "beyond-green-walls"
   },
   {
     id: 4,
     image: "/images/project-4.png",
-    date: "September 13, 2025",
-    category: "Real Estate 4",
-    title: "Top 5 Hidden Resale Value Factors In Pune Real Estate",
-    description: "It was popularised in the 1960s with the release with the release with deskwith desk....... Read More",
-    author: "by Engineers Horizon"
+    date: "September 25, 2024",
+    category: "Real Estate",
+    title: "🏞️ Bavdhan: Where the City Meets Serenity",
+    description: "Bavdhan is one of those rare neighborhoods where city energy and nature's calm coexist perfectly. WYCE chose this location for ExcluCity because it captures both — modern convenience and natural serenity.",
+    author: "by WYCE Team",
+    slug: "bavdhan-city-meets-serenity"
   },
   {
     id: 5,
     image: "/images/project-1.png",
-    date: "September 13, 2025",
-    category: "Real Estate 5",
-    title: "Top 5 Hidden Resale Value Factors In Pune Real Estate",
-    description: "It was popularised in the 1960s with the release with the release with deskwith desk....... Read More",
-    author: "by Engineers Horizon"
+    date: "September 20, 2024",
+    category: "Real Estate",
+    title: "💬 Designing Connection: The Subtle Luxury of Belonging at WYCE",
+    description: "Most modern housing projects focus on privacy but forget the joy of connection. WYCE believes both can exist together. At ExcluCity, the community is designed not just for living, but for belonging.",
+    author: "by WYCE Team",
+    slug: "designing-connection"
   }
 ];
 
@@ -151,17 +157,18 @@ export default function BlogSection() {
           >
             <div className="flex gap-4 sm:gap-6 pb-4">
               {blogCards.map((card) => (
-                <div
+                <Link
                   key={card.id}
-                  className="flex-shrink-0 w-[95%] sm:w-[60%] md:w-[45%] lg:w-[30%] bg-white overflow-hidden shadow-lg"
+                  href={`/blog/${card.slug}`}
+                  className="flex-shrink-0 w-[95%] sm:w-[60%] md:w-[45%] lg:w-[30%] bg-white overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group"
                 >
                   {/* Card Image */}
-                  <div className="relative h-40 sm:h-48 w-full">
+                  <div className="relative h-40 sm:h-48 w-full overflow-hidden">
                     <Image
                       src={card.image}
                       alt={card.title}
                       fill
-                      className="object-cover"
+                      className="object-cover group-hover:scale-105 transition-transform duration-300"
                     />
                   </div>
                   
@@ -174,7 +181,7 @@ export default function BlogSection() {
                           <path fillRule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clipRule="evenodd" />
                         </svg>
                         <span className="hidden sm:inline">{card.date}</span>
-                        <span className="sm:hidden">Sept 13, 2025</span>
+                        <span className="sm:hidden">{card.date.split(' ').slice(0, 2).join(' ')}</span>
                       </div>
                       <span className="text-xs sm:text-sm text-[#B7AC88] font-medium">
                         {card.category}
@@ -182,7 +189,7 @@ export default function BlogSection() {
                     </div>
                     
                     {/* Title */}
-                    <h3 className="text-base sm:text-lg font-semibold mb-2 sm:mb-3 line-clamp-2">
+                    <h3 className="text-base sm:text-lg font-semibold mb-2 sm:mb-3 line-clamp-2 group-hover:text-[#B7AC88] transition-colors">
                       {card.title}
                     </h3>
                     
@@ -199,7 +206,7 @@ export default function BlogSection() {
                       {card.author}
                     </div>
                   </div>
-                </div>
+                </Link>
               ))}
             </div>
           </div>

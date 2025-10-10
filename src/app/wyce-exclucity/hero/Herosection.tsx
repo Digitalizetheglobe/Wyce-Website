@@ -1,29 +1,5 @@
 "use client";
-import { motion, useMotionValue, useTransform, animate } from "framer-motion";
-import { useEffect, useState } from "react";
-
-// 🔹 Counter Component
-function Counter({ from = 0, to, suffix = "" }: { from?: number; to: number; suffix?: string }) {
-  const count = useMotionValue(from);
-  const rounded = useTransform(count, (latest) => Math.floor(latest));
-  const [display, setDisplay] = useState(from);
-
-  useEffect(() => {
-    const controls = animate(count, to, { duration: 2, ease: "easeOut" });
-    const unsubscribe = rounded.on("change", (v) => setDisplay(v));
-    return () => {
-      controls.stop();
-      unsubscribe();
-    };
-  }, [to, count, rounded]);
-
-  return (
-    <span>
-      {display}
-      {suffix}
-    </span>
-  );
-}
+import { motion } from "framer-motion";
 
 // 🔹 Hero Component
 export default function Hero() {
@@ -41,9 +17,9 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: "easeOut" }}
         >
-          Find the Home{" "}
-          <span className="text-[#B7AC88]">You Deserve Live</span> <br />
-          the Lifestyle You Desire
+
+
+          True Luxury Lies in <span className="text-[#B7AC88]">Intent. Trust </span><br/>the Legacy of Thoughtful Builders.
         </motion.h1>
 
         {/* Subtext */}
@@ -53,14 +29,12 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}
         >
-          Every property is more than just four walls—it's a promise of luxury,
-          comfort, and growth. Step into a lifestyle where your dreams meet
-          reality, and your investments create lasting value.
+For decades, we have been turning visions into timeless landmarks, built on the foundation of thoughtfulness. Experience the quality and trust that comes from a legacy committed to shaping your life quietly and beautifully. We don't just build homes; we craft the WYCE-crafted experience for every family.
         </motion.p>
 
         {/* CTA Button */}
         <motion.button
-          className="mt-8 bg-gradient-to-r from-[#B7AC88] to-[#1F1403] hover:bg-gradient-to-l hover:bg-from-[#1F1403] hover:bg-to-[#B7AC88] text-white px-6 py-3 rounded-full shadow-lg hover:scale-105 transition-transform"
+          className="cursor-pointer mt-8 bg-gradient-to-r from-[#B7AC88] to-[#1F1403] hover:bg-gradient-to-l hover:bg-from-[#1F1403] hover:bg-to-[#B7AC88] text-white px-6 py-3 rounded-full shadow-lg hover:scale-105 transition-transform"
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.95 }}
           initial={{ opacity: 0, y: 20 }}
@@ -70,41 +44,41 @@ export default function Hero() {
           Book Site Visit
         </motion.button>
 
-        {/* Stats Section with Counters */}
+        {/* Stats Section */}
         <motion.div
           className="w-full max-w-6xl mx-auto mt-12 rounded-xl bg-[#b7ac88bd] bg-opacity-90 flex flex-col sm:flex-row justify-between items-center py-10 px-6 gap-8 shadow-lg layer-blur-effect"
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1, delay: 0.9, ease: "easeOut" }}
         >
-          {/* 1st Counter */}
+          {/* Experience */}
           <div className="flex-1 text-center">
             <h3 className="text-3xl sm:text-4xl font-bold text-white">
-              <Counter to={500} suffix="+" />
+              Since 1996
             </h3>
-            <p className="text-white text-lg">Premium Properties</p>
+            <p className="text-white text-lg">Experience</p>
           </div>
 
           {/* Divider */}
           <div className="w-16 h-px bg-white/40 my-4 sm:my-0 sm:w-px sm:h-12 mx-auto sm:mx-6" />
 
-          {/* 2nd Counter */}
+          {/* Masterpieces */}
           <div className="flex-1 text-center">
             <h3 className="text-3xl sm:text-4xl font-bold text-white">
-              <Counter to={98} suffix="%" />
+              50+
             </h3>
-            <p className="text-white text-lg">Client Satisfaction</p>
+            <p className="text-white text-lg">Masterpieces</p>
           </div>
 
           {/* Divider */}
           <div className="w-16 h-px bg-white/40 my-4 sm:my-0 sm:w-px sm:h-12 mx-auto sm:mx-6" />
 
-          {/* 3rd Counter */}
+          {/* Families Served */}
           <div className="flex-1 text-center">
             <h3 className="text-3xl sm:text-4xl font-bold text-white">
-              <Counter to={25} suffix="+" />
+              6000+
             </h3>
-            <p className="text-white text-lg">Years Experience</p>
+            <p className="text-white text-lg">Families Served</p>
           </div>
         </motion.div>
       </div>

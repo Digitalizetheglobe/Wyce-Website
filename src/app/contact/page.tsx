@@ -21,7 +21,6 @@ const Contact = () => {
             {/* Banner */}
             <div className="w-full h-64 flex flex-col items-center justify-center text-center bg-gradient-to-b from-black to-[#c2b48f] px-4">
                 <h1 className="text-4xl font-semibold mb-2">Contact Us</h1>
-                <div className="w-30 h-[3px] bg-[#B7AC88] mb-3"></div>
                 <p className="text-lg max-w-4xl">
                     At WIDE Corp, we believe a home is more than bricks and beams<br />
                     it's the space where your most beautiful moments begin.

@@ -3,7 +3,7 @@ import herobg from '../../public/images/hero-bg.png'
 
 export default function HeroSection() {
     return (
-        <div className="relative pt-0 pb-8 sm:pb-20 md:pb-15 w-full min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-[#090909] to-[#B7AC88]">
+        <div className="relative pt-0 pb-8 sm:pb-20 md:pb-15 w-full  flex items-center justify-center overflow-hidden bg-gradient-to-b from-[#090909] to-[#B7AC88]">
             {/* Social Sidebar - Outside the banner */}
             <div className="absolute left-2 sm:left-4 lg:left-8 top-1/2 -translate-y-1/2 flex-col gap-6 sm:gap-8 lg:gap-10 z-[5] hidden md:flex">
                 <div className="flex flex-col items-center gap-2 cursor-pointer hover:translate-x-1 transition-transform duration-300">

@@ -41,7 +41,7 @@ export default function AboutSection() {
         </div>
 
         {/* RIGHT SIDE IMAGES */}
-        <div className="grid grid-cols-2 gap-4 sm:gap-6 lg:gap-8 max-w-[520px] mx-auto lg:mx-0">
+        <div className="grid grid-cols-2 gap-4 sm:gap-6 lg:gap-8 w-full max-w-[520px] mx-auto lg:mx-0">
           <div className="overflow-hidden">
             <Image
               src="/images/about-1.png"
