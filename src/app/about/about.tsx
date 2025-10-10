@@ -40,9 +40,7 @@ export default function HeroSection() {
               As WYCE Corp builders, we put heart into every project, 
               designing homes that welcome joy, comfort, and connection.
             </p>
-            <button className="bg-[#b6a16b] text-black px-6 py-2 rounded-sm font-medium hover:bg-[#d1bb7e] transition">
-              Read More
-            </button>
+
           </div>
         </div>
       </section>

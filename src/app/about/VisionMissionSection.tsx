@@ -16,16 +16,13 @@ export default function VisionMissionSection() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start mb-6">
           {/* Left Content */}
           <div className="space-y-6">
-          <div className="mb-12 text-left">
+          <div className="mb-5 text-left">
           <p className={`text-[#b6a16b] italic text-2xl sm:text-3xl font-light ${vujahday.className}`}>
-            — Our Vision & Mission
+            — Our Vision 
           </p>
         </div>
             <p className="text-gray-300 leading-relaxed text-base sm:text-lg">
-              WYCE Corp is a trusted Pune-based construction company,
-              transforming industries with innovative solutions, integrity,
-              and sustainable growth.
-            </p>
+Our vision is to shape the future of residential real estate by consistently delivering timeless landmarks that embody thoughtful design and superior quality. We believe that true luxury is found in intent, where every detail, from the master plan to the smallest feature, is designed around how you live and feel. This thoughtful approach is not an afterthought; it is the very foundation of everything we build.            </p>
           </div>
 
           {/* Right Image */}
@@ -55,16 +52,11 @@ export default function VisionMissionSection() {
 
           {/* Right Content */}
           <div className="space-y-6 mt-8">
+                      <p className={`text-[#b6a16b] italic text-2xl sm:text-3xl font-light ${vujahday.className}`}>
+            — Our Mission
+          </p>
             <p className="text-gray-300 leading-relaxed text-base sm:text-lg">
-              WYCE Corp is a trusted Pune-based construction company,
-              transforming industries with innovative solutions, integrity,
-              and sustainable growth.
-            </p>
-
-            <p className="text-gray-300 leading-relaxed text-base sm:text-lg">
-              WYCE Corp is a trusted Pune-based construction company,
-              transforming industries with innovative solutions, integrity,
-              and sustainable growth with innovative solutions, integrity.
+Our mission is to be a trusted Pune-based construction company, transforming industries with innovative solutions, integrity, and sustainable growth. We are committed to creating exceptional homes and communities where families can live the WYCE-crafted experience. We are built on the combined wisdom of three trusted names—Parth Developers, Saniket Builders, and Balaji Group—and are driven by a shared vision of quality, trust, and thoughtful living.
             </p>
           </div>
         </div>
