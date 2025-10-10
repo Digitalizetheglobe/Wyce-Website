@@ -5,7 +5,7 @@ import Link from "next/link";
 export default function CtaSection() {
   return (
     <section className="w-full bg-[#0B0B0B] px-5">
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-6xl mx-auto">
         <div className="w-full text-center rounded-2xl py-10 px-8 shadow-lg bg-cover bg-center bg-no-repeat" style={{backgroundImage: "url('/images/cta-bg.png')"}}>
           {/* Small Text */}
           <p className="text-sm text-gray-200 mb-2">Book Now</p>

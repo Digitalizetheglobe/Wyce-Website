@@ -64,7 +64,7 @@ export default function ContactSection() {
                 name="phone"
                 value={formData.phone}
                 onChange={handleChange}
-                placeholder="Phone Number"
+                placeholder="Contact"
                 className="w-full px-3 sm:px-4 py-2.5 sm:py-3 text-sm sm:text-base bg-gray-800/80 border border-gray-600 rounded-md text-white placeholder-white/70 focus:outline-none focus:border-[#B7AC88]"
               />
               <input

@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import footer from '../../public/images/er-logo.png'
+import footer from '../../public/images/logo.png'
 import Image from "next/image";
 
 export default function Footer() {
@@ -14,7 +14,7 @@ export default function Footer() {
           {/* Left Section - Logo & Social */}
           <div className="flex flex-col space-y-6 pr-6">
             <div>
-              <Image src={footer} alt="WYCE" width={200} height={200} />
+              <Image src={footer} alt="WYCE" width={150} height={150} />
 
             </div>
             <div className="flex space-x-3">
@@ -38,47 +38,78 @@ export default function Footer() {
 
           {/* Center Section - Links */}
           <div className="flex flex-col items-start md:items-left space-y-3 px-6">
-            {["Home", "About", "Services", "Contact", "Privacy Policy"].map((link, idx) => (
+            {[
+              { name: "Home", href: "/" },
+              { name: "About", href: "/about" },
+              { name: "Nri Hub", href: "/nri-hub" },
+              { name: "Blog", href: "/blog" }
+            ].map((link, idx) => (
               <Link
                 key={idx}
-                href="#"
+                href={link.href}
                 className="text-white hover:text-[#B7AC88] transition-colors text-lg"
               >
-                {link}
+                {link.name}
               </Link>
             ))}
           </div>
 
           {/* Center Section - Links */}
           <div className="flex flex-col items-start md:items-left space-y-3 px-6">
-            {["Wyce Exclicity", "Privacy Policy", "FAQs", "Publication", "Privacy Policy"].map((link, idx) => (
+            {[
+              { name: "Wyce Exclucity", href: "/wyce-exclucity" },
+              { name: "Privacy Policy", href: "/privacy-policy" },
+              { name: "FAQs", href: "/faq" },
+              { name: "Publication", href: "#" }
+            ].map((link, idx) => (
               <Link
                 key={idx}
-                href="#"
+                href={link.href}
                 className="text-white hover:text-[#B7AC88] transition-colors text-lg"
               >
-                {link}
+                {link.name}
               </Link>
             ))}
           </div>
 
           {/* Right Section - Contact */}
           <div className="space-y-3 text-lg text-white pl-6">
-            <p>+91 75497 99799</p>
-            <p>info@wycecory.com</p>
-            <p>
-              Plot No 123 bavdhan, near <br />
-              16 no bus stop, pune <br />
-              pune - 444110
-            </p>
+            <a 
+              href="tel:+917549799799" 
+              className="block hover:text-[#B7AC88] transition-colors"
+            >
+              +91 75497 99799
+            </a>
+            <a 
+              href="mailto:info@wycecor.com" 
+              className="block hover:text-[#B7AC88] transition-colors"
+            >
+              info@wycecor.com
+            </a>
+            <a
+              href="https://maps.google.com/?q=Wyce+Exclucity,+CEC+Office,+Siddharth+Nagar,+Bavdhan,+Pune,+Maharashtra+411021"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block hover:text-[#B7AC88] transition-colors"
+            >
+              Wyce Exclucity, CEC Office, <br />Siddharth Nagar, Bavdhan, <br />Pune, Maharashtra 411021
+            </a>
           </div>
         </div>
 
         {/* Bottom Bar */}
-        <div className=" text-center text-lg text-white mt-6">
-          ©2025 WYCE Exclucity. All Rights Reserved. Designed by{" "}
-          <span className="text-[#B7AC88]">Digitalize the Globe</span>
-        </div>
+<div className="text-center text-lg text-white mt-6">
+  ©2025 WYCE Exclucity. All Rights Reserved. Designed by{" "}
+  <a
+    href="https://digitalizetheglobe.com/"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="text-[#B7AC88] hover:underline"
+  >
+    Digitalize the Globe
+  </a>
+</div>
+
       </div>
     </footer>
   );

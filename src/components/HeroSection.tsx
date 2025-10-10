@@ -1,5 +1,7 @@
 import Image from 'next/image';
-import herobg from '../../public/images/hero-bg.png'
+import phoneBg from '../../public/images/phone.jpg'
+import tabBg from '../../public/images/tab.jpg'
+import laptopBg from '../../public/images/laptop.jpg'
 
 export default function HeroSection() {
     return (
@@ -32,33 +34,32 @@ export default function HeroSection() {
             {/* Banner Container */}
             <div className="relative w-full max-w-[95%] sm:max-w-[90%] lg:max-w-[1350px] h-[500px] sm:h-[600px] md:h-[670px] flex items-center justify-center overflow-hidden rounded-lg sm:rounded-xl lg:rounded-3xl mx-auto"
                 style={{
-                    backgroundImage: `url(${herobg.src})`,
+                    backgroundImage: `url(${phoneBg.src})`,
                     backgroundPosition: 'center',
                     backgroundSize: 'cover',
                 }}
             >
+                {/* Tablet background */}
+                <div 
+                    className="absolute inset-0 hidden sm:block lg:hidden"
+                    style={{
+                        backgroundImage: `url(${tabBg.src})`,
+                        backgroundPosition: 'center',
+                        backgroundSize: 'cover',
+                    }}
+                />
+                
+                {/* Laptop/Desktop background */}
+                <div 
+                    className="absolute inset-0 hidden lg:block"
+                    style={{
+                        backgroundImage: `url(${laptopBg.src})`,
+                        backgroundPosition: 'center',
+                        backgroundSize: 'cover',
+                    }}
+                />
 
-                {/* Content Wrapper */}
-                <div className="relative w-full h-full flex items-center px-4 sm:px-8 md:px-10 lg:px-16 xl:px-20">
-                    {/* Text Content */}
-                    <div className="relative z-[3] max-w-full sm:max-w-[500px] md:max-w-[600px] lg:max-w-[700px] ml-0 sm:ml-4 md:ml-8 lg:ml-10 xl:ml-20">
-                        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-tight mb-4 sm:mb-6 md:mb-8 drop-shadow-[2px_2px_10px_rgba(0,0,0,0.5)]">
-                            Shaping Skylines With Unmatched quality
-                        </h1>
-                        <p className="text-sm sm:text-base md:text-lg text-white leading-relaxed mb-6 sm:mb-8 md:mb-10 drop-shadow-[1px_1px_5px_rgba(0,0,0,0.5)] max-w-full sm:max-w-[450px] md:max-w-[600px]">
-                            Every project we create is more than concrete and steel; it&apos;s a vision brought to life with unmatched precision, designed to elevate the way you live and experience luxury.
-                        </p>
-                        <a
-                            href="#"
-                            className="inline-flex items-center gap-2 sm:gap-3 px-5 sm:px-7 md:px-9 py-3 sm:py-4 md:py-[18px] bg-[#B7AC88]/90 hover:border hover:border-[#B7AC88] hover:text-[#B7AC88] hover:bg-transparent text-white text-sm sm:text-base font-semibold capitalize hover:bg-[#B7AC88] hover:translate-x-1 transition-all duration-300"
-                        >
-                            Explore properties
-                            <span className="text-lg sm:text-xl">›</span>
-                        </a>
-                    </div>
 
-
-                </div>
             </div>
         </div>
     );

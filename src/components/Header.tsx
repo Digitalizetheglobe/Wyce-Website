@@ -25,7 +25,7 @@ export default function Header() {
                 alt="WYCE EXCLUSIVITY City"
                 width={400}
                 height={280}
-                className="h-24 sm:h-32 lg:h-36 xl:h-40 w-auto"
+                className="h-10 sm:h-10 lg:h-30 xl:h-15 w-auto"
                 priority
               />
             </Link>
@@ -120,11 +120,11 @@ export default function Header() {
               className="text-white hover:text-gray-300 cursor-pointer p-2"
             >
               {isMobileMenuOpen ? (
-                <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="h-8 w-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                 </svg>
               ) : (
-                <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="h-8 w-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
                 </svg>
               )}
