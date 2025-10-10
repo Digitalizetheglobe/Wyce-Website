@@ -67,7 +67,7 @@ export default function Footer() {
             <p>+91 75497 99799</p>
             <p>info@wycecory.com</p>
             <p>
-              Plot No 123 bawdhan, near <br />
+              Plot No 123 bavdhan, near <br />
               16 no bus stop, pune <br />
               pune - 444110
             </p>
