@@ -50,19 +50,14 @@ export default function HeroSection() {
                         </p>
                         <a
                             href="#"
-                            className="inline-flex items-center gap-2 sm:gap-3 px-5 sm:px-7 md:px-9 py-3 sm:py-4 md:py-[18px] bg-[#B7AC88]/90 text-white text-sm sm:text-base font-semibold capitalize hover:bg-[#B7AC88] hover:translate-x-1 transition-all duration-300"
+                            className="inline-flex items-center gap-2 sm:gap-3 px-5 sm:px-7 md:px-9 py-3 sm:py-4 md:py-[18px] bg-[#B7AC88]/90 hover:border hover:border-[#B7AC88] hover:text-[#B7AC88] hover:bg-transparent text-white text-sm sm:text-base font-semibold capitalize hover:bg-[#B7AC88] hover:translate-x-1 transition-all duration-300"
                         >
                             Explore properties
                             <span className="text-lg sm:text-xl">›</span>
                         </a>
                     </div>
 
-                    {/* Progress Bars */}
-                    <div className="absolute bottom-8 sm:bottom-12 md:bottom-16 lg:bottom-20 right-[5%] sm:right-[10%] lg:right-[15%] flex gap-2 sm:gap-3 md:gap-4 z-[4]">
-                        <div className="w-12 sm:w-16 md:w-20 h-1 bg-white cursor-pointer"></div>
-                        <div className="w-12 sm:w-16 md:w-20 h-1 bg-white/30 cursor-pointer hover:bg-white/70 transition-all duration-300"></div>
-                        <div className="w-12 sm:w-16 md:w-20 h-1 bg-white/30 cursor-pointer hover:bg-white/70 transition-all duration-300"></div>
-                    </div>
+
                 </div>
             </div>
         </div>
