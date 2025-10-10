@@ -10,15 +10,12 @@ export default function Footer() {
       <div className="absolute inset-0 bg-gradient-to-b from-[#000000] to-[#4b432e]"></div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start border-b border-[#B7AC88]/40 pb-10 md:divide-x-2 md:divide-[#B7AC88]/60">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 items-start border-b border-[#B7AC88]/60 pb-10 md:divide-x-2 md:divide-[#B7AC88]/60">
           {/* Left Section - Logo & Social */}
           <div className="flex flex-col space-y-6 pr-6">
             <div>
               <Image src={footer} alt="WYCE" width={200} height={200} />
-              {/* <h2 className="text-3xl font-bold tracking-wider leading-none">WYCE</h2>
-              <h3 className="text-2xl font-light italic leading-tight">
-                Exclu<span className="font-normal">City</span>
-              </h3> */}
+
             </div>
             <div className="flex space-x-3">
               {[
@@ -36,6 +33,19 @@ export default function Footer() {
                 </a>
               ))}
             </div>
+          </div>
+
+          {/* Center Section - Links */}
+          <div className="flex flex-col items-start md:items-left space-y-3 px-6">
+            {["Home", "About", "Services", "Contact", "Privacy Policy"].map((link, idx) => (
+              <Link
+                key={idx}
+                href="#"
+                className="text-white hover:text-[#B7AC88] transition-colors text-lg"
+              >
+                {link}
+              </Link>
+            ))}
           </div>
 
           {/* Center Section - Links */}

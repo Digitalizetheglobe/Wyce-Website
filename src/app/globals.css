@@ -182,3 +182,39 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+/* Blog content styles */
+.blog-content h2 {
+  color: #B7AC88;
+  font-size: 1.875rem;
+  font-weight: 600;
+  margin-top: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+.blog-content p {
+  color: white;
+  line-height: 1.75;
+  margin-bottom: 1.5rem;
+}
+
+.blog-content a {
+  color: #B7AC88;
+  text-decoration: none;
+}
+
+.blog-content a:hover {
+  text-decoration: underline;
+}
+
+.blog-content strong {
+  color: white;
+}
+
+.blog-content ul, .blog-content ol {
+  color: white;
+}
+
+.blog-content li {
+  color: white;
+}

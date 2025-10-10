@@ -6,6 +6,8 @@ import { useState } from "react";
 
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isNriDropdownOpen, setIsNriDropdownOpen] = useState(false);
+  const [isMobileNriDropdownOpen, setIsMobileNriDropdownOpen] = useState(false);
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -37,17 +39,50 @@ export default function Header() {
             <Link href="/about" className="text-white hover:text-gray-300 transition-colors">
               About
             </Link>
-            <div className="relative group">
-              <Link href="/projects" className="text-white hover:text-gray-300 transition-colors flex items-center">
+            <Link href="/wyce-exclucity" className="text-white hover:text-gray-300 transition-colors flex items-center">
                 Projects
-                <svg className="ml-1 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            </Link>
+            <div 
+              className="relative group"
+              onMouseEnter={() => setIsNriDropdownOpen(true)}
+              onMouseLeave={() => setIsNriDropdownOpen(false)}
+            >
+              <button className="text-white hover:text-gray-300 transition-colors flex items-center py-2">
+                Nri Hub
+                <svg 
+                  className={`ml-1 h-4 w-4 transition-transform ${isNriDropdownOpen ? 'rotate-180' : ''}`} 
+                  fill="none" 
+                  stroke="currentColor" 
+                  viewBox="0 0 24 24"
+                >
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
-              </Link>
+              </button>
+              {isNriDropdownOpen && (
+                <div className="absolute top-full left-0 pt-2 w-48">
+                  <div className="bg-[#1a1a1a] border border-gray-800 rounded-md shadow-lg py-2">
+                    <Link 
+                      href="/nri-hub" 
+                      className="block px-4 py-2 text-white hover:bg-[#B7AC88] hover:text-black  transition-colors"
+                    >
+                      NRI Investment
+                    </Link>
+                    <Link 
+                      href="/loan-help" 
+                      className="block px-4 py-2 text-white hover:bg-[#B7AC88] hover:text-black transition-colors"
+                    >
+                      Loan Help
+                    </Link>
+                    <Link 
+                      href="/faq" 
+                      className="block px-4 py-2 text-white hover:bg-[#B7AC88] hover:text-black transition-colors"
+                    >
+                      FAQ
+                    </Link>
+                  </div>
+                </div>
+              )}
             </div>
-            <Link href="/nri-hub" className="text-white hover:text-gray-300 transition-colors">
-              Nri Hub
-            </Link>
             <Link href="/blog" className="text-white hover:text-gray-300 transition-colors">
               Blog
             </Link>
@@ -105,19 +140,53 @@ export default function Header() {
                 About
               </Link>
               <Link 
-                href="/projects" 
+                href="/wyce-exclucity" 
                 className="block px-3 py-2 text-white hover:text-gray-300 transition-colors"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Projects
               </Link>
-              <Link 
-                href="/nri-hub" 
-                className="block px-3 py-2 text-white hover:text-gray-300 transition-colors"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Nri Hub
-              </Link>
+              <div>
+                <button
+                  className="w-full flex items-center justify-between px-3 py-2 text-white hover:text-gray-300 transition-colors"
+                  onClick={() => setIsMobileNriDropdownOpen(!isMobileNriDropdownOpen)}
+                >
+                  <span>Nri Hub</span>
+                  <svg 
+                    className={`h-4 w-4 transition-transform ${isMobileNriDropdownOpen ? 'rotate-180' : ''}`}
+                    fill="none" 
+                    stroke="currentColor" 
+                    viewBox="0 0 24 24"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+                {isMobileNriDropdownOpen && (
+                  <div className="pl-6 space-y-1">
+                    <Link 
+                      href="/nri-hub" 
+                      className="block px-3 py-2 text-white hover:text-gray-300 transition-colors"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      NRI Investment
+                    </Link>
+                    <Link 
+                      href="/loan-help" 
+                      className="block px-3 py-2 text-white hover:text-gray-300 transition-colors"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      Loan Help
+                    </Link>
+                    <Link 
+                      href="/faq" 
+                      className="block px-3 py-2 text-white hover:text-gray-300 transition-colors"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      FAQ
+                    </Link>
+                  </div>
+                )}
+              </div>
               <Link 
                 href="/blog" 
                 className="block px-3 py-2 text-white hover:text-gray-300 transition-colors"
