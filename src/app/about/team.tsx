@@ -2,6 +2,11 @@
 import Image from "next/image";
 import { useState } from "react";
 import CtaSection from "./cta";
+import { Vujahday_Script } from "next/font/google";
+const vujahday = Vujahday_Script({
+  subsets: ["latin"],
+  weight: "400",
+});
 
 
 export default function TeamSection() {
@@ -29,23 +34,23 @@ export default function TeamSection() {
   ];
 
   return (
-    <section className="relative w-full bg-[#0B0B0B] text-white py-20">
-      <div className="max-w-6xl mx-auto px-6">
+    <section className={`relative w-full bg-[#121212] text-white py-10 px-6 sm:px-12 lg:px-20 `}>
+      <div className="max-w-7xl mx-auto ">
         {/* Heading */}
         <div className="text-left mb-6">
-          <p className="text-[#b6a16b] italic text-2xl sm:text-3xl font-light">
+          <p className={`text-[#b6a16b] italic text-2xl sm:text-3xl font-light pt-10 ${vujahday.className}`}>
             — Meet The Awesome Team
           </p>
         </div>
 
         {/* Subtext */}
         <p className="text-gray-300 mb-12 max-w-6xl mx-auto text-left">
-          Every property is more than just four walls—it's a promise of luxury,<br />
+          Every property is more than just four walls—it&apos;s a promise of luxury,<br />
           comfort and growth. Step into a lifestyle.
         </p>
 
         {/* Team Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8  mb-12">
           {team.map((member, index) => (
             <div 
               key={index} 

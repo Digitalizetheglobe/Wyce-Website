@@ -96,7 +96,7 @@ export const AnimatedTestimonials = ({
                 <div className="relative h-50 w-full rounded-2xl bg-[#121212] border-2 border-[#B7AC88] shadow-2xl">
                   <div className="p-6 h-full flex flex-col justify-between">
                     <p className="text-white text-xl leading-relaxed mb-4">
-                      "{testimonial.quote}"
+                        &quot;{testimonial.quote}&quot;
                     </p>
                     <div className="flex items-center gap-3">
                       <img

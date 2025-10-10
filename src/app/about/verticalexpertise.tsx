@@ -1,9 +1,13 @@
 'use client';
 import Image from "next/image";
-
+import { Vujahday_Script } from "next/font/google";
+const vujahday = Vujahday_Script({
+  subsets: ["latin"],
+  weight: "400",
+});
 export default function VerticalExpertise() {
   return (
-    <section className="relative w-full bg-[#0B0B0B] text-white py-20">
+    <section className={`relative w-full bg-[#0B0B0B] text-white py-10 px-6 sm:px-12 lg:px-20 `}>
       {/* Background pattern (optional) */}
       <div className="absolute inset-0 opacity-10">
         <Image
@@ -14,10 +18,10 @@ export default function VerticalExpertise() {
         />
       </div>
 
-      <div className="relative max-w-6xl mx-auto px-6">
+      <div className="relative max-w-7xl mx-auto ">
         {/* Heading */}
         <div className="mb-6">
-          <p className="text-[#b6a16b] italic text-2xl sm:text-3xl font-light">
+          <p className={`text-[#b6a16b] italic text-2xl sm:text-3xl font-light ${vujahday.className}`}>
             — Our Vertical Expertise
           </p>
         </div>

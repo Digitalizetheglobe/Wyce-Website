@@ -1,17 +1,15 @@
 "use client";
 import Image from "next/image";
-import { useState } from "react";
+
+import { Vujahday_Script } from "next/font/google";
+const vujahday = Vujahday_Script({
+  subsets: ["latin"],
+  weight: "400",
+});
 
 export default function ValuesSection() {
-  const [currentIndex, setCurrentIndex] = useState(0);
+  
 
-  const scrollLeft = () => {
-    setCurrentIndex((prev) => (prev > 0 ? prev - 1 : 2));
-  };
-
-  const scrollRight = () => {
-    setCurrentIndex((prev) => (prev < 2 ? prev + 1 : 0));
-  };
 
   const values = [
     {
@@ -32,12 +30,12 @@ export default function ValuesSection() {
   ];
 
   return (
-    <section className="bg-[#0d0d0d] text-white py-20 px-6 sm:px-12 lg:px-20">
-      <div className="max-w-6xl mx-auto">
+    <section className={`bg-[#121212] text-white py-10 px-6 sm:px-12 lg:px-20 `}>
+      <div className="max-w-7xl mx-auto">
         {/* Heading */}
         <div className="mb-16 flex justify-between items-start">
           <div>
-            <p className="text-[#b6a16b] italic text-2xl sm:text-3xl font-light mb-4">
+            <p className={`text-[#b6a16b] italic text-2xl sm:text-3xl font-light mb-4 ${vujahday.className}`}>
               — Our Values
             </p>
             <p className="text-gray-300 max-w-2xl text-base">
@@ -47,20 +45,7 @@ export default function ValuesSection() {
           </div>
 
           {/* Arrows */}
-          <div className="hidden md:flex gap-4 mt-2">
-            <button
-              onClick={scrollLeft}
-              className="w-10 h-10 rounded-full border border-[#b6a16b] flex items-center justify-center hover:bg-[#b6a16b] hover:text-black transition-colors duration-300"
-            >
-              ←
-            </button>
-            <button
-              onClick={scrollRight}
-              className="w-10 h-10 rounded-full border border-[#b6a16b] flex items-center justify-center hover:bg-[#b6a16b] hover:text-black transition-colors duration-300"
-            >
-              →
-            </button>
-          </div>
+          
         </div>
 
         {/* Three Column Grid */}

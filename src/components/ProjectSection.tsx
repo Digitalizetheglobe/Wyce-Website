@@ -10,8 +10,9 @@ const vujahday = Vujahday_Script({
 
 export default function ProjectSection() {
   return (
+    
     <section
-      className="relative bg-cover bg-center bg-no-repeat text-white py-12 sm:py-16 md:py-20 px-0 sm:px-0 md:pl-0 lg:pl-25"
+      className=" relative bg-cover bg-center bg-no-repeat text-white py-12 sm:py-16 md:py-20 px-0 sm:px-0 md:pl-0 lg:pl-25"
       style={{ backgroundImage: "url('/images/project-bg.png')" }}
     >
 
