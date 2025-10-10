@@ -23,7 +23,7 @@ const Contact = () => {
                 <h1 className="text-4xl font-semibold mb-2">Contact Us</h1>
                 <p className="text-lg max-w-4xl">
                     At WIDE Corp, we believe a home is more than bricks and beams<br />
-                    it's the space where your most beautiful moments begin.
+                    it&apos;s the space where your most beautiful moments begin.
                 </p>
             </div>
 

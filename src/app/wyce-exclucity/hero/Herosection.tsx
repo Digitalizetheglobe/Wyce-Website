@@ -29,7 +29,7 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}
         >
-For decades, we have been turning visions into timeless landmarks, built on the foundation of thoughtfulness. Experience the quality and trust that comes from a legacy committed to shaping your life quietly and beautifully. We don't just build homes; we craft the WYCE-crafted experience for every family.
+For decades, we have been turning visions into timeless landmarks, built on the foundation of thoughtfulness. Experience the quality and trust that comes from a legacy committed to shaping your life quietly and beautifully. We don&apos;t just build homes; we craft the WYCE-crafted experience for every family.
         </motion.p>
 
         {/* CTA Button */}

@@ -47,7 +47,7 @@ const Career = () => {
                         </div>
                         
                         <p className="text-white text-lg leading-relaxed">
-                            At WYCE Real Estate, we believe success starts with our people. Whether you're a seasoned expert or just beginning your journey, we provide the tools, mentorship, and opportunities to thrive.
+                            At WYCE Real Estate, we believe success starts with our people. Whether you&apos;re a seasoned expert or just beginning your journey, we provide the tools, mentorship, and opportunities to thrive.
                         </p>
                         
                         <div className="space-y-4">
@@ -98,7 +98,7 @@ const Career = () => {
                         </div>
                         
                         <p className="text-white text-lg leading-relaxed">
-                            At WYCE, you're more than an employee—you're part of our family. From team-building events to recognition programs, we celebrate every success together. Expect an environment where your voice matters, ideas are welcomed, and your career path is limitless.
+                            At WYCE, you&apos;re more than an employee—you&apos;re part of our family. From team-building events to recognition programs, we celebrate every success together. Expect an environment where your voice matters, ideas are welcomed, and your career path is limitless.
                         </p>
                     </div>
 

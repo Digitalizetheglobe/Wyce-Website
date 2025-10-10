@@ -4,7 +4,16 @@ import Link from "next/link";
 import BlogSidebar from "@/app/blog/[slug]/BlogSidebar";
 
 // Blog content data
-const blogContent: Record<string, any> = {
+interface BlogData {
+  title: string;
+  date: string;
+  category: string;
+  author: string;
+  image: string;
+  content: string;
+}
+
+const blogContent: Record<string, BlogData> = {
   "quiet-side-of-luxury": {
     title: "🏡 The Quiet Side of Luxury: Why WYCE Believes Thoughtfulness Is the New Opulence",
     date: "October 5, 2024",

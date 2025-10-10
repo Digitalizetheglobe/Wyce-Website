@@ -108,7 +108,7 @@ export default function BlogPage() {
           <h2 className="text-2xl md:text-3xl font-semibold mb-3">Blog</h2>
           <p className="text-gray-200 text-sm md:text-base">
             At WYCE Corp, we believe a home is more than bricks and beams —
-            it's the space where your most beautiful moments begin.
+            it&apos;s the space where your most beautiful moments begin.
           </p>
         </div>
 
