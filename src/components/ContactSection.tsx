@@ -116,6 +116,9 @@ export default function ContactSection() {
               <a href="https://www.youtube.com/@WYCECorp" target="_blank" rel="noopener noreferrer" className="text-white hover:text-[#B7AC88] transition-colors">
                 <i className="fa-brands fa-youtube text-2xl sm:text-3xl"></i>
               </a>
+              <a href="https://www.facebook.com/profile.php?id=61569471185683" target="_blank" rel="noopener noreferrer" className="text-white hover:text-[#B7AC88] transition-colors">
+                <i className="fa-brands fa-facebook-f text-2xl sm:text-3xl"></i>
+              </a>
             </div>
 
             {/* Address */}

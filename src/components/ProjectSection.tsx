@@ -54,17 +54,7 @@ export default function ProjectSection() {
             </Link>
           </div>
 
-          {/* RIGHT SIDE - IMAGE */}
-          <div className="relative lg:ml-0 -mx-4 sm:mx-0 sm:-mr-6 lg:-mr-16">
-            <Image
-              src="/images/project-1.png"
-              alt="Modern residential complex with high-rise towers and green spaces"
-              width={600}
-              height={400}
-              className="w-full h-auto object-cover"
-              priority
-            />
-          </div>
+
         </div>
 
 

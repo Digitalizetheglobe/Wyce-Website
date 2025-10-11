@@ -19,9 +19,10 @@ export default function Footer() {
             </div>
             <div className="flex space-x-3">
               {[
-                { icon: "fa-linkedin", href: "https://www.instagram.com/wyce_corp/" },
+                { icon: "fa-linkedin", href: "https://www.linkedin.com/company/wyce-corp/" },
                 { icon: "fa-youtube", href: "https://www.youtube.com/@WYCECorp" },
                 { icon: "fa-instagram", href: "https://www.instagram.com/wyce_corp/" },
+                { icon: "fa-facebook-f", href: "https://www.facebook.com/profile.php?id=61569471185683" }
               ].map((social, idx) => (
                 <a
                   key={idx}
@@ -81,10 +82,10 @@ export default function Footer() {
               +91 75497 99799
             </a>
             <a 
-              href="mailto:info@wycecor.com" 
+              href="mailto:sales@wycecorp.com" 
               className="block hover:text-[#B7AC88] transition-colors"
             >
-              info@wycecor.com
+              sales@wycecorp.com
             </a>
             <a
               href="https://maps.google.com/?q=Wyce+Exclucity,+CEC+Office,+Siddharth+Nagar,+Bavdhan,+Pune,+Maharashtra+411021"
