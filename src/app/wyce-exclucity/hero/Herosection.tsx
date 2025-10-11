@@ -6,10 +6,10 @@ export default function Hero() {
   return (
     <section
       className="relative w-full min-h-screen overflow-hidden bg-cover bg-center"
-      style={{ backgroundImage: "url('/images/landing-page/herobg.png')" }}
+      
     >
       {/* Content */}
-      <div className="relative z-10 flex flex-col items-center justify-center h-full px-6 pt-50 pb-20 lg:px-20 text-center text-white">
+      <div className="relative z-10 flex flex-col items-center justify-center h-full px-6 pt-20 pb-20 lg:px-20 text-center text-white">
         {/* Heading */}
         <motion.h1
           className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-snug"
@@ -34,7 +34,7 @@ For decades, we have been turning visions into timeless landmarks, built on the 
 
         {/* CTA Button */}
         <motion.button
-          className="cursor-pointer mt-8 bg-gradient-to-r from-[#B7AC88] to-[#1F1403] hover:bg-gradient-to-l hover:bg-from-[#1F1403] hover:bg-to-[#B7AC88] text-white px-6 py-3 rounded-full shadow-lg hover:scale-105 transition-transform"
+          className="mt-8 bg-gradient-to-r from-[#B7AC88] to-[#1F1403] hover:bg-gradient-to-l hover:bg-from-[#1F1403] hover:bg-to-[#B7AC88] text-white px-6 py-3 rounded-full shadow-lg hover:scale-105 transition-transform cursor-pointer"
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.95 }}
           initial={{ opacity: 0, y: 20 }}

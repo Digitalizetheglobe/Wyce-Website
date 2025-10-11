@@ -1,9 +1,9 @@
 "use client";
 import React from "react";
-import { Vujahday_Script } from "next/font/google";
+import { Cinzel } from "next/font/google";
 import CTASection from '@/components/CTASection';
 
-const vujahday = Vujahday_Script({
+const cinzel = Cinzel({
   subsets: ["latin"],
   weight: "400",
 });
@@ -43,7 +43,7 @@ const Career = () => {
                     <div className="space-y-6">
                         <div className="flex items-center gap-3">
                             <span className="w-14 h-[1px] bg-[#B7AC88]"></span>
-                            <h2 className={`text-[#B7AC88] text-3xl ${vujahday.className}`}>Why Join WYCE?</h2>
+                            <h2 className={`text-[#B7AC88] text-3xl ${cinzel.className}`}>Why Join WYCE?</h2>
                         </div>
                         
                         <p className="text-white text-lg leading-relaxed">
@@ -94,7 +94,7 @@ const Career = () => {
                     <div className="space-y-6">
                         <div className="flex items-center gap-3">
                             <span className="w-14 h-[1px] bg-[#B7AC88]"></span>
-                            <h2 className={`text-[#B7AC88] text-3xl ${vujahday.className}`}>Life at WYCE</h2>
+                            <h2 className={`text-[#B7AC88] text-3xl ${cinzel.className}`}>Life at WYCE</h2>
                         </div>
                         
                         <p className="text-white text-lg leading-relaxed">
@@ -122,7 +122,7 @@ const Career = () => {
                 <div className="text-center mb-12">
                     <div className="flex items-center justify-center gap-3 mb-4">
                         <span className="w-14 h-[1px] bg-[#B7AC88]"></span>
-                        <h2 className={`text-[#B7AC88] text-3xl ${vujahday.className}`}>Open Positions</h2>
+                        <h2 className={`text-[#B7AC88] text-3xl ${cinzel.className}`}>Open Positions</h2>
                         <span className="w-14 h-[1px] bg-[#B7AC88]"></span>
                     </div>
                     <p className="text-white text-lg max-w-2xl mx-auto">

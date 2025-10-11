@@ -1,9 +1,11 @@
 "use client";
 
-import { Vujahday_Script } from "next/font/google";
+import { Cinzel } from "next/font/google";
 import { useState } from "react";
+import { motion } from "framer-motion";
+import Image from "next/image";
 
-const vujahday = Vujahday_Script({
+const cinzel = Cinzel({
   subsets: ["latin"],
   weight: "400",
 });
@@ -80,6 +82,7 @@ export default function ContactSection() {
   };
 
   return (
+    <>
     <section
       className="relative bg-black text-white py-12 sm:py-16 md:py-20 overflow-hidden"
       style={{ backgroundImage: "url('/images/bg-image.png')", backgroundSize: "cover", backgroundPosition: "center" }}
@@ -88,121 +91,164 @@ export default function ContactSection() {
 
       <div className="relative container mx-auto px-4 sm:px-6 lg:px-16 max-w-[1320px]">
         {/* Heading */}
-        <div className="mb-8 sm:mb-10">
-          <p className={`text-[#B7AC88] flex items-center gap-2 sm:gap-3 ${vujahday.className}`}>
-            <span className="inline-block w-8 sm:w-10 h-[1px] bg-[#B7AC88]"></span>
-            <span className="text-2xl sm:text-3xl md:text-[36px] lg:text-[40px] leading-tight font-normal">Contact Us</span>
+        <div className="mb-8 sm:mb-10 flex justify-center items-center text-center">
+          <p
+            className={`text-[#B7AC88] flex justify-center items-center gap-2 sm:gap-3`}
+          >
+            <span className={`${cinzel.className} text-2xl sm:text-3xl md:text-[36px] lg:text-[30px] leading-tight font-normal`}>
+              WYCE Corp Built on Legacy. Growing with Vision. Greater Together.
+            </span>
           </p>
         </div>
 
-        {/* Contact Form & Info */}
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_0.8fr] gap-8 sm:gap-10 items-start">
-          {/* Left Side - Form */}
-          <form
-            onSubmit={handleSubmit}
-            className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-5 w-full"
+                <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-6 md:gap-8 lg:gap-10">
+          {/* Left: Map */}
+          <motion.div
+            className="lg:w-1/2 w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[550px] rounded-lg overflow-hidden shadow-lg"
+            initial={{ opacity: 0, x: -60 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1 }}
+            viewport={{ once: true, amount: 0.3 }}
           >
-            {/* Left Column */}
-            <div className="space-y-3 sm:space-y-4">
-              <input
-                type="text"
-                name="firstName"
-                value={formData.firstName}
-                onChange={handleChange}
-                placeholder="First Name"
-                className="w-full px-3 sm:px-4 py-2.5 sm:py-3 text-sm sm:text-base bg-gray-800/80 border border-gray-600 rounded-md text-white placeholder-white/70 focus:outline-none focus:border-[#B7AC88]"
-              />
-              <input
-                type="tel"
-                name="phone"
-                value={formData.phone}
-                onChange={handleChange}
-                placeholder="Contact"
-                className="w-full px-3 sm:px-4 py-2.5 sm:py-3 text-sm sm:text-base bg-gray-800/80 border border-gray-600 rounded-md text-white placeholder-white/70 focus:outline-none focus:border-[#B7AC88]"
-              />
-              <input
-                type="email"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-                placeholder="Email"
-                className="w-full px-3 sm:px-4 py-2.5 sm:py-3 text-sm sm:text-base bg-gray-800/80 border border-gray-600 rounded-md text-white placeholder-white/70 focus:outline-none focus:border-[#B7AC88]"
-              />
-            </div>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3783.2469819588523!2d73.77255937465202!3d18.517737869261904!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2bf0051ba19c1%3A0xe048a525eae24a02!2sWYCE%20Exclucity!5e0!3m2!1sen!2sin!4v1760088958517!5m2!1sen!2sin"
+             
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+            ></iframe>
+          </motion.div>
 
-            {/* Right Column */}
-            <div className="flex flex-col h-full justify-between gap-3 sm:gap-4">
-              <textarea
-                name="message"
-                value={formData.message}
-                onChange={handleChange}
-                placeholder="Message"
-                className="w-full h-[100px] sm:h-[115px] px-3 sm:px-4 py-2.5 sm:py-3 text-sm sm:text-base bg-gray-800/80 border border-gray-600 rounded-md text-white placeholder-white/70 focus:outline-none focus:border-[#B7AC88] resize-none"
-              ></textarea>
-              <button
-                type="submit"
-                disabled={isSubmitting}
-                className="w-full bg-[#B7AC88] text-black font-semibold py-2.5 sm:py-3 text-sm sm:text-base rounded-[4px] hover:bg-[#a49970] transition-all cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed">
-              
-                {isSubmitting ? "SENDING..." : "SEND"}
-              </button>
-            </div>
-          </form>
+          {/* Right: Form */}
+          <motion.div
+            className="lg:w-1/2 w-full p-4 sm:p-6 md:p-8 rounded-lg shadow-lg"
+            initial={{ opacity: 0, x: 60 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1, delay: 0.2 }}
+            viewport={{ once: true, amount: 0.3 }}
+          >
+            <motion.h2
+              className="text-2xl sm:text-3xl lg:text-4xl font-semibold mb-3 sm:mb-4 text-center"
+              initial={{ opacity: 0, y: -20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+            >
+              Contact Us
+            </motion.h2>
+            <motion.p
+              className="mb-4 sm:mb-6 text-center text-sm sm:text-base text-gray-300"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              viewport={{ once: true }}
+            >
+              We would like to hear from you. Please send us a message by filling
+              out the form below and we will get back with you shortly.
+            </motion.p>
 
-          {/* Right Side - Contact Info */}
-          <div className="space-y-6 sm:space-y-8">
-            {/* Status Message */}
-            {submitStatus.type && (
-              <div
-                className={`p-4 rounded-md ${
-                  submitStatus.type === "success"
-                    ? "bg-green-900/50 border border-green-600 text-green-200"
-                    : "bg-red-900/50 border border-red-600 text-red-200"
-                }`}
+            {/* Form with staggered inputs */}
+            <motion.form
+              className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4"
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.3 }}
+              variants={{
+                hidden: {},
+                visible: {
+                  transition: { staggerChildren: 0.15 },
+                },
+              }}
+            >
+              {[
+                "First Name*",
+                "Email*",
+                "Phone Number*",
+                
+                "Message",
+              ].map((placeholder, idx) => (
+                <motion.div
+                  key={idx}
+                  variants={{
+                    hidden: { opacity: 0, y: 20 },
+                    visible: { opacity: 1, y: 0 },
+                  }}
+                  transition={{ duration: 0.6 }}
+                  className={placeholder === "Message" ? "col-span-1 sm:col-span-2" : ""}
+                >
+                  {placeholder === "Select a Service" ? (
+                    <select
+                      className="w-full p-2.5 sm:p-3 text-sm sm:text-base rounded border border-gray-600 bg-transparent text-white focus:outline-none focus:border-[#B7AC88] transition-colors"
+                      defaultValue=""
+                    >
+                      <option value="" disabled className="bg-gray-800">
+                        Select a Service
+                      </option>
+                      <option value="service1" className="bg-gray-800">Service 1</option>
+                      <option value="service2" className="bg-gray-800">Service 2</option>
+                      <option value="service3" className="bg-gray-800">Service 3</option>
+                    </select>
+                  ) : placeholder === "Message" ? (
+                    <textarea
+                      className="w-full p-2.5 sm:p-3 text-sm sm:text-base rounded border border-gray-600 bg-transparent text-white placeholder-gray-400 focus:outline-none focus:border-[#B7AC88] transition-colors resize-none"
+                      rows={4}
+                      placeholder="Message"
+                    ></textarea>
+                  ) : (
+                    <input
+                      type="text"
+                      placeholder={placeholder}
+                      className="w-full p-2.5 sm:p-3 text-sm sm:text-base rounded border border-gray-600 bg-transparent text-white placeholder-gray-400 focus:outline-none focus:border-[#B7AC88] transition-colors"
+                    />
+                  )}
+                </motion.div>
+              ))}
+
+              <motion.label
+                className="col-span-full flex items-start gap-2 text-gray-300 text-xs sm:text-sm w-full"
+                variants={{
+                  hidden: { opacity: 0, y: 10 },
+                  visible: { opacity: 1, y: 0 },
+                }}
               >
-                {submitStatus.message}
-              </div>
-            )}
-            {/* Phone */}
-            <div className="flex items-center gap-2 sm:gap-3">
-              <svg className="w-6 h-6 sm:w-8 sm:h-8 text-white font-bold flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
-              </svg>
-              <a href="tel:+917549799799" className="text-sm sm:text-base lg:text-xl break-words hover:text-[#B7AC88] transition-colors">+91 75497 99799</a>
-            </div>
-
-            {/* Social Icons */}
-            <div className="flex items-center gap-4 sm:gap-5">
-              <a href="https://www.instagram.com/wyce_corp/" target="_blank" rel="noopener noreferrer" className="text-white hover:text-[#B7AC88] transition-colors">
-                <i className="fa-brands fa-instagram text-2xl sm:text-3xl"></i>
-              </a>
-              <a href="https://www.linkedin.com/company/105801954/admin/dashboard/" target="_blank" rel="noopener noreferrer" className="text-white hover:text-[#B7AC88] transition-colors">
-                <i className="fa-brands fa-linkedin text-2xl sm:text-3xl"></i>
-              </a>
-              <a href="https://www.youtube.com/@WYCECorp" target="_blank" rel="noopener noreferrer" className="text-white hover:text-[#B7AC88] transition-colors">
-                <i className="fa-brands fa-youtube text-2xl sm:text-3xl"></i>
-              </a>
-              <a href="https://www.facebook.com/profile.php?id=61569471185683" target="_blank" rel="noopener noreferrer" className="text-white hover:text-[#B7AC88] transition-colors">
-                <i className="fa-brands fa-facebook-f text-2xl sm:text-3xl"></i>
-              </a>
-            </div>
-
-            {/* Address */}
-            <div className="flex items-start gap-2 sm:gap-3">
-              <svg className="w-6 h-6 sm:w-8 sm:h-8 text-white mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                <path
-                  fillRule="evenodd"
-                  d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
-                  clipRule="evenodd"
+                <input 
+                  type="checkbox" 
+                  className="mt-1 w-4 h-4 flex-shrink-0 cursor-pointer accent-[#B7AC88]" 
                 />
-              </svg>
-              <a href="https://www.google.com/maps/search/?api=1&query=Plot+No+123+Bavdhan+near+16+no+bus+stop+Pune+Maharashtra+444110" target="_blank" rel="noopener noreferrer" className="text-sm sm:text-base leading-relaxed hover:text-[#B7AC88] transition-colors">
-                Plot No: 123 Bavdhan, near 16.no bus stop,<br /> Pune, Maharashtra - 444110
-              </a>
-            </div>
-          </div>
+                <span className="flex-1">
+                  I agree with the terms and Privacy Policy and I declare that I
+                  have read the information that is required in accordance.
+                </span>
+              </motion.label>
+
+              {/* Button */}
+              <motion.div
+                className="col-span-full flex justify-center mt-2 w-full"
+                variants={{
+                  hidden: { opacity: 0, scale: 0.9 },
+                  visible: { opacity: 1, scale: 1 },
+                }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+              >
+                <button
+                  type="submit"
+                  className="bg-gradient-to-r from-[#B7AC88] to-[#1F1403] 
+                              text-white px-6 sm:px-8 py-2.5 sm:py-3 rounded-full shadow-md 
+                              hover:scale-105 active:scale-95 transition-transform 
+                              text-sm sm:text-base font-medium w-full sm:w-auto max-w-md"
+                >
+                  Book Site Visit
+                </button>
+              </motion.div>
+            </motion.form>
+          </motion.div>
         </div>
+
+
       </div>
     </section>
+  </>
   );
 }

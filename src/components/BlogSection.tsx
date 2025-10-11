@@ -2,10 +2,10 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { Vujahday_Script } from "next/font/google";
+import { Cinzel } from "next/font/google";
 import { useEffect, useRef, useState } from "react";
 
-const vujahday = Vujahday_Script({
+const cinzel = Cinzel({
   subsets: ["latin"],
   weight: "400",
 });
@@ -139,7 +139,7 @@ export default function BlogSection() {
       <div className="relative container mx-auto px-4 sm:px-6 lg:px-16">
         {/* SECTION HEADER */}
         <div className="mb-10 sm:mb-12 md:mb-16">
-          <p className={`text-[#B7AC88] mb-6 sm:mb-8 flex items-center gap-2 sm:gap-3 ${vujahday.className}`}>
+          <p className={`text-[#B7AC88] mb-6 sm:mb-8 flex items-center gap-2 sm:gap-3 ${cinzel.className}`}>
             <span className="inline-block w-8 sm:w-10 h-[1px] bg-[#B7AC88]"></span>
             <span className="text-2xl sm:text-3xl md:text-[36px] lg:text-[40px] leading-tight font-normal">Blogs & Articles</span>
           </p>

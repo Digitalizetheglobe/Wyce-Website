@@ -1,4 +1,4 @@
-import { Raleway } from "next/font/google";
+import { Raleway, Cinzel } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -7,6 +7,12 @@ const raleway = Raleway({
   variable: "--font-raleway",
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700", "800", "900"],
+});
+
+const cinzel = Cinzel({
+  variable: "--font-cinzel",
+  subsets: ["latin"],
+  weight: ["400", "700"],
 });
 
 
@@ -27,7 +33,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${raleway.variable} font-raleway antialiased`}
+        className={`${raleway.variable} ${cinzel.variable} font-cinzel antialiased`}
         suppressHydrationWarning={true}
       >
         <Header />

@@ -16,7 +16,7 @@ export default function Header() {
   return (
     <header className="bg-[#090909] text-white sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20 sm:h-20 lg:h-23">
+        <div className="flex items-center justify-between h-20 sm:h-20 lg:h-23 cursor-pointer">
           {/* Logo Section */}
           <div className="flex items-center">
             <Link href="/" className="flex items-center">
@@ -25,15 +25,15 @@ export default function Header() {
                 alt="WYCE EXCLUSIVITY City"
                 width={400}
                 height={280}
-                className="h-10 sm:h-10 lg:h-30 xl:h-15 w-auto"
+                className="h-10 sm:h-10 lg:h-30 xl:h-15 w-auto cursor-pointer"
                 priority
               />
             </Link>
           </div>
 
           {/* Navigation Menu - Desktop */}
-          <nav className="hidden lg:flex items-center space-x-6 xl:space-x-10 text-sm xl:text-[16px]">
-            <Link href="/" className="text-white hover:text-gray-300 transition-colors">
+          <nav className="hidden lg:flex items-center space-x-6 xl:space-x-10 text-sm xl:text-[16px] cursor-pointer font-medium">
+            <Link href="/" className="text-white hover:text-gray-300 transition-colors cursor-pointer">
               Home
             </Link>
             <Link href="/about" className="text-white hover:text-gray-300 transition-colors">
@@ -48,7 +48,7 @@ export default function Header() {
               onMouseLeave={() => setIsNriDropdownOpen(false)}
             >
               <button className="text-white hover:text-gray-300 transition-colors flex items-center py-2">
-                Nri Hub
+                NRI HUB
                 <svg 
                   className={`ml-1 h-4 w-4 transition-transform ${isNriDropdownOpen ? 'rotate-180' : ''}`} 
                   fill="none" 

@@ -5,32 +5,11 @@ import Image from "next/image";
 export default function HeroSection() {
   return (
     <>
-      <section className="relative bg-[#0d0d0d] text-white py-16 px-6 sm:px-12 lg:px-20 overflow-hidden">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Left Image Section */}
-          <div className="relative">
-            <Image
-              src="/images/about.png"
-              alt="Main Building"
-              width={600}
-              height={400}
-              className="rounded-md shadow-lg object-cover w-full"
-            />
-
-            {/* Overlapping Image
-            <div className="absolute bottom-[-40px] left-[60%] transform -translate-x-1/2">
-              <Image
-                src="/images/building-small.jpg"
-                alt="Small Building"
-                width={280}
-                height={200}
-                className="rounded-md shadow-2xl border-4 border-black"
-              />
-            </div> */}
-          </div>
-
+      <section className="reltive bg-[#0d0d0d] text-white py-16  overflow-hidden text-center">
+        <div className="max-w-full px-10 sm:px-10 md:px-60 lg:px- mx-autoitems-center">
+     
           {/* Right Text Section */}
-          <div className="text-left mt-12 lg:mt-0">
+          <div className="text-center mt-12 lg:mt-0">
             <h2 className="text-3xl sm:text-4xl font-semibold mb-4">
               A Design-led Real Estate Company in Pune
             </h2>
@@ -41,6 +20,97 @@ export default function HeroSection() {
               designing homes that welcome joy, comfort, and connection.
             </p>
 
+          </div>
+        </div>
+
+        <div className="container mx-auto px-8 sm:px-6 md:px-15 lg:px-25">
+          <div className="flex flex-col md:flex-row items-center justify-center gap-8 sm:gap-12 md:gap-20 lg:gap-20">
+            {/* First Counter */}
+            <div className="text-center">
+              <div 
+                className="text-5xl sm:text-6xl md:text-5xl font-thin mb-3 md:mb-4"
+                style={{ color: "#fff" }}
+              >
+                30+
+              </div>
+              <div 
+                className="text-base sm:text-lg md:text-xl"
+                style={{ color: "#fff" }}
+              >
+                Years Strong
+              </div>
+            </div>
+
+            {/* Divider Line */}
+            <div className="hidden md:block">
+              <div 
+                className="w-0.5 h-20 md:h-28"
+                style={{ backgroundColor: "#fff" }}
+              ></div>
+            </div>
+
+            {/* Second Counter */}
+            <div className="text-center">
+              <div 
+                className="text-5xl sm:text-6xl md:text-5xl font-thin mb-3 md:mb-4"
+                style={{ color: "#fff" }}
+              >
+                6,000+
+              </div>
+              <div 
+                className="text-base sm:text-lg md:text-xl"
+                style={{ color: "#fff" }}
+              >
+                Happy Families
+              </div>
+            </div>
+
+            {/* Divider Line */}
+            <div className="hidden md:block">
+              <div 
+                className="w-0.5 h-20 md:h-28"
+                style={{ backgroundColor: "#fff" }}
+              ></div>
+            </div>
+
+            {/* Third Counter */}
+            <div className="text-center">
+              <div 
+                className="text-5xl sm:text-6xl md:text-5xl font-thin mb-3 md:mb-4"
+                style={{ color: "#fff" }}
+              >
+                50+
+              </div>
+              <div 
+                className="text-base sm:text-lg md:text-xl px-4"
+                style={{ color: "#fff" }}
+              >
+                Project Delivered
+              </div>
+            </div>
+
+                      {/* Divider Line */}
+            <div className="hidden md:block">
+              <div 
+                className="w-0.5 h-20 md:h-28"
+                style={{ backgroundColor: "#fff" }}
+              ></div>
+            </div>
+
+              <div className="text-center">
+              <div 
+                className="text-5xl sm:text-6xl md:text-5xl font-thin mb-3 md:mb-4"
+                style={{ color: "#fff" }}
+              >
+                5M+
+              </div>
+              <div 
+                className="text-base sm:text-lg md:text-xl px-4"
+                style={{ color: "#fff" }}
+              >
+                SqFt Of Development
+              </div>
+            </div>
           </div>
         </div>
       </section>

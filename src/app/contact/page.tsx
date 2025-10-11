@@ -8,9 +8,9 @@ import {
     FaInstagram,
     FaYoutube,
 } from "react-icons/fa";
-import { Vujahday_Script } from "next/font/google";
+import { Cinzel } from "next/font/google";
 
-const vujahday = Vujahday_Script({
+const cinzel = Cinzel({
     subsets: ["latin"],
     weight: "400",
 });
@@ -103,7 +103,7 @@ const Contact = () => {
                 <div className="flex flex-col lg:flex-row justify-between items-start mb-10">
                     {/* Heading */}
                     <div className="lg:w-1/3">
-                        <p className={`text-[#B7AC88] flex items-center gap-3 ${vujahday.className}`}>
+                        <p className={`text-[#B7AC88] flex items-center gap-3 ${cinzel.className}`}>
                             <span className="inline-block w-10 h-[1px] bg-[#B7AC88]"></span>
                             <span className="text-[34px] leading-[42px] font-normal">Contact Us</span>
                         </p>           

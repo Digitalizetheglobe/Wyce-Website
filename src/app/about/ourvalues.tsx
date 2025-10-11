@@ -1,8 +1,8 @@
 "use client";
 import Image from "next/image";
 
-import { Vujahday_Script } from "next/font/google";
-const vujahday = Vujahday_Script({
+import { Cinzel } from "next/font/google";
+const cinzel = Cinzel({
   subsets: ["latin"],
   weight: "400",
 });
@@ -35,7 +35,7 @@ export default function ValuesSection() {
         {/* Heading */}
         <div className="mb-16 flex justify-between items-start">
           <div>
-            <p className={`text-[#b6a16b] italic text-2xl sm:text-3xl font-light mb-4 ${vujahday.className}`}>
+            <p className={`text-[#b6a16b] italic text-2xl sm:text-3xl font-light mb-4 ${cinzel.className}`}>
               — Our Values
             </p>
             <p className="text-gray-300 max-w-2xl text-base">

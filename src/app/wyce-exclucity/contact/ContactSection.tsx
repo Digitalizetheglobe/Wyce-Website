@@ -1,31 +1,107 @@
 "use client";
-import Image from "next/image";
-import { motion } from "framer-motion";
 
-export default function ContactUs() {
+import { Cinzel } from "next/font/google";
+import { useState } from "react";
+import { motion } from "framer-motion";
+import Image from "next/image";
+
+const cinzel = Cinzel({
+  subsets: ["latin"],
+  weight: "400",
+});
+
+export default function ContactSection() {
+  const [formData, setFormData] = useState({
+    firstName: "",
+    phone: "",
+    email: "",
+    message: "",
+  });
+  
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<{
+    type: "success" | "error" | null;
+    message: string;
+  }>({ type: null, message: "" });
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus({ type: null, message: "" });
+
+    try {
+      const response = await fetch(
+        "https://leadquest.corelto.co/public/companies/040487f0-dbe9-485a-bb4b-ab881fa7fdbb/leads-all",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            name: formData.firstName,
+            mobile: formData.phone,
+            email: formData.email,
+            project: "Wyce ExcluCity",
+            source: "Website",
+            sub_source: "",
+            user_email: "",
+            comment: formData.message,
+          }),
+        }
+      );
+
+      if (response.ok) {
+        setSubmitStatus({
+          type: "success",
+          message: "Thank you! Your message has been sent successfully.",
+        });
+        // Reset form
+        setFormData({
+          firstName: "",
+          phone: "",
+          email: "",
+          message: "",
+        });
+      } else {
+        throw new Error("Failed to submit form");
+      }
+    } catch (error) {
+      setSubmitStatus({
+        type: "error",
+        message: "Something went wrong. Please try again later.",
+      });
+      console.error("Form submission error:", error);
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <>
-      {/* Top Image with fade-in */}
-      <motion.section
-        className="relative bg-black w-full h-[200px] sm:h-[300px] md:h-[400px] overflow-hidden"
-        initial={{ opacity: 0, y: -40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1 }}
-        viewport={{ once: true }}
-      >
-        <Image
-          src="/images/landing-page/contact-bg.png"
-          alt="Contact Background"
-          width={1200}
-          height={400}
-          className="w-full h-full object-cover"
-          priority
-        />
-      </motion.section>
+    <section
+      className="relative bg-black text-white py-12 sm:py-16 md:py-0 overflow-hidden"
 
-      {/* Contact Section */}
-      <section className="relative -mt-[45px] md:-mt-20 z-10 w-full bg-transparent text-white px-4 sm:px-6 lg:px-12 xl:px-20 py-8 md:py-12">
-        <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-6 md:gap-8 lg:gap-10">
+    >
+
+
+      <div className="relative container mx-auto px-4 sm:px-6 lg:px-16 max-w-[1320px]">
+        {/* Heading */}
+        <div className="mb-8 sm:mb-10 flex justify-center items-center text-center">
+          <p
+            className={`text-[#B7AC88] flex justify-center items-center gap-2 sm:gap-3`}
+          >
+            <span className={`${cinzel.className} text-2xl sm:text-3xl md:text-[36px] lg:text-[30px] leading-tight font-normal`}>
+              WYCE Corp Built on Legacy. Growing with Vision. Greater Together.
+            </span>
+          </p>
+        </div>
+
+                <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-6 md:gap-8 lg:gap-10">
           {/* Left: Map */}
           <motion.div
             className="lg:w-1/2 w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[550px] rounded-lg overflow-hidden shadow-lg"
@@ -90,7 +166,7 @@ export default function ContactUs() {
                 "First Name*",
                 "Email*",
                 "Phone Number*",
-                "Select a Service",
+                
                 "Message",
               ].map((placeholder, idx) => (
                 <motion.div
@@ -169,7 +245,10 @@ export default function ContactUs() {
             </motion.form>
           </motion.div>
         </div>
-      </section>
-    </>
+
+
+      </div>
+    </section>
+  </>
   );
 }

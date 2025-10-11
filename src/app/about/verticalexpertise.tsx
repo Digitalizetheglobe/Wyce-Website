@@ -1,7 +1,7 @@
 'use client';
 import Image from "next/image";
-import { Vujahday_Script } from "next/font/google";
-const vujahday = Vujahday_Script({
+import { Cinzel } from "next/font/google";
+const cinzel = Cinzel({
   subsets: ["latin"],
   weight: "400",
 });
@@ -21,7 +21,7 @@ export default function VerticalExpertise() {
       <div className="relative max-w-7xl mx-auto ">
         {/* Heading */}
         <div className="mb-6">
-          <p className={`text-[#b6a16b] italic text-2xl sm:text-3xl font-light ${vujahday.className}`}>
+          <p className={`text-[#b6a16b] italic text-2xl sm:text-3xl font-light ${cinzel.className}`}>
             — Our Vertical Expertise
           </p>
         </div>
@@ -33,30 +33,23 @@ export default function VerticalExpertise() {
         </p>
 
         {/* Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 justify-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 justify-center">
           {[
-            { title: "Residential", icon: "/images/bldg.png" },
-            { title: "Commercial", icon: "/images/bldg.png" },
-            { title: "Hospitality", icon: "/images/bldg.png" },
+            { title: "LEADERSHIP" },
+            { title: "LIFE @ WYCE" },
+            { title: "OUR LEGACY" },
+            { title: "CHANNEL PARTNERS" },
           ].map((item, index) => (
-            <div
-              key={index}
-              className="transition-all duration-300 p-10 rounded-xl shadow-lg relative"
-              style={{background: 'linear-gradient(180deg, #B7AC88 0%, #1F1403 107.96%)'}}
-            >
-              {/* Icon */}
-              <div className="absolute -top-10 left-1/2 transform -translate-x-1/2 w-20 h-20 rounded-full flex items-center justify-center shadow-md" style={{background: 'linear-gradient(180deg, #B7AC88 0%, #1F1403 100%)'}}>
-                <Image
-                  src={item.icon}
-                  alt={item.title}
-                  width={50}
-                  height={50}
-                />
-              </div>
-
-              {/* Text */}
-              <div className="mt-10 text-center">
-                <h3 className="text-xl font-semibold">{item.title}</h3>
+            <div key={index} className="relative">
+              <div
+                className="transition-all duration-300 p-8 bg-[#2A2A2A] hover:bg-[#3A3A3A] cursor-pointer border-r border-[#B7AC88] last:border-r-0"
+                style={{ minHeight: '50px' }}
+              >
+                <div className="flex items-center justify-center h-full">
+                  <h3 className="text-white text-lg font-medium text-center uppercase tracking-wide">
+                    {item.title}
+                  </h3>
+                </div>
               </div>
             </div>
           ))}

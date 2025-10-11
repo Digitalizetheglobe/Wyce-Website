@@ -2,8 +2,8 @@
 import Image from "next/image";
 import { useState } from "react";
 import CtaSection from "./cta";
-import { Vujahday_Script } from "next/font/google";
-const vujahday = Vujahday_Script({
+import { Cinzel } from "next/font/google";
+const cinzel = Cinzel({
   subsets: ["latin"],
   weight: "400",
 });
@@ -38,7 +38,7 @@ export default function TeamSection() {
       <div className="max-w-7xl mx-auto ">
         {/* Heading */}
         <div className="text-left mb-6">
-          <p className={`text-[#b6a16b] italic text-2xl sm:text-3xl font-light pt-10 ${vujahday.className}`}>
+          <p className={`text-[#b6a16b] italic text-2xl sm:text-3xl font-light pt-10 ${cinzel.className}`}>
             — Meet The Awesome Team
           </p>
         </div>

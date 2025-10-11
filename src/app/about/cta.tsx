@@ -15,7 +15,7 @@ export default function CtaSection() {
           </h2>
 
           {/* Button */}
-          <button className="bg-white/10 hover:bg-white/20 text-white border border-white/20 rounded-full px-6 py-2 text-sm font-medium flex items-center justify-center mx-auto gap-2 transition-all">
+          <button className="bg-white/10 hover:bg-white/20 text-white border border-white/20 rounded-full px-6 py-2 text-sm font-medium flex items-center justify-center mx-auto gap-2 transition-all cursor-pointer">
             Contact Us
             <span className="text-lg">›</span>
           </button>

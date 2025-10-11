@@ -31,6 +31,7 @@ const About = () => {
       <VisionMissionSection />
       <ValuesSection />
       <VerticalExpertise />
+      <TeamSection />
     </>
   );
 };

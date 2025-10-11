@@ -4,16 +4,16 @@ import Link from "next/link";
 
 export default function CtaSection() {
   return (
-    <section className="w-full bg-[#0B0B0B] px-5">
+    <section className="w-full bg-black px-5" style={{backgroundImage: "url('/images/bg-image.png')"}}>
       <div className="max-w-6xl mx-auto">
         <div className="w-full text-center rounded-2xl py-10 px-8 shadow-lg bg-cover bg-center bg-no-repeat" style={{backgroundImage: "url('/images/cta-bg.png')"}}>
           {/* Small Text */}
-          <p className="text-sm text-gray-200 mb-2">Book Now</p>
+          
 
           {/* Main Heading */}
           <h2 className="text-2xl md:text-3xl font-semibold text-white mb-6">
-            Let&apos;s Start Your Real Estate <br className="hidden sm:block" />
-            Journey Today 
+            Let&apos;s Start Your WYCE <br className="hidden sm:block" />
+            Journey With Us 
           </h2>
 
           {/* Button */}

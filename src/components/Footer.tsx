@@ -58,7 +58,7 @@ export default function Footer() {
           {/* Center Section - Links */}
           <div className="flex flex-col items-start md:items-left space-y-3 px-6">
             {[
-              { name: "Wyce Exclucity", href: "/wyce-exclucity" },
+              { name: "WYCE  Exclucity", href: "/wyce-exclucity" },
               { name: "Privacy Policy", href: "/privacy-policy" },
               { name: "FAQs", href: "/faq" },
               { name: "Publication", href: "#" }
@@ -93,7 +93,7 @@ export default function Footer() {
               rel="noopener noreferrer"
               className="block hover:text-[#B7AC88] transition-colors"
             >
-              Wyce Exclucity, CEC Office, <br />Siddharth Nagar, Bavdhan, <br />Pune, Maharashtra 411021
+              WYCE  Exclucity, CEC Office, <br />Siddharth Nagar, Bavdhan, <br />Pune, Maharashtra 411021
             </a>
           </div>
         </div>

@@ -115,13 +115,13 @@ export default function AmenitiesCarousel() {
   ];
 
   return (
-    <div className="w-full flex flex-col items-center py-12 relative px-4 sm:px-6 lg:px-8">
+    <div className="w-full flex flex-col items-center py-12 relative px-4 sm:px-6 lg:px-8 mt-15">
       {/* Heading */}
       <div className="w-full text-center mb-12 mt-20">
         <h2 className="text-3xl md:text-4xl font-bold text-[#B7AC88] font-Raleway">
           Premium Amenities
         </h2>
-        <p className="text-white-400 max-w-4xl mx-auto mt-4 font-raleway text-lg sm:text-xl md:text-2xl px-4">
+        <p className="text-white max-w-4xl mx-auto mt-4 font-raleway text-lg sm:text-xl md:text-2xl px-4">
           Experience Elevated Living WYCE Exclucity properties come packed with lifestyle-enhancing
           features that cater to all age groups.
         </p>

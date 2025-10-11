@@ -22,7 +22,7 @@ export default function WyceExclucityPage() {
       <AboutProject />
       <VideoSection />
       <AmenitiesCarousel />
-      <PricesSection />
+
       <Gallery />
       <CtaSection />
       <ContactSection />

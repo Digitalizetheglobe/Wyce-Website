@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
-import { Vujahday_Script } from "next/font/google";
-const vujahday = Vujahday_Script({
+import { Cinzel } from "next/font/google";
+const cinzel = Cinzel({
   subsets: ["latin"],
   weight: "400",
 });
@@ -17,12 +17,12 @@ export default function VisionMissionSection() {
           {/* Left Content */}
           <div className="space-y-6">
           <div className="mb-5 text-left">
-          <p className={`text-[#b6a16b] italic text-2xl sm:text-3xl font-light ${vujahday.className}`}>
+          <p className={`text-[#b6a16b] italic text-2xl sm:text-3xl font-light ${cinzel.className}`}>
             — Our Vision 
           </p>
         </div>
             <p className="text-gray-300 leading-relaxed text-base sm:text-lg">
-Our vision is to shape the future of residential real estate by consistently delivering timeless landmarks that embody thoughtful design and superior quality. We believe that true luxury is found in intent, where every detail, from the master plan to the smallest feature, is designed around how you live and feel. This thoughtful approach is not an afterthought; it is the very foundation of everything we build.            </p>
+              Our vision is to shape the future of residential real estate by consistently delivering timeless landmarks that embody thoughtful design and superior quality. We believe that true luxury is found in intent, where every detail, from the master plan to the smallest feature, is designed around how you live and feel. This thoughtful approach is not an afterthought; it is the very foundation of everything we build.            </p>
           </div>
 
           {/* Right Image */}
@@ -52,7 +52,7 @@ Our vision is to shape the future of residential real estate by consistently del
 
           {/* Right Content */}
           <div className="space-y-6 mt-8">
-                      <p className={`text-[#b6a16b] italic text-2xl sm:text-3xl font-light ${vujahday.className}`}>
+                      <p className={`text-[#b6a16b] italic text-2xl sm:text-3xl font-light ${cinzel.className}`}>
             — Our Mission
           </p>
             <p className="text-gray-300 leading-relaxed text-base sm:text-lg">
