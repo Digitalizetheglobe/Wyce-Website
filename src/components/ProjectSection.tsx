@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { Cinzel } from "next/font/google";
 
@@ -25,7 +24,7 @@ export default function ProjectSection() {
         <div className="">
             <p className={`text-[#B7AC88] flex items-center justify-center gap-2 sm:gap-3 ${cinzel.className}`}>
             <span className="inline-block w-8 sm:w-10 h-[1px] bg-[#B7AC88]"></span>
-            <span className="text-2xl sm:text-3xl md:text-[36px] lg:text-[30px] leading-tight font-normal">We're Believers</span>
+            <span className="text-2xl sm:text-3xl md:text-[36px] lg:text-[30px] leading-tight font-normal">We&apos;re Believers</span>
             </p>
         </div>
 
@@ -36,7 +35,7 @@ export default function ProjectSection() {
 
             {/* Description Text */}
             <p className="text-white text-sm sm:text-base lg:text-lg xl:text-xl leading-relaxed">
-              Every WYCE project begins with one simple idea  to design spaces that strengthen relationships. From thoughtful layouts and community-driven amenities to honest timelines and transparent dealings, every decision is made with one question in mind: "Will this make life better for our customers?
+              Every WYCE project begins with one simple idea  to design spaces that strengthen relationships. From thoughtful layouts and community-driven amenities to honest timelines and transparent dealings, every decision is made with one question in mind: &quot;Will this make life better for our customers?&quot;
             </p>
             
             {/* CTA Button */}
