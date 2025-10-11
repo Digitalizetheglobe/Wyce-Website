@@ -15,15 +15,68 @@ export default function ContactSection() {
     email: "",
     message: "",
   });
+  
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<{
+    type: "success" | "error" | null;
+    message: string;
+  }>({ type: null, message: "" });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log("Form Submitted:", formData);
+    setIsSubmitting(true);
+    setSubmitStatus({ type: null, message: "" });
+
+    try {
+      const response = await fetch(
+        "https://leadquest.corelto.co/public/companies/040487f0-dbe9-485a-bb4b-ab881fa7fdbb/leads-all",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            name: formData.firstName,
+            mobile: formData.phone,
+            email: formData.email,
+            project: "Wyce ExcluCity",
+            source: "Website",
+            sub_source: "",
+            user_email: "",
+            comment: formData.message,
+          }),
+        }
+      );
+
+      if (response.ok) {
+        setSubmitStatus({
+          type: "success",
+          message: "Thank you! Your message has been sent successfully.",
+        });
+        // Reset form
+        setFormData({
+          firstName: "",
+          phone: "",
+          email: "",
+          message: "",
+        });
+      } else {
+        throw new Error("Failed to submit form");
+      }
+    } catch (error) {
+      setSubmitStatus({
+        type: "error",
+        message: "Something went wrong. Please try again later.",
+      });
+      console.error("Form submission error:", error);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -88,21 +141,34 @@ export default function ContactSection() {
               ></textarea>
               <button
                 type="submit"
-                className="w-full bg-[#B7AC88] text-black font-semibold py-2.5 sm:py-3 text-sm sm:text-base rounded-[4px] hover:bg-[#a49970] transition-all cursor-pointer">
+                disabled={isSubmitting}
+                className="w-full bg-[#B7AC88] text-black font-semibold py-2.5 sm:py-3 text-sm sm:text-base rounded-[4px] hover:bg-[#a49970] transition-all cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed">
               
-                SEND
+                {isSubmitting ? "SENDING..." : "SEND"}
               </button>
             </div>
           </form>
 
           {/* Right Side - Contact Info */}
           <div className="space-y-6 sm:space-y-8">
+            {/* Status Message */}
+            {submitStatus.type && (
+              <div
+                className={`p-4 rounded-md ${
+                  submitStatus.type === "success"
+                    ? "bg-green-900/50 border border-green-600 text-green-200"
+                    : "bg-red-900/50 border border-red-600 text-red-200"
+                }`}
+              >
+                {submitStatus.message}
+              </div>
+            )}
             {/* Phone */}
             <div className="flex items-center gap-2 sm:gap-3">
               <svg className="w-6 h-6 sm:w-8 sm:h-8 text-white font-bold flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                 <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
               </svg>
-              <p className="text-sm sm:text-base lg:text-xl break-words">+91 75497 99799</p>
+              <a href="tel:+917549799799" className="text-sm sm:text-base lg:text-xl break-words hover:text-[#B7AC88] transition-colors">+91 75497 99799</a>
             </div>
 
             {/* Social Icons */}
@@ -130,9 +196,9 @@ export default function ContactSection() {
                   clipRule="evenodd"
                 />
               </svg>
-              <p className="text-sm sm:text-base leading-relaxed">
+              <a href="https://www.google.com/maps/search/?api=1&query=Plot+No+123+Bavdhan+near+16+no+bus+stop+Pune+Maharashtra+444110" target="_blank" rel="noopener noreferrer" className="text-sm sm:text-base leading-relaxed hover:text-[#B7AC88] transition-colors">
                 Plot No: 123 Bavdhan, near 16.no bus stop,<br /> Pune, Maharashtra - 444110
-              </p>
+              </a>
             </div>
           </div>
         </div>
