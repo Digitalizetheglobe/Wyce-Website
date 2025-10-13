@@ -27,7 +27,7 @@ const About = () => {
             About Us
           </motion.h2>
           <motion.div 
-            className="text-gray-200 text-sm md:text-base w-200"
+            className="text-gray-200 text-sm md:text-base sm:w-100 md:w-200  px-10"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}

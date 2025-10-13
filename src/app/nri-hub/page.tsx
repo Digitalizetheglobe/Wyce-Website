@@ -10,12 +10,12 @@ export default function BlogPage() {
   return (
     <>
 
-      <section className="w-full text-white py-10 md:py-16" style={{background: 'linear-gradient(180deg, #090909 0%, #B7AC88 100%)'}}>
+      <section className="w-full text-white py-10 md:py-16 bg-[#0a0a0a] border-b border-white/20 ">
         {/* Header Section */}
         <div className="text-center max-w-2xl mx-auto mb-10">
           <h2 className="text-2xl md:text-3xl font-semibold mb-3">NRI INVESTMENT</h2>
           <p className="text-gray-200 text-sm md:text-base">
-            At WYCE Corp, we believe a home is more than bricks and beams —
+            At WYCE Corp, we believe a home is more than bricks and beams 
             it&apos;s the space where your most beautiful moments begin.
           </p>
         </div>

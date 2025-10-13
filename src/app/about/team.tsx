@@ -43,12 +43,12 @@ export default function TeamSection() {
   };
 
   return (
-    <section className={`relative w-full bg-[#121212] text-white py-10 px-6 sm:px-12 lg:px-20 `}>
-      <div className="max-w-7xl mx-auto ">
+    <section className={`relative w-full bg-[#121212] text-white py-8 sm:py-12 md:py-16 px-4 sm:px-6 md:px-8 lg:px-12`}>
+      <div className="max-w-7xl mx-auto">
         {/* Heading */}
-        <div className="text-left mb-2">
+        <div className="text-center mb-4 sm:mb-6">
           <motion.p 
-            className={`text-[#fff]  text-2xl sm:text-2xl font-light pt-10 text-center`}
+            className={`text-[#fff] text-xl sm:text-2xl md:text-3xl lg:text-4xl font-light pt-6 sm:pt-8 md:pt-10`}
             initial={{ opacity: 0, y: -30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
@@ -60,7 +60,7 @@ export default function TeamSection() {
 
         {/* Subtext */}
         <motion.p 
-          className="text-gray-300 mb-12 max-w-6xl mx-auto text-center "
+          className="text-gray-300 mb-8 sm:mb-10 md:mb-12 max-w-4xl mx-auto text-center text-sm sm:text-base md:text-lg px-4"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
@@ -72,7 +72,7 @@ A collective of visionaries, creators, and professionals each member brings year
 
         {/* Team Cards */}
         <motion.div 
-          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-8  mb-12"
+          className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 md:gap-8 mb-8 sm:mb-10 md:mb-12"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -81,13 +81,13 @@ A collective of visionaries, creators, and professionals each member brings year
           {team.map((member, index) => (
             <motion.div 
               key={index} 
-              className="relative bg-[#141414] overflow-hidden shadow-lg group cursor-pointer transition-all duration-300  "
+              className="relative bg-[#141414] overflow-hidden shadow-lg group cursor-pointer transition-all duration-300 "
               onMouseEnter={() => setHoveredIndex(index)}
               onMouseLeave={() => setHoveredIndex(null)}
               variants={itemVariants}
             >
               <motion.div 
-                className="relative w-150 h-[400px]"
+                className="relative w-full h-[350px] sm:h-[300px] md:h-[350px] lg:h-[400px]"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
