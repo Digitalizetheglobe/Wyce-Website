@@ -45,7 +45,7 @@ export default function Hero() {
           className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-bold leading-snug max-w-7xl"
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, ease: "easeOut" }}
+          transition={{ duration: 1 }}
         >
 
           Building the Future <span className="text-[#e84627]">Together</span> & Beginning at<br/><span className="text-6xl"> Bavdhan</span>

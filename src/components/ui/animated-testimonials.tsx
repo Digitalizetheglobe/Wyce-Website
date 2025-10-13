@@ -89,7 +89,6 @@ export const AnimatedTestimonials = ({
                 }}
                 transition={{
                   duration: 0.6,
-                  ease: "easeInOut",
                 }}
                 className="absolute inset-0 origin-center"
               >
