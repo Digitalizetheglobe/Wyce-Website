@@ -48,7 +48,7 @@ export default function Header() {
               onMouseLeave={() => setIsNriDropdownOpen(false)}
             >
               <button className="text-white hover:text-gray-300 transition-colors flex items-center py-2">
-                NRI HUB
+                NRI Hub
                 <svg 
                   className={`ml-1 h-4 w-4 transition-transform ${isNriDropdownOpen ? 'rotate-180' : ''}`} 
                   fill="none" 

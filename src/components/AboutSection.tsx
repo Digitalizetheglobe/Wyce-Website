@@ -18,11 +18,11 @@ export default function AboutSection() {
       {/* GREATER TOGETHER SECTION WITH VIDEO */}
       <div className="relative container mx-auto px-4 sm:px-6 lg:px-16 mt-12 sm:mt-16 md:mt-10 max-w-[1320px]">
         <div className="text-center mb-6 sm:mb-8">
-          <h3 className={`${cinzel.className} text-lg sm:text-xl md:text-2xl `}>
-            Greater together
+          <h3 className={` text-lg sm:text-xl md:text-2xl `}>
+            Greater Together
           </h3>
-          <p className={`${cinzel.className} text-lg sm:text-xl md:text-xl italic`}>
-            because strength grows in unity
+          <p className={` text-lg sm:text-xl md:text-sm `}>
+            At WYCE, being Greater Together means combining experience, innovation, and a shared vision to redefine excellence in real estate.
           </p>
         </div>
 
