@@ -42,7 +42,7 @@ const Career = () => {
                     transition={{ delay: 0.2 }}
                 >
                     At WYCE Corp, we believe a home is more than bricks  and beams
-                    it's the space where your most beautiful moments begin
+                    it&apos;s the space where your most beautiful moments begin
                 </motion.p>
             </div>
 
@@ -92,8 +92,8 @@ const Career = () => {
                         >
                             Joining WYCE means becoming part of a culture that values collaboration over competition, creativity over convention, and integrity over everything.
                             Here, every idea matters, every role contributes, and every individual helps shape the future of modern living.
-                            We don't just build spaces  we build possibilities.
-                            And together, we're redefining what it means to be Greater Together.
+                            We don&apos;t just build spaces  we build possibilities.
+                            And together, we&apos;re redefining what it means to be Greater Together.
                         </motion.p>
                         <motion.p
                             initial="hidden"
@@ -103,7 +103,7 @@ const Career = () => {
                             transition={{ delay: 0.2 }}
                         >
                             Because when we grow, you grow.
-                            And when we create thoughtfully, it's truly beautiful.
+                            And when we create thoughtfully, it&apos;s truly beautiful.
                         </motion.p>
                         
                         {/* <div className="space-y-4">
@@ -191,7 +191,7 @@ const Career = () => {
                                 viewport={{ once: true }}
                                 variants={fadeInUp}
                                 transition={{ delay: 0.4 }}
-                           > We nurture talent, encourage learning, and empower every voice because we believe that together, we don't just build projects, we build possibilities.
+                           > We nurture talent, encourage learning, and empower every voice because we believe that together, we don&apos;t just build projects, we build possibilities.
                             At WYCE, Thoughtful is Beautiful in our designs, in our culture, and in the way we grow together.  
                         </motion.p>
                     </div>

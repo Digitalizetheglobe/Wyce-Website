@@ -40,7 +40,7 @@ export default function ValuesSection() {
       y: 0,
       transition: {
         duration: 0.6,
-        ease: "easeOut"
+        ease: [0.25, 0.46, 0.45, 0.94]
       }
     },
   };
@@ -66,7 +66,7 @@ export default function ValuesSection() {
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            At WYCE Corp, every milestone we achieve and every space we create is guided by values that define who we are..They are the foundation of our collaboration, the compass for our vision, and the strength behind our promise to build a future that's truly Greater Together.
+            At WYCE Corp, every milestone we achieve and every space we create is guided by values that define who we are..They are the foundation of our collaboration, the compass for our vision, and the strength behind our promise to build a future that&apos;s truly Greater Together.
           </motion.p>
         </div>
 

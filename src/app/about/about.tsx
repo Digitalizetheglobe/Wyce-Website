@@ -113,7 +113,7 @@ export default function HeroSection() {
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.6 }}
             >
-              A collective of visionaries shaping tomorrow's skyline
+              A collective of visionaries shaping tomorrow&apos;s skyline
             </motion.h2>
             <motion.p 
               className="text-gray-300 leading-relaxed mb-6"

@@ -35,14 +35,14 @@ const About = () => {
           >
             <p>
               At WYCE Corp, we believe true greatness is never built alone.
-              It's the result of shared values, complementary strengths, and a common dream to create something enduring.
+              It&apos;s the result of shared values, complementary strengths, and a common dream to create something enduring.
 
               Born from the union of three trusted names in real estate, WYCE Corp represents a new era of collaboration where experience meets innovation, and legacy meets vision.
 
-              "Greater Together" is more than our philosophy it's our foundation. It reflects the spirit of partnership that drives every decision, every design, and every development we create.
+              &ldquo;Greater Together&rdquo; is more than our philosophy it&apos;s our foundation. It reflects the spirit of partnership that drives every decision, every design, and every development we create.
 
               Together, we are building not just homes, but experiences.
-              Not just landmarks, but legacies that redefine Pune's skyline and its way of living.
+              Not just landmarks, but legacies that redefine Pune&apos;s skyline and its way of living.
             </p>
           </motion.div>
         </div>
