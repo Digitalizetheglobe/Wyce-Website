@@ -95,6 +95,7 @@ A collective of visionaries, creators, and professionals each member brings year
               >
                 <Image
                   src={member.img}
+                  alt="Team member"
                   fill
                   className={`object-cover transition-all duration-300 `}
                 />
