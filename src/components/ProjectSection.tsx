@@ -29,8 +29,8 @@ export default function ProjectSection() {
           transition={{ duration: 0.6 }}
           viewport={{ once: true, amount: 0.3 }}
         >
-            <p className="flex items-center justify-center gap-2 sm:gap-3">
-            <span className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl leading-tight font-normal">We&apos;re Believers</span>
+            <p className="flex items-center justify-center gap-2 sm:gap-3 text-lg sm:text-xl md:text-2xl">
+            We&apos;re Believers
             </p>
         </motion.div>
 
@@ -41,7 +41,7 @@ export default function ProjectSection() {
 
             {/* Description Text */}
             <motion.p 
-              className="text-white text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed"
+              className="text-white text-sm sm:text-base md:text-lg lg:text-lg leading-relaxed"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}

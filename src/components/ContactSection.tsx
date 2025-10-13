@@ -95,7 +95,7 @@ export default function ContactSection() {
           <p
             className={`text-[#fff] flex justify-center items-center gap-2 sm:gap-3 w-250`}
           >
-            <span className={`text-2xl sm:text-3xl md:text-[36px] lg:text-xl leading-tight font-normal`}>
+            <span className={`text-lg sm:text-xl md:text-[36px] lg:text-2xl leading-tight font-normal`}>
               At WYCE, being Greater Together means merging experience with fresh vision, heritage with modernity, and ambition with purpose.
              We’re not just building structures; we’re building relationships, trust, and a shared future that stands the test of time.
             </span>
