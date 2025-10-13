@@ -48,10 +48,10 @@ The environment is crafted for balance and well-being , featuring over 70,000 sq
           }}
         >
           {[
-            { src: "/images/landing-page/sec2-1.png", alt: "Living Room" },
-            { src: "/images/landing-page/sec2-2.png", alt: "Modern Interior" },
-            { src: "/images/landing-page/sec2-3.png", alt: "Chandelier Hall" },
-            { src: "/images/landing-page/sec2-4.png", alt: "Bedroom" },
+            { src: "/images/landing-page/sec2-1.jpeg", alt: "Living Room" },
+            { src: "/images/landing-page/sec2-2.jpeg", alt: "Modern Interior" },
+            { src: "/images/landing-page/sec2-3.jpeg", alt: "Chandelier Hall" },
+            { src: "/images/landing-page/sec2-4.jpeg", alt: "Bedroom" },
           ].map((img, index) => (
             <motion.div
               key={index}

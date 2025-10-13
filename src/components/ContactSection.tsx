@@ -2,7 +2,7 @@
 
 import { Cinzel } from "next/font/google";
 import { useState } from "react";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import Image from "next/image";
 
 const cinzel = Cinzel({
@@ -93,10 +93,11 @@ export default function ContactSection() {
         {/* Heading */}
         <div className="mb-8 sm:mb-10 flex justify-center items-center text-center">
           <p
-            className={`text-[#B7AC88] flex justify-center items-center gap-2 sm:gap-3`}
+            className={`text-[#fff] flex justify-center items-center gap-2 sm:gap-3 w-250`}
           >
-            <span className={`${cinzel.className} text-2xl sm:text-3xl md:text-[36px] lg:text-[30px] leading-tight font-normal`}>
-              WYCE Corp Built on Legacy. Growing with Vision. Greater Together.
+            <span className={`text-2xl sm:text-3xl md:text-[36px] lg:text-xl leading-tight font-normal`}>
+              At WYCE, being Greater Together means merging experience with fresh vision, heritage with modernity, and ambition with purpose.
+             We’re not just building structures; we’re building relationships, trust, and a shared future that stands the test of time.
             </span>
           </p>
         </div>
@@ -104,7 +105,7 @@ export default function ContactSection() {
                 <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-6 md:gap-8 lg:gap-10">
           {/* Left: Map */}
           <motion.div
-            className="lg:w-1/2 w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[550px] rounded-lg overflow-hidden shadow-lg"
+            className="lg:w-1/2 w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px] rounded-lg overflow-hidden shadow-lg"
             initial={{ opacity: 0, x: -60 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 1 }}
@@ -130,7 +131,7 @@ export default function ContactSection() {
             viewport={{ once: true, amount: 0.3 }}
           >
             <motion.h2
-              className="text-2xl sm:text-3xl lg:text-4xl font-semibold mb-3 sm:mb-4 text-center"
+              className="text-2xl sm:text-3xl lg:text-2xl mb-3 sm:mb-4 text-center"
               initial={{ opacity: 0, y: -20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
@@ -149,9 +150,26 @@ export default function ContactSection() {
               out the form below and we will get back with you shortly.
             </motion.p>
 
+            {/* Status Message */}
+            {submitStatus.type && (
+              <motion.div
+                className={`mb-6 p-4 rounded-md ${
+                  submitStatus.type === "success"
+                    ? "bg-green-900/50 border border-green-600 text-green-200"
+                    : "bg-red-900/50 border border-red-600 text-red-200"
+                }`}
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+              >
+                {submitStatus.message}
+              </motion.div>
+            )}
+
             {/* Form with staggered inputs */}
             <motion.form
-              className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4"
+              onSubmit={handleSubmit}
+              className="grid grid-cols-1 gap-3 sm:gap-4"
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, amount: 0.3 }}
@@ -162,49 +180,76 @@ export default function ContactSection() {
                 },
               }}
             >
-              {[
-                "First Name*",
-                "Email*",
-                "Phone Number*",
-                
-                "Message",
-              ].map((placeholder, idx) => (
-                <motion.div
-                  key={idx}
-                  variants={{
-                    hidden: { opacity: 0, y: 20 },
-                    visible: { opacity: 1, y: 0 },
-                  }}
-                  transition={{ duration: 0.6 }}
-                  className={placeholder === "Message" ? "col-span-1 sm:col-span-2" : ""}
-                >
-                  {placeholder === "Select a Service" ? (
-                    <select
-                      className="w-full p-2.5 sm:p-3 text-sm sm:text-base rounded border border-gray-600 bg-transparent text-white focus:outline-none focus:border-[#B7AC88] transition-colors"
-                      defaultValue=""
-                    >
-                      <option value="" disabled className="bg-gray-800">
-                        Select a Service
-                      </option>
-                      <option value="service1" className="bg-gray-800">Service 1</option>
-                      <option value="service2" className="bg-gray-800">Service 2</option>
-                      <option value="service3" className="bg-gray-800">Service 3</option>
-                    </select>
-                  ) : placeholder === "Message" ? (
-                    <textarea
-                      className="w-full p-2.5 sm:p-3 text-sm sm:text-base rounded border border-gray-600 bg-transparent text-white placeholder-gray-400 focus:outline-none focus:border-[#B7AC88] transition-colors resize-none"
-                      rows={4}
-                      placeholder="Message"
-                    ></textarea>
-                  ) : (
-                    <input
-                      type="text"
-                      placeholder={placeholder}
-                      className="w-full p-2.5 sm:p-3 text-sm sm:text-base rounded border border-gray-600 bg-transparent text-white placeholder-gray-400 focus:outline-none focus:border-[#B7AC88] transition-colors"
-                    />
-                  )}
-                </motion.div>
-              ))}
+              <motion.div
+                variants={{
+                  hidden: { opacity: 0, y: 20 },
+                  visible: { opacity: 1, y: 0 },
+                }}
+                transition={{ duration: 0.6 }}
+              >
+                <input
+                  type="text"
+                  name="firstName"
+                  value={formData.firstName}
+                  onChange={handleChange}
+                  placeholder="First Name*"
+                  required
+                  className="w-full p-2.5 sm:p-3 text-sm sm:text-base rounded border border-gray-600 bg-transparent text-white placeholder-gray-400 focus:outline-none focus:border-[#B7AC88] transition-colors"
+                />
+              </motion.div>
+
+              <motion.div
+                variants={{
+                  hidden: { opacity: 0, y: 20 },
+                  visible: { opacity: 1, y: 0 },
+                }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+              >
+                <input
+                  type="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  placeholder="Email*"
+                  required
+                  className="w-full p-2.5 sm:p-3 text-sm sm:text-base rounded border border-gray-600 bg-transparent text-white placeholder-gray-400 focus:outline-none focus:border-[#B7AC88] transition-colors"
+                />
+              </motion.div>
+
+              <motion.div
+                variants={{
+                  hidden: { opacity: 0, y: 20 },
+                  visible: { opacity: 1, y: 0 },
+                }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+              >
+                <input
+                  type="tel"
+                  name="phone"
+                  value={formData.phone}
+                  onChange={handleChange}
+                  placeholder="Contact*"
+                  required
+                  className="w-full p-2.5 sm:p-3 text-sm sm:text-base rounded border border-gray-600 bg-transparent text-white placeholder-gray-400 focus:outline-none focus:border-[#B7AC88] transition-colors"
+                />
+              </motion.div>
+
+              <motion.div
+                variants={{
+                  hidden: { opacity: 0, y: 20 },
+                  visible: { opacity: 1, y: 0 },
+                }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+              >
+                <textarea
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  placeholder="Message"
+                  rows={4}
+                  className="w-full p-2.5 sm:p-3 text-sm sm:text-base rounded border border-gray-600 bg-transparent text-white placeholder-gray-400 focus:outline-none focus:border-[#B7AC88] transition-colors resize-none"
+                />
+              </motion.div>
 
               <motion.label
                 className="col-span-full flex items-start gap-2 text-gray-300 text-xs sm:text-sm w-full"
@@ -212,6 +257,7 @@ export default function ContactSection() {
                   hidden: { opacity: 0, y: 10 },
                   visible: { opacity: 1, y: 0 },
                 }}
+                transition={{ duration: 0.6, delay: 0.4 }}
               >
                 <input 
                   type="checkbox" 
@@ -230,16 +276,18 @@ export default function ContactSection() {
                   hidden: { opacity: 0, scale: 0.9 },
                   visible: { opacity: 1, scale: 1 },
                 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
+                transition={{ duration: 0.6, delay: 0.5 }}
               >
                 <button
                   type="submit"
-                  className="bg-gradient-to-r from-[#B7AC88] to-[#1F1403] 
-                              text-white px-6 sm:px-8 py-2.5 sm:py-3 rounded-full shadow-md 
+                  disabled={isSubmitting}
+                  className="border hover:text-[#B7AC88] hover:border-[#B7AC88] cursor-pointer
+                              text-white px-6 sm:px-12 py-2 sm:py-3 shadow-md text-bold border-2
                               hover:scale-105 active:scale-95 transition-transform 
-                              text-sm sm:text-base font-medium w-full sm:w-auto max-w-md"
+                              text-sm sm:text-base font-bold w-full sm:w-auto max-w-md
+                              disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  Book Site Visit
+                  {isSubmitting ? "SENDING..." : "Book Site Visit"}
                 </button>
               </motion.div>
             </motion.form>

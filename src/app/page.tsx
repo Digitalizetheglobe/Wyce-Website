@@ -26,9 +26,6 @@ export default function Home() {
 
       <CTASection />
 
-
-
-
       <ContactSection />
     </main>
   );

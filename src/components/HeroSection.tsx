@@ -13,7 +13,7 @@ export default function HeroSection() {
 
 
             {/* Banner Container */}
-            <div className="relative w-full h-[650px] sm:h-[600px] md:h-[710px] flex items-center justify-center overflow-hidden"
+            <div className="relative w-full h-[750px] sm:h-[700px] md:h-[780px] flex items-center justify-center overflow-hidden"
                 style={{
                     backgroundImage: `url(${phoneBg.src})`,
                     backgroundPosition: 'center',

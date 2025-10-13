@@ -3,28 +3,28 @@ import { motion } from "framer-motion";
 
 export default function Gallery() {
   return (
-    <section className="bg-black text-center">
+    <section className="bg-black text-center py-10">
       {/* Animated Heading */}
       <motion.h2
-        className="text-3xl md:text-4xl font-bold text-[#B7AC88] mb-4"
+        className="text-3xl md:text-2xl text-[#fff] mb-2 font-bold"
         initial={{ opacity: 0, y: -30 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
         viewport={{ once: true, amount: 0.3 }}
       >
-        Gallery
+        WYCE Exclucity
       </motion.h2>
 
       {/* Animated Paragraph */}
       <motion.p
-        className="text-gray-400 max-w-2xl mx-auto mb-12"
+        className="text-white max-w-2xl text-lg mx-auto mb-12"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.3, duration: 0.8 }}
         viewport={{ once: true, amount: 0.3 }}
       >
-        Every property is more than just four walls—it’s a promise of luxury,
-        comfort and growth. Step into a lifestyle
+         Where Thoughtful is Beautiful.
+          Every line, curve, and corner is crafted with purpose  creating spaces that feel as beautiful as they look.
       </motion.p>
 
       <div className="py-4 px-2 mx-auto max-w-screen-xl sm:py-4 lg:px-6">

@@ -6,7 +6,6 @@ import AmenitiesCarousel from "./amenties/Amenities";
 import PricesSection from "./price/PriceSection";
 import Gallery from "./gallery/GallerySection";
 import CtaSection from "./CTA/CtaSection";
-import ContactSection from "./contact/ContactSection";
 
 
 export const metadata = {
@@ -24,8 +23,6 @@ export default function WyceExclucityPage() {
       <AmenitiesCarousel />
 
       <Gallery />
-      <CtaSection />
-      <ContactSection />
 
     </main>
   );

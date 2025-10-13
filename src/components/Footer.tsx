@@ -7,7 +7,7 @@ export default function Footer() {
   return (
     <footer className="relative text-white">
       {/* Gradient background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#000000] to-[#4b432e]"></div>
+      <div className="absolute inset-0 bg-[#0a0a0a] from-[#] to-[#4b432e]"></div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 items-start border-b border-[#B7AC88]/60 pb-10 md:divide-x-2 md:divide-[#B7AC88]/60">
@@ -29,9 +29,9 @@ export default function Footer() {
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-9 h-9 flex items-center justify-center rounded-md text-white hover:bg-[#B7AC88] hover:text-black transition-colors gradient-background bg-gradient-to-b from-[#1F1403] to-[#B7AC88]"
+                  className="w-9 h-12 flex items-center justify-center rounded-md text-white hover:text-[#B7AC88]  transition-colors "
                 >
-                  <i className={`fab ${social.icon} text-sm`}></i>
+                  <i className={`fab ${social.icon} text-2xl`}></i>
                 </a>
               ))}
             </div>
@@ -40,9 +40,9 @@ export default function Footer() {
           {/* Center Section - Links */}
           <div className="flex flex-col items-start md:items-left space-y-3 px-6">
             {[
-              { name: "Home", href: "/" },
-              { name: "About", href: "/about" },
-              { name: "Nri Hub", href: "/nri-hub" },
+              { name: "Our Story", href: "/" },
+              { name: "About Us", href: "/about" },
+              { name: "NRI Hub", href: "/nri-hub" },
               { name: "Blog", href: "/blog" }
             ].map((link, idx) => (
               <Link

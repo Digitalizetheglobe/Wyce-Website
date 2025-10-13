@@ -34,13 +34,13 @@ export default function Header() {
           {/* Navigation Menu - Desktop */}
           <nav className="hidden lg:flex items-center space-x-6 xl:space-x-10 text-sm xl:text-[16px] cursor-pointer font-medium">
             <Link href="/" className="text-white hover:text-gray-300 transition-colors cursor-pointer">
-              Home
+              Our Story
             </Link>
             <Link href="/about" className="text-white hover:text-gray-300 transition-colors">
-              About
+              About Us
             </Link>
             <Link href="/wyce-exclucity" className="text-white hover:text-gray-300 transition-colors flex items-center">
-                Projects
+                Our Project
             </Link>
             <div 
               className="relative group"
@@ -84,10 +84,10 @@ export default function Header() {
               )}
             </div>
             <Link href="/blog" className="text-white hover:text-gray-300 transition-colors">
-              Blog
+              Blogs
             </Link>
             <Link href="/career" className="text-white hover:text-gray-300 transition-colors">
-              Career
+              Careers
             </Link>
           </nav>
           <div className="hidden lg:flex items-center">

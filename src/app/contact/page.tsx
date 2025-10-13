@@ -89,9 +89,9 @@ const Contact = () => {
     return (
         <div className="w-full bg-black text-white">
             {/* Banner */}
-            <div className="w-full h-64 flex flex-col items-center justify-center text-center bg-gradient-to-b from-black to-[#c2b48f] px-4">
-                <h1 className="text-4xl font-semibold mb-2">Contact Us</h1>
-                <p className="text-lg max-w-4xl">
+            <div className="w-full h-64 flex flex-col items-center justify-center text-center bg-[#0a0a0a] border-b border-white/20 px-4">
+                <h1 className="text-2xl font-semibold mb-2">Contact Us</h1>
+                <p className="text-gray-200 text-sm md:text-base w-200  ">
                     At WIDE Corp, we believe a home is more than bricks and beams<br />
                     it&apos;s the space where your most beautiful moments begin.
                 </p>
@@ -103,11 +103,10 @@ const Contact = () => {
                 <div className="flex flex-col lg:flex-row justify-between items-start mb-10">
                     {/* Heading */}
                     <div className="lg:w-1/3">
-                        <p className={`text-[#B7AC88] flex items-center gap-3 ${cinzel.className}`}>
-                            <span className="inline-block w-10 h-[1px] bg-[#B7AC88]"></span>
-                            <span className="text-[34px] leading-[42px] font-normal">Contact Us</span>
+                        <p className={`text-[#fff] flex items-center gap-3 `}>
+                            <span className="text-3xl leading-[42px] font-normal">Contact Us</span>
                         </p>           
-                         <h2 className="text-xl font-bold text-[#B7AC88]">GET IN TOUCH</h2>
+                         <h2 className="text-xl font-bold text-[#fff]">GET IN TOUCH</h2>
                     </div>
 
                     {/* Cards */}

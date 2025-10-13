@@ -1,28 +1,48 @@
 'use client';
 
 import Link from "next/link";
+import { motion } from "motion/react";
 
 export default function CtaSection() {
   return (
     <section className="w-full bg-black px-5" style={{backgroundImage: "url('/images/bg-image.png')"}}>
-      <div className="max-w-6xl mx-auto">
-        <div className="w-full text-center rounded-2xl py-10 px-8 shadow-lg bg-cover bg-center bg-no-repeat" style={{backgroundImage: "url('/images/cta-bg.png')"}}>
+      <motion.div 
+        className="max-w-6xl mx-auto"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true, amount: 0.3 }}
+      >
+        <div className="w-full text-center rounded-2xl py-10 px-8 shadow-lg bg-cover bg-center bg-no-repeat border" style={{backgroundImage: "url('/images/.png')"}}>
           {/* Small Text */}
           
 
           {/* Main Heading */}
-          <h2 className="text-2xl md:text-3xl font-semibold text-white mb-6">
-            Let&apos;s Start Your WYCE <br className="hidden sm:block" />
+          <motion.h2 
+            className="text-2xl md:text-xl font-semibold text-white mb-6"
+            initial={{ opacity: 0, y: -20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            viewport={{ once: true }}
+          >
+            Let&apos;s Start Your WYCE 
             Journey With Us 
-          </h2>
+          </motion.h2>
 
           {/* Button */}
-          <Link href="/contact" className="bg-white/10 w-50 hover:bg-white/20 text-white border border-white/20 rounded-full px-6 py-2 text-sm font-medium flex items-center justify-center mx-auto gap-2 transition-all">
-            Contact Us
-            <span className="text-lg">›</span>
-          </Link>
+            <motion.div 
+              className="flex justify-center mt-5"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              viewport={{ once: true }}
+            >
+              <Link href="/contact" className="inline-block border text-[#fff] border-2 px-8 sm:px-12 py-2 text-sm sm:text-base font-bold hover:border-[#B7AC88] hover:text-[#B7AC88] transition-all">
+                  Contact Us
+              </Link>
+            </motion.div>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 }
