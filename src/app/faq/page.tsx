@@ -48,8 +48,9 @@ export default function FAQPage() {
 
   return (
     <div className="min-h-screen bg-black">
-
-         <section className="w-full text-white py-10 md:py-16 bg-[#0a0a0a] border-b border-white/20">
+      <Header />
+      
+      <section className="w-full text-white py-10 md:py-16 bg-[#0a0a0a] border-b border-white/20">
         {/* Header Section */}
         <div className="text-center max-w-2xl mx-auto mb-10">
           <h2 className="text-2xl md:text-3xl font-semibold mb-3">FAQ&apos;s</h2>
@@ -120,7 +121,7 @@ export default function FAQPage() {
             <div className="relative">
               <div className="relative h-[600px] lg:h-[450px] overflow-hidden">
                 <Image
-                  src="/images/faq.png"
+                  src="/images/about.png"
                   alt="Real Estate Consultation"
                   fill
                   className="object-cover"
@@ -136,7 +137,7 @@ export default function FAQPage() {
         </div>
       </section>
 
-
+      <Footer />
     </div>
   );
 }

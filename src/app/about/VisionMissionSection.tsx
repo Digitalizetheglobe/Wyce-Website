@@ -94,7 +94,7 @@ export default function VisionMissionSection() {
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.6, delay: 0.4 }}
             >
-              Our mission is to be a trusted Pune-based construction company, transforming industries with innovative solutions, integrity, and sustainable growth. We are committed to creating exceptional homes and communities where families can live the WYCE-crafted experience. We are built on the combined wisdom of three trusted names—Parth Developers, Saniket Builders, and Balaji Group—and are driven by a shared vision of quality, trust, and thoughtful living.
+              Our mission is to be a trusted Pune-based construction company, transforming industries with innovative solutions, integrity, and sustainable growth. We are committed to creating exceptional homes and communities where families can live the WYCE-crafted experience. We are built on the combined wisdom of three trusted names Parth Developers, Saniket Builders, and Balaji Group and are driven by a shared vision of quality, trust, and thoughtful living.
             </motion.p>
           </div>
         </div>
