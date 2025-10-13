@@ -121,7 +121,7 @@ export default function FAQPage() {
             <div className="relative">
               <div className="relative h-[600px] lg:h-[450px] overflow-hidden">
                 <Image
-                  src="/images/about.png"
+                  src="/images/faq.png"
                   alt="Real Estate Consultation"
                   fill
                   className="object-cover"
