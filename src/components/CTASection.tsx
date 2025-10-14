@@ -13,7 +13,7 @@ export default function CtaSection() {
         transition={{ duration: 0.6 }}
         viewport={{ once: true, amount: 0.3 }}
       >
-        <div className="w-full text-center rounded-2xl py-10 px-8 shadow-lg bg-cover bg-center bg-no-repeat border" style={{backgroundImage: "url('/images/.png')"}}>
+        <div className="w-full text-center  py-10 px-8 shadow-lg bg-cover bg-center bg-no-repeat border" style={{backgroundImage: "url('/images/.png')"}}>
           {/* Small Text */}
           
 

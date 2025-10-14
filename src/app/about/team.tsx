@@ -43,36 +43,36 @@ export default function TeamSection() {
   };
 
   return (
-    <section className={`relative w-full bg-[#121212] text-white py-8 sm:py-12 md:py-16 px-4 sm:px-6 md:px-8 lg:px-12`}>
+    <section className={`relative w-full bg-[#121212] text-white py-8 sm:py-12 md:py-10 px-4 sm:px-6 md:px-8 lg:px-12`}>
       <div className="max-w-7xl mx-auto">
         {/* Heading */}
-        <div className="text-center mb-4 sm:mb-6">
+        <div className="text-center mb-2">
           <motion.p 
-            className={`text-[#fff] text-xl sm:text-2xl md:text-3xl lg:text-4xl font-light pt-6 sm:pt-8 md:pt-10`}
+            className={`text-[#fff] text-xl sm:text-2xl md:text-3xl lg:text-2xl font-light pt-6 sm:pt-8 md:pt-10 mb-4`}
             initial={{ opacity: 0, y: -30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.6 }}
           >
-             Meet The Awesome Leaders
+             Meet The <span className="font-breathney text-[#b6a16b]">Awesome</span> Leaders
           </motion.p>
         </div>
 
         {/* Subtext */}
         <motion.p 
-          className="text-gray-300 mb-8 sm:mb-10 md:mb-12 max-w-4xl mx-auto text-center text-sm sm:text-base md:text-lg px-4"
+          className="text-gray-300 mb-8 sm:mb-10 md:mb-12 max-w-6xl mx-auto text-center text-sm sm:text-base md:text-lg px-4"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
           our team is the embodiment of our belief in being Greater Together.
-A collective of visionaries, creators, and professionals each member brings years of expertise, fresh perspectives, and a shared commitment to excellence.
+          A collective of visionaries, creators, and professionals each member brings years of expertise, fresh perspectives, and a shared commitment to excellence.
         </motion.p>
 
         {/* Team Cards */}
         <motion.div 
-          className="grid grid-cols-1 sm:grid-cols-1 gap-4 sm:gap-6 md:gap-8 mb-8 sm:mb-10 md:mb-12"
+          className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 md:gap-8 mb-8 sm:mb-10 md:mb-12"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -87,7 +87,7 @@ A collective of visionaries, creators, and professionals each member brings year
               variants={itemVariants}
             >
               <motion.div 
-                className="relative w-full h-[250px] sm:h-[300px] md:h-[500px] lg:h-[850px]"
+                className="relative w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px]"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}

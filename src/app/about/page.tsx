@@ -24,7 +24,7 @@ const About = () => {
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.6 }}
           >
-            About Us
+            About<span className="font-breathney text-[#b6a16b] ml-2">Us</span> 
           </motion.h2>
           <motion.div 
             className="text-gray-200 text-sm md:text-base sm:w-100 md:w-200  px-10"

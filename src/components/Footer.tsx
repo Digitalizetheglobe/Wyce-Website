@@ -9,10 +9,10 @@ export default function Footer() {
       {/* Gradient background */}
       <div className="absolute inset-0 bg-[#0a0a0a] from-[#] to-[#4b432e]"></div>
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 items-start border-b border-[#B7AC88]/60 pb-10 md:divide-x-2 md:divide-[#B7AC88]/60">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-4">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start border-b border-[#B7AC88]/60 pb-10 md:divide-x-2 md:divide-[#B7AC88]/60">
           {/* Left Section - Logo & Social */}
-          <div className="flex flex-col space-y-6 pr-6">
+          <div className="flex flex-col items-center space-y-6">
             <div>
               <Image src={footer} alt="WYCE" width={150} height={150} />
 
@@ -38,11 +38,11 @@ export default function Footer() {
           </div>
 
           {/* Center Section - Links */}
-          <div className="flex flex-col items-start md:items-left space-y-3 px-6">
+          <div className="flex flex-col items-start md:items-center space-y-3 px-6">
             {[
               { name: "Our Story", href: "/" },
               { name: "About Us", href: "/about" },
-              { name: "NRI Hub", href: "/nri-hub" },
+              { name: "NRI Desk", href: "/nri-hub" },
               { name: "Blog", href: "/blog" }
             ].map((link, idx) => (
               <Link
@@ -55,26 +55,9 @@ export default function Footer() {
             ))}
           </div>
 
-          {/* Center Section - Links */}
-          <div className="flex flex-col items-start md:items-left space-y-3 px-6">
-            {[
-              { name: "WYCE  Exclucity", href: "/wyce-exclucity" },
-              { name: "Privacy Policy", href: "/privacy-policy" },
-              { name: "FAQs", href: "/faq" },
-              { name: "Publication", href: "#" }
-            ].map((link, idx) => (
-              <Link
-                key={idx}
-                href={link.href}
-                className="text-white hover:text-[#B7AC88] transition-colors text-lg"
-              >
-                {link.name}
-              </Link>
-            ))}
-          </div>
 
           {/* Right Section - Contact */}
-          <div className="space-y-3 text-lg text-white pl-6">
+          <div className="space-y-3 text-lg text-white flex flex-col items-center">
             <a 
               href="tel:+917549799799" 
               className="block hover:text-[#B7AC88] transition-colors"
@@ -99,17 +82,25 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-<div className="text-center text-lg text-white mt-6">
-  ©2025 WYCE Exclucity. All Rights Reserved. Designed by{" "}
-  <a
-    href="https://digitalizetheglobe.com/"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="text-[#B7AC88] hover:underline"
-  >
-    Digitalize the Globe
-  </a>
-</div>
+        <div className="flex flex-col sm:flex-row justify-between items-center text-sm text-white mt-4 space-y-2 sm:space-y-0">
+          <div>
+            ©2025 WYCE Exclucity. All Rights Reserved.
+          </div>
+          <div className="flex space-x-4">
+            <Link
+              href="/privacy-policy"
+              className="hover:text-[#B7AC88] transition-colors"
+            >
+              Privacy Policy
+            </Link>
+            <Link
+              href="/terms-condition"
+              className="hover:text-[#B7AC88] transition-colors"
+            >
+              Terms & Condition
+            </Link>
+          </div>
+        </div>
 
       </div>
     </footer>

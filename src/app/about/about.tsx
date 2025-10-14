@@ -107,13 +107,15 @@ export default function HeroSection() {
           {/* Right Text Section */}
           <div className="text-center mt-12 lg:mt-0">
             <motion.h2 
-              className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl mb-4 sm:mb-6"
+              className="text-2xl sm:text-3xl md:text-4xl lg:text-3xl mb-4 sm:mb-6 flex flex-wrap items-center justify-center gap-2"
               initial={{ opacity: 0, y: -30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.6 }}
             >
-              A collective of visionaries shaping tomorrow&apos;s skyline
+              <span>A collective of</span>
+              <span className="font-breathney text-[#b6a16b] text-5xl ml-2">visionaries</span>
+              <span>shaping tomorrow&apos;s skyline</span>
             </motion.h2>
             <motion.p 
               className="text-gray-300 leading-relaxed mb-8 sm:mb-10 text-sm sm:text-base md:text-lg max-w-4xl mx-auto px-4"

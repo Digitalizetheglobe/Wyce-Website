@@ -13,7 +13,7 @@ export default function ProjectSection() {
   return (
     
     <section
-      className="relative bg-cover bg-center bg-no-repeat text-white py-12 sm:py-16 md:py-20 px-4 sm:px-6 md:px-8"
+      className="relative bg-cover bg-center bg-no-repeat text-white py-12 sm:pt-16 md:pt-20 px-4 sm:px-6 md:px-8"
       style={{ backgroundImage: "url('/images/project-bg.png')" }}
     >
 
@@ -30,7 +30,7 @@ export default function ProjectSection() {
           viewport={{ once: true, amount: 0.3 }}
         >
             <p className="flex items-center justify-center gap-2 sm:gap-3 text-lg sm:text-xl md:text-2xl">
-            We&apos;re Believers
+            We&apos;re <span className="font-breathney text-[#b6a16b]">Believers</span>
             </p>
         </motion.div>
 
@@ -41,7 +41,7 @@ export default function ProjectSection() {
 
             {/* Description Text */}
             <motion.p 
-              className="text-white text-sm sm:text-base md:text-lg lg:text-lg leading-relaxed"
+              className="text-white text-sm sm:text-base md:text-lg lg:text-lg leading-relaxed mt-5"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}

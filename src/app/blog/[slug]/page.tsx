@@ -15,11 +15,11 @@ interface BlogData {
 
 const blogContent: Record<string, BlogData> = {
   "quiet-side-of-luxury": {
-    title: "🏡 The Quiet Side of Luxury: Why WYCE Believes Thoughtfulness Is the New Opulence",
+    title: "The Quiet Side of Luxury: Why WYCE Believes Thoughtfulness Is the New Opulence",
     date: "October 5, 2024",
     category: "Real Estate",
     author: "WYCE Team",
-    image: "/images/project-1.png",
+    image: "/images/blog2.jpeg",
     content: `
       <h2>Understanding What Luxury Really Means</h2>
       <p>Luxury has always been linked with what's visible — high ceilings, imported fittings, grand entrances, and marble everywhere. But if you take a moment to think about it, true luxury is not about the things you see. It's about what you feel when you step inside.</p>
@@ -54,11 +54,11 @@ const blogContent: Record<string, BlogData> = {
     `,
   },
   "space-new-luxury": {
-    title: "🌇 Space Is the New Luxury: Inside WYCE's 11-Acre Vision for the Select Few",
+    title: "Space Is the New Luxury: Inside WYCE's 11-Acre Vision for the Select Few",
     date: "October 3, 2024",
     category: "Real Estate",
     author: "WYCE Team",
-    image: "/images/project-2.png",
+    image: "/images/blog3.jpeg",
     content: `
       <h2>Why Space Has Become a Rare Privilege</h2>
       <p>In most cities today, "luxury living" has started to mean living small but paying big. The skyline keeps growing taller, but the feeling of openness keeps disappearing. WYCE saw this shift and decided to build differently — to create homes that give people back what they've lost: space.</p>
@@ -85,7 +85,7 @@ const blogContent: Record<string, BlogData> = {
     `,
   },
   "beyond-green-walls": {
-    title: "🌿 Beyond Green Walls: How WYCE Designs Homes That Breathe",
+    title: "Beyond Green Walls: How WYCE Designs Homes That Breathe",
     date: "September 28, 2024",
     category: "Real Estate",
     author: "WYCE Team",
@@ -115,11 +115,11 @@ const blogContent: Record<string, BlogData> = {
     `,
   },
   "bavdhan-city-meets-serenity": {
-    title: "🏞️ Bavdhan: Where the City Meets Serenity",
+    title: "Bavdhan: Where the City Meets Serenity",
     date: "September 25, 2024",
     category: "Real Estate",
     author: "WYCE Team",
-    image: "/images/project-4.png",
+    image: "/images/blog4.jpeg",
     content: `
       <h2>A Location That Understands Balance</h2>
       <p>Bavdhan is one of those rare neighborhoods where city energy and nature's calm coexist perfectly. WYCE chose this location for ExcluCity because it captures both — modern convenience and natural serenity.</p>
@@ -141,11 +141,11 @@ const blogContent: Record<string, BlogData> = {
     `,
   },
   "designing-connection": {
-    title: "💬 Designing Connection: The Subtle Luxury of Belonging at WYCE",
+    title: "Designing Connection: The Subtle Luxury of Belonging at WYCE",
     date: "September 20, 2024",
     category: "Real Estate",
     author: "WYCE Team",
-    image: "/images/project-1.png",
+    image: "/images/blog5.jpeg",
     content: `
       <h2>Homes That Bring People Together</h2>
       <p>Most modern housing projects focus on privacy but forget the joy of connection. WYCE believes both can exist together. At ExcluCity, the community is designed not just for living, but for belonging.</p>
@@ -171,31 +171,31 @@ const blogContent: Record<string, BlogData> = {
 const recentPosts = [
   {
     id: 1,
-    title: "🏡 The Quiet Side of Luxury: Why WYCE Believes Thoughtfulness Is the New Opulence",
+    title: "The Quiet Side of Luxury: Why WYCE Believes Thoughtfulness Is the New Opulence",
     date: "October 5, 2024",
     slug: "quiet-side-of-luxury",
   },
   {
     id: 2,
-    title: "🌇 Space Is the New Luxury: Inside WYCE's 11-Acre Vision for the Select Few",
+    title: "Space Is the New Luxury: Inside WYCE's 11-Acre Vision for the Select Few",
     date: "October 3, 2024",
     slug: "space-new-luxury",
   },
   {
     id: 3,
-    title: "🌿 Beyond Green Walls: How WYCE Designs Homes That Breathe",
+    title: "Beyond Green Walls: How WYCE Designs Homes That Breathe",
     date: "September 28, 2024",
     slug: "beyond-green-walls",
   },
   {
     id: 4,
-    title: "🏞️ Bavdhan: Where the City Meets Serenity",
+    title: "Bavdhan: Where the City Meets Serenity",
     date: "September 25, 2024",
     slug: "bavdhan-city-meets-serenity",
   },
   {
     id: 5,
-    title: "💬 Designing Connection: The Subtle Luxury of Belonging at WYCE",
+    title: "Designing Connection: The Subtle Luxury of Belonging at WYCE",
     date: "September 20, 2024",
     slug: "designing-connection",
   },

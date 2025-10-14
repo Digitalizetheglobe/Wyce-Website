@@ -25,7 +25,7 @@ export default function VerticalExpertise() {
   };
 
   return (
-    <section className={`relative w-full bg-[#0B0B0B] text-white py-40 px-6 sm:px-12 lg:px-20 `}>
+    <section className={`relative w-full bg-[#0B0B0B] text-white py-20 px-6 sm:px-12 lg:px-20 `}>
       {/* Background pattern (optional) */}
       <div className="absolute inset-0 opacity-10">
         <Image
@@ -40,13 +40,13 @@ export default function VerticalExpertise() {
         {/* Heading */}
         <div className="mb-2">
           <motion.p 
-            className={`text-[#fff]  text-2xl sm:text-2xl font-light text-center`}
+            className={`text-[#fff]  text-2xl sm:text-2xl font-light text-center mb-4` }
             initial={{ opacity: 0, y: -30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.6 }}
           >
-            Greater Together in Every Dimension
+            Greater Together in <span className="font-breathney text-[#b6a16b]">Every</span> Dimension
           </motion.p>
         </div>
 
@@ -59,8 +59,8 @@ export default function VerticalExpertise() {
           transition={{ duration: 0.6, delay: 0.2 }}
         >
           Our culture celebrates passion and togetherness  where every individual contributes to a shared dream of excellence.
-Rooted in legacy, we continue to build upon the trust and craftsmanship that have shaped our journey.
-And with our channel partners, we extend this spirit of collaboration growing, innovating, and succeeding.
+          Rooted in legacy, we continue to build upon the trust and craftsmanship that have shaped our journey.
+          And with our channel partners, we extend this spirit of collaboration growing, innovating, and succeeding.
         </motion.p>
 
         {/* Cards */}

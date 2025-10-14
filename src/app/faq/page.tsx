@@ -14,28 +14,38 @@ interface FAQItem {
 const faqData: FAQItem[] = [
   {
     id: 1,
-    question: "WHO IS Wyce?",
-    answer: "WYCE Exclucity is a luxurious, large-scale residential project in Bavdhan, Pune, developed by Parth, Saniket, and Balaji Group. This RERA-registered project spans 12 acres with 11 high-rise towers offering premium 2, 3, and 4 BHK apartments. The project perfectly blends modern luxury and nature, dedicating over 60% of the land to open green spaces and offering more than 50 world-class amenities."
+    question: "What is the location of the project?",
+    answer: "WYCE Exclucity is located in Bavdhan, Pune a prime location that seamlessly connects you to the city’s major destinations while keeping you close to nature and tranquility."
   },
   {
     id: 2,
-    question: "WHAT IS PIO?",
-    answer: "PIO (Person of Indian Origin) refers to a person who was a citizen of India at any time or whose parents, grandparents, or great-grandparents were citizens of India. PIOs can invest in Indian real estate under certain conditions and are eligible for various investment benefits in projects like WYCE Exclucity."
+    question: "What configurations are available?",
+    answer: "The project offers premium 2 BHK ,3 BHK & 4BHK residences, designed with spacious layouts, modern architecture, and thoughtful planning to elevate everyday living."
   },
   {
     id: 3,
-    question: "Any person of full age and capacity?",
-    answer: "Yes, any person of full age (18 years and above) and sound mind can invest in WYCE Exclucity. This includes Indian nationals, NRIs, PIOs, and foreign nationals (subject to applicable laws and regulations). We ensure all legal requirements are met for different categories of investors."
+    question: "Is the project RERA registered?",
+    answer: "Yes, WYCE Exclucity is RERA approved. You can verify the details on the official RERA website using our registration number P52100077762, P52100077827."
   },
   {
     id: 4,
-    question: "What are the payment plans available?",
-    answer: "WYCE Exclucity offers flexible payment plans including construction-linked plans, down payment schemes, and easy EMI options. Our financial team will work with you to create a payment schedule that suits your financial situation and investment goals."
+    question: "What makes WYCE Exclucity different from other projects?",
+    answer: "Every detail at WYCE Exclucity reflects our philosophy  “Thoughtful is Beautiful.” From the layout and natural light to community spaces and design sensibility, the project blends luxury with meaning  creating homes that feel personal, peaceful, and complete."
   },
   {
     id: 5,
-    question: "What amenities are included in the project?",
-    answer: "WYCE Exclucity offers over 50 world-class amenities including swimming pools, fitness centers, landscaped gardens, children's play areas, clubhouse, sports facilities, security systems, and much more. The project is designed to provide a complete lifestyle experience for residents."
+    question: "Are there eco-friendly or sustainable features?",
+    answer: "Yes, WYCE Exclucity is designed with sustainability in mind featuring rainwater harvesting, solar lighting, waste management systems, and energy-efficient infrastructure."
+  },
+  {
+    id: 6,
+    question: "Is there a sample flat available for viewing?",
+    answer: "Yes, a show apartment is available for on-site visits, allowing you to experience the design, finishes, and lifestyle before making a decision."
+  },
+  {
+    id: 7,
+    question: "How can I book a site visit or get more details?",
+    answer: "Simply fill out the enquiry form on this website or call our sales team to schedule a personalized walk-through of WYCE Exclucity."
   }
 ];
 
@@ -52,7 +62,7 @@ export default function FAQPage() {
       <section className="w-full text-white py-10 md:py-16 bg-[#0a0a0a] border-b border-white/20">
         {/* Header Section */}
         <div className="text-center max-w-2xl mx-auto mb-10">
-          <h2 className="text-2xl md:text-3xl font-semibold mb-3">FAQ&apos;s</h2>
+          <h2 className="text-2xl md:text-3xl font-semibold mb-3">Quick Facts</h2>
           <p className="text-gray-200 text-sm md:text-base">
             At WYCE Corp, we believe a home is more than bricks and beams 
             it&apos;s the space where your most beautiful moments begin.
@@ -74,12 +84,12 @@ export default function FAQPage() {
             {/* FAQ Accordion - Each question in separate box */}
             <div className="space-y-4">
               {faqData.map((item) => (
-                <div key={item.id} className="bg-gray-900/50 p-6 rounded-xl border border-[#B7AC88] hover:border-white transition-colors cursor-pointer">
+                <div key={item.id} className="bg-gray-900/50 p-3  border border-[#B7AC88] hover:border-white transition-colors cursor-pointer">
                   <button
                     onClick={() => toggleItem(item.id)}
                     className="w-full text-left flex items-center justify-between group cursor-pointer"
                   >
-                    <h3 className="text-xl font-bold text-white group-hover:text-[#B7AC88] transition-colors">
+                    <h3 className="text-md font-bold text-white group-hover:text-[#B7AC88] transition-colors">
                       {item.question}
                     </h3>
                     <div className="ml-4 flex-shrink-0">
@@ -118,9 +128,9 @@ export default function FAQPage() {
 
             {/* Image Section */}
             <div className="relative">
-              <div className="relative h-[600px] lg:h-[450px] overflow-hidden">
+              <div className="relative h-[600px] lg:h-[440px] overflow-hidden">
                 <Image
-                  src="/images/faq.png"
+                  src="/images/faq1.jpeg"
                   alt="Real Estate Consultation"
                   fill
                   className="object-cover"

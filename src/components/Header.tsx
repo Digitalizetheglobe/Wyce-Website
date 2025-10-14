@@ -133,7 +133,7 @@ export default function Header() {
               onMouseLeave={() => setIsNriDropdownOpen(false)}
             >
               <button className="text-white hover:text-gray-300 transition-colors flex items-center py-2">
-                NRI Hub
+                NRI Desk
                 <svg 
                   className={`ml-1 h-4 w-4 transition-transform ${isNriDropdownOpen ? 'rotate-180' : ''}`} 
                   fill="none" 
@@ -162,7 +162,7 @@ export default function Header() {
                       href="/faq" 
                       className="block px-4 py-2 text-white hover:bg-[#B7AC88] hover:text-black transition-colors"
                     >
-                      FAQ
+                      Quick Facts
                     </Link>
                   </div>
                 </div>

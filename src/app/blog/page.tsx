@@ -8,27 +8,27 @@ import Link from "next/link";
 const blogPosts = [
   {
     id: 1,
-    title: "🏡 The Quiet Side of Luxury: Why WYCE Believes Thoughtfulness Is the New Opulence",
+    title: "The Quiet Side of Luxury: Why WYCE Believes Thoughtfulness Is the New Opulence",
     excerpt:
       "Luxury has always been linked with what's visible — high ceilings, imported fittings, grand entrances. But true luxury is not about what you see. It's about what you feel when you step inside.",
     category: "Real Estate",
     date: "October 5, 2024",
-    image: "/images/project-1.png",
+    image: "/images/blog2.jpeg",
     slug: "quiet-side-of-luxury",
   },
   {
     id: 2,
-    title: "🌇 Space Is the New Luxury: Inside WYCE's 11-Acre Vision for the Select Few",
+    title: "Space Is the New Luxury: Inside WYCE's 11-Acre Vision for the Select Few",
     excerpt:
       "In most cities today, luxury living has started to mean living small but paying big. WYCE saw this shift and decided to build differently — to create homes that give people back what they've lost: space.",
     category: "Real Estate",
     date: "October 3, 2024",
-    image: "/images/project-2.png",
+    image: "/images/blog3.jpeg",
     slug: "space-new-luxury",
   },
   {
     id: 3,
-    title: "🌿 Beyond Green Walls: How WYCE Designs Homes That Breathe",
+    title: "Beyond Green Walls: How WYCE Designs Homes That Breathe",
     excerpt:
       "Almost every developer claims to build eco-friendly homes. But most of it stops at token gestures. WYCE goes beyond that by designing a lifestyle that breathes, not just buildings that look green.",
     category: "Real Estate",
@@ -38,22 +38,22 @@ const blogPosts = [
   },
   {
     id: 4,
-    title: "🏞️ Bavdhan: Where the City Meets Serenity",
+    title: "Bavdhan: Where the City Meets Serenity",
     excerpt:
       "Bavdhan is one of those rare neighborhoods where city energy and nature's calm coexist perfectly. WYCE chose this location for ExcluCity because it captures both — modern convenience and natural serenity.",
     category: "Real Estate",
     date: "September 25, 2024",
-    image: "/images/project-4.png",
+    image: "/images/blog4.jpeg",
     slug: "bavdhan-city-meets-serenity",
   },
   {
     id: 5,
-    title: "💬 Designing Connection: The Subtle Luxury of Belonging at WYCE",
+    title: "Designing Connection: The Subtle Luxury of Belonging at WYCE",
     excerpt:
       "Most modern housing projects focus on privacy but forget the joy of connection. WYCE believes both can exist together. At ExcluCity, the community is designed not just for living, but for belonging.",
     category: "Real Estate",
     date: "September 20, 2024",
-    image: "/images/project-1.png",
+    image: "/images/blog5.jpeg",
     slug: "designing-connection",
   },
 ];
@@ -61,31 +61,31 @@ const blogPosts = [
 const recentPosts = [
   {
     id: 1,
-    title: "🏡 The Quiet Side of Luxury: Why WYCE Believes Thoughtfulness Is the New Opulence",
+    title: "The Quiet Side of Luxury: Why WYCE Believes Thoughtfulness Is the New Opulence",
     date: "October 5, 2024",
     slug: "quiet-side-of-luxury",
   },
   {
     id: 2,
-    title: "🌇 Space Is the New Luxury: Inside WYCE's 11-Acre Vision for the Select Few",
+    title: "Space Is the New Luxury: Inside WYCE's 11-Acre Vision for the Select Few",
     date: "October 3, 2024",
     slug: "space-new-luxury",
   },
   {
     id: 3,
-    title: "🌿 Beyond Green Walls: How WYCE Designs Homes That Breathe",
+    title: "Beyond Green Walls: How WYCE Designs Homes That Breathe",
     date: "September 28, 2024",
     slug: "beyond-green-walls",
   },
   {
     id: 4,
-    title: "🏞️ Bavdhan: Where the City Meets Serenity",
+    title: "Bavdhan: Where the City Meets Serenity",
     date: "September 25, 2024",
     slug: "bavdhan-city-meets-serenity",
   },
   {
     id: 5,
-    title: "💬 Designing Connection: The Subtle Luxury of Belonging at WYCE",
+    title: "Designing Connection: The Subtle Luxury of Belonging at WYCE",
     date: "September 20, 2024",
     slug: "designing-connection",
   },
@@ -105,7 +105,7 @@ export default function BlogPage() {
       <section className="w-full text-white py-10 md:py-16 bg-[#0a0a0a] border-b border-white/20" >
         {/* Header Section */}
         <div className="text-center max-w-2xl mx-auto mb-10">
-          <h2 className="text-2xl md:text-3xl font-semibold mb-3">WYCE Journal</h2>
+          <h2 className="text-2xl md:text-3xl font-semibold mb-3">WYCE<span className="font-breathney text-[#b6a16b] ml-2 ">Journal</span> </h2>
           <p className="text-gray-200 text-sm md:text-base">
             Explore the world of WYCE stories of design, innovation, and life beyond the ordinary.
             Because in every detail, Thoughtful is Beautiful.
@@ -132,7 +132,7 @@ export default function BlogPage() {
                 >
                   {/* Blog Card Image */}
                   <Link href={`/blog/${post.slug}`}>
-                    <div className="h-64 bg-gray-200 overflow-hidden cursor-pointer">
+                    <div className="h-120 bg-gray-200 overflow-hidden cursor-pointer">
                       <img
                         src={post.image}
                         alt={post.title}

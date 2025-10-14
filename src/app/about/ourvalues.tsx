@@ -50,13 +50,13 @@ export default function ValuesSection() {
         {/* Heading */}
         <div className="mb-16 text-center">
           <motion.p 
-            className={`text-[#fff] text-2xl sm:text-2xl font-light mb-4 `}
+            className={`text-[#fff] text-2xl sm:text-2xl font-light mb-4`}
             initial={{ opacity: 0, y: -30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.6 }}
           >
-            The WYCE Way
+            The WYCE <span className="font-breathney text-[#b6a16b]">Way</span>
           </motion.p>
           <motion.p 
             className="text-gray-300 max-w-5xl text-lg text-base mx-auto"

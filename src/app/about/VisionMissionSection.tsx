@@ -1,10 +1,16 @@
 "use client";
 import Image from "next/image";
 import { motion } from "motion/react";
-import { Cinzel } from "next/font/google";
+import { Cinzel, Raleway } from "next/font/google";
+
 const cinzel = Cinzel({
   subsets: ["latin"],
   weight: "400",
+});
+
+const railway = Raleway({
+  subsets: ["latin"],
+  weight: "300",
 });
 export default function VisionMissionSection() {
   return (
@@ -25,11 +31,11 @@ export default function VisionMissionSection() {
               transition={{ duration: 0.6 }}
             >
               <p className={`text-[#fff]  text-3xl sm:text-2xl font-light`}>
-                Creating a positive impact
+                Creating a <span className="font-breathney text-[#b6a16b]">Positive</span> Impact
               </p>
             </motion.div>
             <motion.p 
-              className="text-gray-300 leading-relaxed text-base sm:text-lg"
+              className={`text-gray-300 leading-relaxed text-base sm:text-lg ${railway.className}`}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
@@ -68,7 +74,7 @@ export default function VisionMissionSection() {
             transition={{ duration: 0.7 }}
           >
             <Image
-              src="/images/mission.jpeg"
+              src="/images/saniket2.png"
               alt="Mission Image"
               width={600}
               height={300}
@@ -85,10 +91,10 @@ export default function VisionMissionSection() {
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              Together, We Build Better
+              <span className="font-breathney text-[#b6a16b] ml-2"></span>, We Build Better
             </motion.p>
             <motion.p 
-              className="text-gray-300 leading-relaxed text-base sm:text-lg"
+              className={`text-gray-300 leading-relaxed text-base sm:text-lg ${railway.className}`}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}

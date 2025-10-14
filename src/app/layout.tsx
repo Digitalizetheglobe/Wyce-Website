@@ -1,4 +1,4 @@
-import { Raleway, Cinzel } from "next/font/google";
+import { Raleway, Cinzel, Great_Vibes } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -13,6 +13,12 @@ const cinzel = Cinzel({
   variable: "--font-cinzel",
   subsets: ["latin"],
   weight: ["400", "700"],
+});
+
+const greatVibes = Great_Vibes({
+  variable: "--font-great-vibes",
+  subsets: ["latin"],
+  weight: ["400"],
 });
 
 
@@ -33,7 +39,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${raleway.variable} ${cinzel.variable} font-cinzel antialiased`}
+        className={`${raleway.variable} ${cinzel.variable} ${greatVibes.variable} font-cinzel antialiased`}
         suppressHydrationWarning={true}
       >
         <Header />
