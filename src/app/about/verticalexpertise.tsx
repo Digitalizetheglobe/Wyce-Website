@@ -2,10 +2,7 @@
 import Image from "next/image";
 import { motion } from "motion/react";
 import { Cinzel } from "next/font/google";
-const cinzel = Cinzel({
-  subsets: ["latin"],
-  weight: "400",
-});
+
 export default function VerticalExpertise() {
   const containerVariants = {
     hidden: {},
@@ -91,7 +88,7 @@ And with our channel partners, we extend this spirit of collaboration growing, i
               >
                 <div className="flex items-center justify-center h-full">
                   <motion.h3 
-                    className="text-black text-xl font-bold text-center uppercase tracking-wide hover:text-white"
+                    className="text-black text-xl md:text-lg lg:text-lg font-bold text-center uppercase tracking-wide hover:text-white"
                     initial={{ opacity: 0, y: -20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, amount: 0.3 }}

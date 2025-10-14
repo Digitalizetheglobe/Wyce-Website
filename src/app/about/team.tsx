@@ -87,7 +87,7 @@ A collective of visionaries, creators, and professionals each member brings year
               variants={itemVariants}
             >
               <motion.div 
-                className="relative w-full h-[250px] sm:h-[300px] md:h-[500px] lg:h-[400px]"
+                className="relative w-full h-[250px] sm:h-[300px] md:h-[500px] lg:h-[850px]"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
