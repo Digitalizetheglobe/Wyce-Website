@@ -48,7 +48,6 @@ export default function FAQPage() {
 
   return (
     <div className="min-h-screen bg-black">
-      <Header />
       
       <section className="w-full text-white py-10 md:py-16 bg-[#0a0a0a] border-b border-white/20">
         {/* Header Section */}
@@ -137,7 +136,6 @@ export default function FAQPage() {
         </div>
       </section>
 
-      <Footer />
     </div>
   );
 }
