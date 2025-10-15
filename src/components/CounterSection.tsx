@@ -25,12 +25,12 @@ function AnimatedCounter({ end, duration = 2000, suffix = "", decimals = 0 }: Co
       { threshold: 0.3 }
     );
 
-    if (counterRef.current) {
-      observer.observe(counterRef.current);
+    const currentRef = counterRef.current;
+    if (currentRef) {
+      observer.observe(currentRef);
     }
 
     return () => {
-      const currentRef = counterRef.current;
       if (currentRef) {
         observer.unobserve(currentRef);
       }

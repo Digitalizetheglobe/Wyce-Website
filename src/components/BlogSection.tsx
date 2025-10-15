@@ -109,7 +109,6 @@ export default function BlogSection() {
 
   const handleUserInteraction = () => {
     setIsUserInteracting(true);
-    setHasScrolled(true);
     
     // Clear existing timeout
     if (userInteractionTimeoutRef.current) {
