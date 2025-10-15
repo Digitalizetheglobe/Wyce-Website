@@ -4,10 +4,6 @@ import Link from "next/link";
 import { Cinzel } from "next/font/google";
 import { motion } from "motion/react";
 
-const cinzel = Cinzel({
-  subsets: ["latin"],
-  weight: "400",
-});
 
 export default function ProjectSection() {
   return (

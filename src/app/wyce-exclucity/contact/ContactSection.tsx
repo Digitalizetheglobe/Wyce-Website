@@ -17,57 +17,6 @@ export default function ContactSection() {
     message: "",
   });
   
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    setSubmitStatus({ type: null, message: "" });
-
-    try {
-      const response = await fetch(
-        "https://leadquest.corelto.co/public/companies/040487f0-dbe9-485a-bb4b-ab881fa7fdbb/leads-all",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            name: formData.firstName,
-            mobile: formData.phone,
-            email: formData.email,
-            project: "Wyce ExcluCity",
-            source: "Website",
-            sub_source: "",
-            user_email: "",
-            comment: formData.message,
-          }),
-        }
-      );
-
-      if (response.ok) {
-        setSubmitStatus({
-          type: "success",
-          message: "Thank you! Your message has been sent successfully.",
-        });
-        // Reset form
-        setFormData({
-          firstName: "",
-          phone: "",
-          email: "",
-          message: "",
-        });
-      } else {
-        throw new Error("Failed to submit form");
-      }
-    } catch (error) {
-      setSubmitStatus({
-        type: "error",
-        message: "Something went wrong. Please try again later.",
-      });
-      console.error("Form submission error:", error);
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
 
   return (
     <>

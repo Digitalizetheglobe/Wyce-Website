@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
-import { Cinzel } from "next/font/google";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 
 // Animation variants
@@ -55,10 +55,11 @@ const Career = () => {
                         <div className="relative">
                             {/* Background Office Image */}
                             <div className="w-full h-80 overflow-hidden">
-                                <img 
+                                <Image 
                                     src="/images/carrer-about.jpeg" 
                                     alt="Office Environment" 
-                                    className="w-full h-full object-cover"
+                                    fill
+                                    className="object-cover"
                                 />
                             </div>
 
@@ -201,10 +202,11 @@ const Career = () => {
                     >
                         <div className="relative">
                             <div className="w-full h-120 overflow-hidden border border-[#B7AC88]/20">
-                                <img 
+                                <Image 
                                     src="/images/career-life.jpeg" 
                                     alt="Life at WYCE" 
-                                    className="w-full h-full object-cover"
+                                    fill
+                                    className="object-cover"
                                 />
                             </div>
                         </div>

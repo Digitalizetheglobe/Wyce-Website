@@ -1,6 +1,5 @@
 'use client';
 import Image from "next/image";
-import { useState } from "react";
 import { motion } from "motion/react";
 
 export default function TeamSection() {
@@ -81,8 +80,6 @@ export default function TeamSection() {
             <motion.div 
               key={index} 
               className="relative bg-[#141414] overflow-hidden shadow-lg group cursor-pointer transition-all duration-300 "
-              onMouseEnter={() => setHoveredIndex(index)}
-              onMouseLeave={() => setHoveredIndex(null)}
               variants={itemVariants}
             >
               <motion.div 

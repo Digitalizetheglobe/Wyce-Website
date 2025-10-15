@@ -1,6 +1,5 @@
 "use client";
 
-import { Cinzel } from "next/font/google";
 import { useState } from "react";
 import { motion } from "motion/react";
 

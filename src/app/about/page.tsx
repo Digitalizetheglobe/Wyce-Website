@@ -8,7 +8,6 @@ import VisionMissionSection from "./VisionMissionSection";
 import ValuesSection from "./ourvalues";
 import VerticalExpertise from "./verticalexpertise";
 import TeamSection from "./team";
-import CtaSection from "@/components/CTASection";
 import OurBuilder from "./our-builders";
 
 

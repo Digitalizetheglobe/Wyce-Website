@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import { motion } from "motion/react";
-import { Cinzel, Raleway } from "next/font/google";
+import { Raleway } from "next/font/google";
 
 
 const railway = Raleway({

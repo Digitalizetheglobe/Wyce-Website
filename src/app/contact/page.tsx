@@ -4,7 +4,6 @@ import {
     FaMapMarkerAlt,
     FaPhoneAlt,
 } from "react-icons/fa";
-import { Cinzel } from "next/font/google";
 
 
 const Contact = () => {
