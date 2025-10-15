@@ -113,9 +113,8 @@ export default function BlogPage() {
           </p>
         </div>
 
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-10 px-6 md:px-10">
-          {/* Image Section */}
-        
+        <div className="max-w-7xl mx-auto px-6 md:px-10">
+          {/* Content placeholder for future additions */}
         </div>
       </section>
       
@@ -133,7 +132,7 @@ export default function BlogPage() {
                 >
                   {/* Blog Card Image */}
                   <Link href={`/blog/${post.slug}`}>
-                    <div className="h-120 bg-gray-200 overflow-hidden cursor-pointer">
+                    <div className="relative h-64 bg-gray-200 overflow-hidden cursor-pointer">
                       <Image
                         src={post.image}
                         alt={post.title}
@@ -178,7 +177,7 @@ export default function BlogPage() {
 
             {/* Right Side - Sidebar */}
             <div className="lg:col-span-1">
-              <div className="sticky top-25 space-y-6">
+              <div className="sticky top-6 space-y-6">
               {/* Search Form */}
               <div className="bg-[#121212] shadow-md p-6">
                 <h3 className="text-xl text-white mb-4">
@@ -211,7 +210,7 @@ export default function BlogPage() {
                     <div key={post.id}>
                       <Link href={`/blog/${post.slug}`}>
                         <div className="group cursor-pointer">
-                          <h4 className="font-semibold text-[#fff] group-hover:text-[#B7AC88] transition-colors mb-1 line-clamp-2">
+                          <h4 className="font-semibold text-[#fff] group-hover:text-[#B7AC88] transition-colors mb-1 overflow-hidden" style={{display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical'}}>
                             {post.title}
                           </h4>
                           <p className="text-sm text-gray-500">{post.date}</p>
