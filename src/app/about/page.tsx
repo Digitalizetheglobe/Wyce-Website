@@ -9,6 +9,7 @@ import ValuesSection from "./ourvalues";
 import VerticalExpertise from "./verticalexpertise";
 import TeamSection from "./team";
 import CtaSection from "@/components/CTASection";
+import OurBuilder from "./our-builders";
 
 
 const About = () => {
@@ -54,6 +55,7 @@ const About = () => {
       </section>
       <HeroSection />
       <VisionMissionSection />
+      <OurBuilder />
       <ValuesSection />
       <VerticalExpertise />
       <TeamSection />

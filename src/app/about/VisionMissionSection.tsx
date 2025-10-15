@@ -74,7 +74,7 @@ export default function VisionMissionSection() {
             transition={{ duration: 0.7 }}
           >
             <Image
-              src="/images/saniket2.png"
+              src="/images/mission.jpeg"
               alt="Mission Image"
               width={600}
               height={300}
@@ -91,7 +91,7 @@ export default function VisionMissionSection() {
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              <span className="font-breathney text-[#b6a16b] ml-2"></span>, We Build Better
+              <span className="font-breathney text-[#b6a16b] ml-2">Together</span>, We Build Better
             </motion.p>
             <motion.p 
               className={`text-gray-300 leading-relaxed text-base sm:text-lg ${railway.className}`}
@@ -100,8 +100,40 @@ export default function VisionMissionSection() {
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.6, delay: 0.4 }}
             >
-              Our mission is to be a trusted Pune-based construction company, transforming industries with innovative solutions, integrity, and sustainable growth. We are committed to creating exceptional homes and communities where families can live the WYCE-crafted experience. We are built on the combined wisdom of three trusted names Parth Developers, Saniket Builders, and Balaji Group and are driven by a shared vision of quality, trust, and thoughtful living.
+              We are built on the combined wisdom of three trusted names and are driven by a shared vision of quality, trust, and thoughtful living.
             </motion.p>
+            
+            {/* Three Logos */}
+            <motion.div 
+              className="flex justify-center md:justify-start items-center gap-6 mt-8"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.6, delay: 0.6 }}
+            >
+              <Image
+                src="/images/BALAJI LOGO.png"
+                alt="Balaji Group Logo"
+                width={80}
+                height={60}
+                className="w-20 h-14 object-contain"
+              />
+              <Image
+                src="/images/SANIKET LOGO.png"
+                alt="Saniket Builders Logo"
+                width={80}
+                height={80}
+                className="w-20 h-20 object-contain"
+              />
+              <Image
+                src="/images/PARTH LOGO.png"
+                alt="Parth Developers Logo"
+                width={80}
+                height={50}
+                className="w-20 object-contain"
+                style={{ height: '50px' }}
+              />
+            </motion.div>
           </div>
         </div>
       </div>
