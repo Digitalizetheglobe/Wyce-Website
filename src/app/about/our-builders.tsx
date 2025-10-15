@@ -40,21 +40,21 @@ export default function OurBuilder() {
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          {/* Balaji Group Card */}
+          {/* Saniket Builder Card */}
           <motion.div 
             className="rounded-xl border p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.6, delay: 0.3 }}
-          >
-            <div className="flex justify-center">
-              <div className="w-35 h-35 rounded-lg flex items-center justify-center">
+          > 
+            <div className="flex justify-center mb-6">
+              <div className="w-32 h-32 rounded-lg flex items-center justify-center">
                 <Image
                   src="/images/SANIKET-LOGO.png"
-                  alt="Balaji Group Logo"
-                  width={140}
-                  height={140}
+                  alt="Saniket Builder Logo"
+                  width={120}
+                  height={120}
                   className="object-contain"
                 />
               </div>
@@ -71,7 +71,7 @@ export default function OurBuilder() {
                 href="https://saniket.in/" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="border border-2 hover:bg-[#b6a16b] text-white px-6 py-2 transition-colors duration-300 flex items-center gap-2 cursor-pointer"
+                className=" mt-5 border border-2 hover:bg-[#b6a16b] text-white px-6 py-2 transition-colors duration-300 flex items-center gap-2 cursor-pointer"
               >
                 Read More
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -90,12 +90,12 @@ export default function OurBuilder() {
                     transition={{ duration: 0.6, delay: 0.3 }}
                 >
                     <div className="flex justify-center mb-6">
-                    <div className="w-25 h-25 rounded-lg flex items-center justify-center mb-5">
+                    <div className="w-32 h-32 rounded-lg flex items-center justify-center">
                         <Image
                         src="/images/PARTH-LOGO.png"
-                        alt="Balaji Group Logo"
-                        width={110}
-                        height={90}
+                        alt="Parth Developer Logo"
+                        width={120}
+                        height={120}
                         className="object-contain"
                         />
                     </div>
@@ -129,12 +129,12 @@ export default function OurBuilder() {
             transition={{ duration: 0.6, delay: 0.3 }}
           >
             <div className="flex justify-center mb-6">
-              <div className="w-30 h-30 rounded-lg flex items-center justify-center">
+              <div className="w-32 h-32 rounded-lg flex items-center justify-center">
                 <Image
                   src="/images/BALAJI-LOGO.png"
                   alt="Balaji Group Logo"
-                  width={110}
-                  height={110}
+                  width={120}
+                  height={120}
                   className="object-contain"
                 />
               </div>

@@ -1,8 +1,12 @@
 "use client";
 import Image from "next/image";
 import { motion } from "motion/react";
-import { Raleway } from "next/font/google";
+import { Cinzel, Raleway } from "next/font/google";
 
+const cinzel = Cinzel({
+  subsets: ["latin"],
+  weight: "400",
+});
 
 const railway = Raleway({
   subsets: ["latin"],
@@ -96,40 +100,8 @@ export default function VisionMissionSection() {
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.6, delay: 0.4 }}
             >
-              We are built on the combined wisdom of three trusted names and are driven by a shared vision of quality, trust, and thoughtful living.
+              Our mission is to be a trusted Pune-based construction company, transforming industries with innovative solutions, integrity, and sustainable growth. We are committed to creating exceptional homes and communities where families can live the WYCE-crafted experience. We are built on the combined wisdom of three trusted names Parth Developers, Saniket Builders, and Balaji Group and are driven by a shared vision of quality, trust, and thoughtful living.
             </motion.p>
-            
-            {/* Three Logos */}
-            <motion.div 
-              className="flex justify-center md:justify-start items-center gap-6 mt-8"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.3 }}
-              transition={{ duration: 0.6, delay: 0.6 }}
-            >
-              <Image
-                src="/images/BALAJI LOGO.png"
-                alt="Balaji Group Logo"
-                width={80}
-                height={60}
-                className="w-20 h-14 object-contain"
-              />
-              <Image
-                src="/images/SANIKET LOGO.png"
-                alt="Saniket Builders Logo"
-                width={80}
-                height={80}
-                className="w-20 h-20 object-contain"
-              />
-              <Image
-                src="/images/PARTH LOGO.png"
-                alt="Parth Developers Logo"
-                width={80}
-                height={50}
-                className="w-20 object-contain"
-                style={{ height: '50px' }}
-              />
-            </motion.div>
           </div>
         </div>
       </div>
