@@ -132,7 +132,7 @@ export default function BlogPage() {
                 >
                   {/* Blog Card Image */}
                   <Link href={`/blog/${post.slug}`}>
-                    <div className="relative h-64 bg-gray-200 overflow-hidden cursor-pointer">
+                    <div className="relative h-120 bg-gray-200 overflow-hidden cursor-pointer">
                       <Image
                         src={post.image}
                         alt={post.title}
