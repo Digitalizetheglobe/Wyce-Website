@@ -90,7 +90,6 @@ export default function PhotoSection() {
             behavior: 'smooth'
           });
         }
-        setHasScrolled(true);
       }
     }, 2000); // Auto-scroll every 2 seconds
 
@@ -99,7 +98,6 @@ export default function PhotoSection() {
 
   const handleUserInteraction = () => {
     setIsUserInteracting(true);
-    setHasScrolled(true);
     
     // Clear existing timeout
     if (userInteractionTimeoutRef.current) {
@@ -113,7 +111,6 @@ export default function PhotoSection() {
   };
 
   const handleScroll = () => {
-    setHasScrolled(true);
     handleUserInteraction();
   };
 
