@@ -10,12 +10,6 @@ const cinzel = Cinzel({
 });
 
 export default function ContactSection() {
-  const [formData, setFormData] = useState({
-    firstName: "",
-    phone: "",
-    email: "",
-    message: "",
-  });
   
 
   return (

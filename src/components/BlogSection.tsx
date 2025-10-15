@@ -101,7 +101,6 @@ export default function BlogSection() {
             behavior: 'smooth'
           });
         }
-        setHasScrolled(true);
       }
     }, 2000); // Auto-scroll every 2 seconds
 
@@ -124,7 +123,6 @@ export default function BlogSection() {
   };
 
   const handleScroll = () => {
-    setHasScrolled(true);
     handleUserInteraction();
   };
 

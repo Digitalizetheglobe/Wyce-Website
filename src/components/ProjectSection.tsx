@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import { Cinzel } from "next/font/google";
 import { motion } from "motion/react";
 
 
