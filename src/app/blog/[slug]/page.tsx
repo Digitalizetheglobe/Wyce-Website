@@ -1,6 +1,7 @@
 import React from "react";
 import { Calendar, Tag, ArrowLeft } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 import BlogSidebar from "@/app/blog/[slug]/BlogSidebar";
 
 // Blog content data
@@ -244,11 +245,12 @@ export default async function BlogPostPage({
           <div className="lg:col-span-2">
             <article className="bg-[#121212] overflow-hidden">
               {/* Featured Image */}
-              <div className="h-96 bg-gray-800 overflow-hidden mb-8">
-                <img
+              <div className="h-96 bg-gray-800 overflow-hidden mb-8 relative">
+                <Image
                   src={post.image}
                   alt={post.title}
-                  className="w-full h-full object-cover"
+                  fill
+                  className="object-cover"
                 />
               </div>
 

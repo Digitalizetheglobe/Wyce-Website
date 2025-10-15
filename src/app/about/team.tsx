@@ -4,7 +4,6 @@ import { useState } from "react";
 import { motion } from "motion/react";
 
 export default function TeamSection() {
-  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   const team = [
     {

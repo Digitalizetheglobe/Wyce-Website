@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 
 export default function AmenitiesSection() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -138,10 +139,12 @@ export default function AmenitiesSection() {
               className="bg-[#887f65] rounded-lg shadow-lg p-3 flex items-center gap-4 hover:shadow-xl transition-shadow duration-300 w-full max-w-md"
             >
               <div className="flex-shrink-0">
-                <img
+                <Image
                   src={amenity.icon}
                   alt={amenity.text}
-                  className="w-16 h-16 object-contain"
+                  width={64}
+                  height={64}
+                  className="object-contain"
                 />
               </div>
               <span className="text-white font-bold text-lg">

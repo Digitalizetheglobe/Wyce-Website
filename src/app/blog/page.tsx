@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { Search } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 // Blog posts data
 const blogPosts = [
@@ -133,10 +134,11 @@ export default function BlogPage() {
                   {/* Blog Card Image */}
                   <Link href={`/blog/${post.slug}`}>
                     <div className="h-120 bg-gray-200 overflow-hidden cursor-pointer">
-                      <img
+                      <Image
                         src={post.image}
                         alt={post.title}
-                        className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                        fill
+                        className="object-cover hover:scale-105 transition-transform duration-300"
                       />
                     </div>
                   </Link>

@@ -1,13 +1,8 @@
 "use client";
 import React from "react";
 import { Cinzel } from "next/font/google";
-import CTASection from '@/components/CTASection';
 import { motion } from "framer-motion";
 
-const cinzel = Cinzel({
-  subsets: ["latin"],
-  weight: "400",
-});
 
 // Animation variants
 const fadeInUp = {

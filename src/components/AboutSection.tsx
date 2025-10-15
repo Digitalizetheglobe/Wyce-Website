@@ -1,14 +1,8 @@
 "use client";
 
-import Image from "next/image";
-import Link from "next/link";
 import { Cinzel } from "next/font/google";
 import { motion } from "motion/react";
 
-const cinzel = Cinzel({
-  subsets: ["latin"],
-  weight: ["400", "700"],
-});
 
 export default function AboutSection() {
   return (

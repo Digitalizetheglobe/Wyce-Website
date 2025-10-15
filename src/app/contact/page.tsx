@@ -3,17 +3,9 @@ import React, { useState } from "react";
 import {
     FaMapMarkerAlt,
     FaPhoneAlt,
-    FaFacebookF,
-    FaTwitter,
-    FaInstagram,
-    FaYoutube,
 } from "react-icons/fa";
 import { Cinzel } from "next/font/google";
 
-const cinzel = Cinzel({
-    subsets: ["latin"],
-    weight: "400",
-});
 
 const Contact = () => {
     const [formData, setFormData] = useState({

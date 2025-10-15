@@ -1,5 +1,4 @@
 "use client";
-import Image from "next/image";
 import { motion } from "motion/react";
 import { useEffect, useRef, useState } from "react";
 
@@ -30,8 +29,9 @@ function AnimatedCounter({ end, duration = 2000, suffix = "", decimals = 0 }: Co
     }
 
     return () => {
-      if (counterRef.current) {
-        observer.unobserve(counterRef.current);
+      const currentRef = counterRef.current;
+      if (currentRef) {
+        observer.unobserve(currentRef);
       }
     };
   }, []);

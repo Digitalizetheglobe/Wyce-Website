@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import phoneBg from '../../public/images/phone.jpg'
 import tabBg from '../../public/images/tab.jpg'
 import laptopBg from '../../public/images/laptop.jpg'

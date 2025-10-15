@@ -32,7 +32,7 @@ export default function TermsConditionsPage() {
             <div className="mb-8">
               <h2 className="text-xl md:text-2xl font-bold text-white mb-6">TERMS OF WEBSITE USE</h2>
               <p className="text-gray-300 leading-relaxed mb-4">
-                These terms of use (together with the documents referred therein) set out the terms on which you may make use of our website https://www.wycecorp.com/, and any other website or mobile application operated by us ("Our Sites"), whether as a guest or a registered user. Use of Our Sites includes accessing, browsing or registering to use Our Sites. By proceeding to view Our Sites or any part of it, you acknowledge that you have read, understood and accepted these terms which shall constitute the entire binding agreement between you and WYCE Corp. These terms may be varied by WYCE Corp from time to time and the revised terms will be deemed to apply at the relevant time in respect of your registration and/or use of Our Sites.
+                These terms of use (together with the documents referred therein) set out the terms on which you may make use of our website https://www.wycecorp.com/, and any other website or mobile application operated by us (&quot;Our Sites&quot;), whether as a guest or a registered user. Use of Our Sites includes accessing, browsing or registering to use Our Sites. By proceeding to view Our Sites or any part of it, you acknowledge that you have read, understood and accepted these terms which shall constitute the entire binding agreement between you and WYCE Corp. These terms may be varied by WYCE Corp from time to time and the revised terms will be deemed to apply at the relevant time in respect of your registration and/or use of Our Sites.
               </p>
               <p className="text-gray-300 leading-relaxed">
                 Please read these terms carefully before you start to use Our Sites, as these will apply to your use of Our Sites. If you do not agree to these terms, you must not use Our Sites.
@@ -176,7 +176,7 @@ export default function TermsConditionsPage() {
             <div className="mb-8">
               <h2 className="text-xl md:text-2xl font-bold text-white mb-4">About Us</h2>
               <p className="text-gray-300 leading-relaxed mb-4">
-                https://www.wycecorp.com/ is a site operated by Saniket Group, Balaji Group and Parth Group of companies (that is, its affiliates, subsidiaries, ultimate holding company and its subsidiaries) ("we", "our", "us", or "WYCE Corp").
+                https://www.wycecorp.com/ is a site operated by Saniket Group, Balaji Group and Parth Group of companies (that is, its affiliates, subsidiaries, ultimate holding company and its subsidiaries) (&quot;we&quot;, &quot;our&quot;, &quot;us&quot;, or &quot;WYCE Corp&quot;).
               </p>
             </div>
 

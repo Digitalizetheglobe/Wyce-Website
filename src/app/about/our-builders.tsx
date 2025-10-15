@@ -1,17 +1,6 @@
 "use client";
 import Image from "next/image";
 import { motion } from "motion/react";
-import { Cinzel, Raleway } from "next/font/google";
-
-const cinzel = Cinzel({
-  subsets: ["latin"],
-  weight: "400",
-});
-
-const railway = Raleway({
-  subsets: ["latin"],
-  weight: "300",
-});
 export default function OurBuilder() {
   return (
     <section className={`bg-[#0d0d0d] text-white py-10 px-6 sm:px-12 lg:px-20 `}>

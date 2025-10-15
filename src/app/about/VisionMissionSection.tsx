@@ -3,10 +3,6 @@ import Image from "next/image";
 import { motion } from "motion/react";
 import { Cinzel, Raleway } from "next/font/google";
 
-const cinzel = Cinzel({
-  subsets: ["latin"],
-  weight: "400",
-});
 
 const railway = Raleway({
   subsets: ["latin"],

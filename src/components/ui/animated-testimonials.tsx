@@ -36,7 +36,7 @@ export const AnimatedTestimonials = ({
       const interval = setInterval(handleNext, 5000);
       return () => clearInterval(interval);
     }
-  }, [autoplay]);
+  }, [autoplay, handleNext]);
 
   const getRotateValue = (index: number) => {
     const rotations = [-8, 15, 26, -2, 1, 5, 7, -9, 6, -1];

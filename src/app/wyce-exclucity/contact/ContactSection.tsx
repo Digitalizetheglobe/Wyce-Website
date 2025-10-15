@@ -3,7 +3,6 @@
 import { Cinzel } from "next/font/google";
 import { useState } from "react";
 import { motion } from "framer-motion";
-import Image from "next/image";
 
 const cinzel = Cinzel({
   subsets: ["latin"],
@@ -18,17 +17,6 @@ export default function ContactSection() {
     message: "",
   });
   
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState<{
-    type: "success" | "error" | null;
-    message: string;
-  }>({ type: null, message: "" });
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
-  };
-
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);

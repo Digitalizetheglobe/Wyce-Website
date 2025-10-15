@@ -5,7 +5,6 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 
 export default function PricesSection() {
-  const [showModal, setShowModal] = useState(false);
 
   const homes = [
     {

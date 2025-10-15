@@ -3,9 +3,7 @@ import Hero from "./hero/Herosection";
 import AboutProject from "./about/aboutsection";
 import VideoSection from "./video/VideoSection";
 import AmenitiesCarousel from "./amenties/Amenities";
-import PricesSection from "./price/PriceSection";
 import Gallery from "./gallery/GallerySection";
-import CtaSection from "./CTA/CtaSection";
 
 
 export const metadata = {

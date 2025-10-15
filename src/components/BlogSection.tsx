@@ -67,7 +67,6 @@ const blogCards = [
 export default function BlogSection() {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const [isUserInteracting, setIsUserInteracting] = useState(false);
-  const [hasScrolled, setHasScrolled] = useState(false);
   const [isMounted, setIsMounted] = useState(false);
   const userInteractionTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 

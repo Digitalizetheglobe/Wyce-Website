@@ -30,8 +30,9 @@ function AnimatedCounter({ end, duration = 2000, suffix = "", decimals = 0 }: Co
     }
 
     return () => {
-      if (counterRef.current) {
-        observer.unobserve(counterRef.current);
+      const currentRef = counterRef.current;
+      if (currentRef) {
+        observer.unobserve(currentRef);
       }
     };
   }, []);

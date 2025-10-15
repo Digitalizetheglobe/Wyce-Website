@@ -3,12 +3,7 @@
 import { Cinzel } from "next/font/google";
 import { useState } from "react";
 import { motion } from "motion/react";
-import Image from "next/image";
 
-const cinzel = Cinzel({
-  subsets: ["latin"],
-  weight: "400",
-});
 
 export default function ContactSection() {
   const [formData, setFormData] = useState({

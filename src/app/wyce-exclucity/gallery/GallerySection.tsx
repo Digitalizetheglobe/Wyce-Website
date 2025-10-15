@@ -1,5 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 export default function Gallery() {
   return (
@@ -38,10 +39,11 @@ export default function Gallery() {
             viewport={{ once: true, amount: 0.2 }}
           >
             <a className="group relative flex flex-col overflow-hidden rounded-lg px-4 pb-4 pt-40 flex-grow">
-              <img
-                src="../images/landing-page/gallery/g1.jpg"
-                alt=""
-                className="absolute inset-0 h-full w-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out"
+              <Image
+                src="/images/landing-page/gallery/g1.jpg"
+                alt="Gallery image 1"
+                fill
+                className="object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out"
               />
               <div className="absolute inset-0 bg-gradient-to-b from-gray-900/25 to-gray-900/5"></div>
             </a>
@@ -56,10 +58,11 @@ export default function Gallery() {
             viewport={{ once: true, amount: 0.2 }}
           >
             <a className="group relative flex flex-col overflow-hidden rounded-lg px-4 pb-4 pt-40 mb-4">
-              <img
-                src="../images/landing-page/gallery/g2.jpg"
-                alt=""
-                className="absolute inset-0 h-full w-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out"
+              <Image
+                src="/images/landing-page/gallery/g2.jpg"
+                alt="Gallery image 2"
+                fill
+                className="object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out"
               />
               <div className="absolute inset-0 bg-gradient-to-b from-gray-900/25 to-gray-900/5"></div>
             </a>
@@ -72,10 +75,11 @@ export default function Gallery() {
                 transition={{ delay: 0.3, duration: 0.6 }}
                 viewport={{ once: true, amount: 0.2 }}
               >
-                <img
-                  src="../images/landing-page/gallery/g3.jpg"
-                  alt=""
-                  className="absolute inset-0 h-full w-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out"
+                <Image
+                  src="/images/landing-page/gallery/g3.jpg"
+                  alt="Gallery image 3"
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out"
                 />
                 <div className="absolute inset-0 bg-gradient-to-b from-gray-900/25 to-gray-900/5"></div>
               </motion.a>
@@ -87,10 +91,11 @@ export default function Gallery() {
                 transition={{ delay: 0.4, duration: 0.6 }}
                 viewport={{ once: true, amount: 0.2 }}
               >
-                <img
-                  src="../images/landing-page/gallery/g4.jpg"
-                  alt=""
-                  className="absolute inset-0 h-full w-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out"
+                <Image
+                  src="/images/landing-page/gallery/g4.jpg"
+                  alt="Gallery image 4"
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out"
                 />
                 <div className="absolute inset-0 bg-gradient-to-b from-gray-900/25 to-gray-900/5"></div>
               </motion.a>
@@ -106,10 +111,11 @@ export default function Gallery() {
             viewport={{ once: true, amount: 0.2 }}
           >
             <a className="group relative flex flex-col overflow-hidden rounded-lg px-4 pb-4 pt-40 flex-grow">
-              <img
-                src="../images/landing-page/gallery/g5.jpg"
-                alt=""
-                className="absolute inset-0 h-full w-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out"
+              <Image
+                src="/images/landing-page/gallery/g5.jpg"
+                alt="Gallery image 5"
+                fill
+                className="object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out"
               />
               <div className="absolute inset-0 bg-gradient-to-b from-gray-900/25 to-gray-900/5"></div>
             </a>

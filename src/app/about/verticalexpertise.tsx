@@ -1,7 +1,6 @@
 'use client';
 import Image from "next/image";
 import { motion } from "motion/react";
-import { Cinzel } from "next/font/google";
 
 export default function VerticalExpertise() {
   const containerVariants = {
