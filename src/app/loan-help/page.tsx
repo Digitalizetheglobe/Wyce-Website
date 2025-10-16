@@ -13,7 +13,9 @@ export default function BlogPage() {
       <section className="w-full text-white py-10 md:py-16 bg-[#0a0a0a] border-b border-white/20 ">
         {/* Header Section */}
         <div className="text-center max-w-2xl mx-auto mb-10">
-          <h2 className="text-2xl md:text-3xl font-semibold mb-3">Loan Help</h2>
+          <h2 className="text-2xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold mb-3 sm:mb-4">
+            <span className="font-breathney text-[#b6a16b] mr-1 sm:mr-2 text-[20px] sm:text-2xl md:text-2xl lg:text-2xl">Loan</span>Help
+          </h2>
           <p className="text-gray-200 text-sm md:text-base">
             At WYCE Corp, we believe a home is more than bricks and beams
             it&apos;s the space where your most beautiful moments begin.
@@ -29,7 +31,7 @@ export default function BlogPage() {
       {/* Loan Help Section */}
       <section className="w-full bg-black text-white py-16">
         <div className="max-w-7xl mx-auto px-6">
-          <h1 className="text-4xl md:text-5xl font-bold mb-8">Loan Help</h1>
+          <h1 className="text-4xl md:text-4xl font-bold mb-8">Loan Help</h1>
           
           <p className="text-lg leading-relaxed mb-8">
             If you are a Non-Resident Indian (NRI), acquiring a home loan in India can be a confusing process. Here is some information to help you understand the process.

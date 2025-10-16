@@ -38,7 +38,7 @@ export default function Footer() {
           </div>
 
           {/* Center Section - Links */}
-          <div className="flex flex-col items-start md:items-center space-y-3 px-6">
+          <div className="flex flex-col items-center md:items-center space-y-3 px-6">
             {[
               { name: "Our Story", href: "/" },
               { name: "About Us", href: "/about" },
@@ -74,7 +74,7 @@ export default function Footer() {
               href="https://maps.google.com/?q=Wyce+Exclucity,+CEC+Office,+Siddharth+Nagar,+Bavdhan,+Pune,+Maharashtra+411021"
               target="_blank"
               rel="noopener noreferrer"
-              className="block hover:text-[#B7AC88] transition-colors"
+              className="block hover:text-[#B7AC88] transition-colors text-center"
             >
               WYCE  Exclucity, CEC Office, <br />Siddharth Nagar, Bavdhan, <br />Pune, Maharashtra 411021
             </a>

@@ -60,8 +60,10 @@ export default function FAQPage() {
       <section className="w-full text-white py-10 md:py-16 bg-[#0a0a0a] border-b border-white/20">
         {/* Header Section */}
         <div className="text-center max-w-2xl mx-auto mb-10">
-          <h2 className="text-2xl md:text-3xl font-semibold mb-3">Quick Facts</h2>
-          <p className="text-gray-200 text-sm md:text-base">
+          <h2 className="text-2xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold mb-3 sm:mb-4">
+            <span className="font-breathney text-[#b6a16b] mr-1 sm:mr-2 text-[20px] sm:text-xl md:text-xl lg:text-2xl">Quick</span>Facts
+          </h2>
+                    <p className="text-gray-200 text-sm md:text-base">
             At WYCE Corp, we believe a home is more than bricks and beams 
             it&apos;s the space where your most beautiful moments begin.
           </p>

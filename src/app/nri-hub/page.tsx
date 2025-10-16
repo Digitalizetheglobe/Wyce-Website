@@ -12,9 +12,11 @@ export default function BlogPage() {
 
       <section className="w-full text-white py-10 md:py-16 bg-[#0a0a0a] border-b border-white/20 ">
         {/* Header Section */}
-        <div className="text-center max-w-2xl mx-auto mb-10">
-          <h2 className="text-2xl md:text-3xl font-semibold mb-3">NRI <span className="font-breathney text-[#b6a16b] ml-2 text-xl">INVESTMENT</span></h2>
-          <p className="text-gray-200 text-sm md:text-base">
+        <div className="text-center max-w-2xl mx-auto mb-8 sm:mb-10 px-4 sm:px-6">
+          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold mb-3 sm:mb-4">
+            NRI <span className="font-breathney text-[#b6a16b] ml-1 sm:ml-2 text-[12px] sm:text-xl md:text-xl lg:text-xl">INVESTMENT</span>
+          </h2>
+          <p className="text-gray-200 text-sm sm:text-base md:text-lg leading-relaxed">
             WYCE Corp Bringing you closer to home, wherever you are.
           </p>
         </div>
@@ -31,7 +33,7 @@ export default function BlogPage() {
           
           {/* NRI Investment Section */}
           <div className="mb-12">
-            <h1 className="text-3xl md:text-4xl font-bold mb-6">NRI Property <span className="font-breathney text-[#b6a16b]">Investment</span></h1>
+            <h1 className="text-3xl md:text-4xl font-bold mb-6">NRI Property <span className="font-breathney text-[#b6a16b] text-2xl">Investment</span></h1>
             
             <div className="space-y-6 text-base leading-relaxed">
               <p>
