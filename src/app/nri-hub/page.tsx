@@ -33,7 +33,7 @@ export default function BlogPage() {
           
           {/* NRI Investment Section */}
           <div className="mb-12">
-            <h1 className="text-3xl md:text-4xl font-bold mb-6">NRI Property <span className="font-breathney text-[#b6a16b] text-2xl">Investment</span></h1>
+            <h1 className="text-3xl md:text-4xl font-bold mb-6">NRI Property <span className="font-breathney text-[#b6a16b] text-xl">INVESTMENT</span></h1>
             
             <div className="space-y-6 text-base leading-relaxed">
               <p>

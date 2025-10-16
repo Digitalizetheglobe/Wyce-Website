@@ -12,7 +12,7 @@ export default function Footer() {
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-4">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start border-b border-[#B7AC88]/60 pb-10 md:divide-x-2 md:divide-[#B7AC88]/60">
           {/* Left Section - Logo & Social */}
-          <div className="flex flex-col items-center space-y-6">
+          <div className="flex flex-col items-left space-y-6">
             <div>
               <Image src={footer} alt="WYCE" width={150} height={150} />
 
@@ -29,7 +29,7 @@ export default function Footer() {
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-9 h-12 flex items-center justify-center rounded-md text-white hover:text-[#B7AC88]  transition-colors "
+                  className="w-9 h-12 flex items-left justify-left rounded-md text-white hover:text-[#B7AC88]  transition-colors "
                 >
                   <i className={`fab ${social.icon} text-2xl`}></i>
                 </a>
@@ -37,8 +37,8 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Center Section - Links */}
-          <div className="flex flex-col items-center md:items-center space-y-3 px-6">
+          {/* left Section - Links */}
+          <div className="flex flex-col items-left md:items-left space-y-3 px-6">
             {[
               { name: "Our Story", href: "/" },
               { name: "About Us", href: "/about" },
@@ -57,7 +57,7 @@ export default function Footer() {
 
 
           {/* Right Section - Contact */}
-          <div className="space-y-3 text-lg text-white flex flex-col items-center">
+          <div className="space-y-3 text-lg text-white flex flex-col items-left">
             <a 
               href="tel:+917549799799" 
               className="block hover:text-[#B7AC88] transition-colors"
@@ -74,7 +74,7 @@ export default function Footer() {
               href="https://maps.google.com/?q=Wyce+Exclucity,+CEC+Office,+Siddharth+Nagar,+Bavdhan,+Pune,+Maharashtra+411021"
               target="_blank"
               rel="noopener noreferrer"
-              className="block hover:text-[#B7AC88] transition-colors text-center"
+              className="block hover:text-[#B7AC88] transition-colors text-left"
             >
               WYCE  Exclucity, CEC Office, <br />Siddharth Nagar, Bavdhan, <br />Pune, Maharashtra 411021
             </a>
@@ -82,7 +82,7 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="flex flex-col sm:flex-row justify-between items-center text-sm text-white mt-4 space-y-2 sm:space-y-0">
+        <div className="flex flex-col sm:flex-row justify-between items-left text-sm text-white mt-4 space-y-2 sm:space-y-0">
           <div>
             ©2025 WYCE Exclucity. All Rights Reserved.
           </div>
