@@ -89,7 +89,7 @@ export default function AmenitiesSection() {
   };
   // Exactly 12 amenities as shown in the image
   const amenities = [
-    { icon: "/images/landing-page/icons/wyce_icons[1]-01.svg", text: "Cricket Practise Pitch" },
+    { icon: "/images/landing-page/icons/wyce_icons[1]-01.svg", text: "Practise Pitch" },
     { icon: "/images/landing-page/icons/wyce_icons[1]-02.svg", text: "Dual Indoor Badminton Courts" },
     { icon: "/images/landing-page/icons/wyce_icons[1]-03.svg", text: "Paw Park" },
     { icon: "/images/landing-page/icons/wyce_icons[1]-04.svg", text: "Theatrum" },
