@@ -8,7 +8,7 @@ export default function PrivacyPolicyPage() {
       {/* Header Section */}
       <section className="w-full text-white py-10 md:py-6 bg-[#0a0a0a] border-b border-white/20" >
         <div className="text-center max-w-2xl mx-auto mb-10">
-          <h2 className="text-2xl md:text-3xl font-semibold mb-3  ">Privacy Policy</h2>
+          <h1 className="text-2xl md:text-3xl font-semibold mb-3  ">Privacy Policy</h1>
           <p className="text-gray-200 text-sm md:text-base">
             Learn how WYCE protects and manages your personal information
           </p>
