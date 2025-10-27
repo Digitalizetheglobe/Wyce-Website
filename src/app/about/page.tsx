@@ -1,64 +1,32 @@
-"use client";
-// import Image from "next/image";
-// import Link from "next/link";
 import React from "react";
-import { motion } from "motion/react";
 import HeroSection from "./about";
 import VisionMissionSection from "./VisionMissionSection";
 import ValuesSection from "./ourvalues";
 import VerticalExpertise from "./verticalexpertise";
 import TeamSection from "./team";
 import OurBuilder from "./our-builders";
+import AnimatedHeader from "./AnimatedHeader";
+import { Metadata } from "next";
 
+export const metadata: Metadata = {
+  title: "WYCE Corp – Real estate company in Pune",
+  description: "Discover your dream property with WYCE Corp, Pune's leading real estate developer. Explore premium projects, elegant spaces, and trusted real estate services today!",
+  keywords: "flats in pune, luxury flats in pune, 2 bhk flat in pune, 3 bhk flats in pune, flats for sale in pune, 4 bhk flats in pune, buy flat in pune, flats in Bavdhan, luxury flats in pune, Real Estate Developer",
+  alternates: {
+    canonical: "https://www.wycecorp.com/about"
+  }
+};
 
 const About = () => {
   return (
     <>
-      <section className="w-full text-white py-10 md:py-16 bg-[#0a0a0a] border-b border-white/20">
-        {/* Header Section */}
-        <div className="text-center max-w-3xl mx-auto mb-10">
-          <motion.h2 
-            className="text-2xl md:text-3xl font-semibold mb-3"
-            initial={{ opacity: 0, y: -30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.6 }}
-          >
-            About<span className="font-breathney text-[#b6a16b] ml-2">Us</span> 
-          </motion.h2>
-          <motion.div 
-            className="text-gray-200 text-sm md:text-base sm:w-100 md:w-200  px-10"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-          >
-            <p>
-              At WYCE Corp, we believe true greatness is never built alone.
-              It&apos;s the result of shared values, complementary strengths, and a common dream to create something enduring.
-
-              Born from the union of three trusted names in real estate, WYCE Corp represents a new era of collaboration where experience meets innovation, and legacy meets vision.
-
-              &ldquo;Greater Together&rdquo; is more than our philosophy it&apos;s our foundation. It reflects the spirit of partnership that drives every decision, every design, and every development we create.
-
-              Together, we are building not just homes, but experiences.
-              Not just landmarks, but legacies that redefine Pune&apos;s skyline and its way of living.
-            </p>
-          </motion.div>
-        </div>
-
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-10 px-6 md:px-10">
-          {/* Image Section */}
-        
-        </div>
-      </section>
+      <AnimatedHeader />
       <HeroSection />
       <VisionMissionSection />
       <OurBuilder />
       <ValuesSection />
       <VerticalExpertise />
       <TeamSection />
-
     </>
   );
 };
