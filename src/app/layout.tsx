@@ -13,6 +13,12 @@ export const metadata: Metadata = {
   },
   verification: {
     google: "Pz5HyQPGT_xgsSYscV6Dx3WRIP2QGsx8BiDUslcveKc"
+  },
+  robots: "index, follow",
+  authors: [{ name: "WYCE Corp" }],
+  publisher: "WYCE Corp",
+  alternates: {
+    canonical: "https://www.wycecorp.com/"
   }
 };
 
@@ -43,12 +49,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <head>
-        <meta name="robots" content="index, follow" />
-        <meta name="google-site-verification" content="Pz5HyQPGT_xgsSYscV6Dx3WRIP2QGsx8BiDUslcveKc" />
-        <link rel="canonical" href="https://www.wycecorp.com/" />
-        
-        {/* Google tag (gtag.js) */}
+      <body
+        className={`${raleway.variable} ${cinzel.variable} ${greatVibes.variable} font-cinzel antialiased`}
+        suppressHydrationWarning={true}
+      >
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-K6VG584275"></script>
         <script
           dangerouslySetInnerHTML={{
@@ -60,7 +64,6 @@ export default function RootLayout({
             `,
           }}
         />
-        
         <link
           rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
@@ -89,11 +92,6 @@ export default function RootLayout({
             })
           }}
         />
-      </head>
-      <body
-        className={`${raleway.variable} ${cinzel.variable} ${greatVibes.variable} font-cinzel antialiased`}
-        suppressHydrationWarning={true}
-      >
         <Header />
         <main>{children}</main>
         <Footer />

@@ -5,7 +5,12 @@ export const metadata: Metadata = {
   title: "Apply for NRI Home Loan in India",
   description: "Explore NRI home loan solutions tailored for you. Apply today to benefit from attractive interest rates and easy processing for your property in India.",
   keywords: "NRI Home Loan India, Home Loan for NRI, NRI Housing Loan Eligibility, NRI Home Loan Documents, NRI Loan Interest Rates, RBI Rules for NRI Home Loan, NRI Property Loan India, NRI Home Loan Process, Apply NRI Home Loan Online, NRI Home Loan Requirements",
-
+  robots: "index, follow",
+  authors: [{ name: "WYCE Corp" }],
+  publisher: "WYCE Corp",
+  alternates: {
+    canonical: "https://www.wycecorp.com/loan-help"
+  }
 };
 
 export default function BlogPage() {
