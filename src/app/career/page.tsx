@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 
@@ -15,8 +15,336 @@ const fadeInUp = {
 };
 
 const Career = () => {
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [showThankYou, setShowThankYou] = useState(false);
+    const [formData, setFormData] = useState({
+        name: "",
+        email: "",
+        phone: "",
+        message: "",
+        position: "",
+        resume: null as File | null
+    });
+    const [errors, setErrors] = useState<Record<string, string>>({});
+
+    const handleApplyNow = (position: string) => {
+        setFormData(prev => ({ ...prev, position }));
+        setIsModalOpen(true);
+        setErrors({});
+    };
+
+    const handleCloseModal = () => {
+        setIsModalOpen(false);
+        setFormData({
+            name: "",
+            email: "",
+            phone: "",
+            message: "",
+            position: "",
+            resume: null
+        });
+        setErrors({});
+    };
+
+    const validateForm = () => {
+        const newErrors: Record<string, string> = {};
+
+        // Name validation
+        if (!formData.name.trim()) {
+            newErrors.name = "Name is required";
+        }
+
+        // Email validation
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!formData.email.trim()) {
+            newErrors.email = "Email is required";
+        } else if (!emailRegex.test(formData.email)) {
+            newErrors.email = "Please enter a valid email address";
+        }
+
+        // Phone validation
+        const phoneRegex = /^\d+$/;
+        if (!formData.phone.trim()) {
+            newErrors.phone = "Phone number is required";
+        } else if (!phoneRegex.test(formData.phone)) {
+            newErrors.phone = "Phone number must contain only digits";
+        } else if (formData.phone.length !== 10) {
+            newErrors.phone = "Phone number must be exactly 10 digits";
+        }
+
+        // Message validation
+        if (!formData.message.trim()) {
+            newErrors.message = "Message is required";
+        }
+
+        // Resume validation
+        if (!formData.resume) {
+            newErrors.resume = "Resume is required";
+        }
+
+        setErrors(newErrors);
+        return Object.keys(newErrors).length === 0;
+    };
+
+    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+        const { name, value } = e.target;
+        // For phone field, only allow digits
+        if (name === "phone") {
+            const digitsOnly = value.replace(/\D/g, "");
+            setFormData(prev => ({ ...prev, [name]: digitsOnly }));
+        } else {
+            setFormData(prev => ({ ...prev, [name]: value }));
+        }
+        // Clear error for this field when user starts typing
+        if (errors[name]) {
+            setErrors(prev => ({ ...prev, [name]: "" }));
+        }
+    };
+
+    const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const file = e.target.files?.[0];
+        
+        // Clear previous errors and file if no file selected
+        if (!file) {
+            setFormData(prev => ({ ...prev, resume: null }));
+            return;
+        }
+        
+        // Check file size (5MB max)
+        if (file.size > 5 * 1024 * 1024) {
+            setErrors(prev => ({ ...prev, resume: "File size must be less than 5MB" }));
+            setFormData(prev => ({ ...prev, resume: null }));
+            return;
+        }
+        
+        // Check file type
+        const allowedTypes = ['.pdf', '.doc', '.docx'];
+        const fileExtension = file.name.toLowerCase().substring(file.name.lastIndexOf('.'));
+        if (!allowedTypes.includes(fileExtension)) {
+            setErrors(prev => ({ ...prev, resume: "Only PDF, DOC, and DOCX files are allowed" }));
+            setFormData(prev => ({ ...prev, resume: null }));
+            return;
+        }
+        
+        // Valid file
+        setFormData(prev => ({ ...prev, resume: file }));
+        setErrors(prev => ({ ...prev, resume: "" }));
+    };
+
+    const handleSubmit = (e: React.FormEvent) => {
+        e.preventDefault();
+        if (validateForm()) {
+            // Here you would typically send the data to your backend
+            console.log("Form submitted:", formData);
+            
+            // Show thank you message
+            setIsModalOpen(false);
+            setShowThankYou(true);
+            
+            // Reset form after 3 seconds
+            setTimeout(() => {
+                setShowThankYou(false);
+                setFormData({
+                    name: "",
+                    email: "",
+                    phone: "",
+                    message: "",
+                    position: "",
+                    resume: null
+                });
+            }, 3000);
+        }
+    };
+
     return (
         <div className="w-full bg-black text-white">
+            {/* Thank You Modal */}
+            {showThankYou && (
+                <div className="fixed inset-0 bg-black/70 flex items-center justify-center z-50">
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        className="bg-[#121212] border border-[#B7AC88] rounded-lg p-8 max-w-md mx-4 text-center"
+                    >
+                        <div className="mb-4">
+                            <svg className="w-16 h-16 mx-auto text-[#B7AC88]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                            </svg>
+                        </div>
+                        <h3 className="text-2xl font-bold text-white mb-2">Thank You!</h3>
+                        <p className="text-gray-300">
+                            We have received your application. Our team will review it and get back to you soon.
+                        </p>
+                    </motion.div>
+                </div>
+            )}
+
+            {/* Application Modal */}
+            {isModalOpen && (
+                <div className="fixed inset-0 bg-black/70 flex items-center justify-center z-50 p-4 overflow-y-auto">
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        className="bg-[#121212] border border-[#A5A5A5] rounded-lg max-w-2xl w-full max-h-[90vh] overflow-y-auto"
+                    >
+                        <div className="p-6">
+                            {/* Header */}
+                            <div className="flex justify-between items-center mb-6">
+                                <h2 className="text-2xl font-bold text-white">Apply for Position</h2>
+                                <button
+                                    onClick={handleCloseModal}
+                                    className="text-gray-400 hover:text-white transition"
+                                >
+                                    <svg className="w-6 h-6 cursor-pointer" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                                    </svg>
+                                </button>
+                            </div>
+
+                            {/* Form */}
+                            <form onSubmit={handleSubmit} className="space-y-4">
+                                {/* Position */}
+                                <div>
+                                    <label className="block text-sm font-medium text-gray-300 mb-2">
+                                        Position <span className="text-red-500">*</span>
+                                    </label>
+                                    <input
+                                        type="text"
+                                        name="position"
+                                        value={formData.position}
+                                        readOnly
+                                        className="w-full px-4 py-3 bg-[#0a0a0a] border border-gray-600 rounded-lg text-white cursor-not-allowed"
+                                    />
+                                </div>
+
+                                {/* Name */}
+                                <div>
+                                    <label className="block text-sm font-medium text-gray-300 mb-2">
+                                        Full Name <span className="text-red-500">*</span>
+                                    </label>
+                                    <input
+                                        type="text"
+                                        name="name"
+                                        value={formData.name}
+                                        onChange={handleInputChange}
+                                        className={`w-full px-4 py-3 bg-[#0a0a0a] border rounded-lg text-white focus:outline-none focus:border-[#B7AC88] ${
+                                            errors.name ? "border-red-500" : "border-gray-600"
+                                        }`}
+                                        placeholder="Enter your full name"
+                                    />
+                                    {errors.name && <p className="text-red-500 text-sm mt-1">{errors.name}</p>}
+                                </div>
+
+                                {/* Email */}
+                                <div>
+                                    <label className="block text-sm font-medium text-gray-300 mb-2">
+                                        Email <span className="text-red-500">*</span>
+                                    </label>
+                                    <input
+                                        type="email"
+                                        name="email"
+                                        value={formData.email}
+                                        onChange={handleInputChange}
+                                        className={`w-full px-4 py-3 bg-[#0a0a0a] border rounded-lg text-white focus:outline-none focus:border-[#B7AC88] ${
+                                            errors.email ? "border-red-500" : "border-gray-600"
+                                        }`}
+                                        placeholder="Enter your email"
+                                    />
+                                    {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email}</p>}
+                                </div>
+
+                                {/* Phone */}
+                                <div>
+                                    <label className="block text-sm font-medium text-gray-300 mb-2">
+                                        Phone Number <span className="text-red-500">*</span>
+                                    </label>
+                                    <input
+                                        type="tel"
+                                        name="phone"
+                                        value={formData.phone}
+                                        onChange={handleInputChange}
+                                        maxLength={10}
+                                        className={`w-full px-4 py-3 bg-[#0a0a0a] border rounded-lg text-white focus:outline-none focus:border-[#B7AC88] ${
+                                            errors.phone ? "border-red-500" : "border-gray-600"
+                                        }`}
+                                        placeholder="Enter your 10-digit phone number"
+                                    />
+                                    {errors.phone && <p className="text-red-500 text-sm mt-1">{errors.phone}</p>}
+                                </div>
+
+                                {/* Message */}
+                                <div>
+                                    <label className="block text-sm font-medium text-gray-300 mb-2">
+                                        Message <span className="text-red-500">*</span>
+                                    </label>
+                                    <textarea
+                                        name="message"
+                                        value={formData.message}
+                                        onChange={handleInputChange}
+                                        rows={4}
+                                        className={`w-full px-4 py-3 bg-[#0a0a0a] border rounded-lg text-white focus:outline-none focus:border-[#B7AC88] resize-none ${
+                                            errors.message ? "border-red-500" : "border-gray-600"
+                                        }`}
+                                        placeholder="Tell us about yourself and why you're interested in this position"
+                                    />
+                                    {errors.message && <p className="text-red-500 text-sm mt-1">{errors.message}</p>}
+                                </div>
+
+                                {/* Resume Upload */}
+                                <div>
+                                    <label className="block text-sm font-medium text-gray-300 mb-2">
+                                        Upload Resume <span className="text-red-500">*</span>
+                                    </label>
+                                    <div className="border-2 border-dashed border-gray-600 rounded-lg p-6 hover:border-[#B7AC88] transition-colors">
+                                        <input
+                                            type="file"
+                                            name="resume"
+                                            onChange={handleFileChange}
+                                            accept=".pdf,.doc,.docx"
+                                            className="hidden"
+                                            id="resume-upload"
+                                        />
+                                        <label
+                                            htmlFor="resume-upload"
+                                            className="cursor-pointer flex flex-col items-center"
+                                        >
+                                            <svg className="w-12 h-12 text-gray-400 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
+                                            </svg>
+                                            <span className="text-gray-400 text-sm">
+                                                {formData.resume ? formData.resume.name : "Click to upload your resume"}
+                                            </span>
+                                            <span className="text-gray-500 text-xs mt-1">PDF, DOC, DOCX (Max 5MB)</span>
+                                        </label>
+                                    </div>
+                                    {errors.resume && <p className="text-red-500 text-sm mt-1">{errors.resume}</p>}
+                                    {formData.resume && (
+                                        <p className="text-[#B7AC88] text-sm mt-2">✓ File selected: {formData.resume.name}</p>
+                                    )}
+                                </div>
+
+                                {/* Submit Button */}
+                                <div className="flex gap-4 pt-4">
+                                    <button
+                                        type="submit"
+                                        className="flex-1 bg-[#B7AC88] text-white px-6 py-3 rounded-lg font-medium hover:bg-[#a49b76] transition cursor-pointer"
+                                    >
+                                        Submit Application
+                                    </button>
+                                    <button
+                                        type="button"
+                                        onClick={handleCloseModal}
+                                        className="px-6 py-3 border border-gray-600 text-white rounded-lg font-medium hover:border-gray-400 transition cursor-pointer"
+                                    >
+                                        Cancel
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </motion.div>
+                </div>
+            )}
+
             {/* Banner */}
             <div className="w-full h-80 flex flex-col items-center justify-center text-center bg-[#0a0a0a] border-b border-white/20 px-4">
                 <motion.h1 
@@ -253,7 +581,10 @@ const Career = () => {
                         </p>
                         <div className="flex items-center justify-between">
                             <span className="text-[#B7AC88] text-sm font-medium">Full Time</span>
-                            <button className="bg-[#B7AC88] text-white px-4 py-2 rounded text-sm font-medium hover:bg-[#a49b76] transition">
+                            <button 
+                                onClick={() => handleApplyNow("Pre Sales Executive")}
+                                className="bg-[#B7AC88] text-white px-4 py-2 rounded text-sm font-medium hover:bg-[#a49b76] transition cursor-pointer" 
+                            >
                                 Apply Now
                             </button>
                         </div>
@@ -274,7 +605,10 @@ const Career = () => {
                         </p>
                         <div className="flex items-center justify-between">
                             <span className="text-[#B7AC88] text-sm font-medium">Full Time</span>
-                            <button className="bg-[#B7AC88] text-white px-4 py-2 rounded text-sm font-medium hover:bg-[#a49b76] transition">
+                            <button 
+                                onClick={() => handleApplyNow("Sales Manager")}
+                                className="bg-[#B7AC88] text-white px-4 py-2 rounded text-sm font-medium hover:bg-[#a49b76] transition cursor-pointer"
+                            >
                                 Apply Now
                             </button>
                         </div>
