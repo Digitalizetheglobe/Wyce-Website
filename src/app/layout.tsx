@@ -44,6 +44,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <meta name="robots" content="index, follow" />
         <meta name="google-site-verification" content="Pz5HyQPGT_xgsSYscV6Dx3WRIP2QGsx8BiDUslcveKc" />
         <link rel="canonical" href="https://www.wycecorp.com/" />
         
