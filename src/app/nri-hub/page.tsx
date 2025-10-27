@@ -5,9 +5,7 @@ export const metadata: Metadata = {
   title: "NRI property investment | WYCE Corp",
   description: "Simplify your NRI property investment with WYCE Corp. Our dedicated desk offers seamless support from selection to possession, ensuring a trusted experience worldwide.",
   keywords: "NRI Property Investment in India, NRI Property Investment in Pune, NRI Real Estate Investment, Buy Property in India for NRI, NRI Home Buying in India, NRI Real Estate Developers in Pune, Property for NRI in India, Secure NRI Property Investment, NRI Real Estate Services India, Trusted Developers for NRI Buyers in Pune, NRI property investment",
-  alternates: {
-    canonical: "https://www.wycecorp.com/nri-hub"
-  }
+
 };
 
 export default function BlogPage() {
