@@ -5,7 +5,7 @@ import Footer from "@/components/Footer";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Wyce Exclusity - 4, 3 & 2 BHK Premium Residences in Bavdhan Pune",
+  title: "Wyce Exclucity - 4, 3 & 2 BHK Premium Residences in Bavdhan Pune",
   description: "Buy luxury flats in Bavdhan, Pune with WYCE Corp – offering 4, 3 & 2 BHK premium apartments designed for comfort, style, and modern living in prime city locations.",
   keywords: "flats in pune, luxury flats in pune, 2 bhk flat in pune, 3 bhk flats in pune, flats for sale in pune, 4 bhk flats in pune, buy flats in pune, flats in Bavdhan, luxury flats in pune",
   icons: {
