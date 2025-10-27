@@ -18,7 +18,7 @@ export default function AboutSection() {
           transition={{ duration: 0.6 }}
           viewport={{ once: true, amount: 0.3 }}
         >
-          <motion.h3 
+          <motion.h1 
             className={` text-lg sm:text-xl md:text-2xl `}
             initial={{ opacity: 0, y: -20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -26,7 +26,7 @@ export default function AboutSection() {
             viewport={{ once: true }}
           >
             Greater Together
-          </motion.h3>
+          </motion.h1>
           <motion.p 
             className={` text-lg sm:text-xl md:text-lg `}
             initial={{ opacity: 0, y: -20 }}
