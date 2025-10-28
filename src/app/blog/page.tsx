@@ -24,7 +24,7 @@ const blogPosts = [
       "Bavdhan is witnessing a new wave of infrastructure growth and the most exciting update is the 12-meter road now under development. This upcoming stretch is set to redefine everyday travel by connecting residents OF WYCE ExcluCity directly to Chandani Chowk in just 5 minutes.",
     category: "Real Estate",
     date: "October 28, 2025",
-    image: "/images/blog3.jpeg",
+    image: "/images/blog-4.jpg",
     slug: "a-new-12-meter-road",
   },
 
