@@ -49,12 +49,12 @@ export default function OurBuilder() {
             transition={{ duration: 0.6, delay: 0.3 }}
           > 
             <div className="flex justify-center mb-6">
-              <div className="w-32 h-32 rounded-lg flex items-center justify-center">
+              <div className="w-35 h-32 rounded-lg flex items-center justify-center">
                 <Image
                   src="/images/SANIKET-LOGO.png"
                   alt="Saniket Builder Logo"
-                  width={120}
-                  height={120}
+                  width={130}
+                  height={130}
                   className="object-contain"
                 />
               </div>
@@ -94,8 +94,8 @@ export default function OurBuilder() {
                         <Image
                         src="/images/PARTH-LOGO.png"
                         alt="Parth Developer Logo"
-                        width={120}
-                        height={120}
+                        width={110}
+                        height={110}
                         className="object-contain"
                         />
                     </div>
@@ -129,12 +129,12 @@ export default function OurBuilder() {
             transition={{ duration: 0.6, delay: 0.3 }}
           >
             <div className="flex justify-center mb-6">
-              <div className="w-32 h-32 rounded-lg flex items-center justify-center">
+              <div className="w-36 h-32 rounded-lg flex items-center justify-center">
                 <Image
                   src="/images/BALAJI-LOGO.png"
                   alt="Balaji Group Logo"
-                  width={120}
-                  height={120}
+                  width={220}
+                  height={220}
                   className="object-contain filter grayscale"
                 />
               </div>

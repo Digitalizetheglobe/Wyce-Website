@@ -9,87 +9,58 @@ import Image from "next/image";
 const blogPosts = [
   {
     id: 1,
-    title: "The Quiet Side of Luxury: Why WYCE Believes Thoughtfulness Is the New Opulence",
+    title: "Bavdhan Wasn’t on My Radar... Until I Realized Everyone Smart Was Moving There",
     excerpt:
-      "Luxury has always been linked with what's visible — high ceilings, imported fittings, grand entrances. But true luxury is not about what you see. It's about what you feel when you step inside.",
+      "When you think of Pune’s dream neighbourhoods, the usual suspects come to mind - Baner,Hinjawadi, Koregaon Park. The well-known, well-hyped areas where everyone assumes you’d want to live.",
     category: "Real Estate",
-    date: "October 5, 2024",
+    date: "October 28, 2025",
     image: "/images/blog2.jpeg",
-    slug: "quiet-side-of-luxury",
+    slug: "bavhdan-wasn't-on-my-radar",
   },
   {
     id: 2,
-    title: "Space Is the New Luxury: Inside WYCE's 11-Acre Vision for the Select Few",
+    title: "A New 12-Meter Road Transforms Connectivity to Chandani Chowk",
     excerpt:
-      "In most cities today, luxury living has started to mean living small but paying big. WYCE saw this shift and decided to build differently — to create homes that give people back what they've lost: space.",
+      "Bavdhan is witnessing a new wave of infrastructure growth and the most exciting update is the 12-meter road now under development. This upcoming stretch is set to redefine everyday travel by connecting residents OF WYCE ExcluCity directly to Chandani Chowk in just 5 minutes.",
     category: "Real Estate",
-    date: "October 3, 2024",
+    date: "October 28, 2025",
     image: "/images/blog3.jpeg",
-    slug: "space-new-luxury",
+    slug: "a-new-12-meter-road",
   },
-  {
-    id: 3,
-    title: "Beyond Green Walls: How WYCE Designs Homes That Breathe",
-    excerpt:
-      "Almost every developer claims to build eco-friendly homes. But most of it stops at token gestures. WYCE goes beyond that by designing a lifestyle that breathes, not just buildings that look green.",
-    category: "Real Estate",
-    date: "September 28, 2024",
-    image: "/images/project-3.png",
-    slug: "beyond-green-walls",
-  },
-  {
-    id: 4,
-    title: "Bavdhan: Where the City Meets Serenity",
-    excerpt:
-      "Bavdhan is one of those rare neighborhoods where city energy and nature's calm coexist perfectly. WYCE chose this location for ExcluCity because it captures both — modern convenience and natural serenity.",
-    category: "Real Estate",
-    date: "September 25, 2024",
-    image: "/images/blog4.jpeg",
-    slug: "bavdhan-city-meets-serenity",
-  },
-  {
-    id: 5,
-    title: "Designing Connection: The Subtle Luxury of Belonging at WYCE",
-    excerpt:
-      "Most modern housing projects focus on privacy but forget the joy of connection. WYCE believes both can exist together. At ExcluCity, the community is designed not just for living, but for belonging.",
-    category: "Real Estate",
-    date: "September 20, 2024",
-    image: "/images/blog5.jpeg",
-    slug: "designing-connection",
-  },
+
 ];
 
 const recentPosts = [
   {
     id: 1,
-    title: "The Quiet Side of Luxury: Why WYCE Believes Thoughtfulness Is the New Opulence",
-    date: "October 5, 2024",
-    slug: "quiet-side-of-luxury",
+    title: "Bavdhan Wasn’t on My Radar... Until I Realized Everyone Smart Was Moving There",
+    date: "October 28, 2025",
+    slug: "bavhdan-wasn't-on-my-radar",
   },
   {
     id: 2,
-    title: "Space Is the New Luxury: Inside WYCE's 11-Acre Vision for the Select Few",
-    date: "October 3, 2024",
-    slug: "space-new-luxury",
+    title: "A New 12-Meter Road Transforms Connectivity to Chandani Chowk",
+    date: "October 28, 2025",
+    slug: "a-new-12-meter-road",
   },
-  {
-    id: 3,
-    title: "Beyond Green Walls: How WYCE Designs Homes That Breathe",
-    date: "September 28, 2024",
-    slug: "beyond-green-walls",
-  },
-  {
-    id: 4,
-    title: "Bavdhan: Where the City Meets Serenity",
-    date: "September 25, 2024",
-    slug: "bavdhan-city-meets-serenity",
-  },
-  {
-    id: 5,
-    title: "Designing Connection: The Subtle Luxury of Belonging at WYCE",
-    date: "September 20, 2024",
-    slug: "designing-connection",
-  },
+  // {
+  //   id: 3,
+  //   title: "Beyond Green Walls: How WYCE Designs Homes That Breathe",
+  //   date: "September 28, 2024",
+  //   slug: "beyond-green-walls",
+  // },
+  // {
+  //   id: 4,
+  //   title: "Bavdhan: Where the City Meets Serenity",
+  //   date: "September 25, 2024",
+  //   slug: "bavdhan-city-meets-serenity",
+  // },
+  // {
+  //   id: 5,
+  //   title: "Designing Connection: The Subtle Luxury of Belonging at WYCE",
+  //   date: "September 20, 2024",
+  //   slug: "designing-connection",
+  // },
 ];
 
 export default function BlogPage() {
