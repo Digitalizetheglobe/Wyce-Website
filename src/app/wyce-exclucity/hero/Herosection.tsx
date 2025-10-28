@@ -161,7 +161,7 @@ From luxurious residences that elevate everyday living to thoughtfully designed 
 
         {/* Stats Section */}
         <motion.div
-          className="w-full max-w-6xl mx-auto mt-12 rounded-xl bg-[#b7ac88bd] bg-opacity-90 flex flex-col sm:flex-row justify-between items-center py-10 px-6 gap-8 shadow-lg layer-blur-effect"
+          className="w-full max-w-6xl mx-auto mt-12 rounded-xl bg-[#b7ac88bd] bg-opacity-90 flex flex-col sm:flex-row justify-between items-center py-7 px-6 gap-8 shadow-lg layer-blur-effect"
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1, delay: 0.9, ease: "easeOut" }}
@@ -169,9 +169,9 @@ From luxurious residences that elevate everyday living to thoughtfully designed 
           {/* Experience */}
           <div className="flex-1 text-center">
             <h3 className="text-3xl sm:text-4xl font-bold text-white">
-              <AnimatedCounter end={30} suffix="+" duration={2} />
+              <AnimatedCounter end={11} suffix="" duration={2} />
             </h3>
-            <p className="text-white text-lg">Years Strong</p>
+            <p className="text-white text-lg">Acres</p>
           </div>
 
           {/* Divider */}
@@ -180,9 +180,9 @@ From luxurious residences that elevate everyday living to thoughtfully designed 
           {/* Masterpieces */}
           <div className="flex-1 text-center">
             <h3 className="text-3xl sm:text-4xl font-bold text-white">
-              <AnimatedCounter end={6000} suffix="+" duration={2.5} />
+              <AnimatedCounter end={11} suffix="" duration={2.5} />
             </h3>
-            <p className="text-white text-lg">Happy Families</p>
+            <p className="text-white text-lg">Towers</p>
           </div>
 
           {/* Divider */}
@@ -191,10 +191,9 @@ From luxurious residences that elevate everyday living to thoughtfully designed 
           {/* Families Served */}
           <div className="flex-1 text-center">
             <h3 className="text-3xl sm:text-4xl font-bold text-white">
-              <AnimatedCounter end={50} suffix="+" duration={2} />
+              <AnimatedCounter end={60} suffix="%" duration={2} />
             </h3>
-            <p className="text-white text-lg">Project Delivered
-</p>
+            <p className="text-white text-lg">Open Space</p>
           </div>
 
                     {/* Divider */}
@@ -202,9 +201,9 @@ From luxurious residences that elevate everyday living to thoughtfully designed 
 
           <div className="flex-1 text-center">
             <h3 className="text-3xl sm:text-4xl font-bold text-white">
-              <AnimatedCounter end={5} suffix="M+" duration={2} />
+              <AnimatedCounter end={50} suffix="+" duration={2} />
             </h3>
-            <p className="text-white text-lg">Sq.Ft Of Development</p>
+            <p className="text-white text-lg">Lifestyle Amenities</p>
           </div>
         </motion.div>
       </div>

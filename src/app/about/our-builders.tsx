@@ -104,7 +104,7 @@ export default function OurBuilder() {
                     Parth Developer
                     </h3>
                     <p className="text-white text-center text-sm leading-relaxed mb-6">
-                        Parth Developers, founded in 1989 by Mr. Mahendra Jagannath Yeole, stands as a trusted name in Pune’s real estate with over 34 years of visionary expertise.Driven by experience, innovation, and a motivated team, we’ve earned the trust of both local and NRI homebuyers alike.Our mission is to craft exceptional living experiences, making us one of Pune’s most respected and forward-looking developers.                    </p>
+                        Parth Developers, founded in 1989 by Mr. Mahendra Jagannath Yeole, stands as a trusted name in Pune’s real estate with over 34 years of visionary expertise. Driven by experience, innovation, and a motivated team, we’ve earned the trust of both local and NRI homebuyers alike. Our mission is to craft exceptional living experiences, making us one of Pune’s most respected and forward-looking developers.                    </p>
                     <div className="flex justify-center">
                     <a 
                         href="https://www.parthdeveloper.in/" 
@@ -135,7 +135,7 @@ export default function OurBuilder() {
                   alt="Balaji Group Logo"
                   width={120}
                   height={120}
-                  className="object-contain"
+                  className="object-contain filter grayscale"
                 />
               </div>
             </div>
@@ -143,7 +143,7 @@ export default function OurBuilder() {
               Balaji Group
             </h3>
             <p className="text-white text-center text-sm leading-relaxed mb-6">
-                With 22 years of experience and 15+ ongoing projects, we’ve proudly delivered homes to over 3,000 happy families across 15 prime Pune locations.From affordable housing to luxury residences, our focus remains on quality, innovation, and timely delivery.What began as an entrepreneurial dream has grown into a trusted real estate legacy built on collaboration and excellence            </p>
+                With 22 years of experience and 15+ ongoing projects, we’ve proudly delivered homes to over 3,000 happy families across 15 prime Pune locations. From affordable housing to luxury residences, our focus remains on quality, innovation, and timely delivery. What began as an entrepreneurial dream has grown into a trusted real estate legacy built on collaboration and excellence            </p>
             <div className="flex justify-center">
               <a 
                 href="https://www.balajigroup.co.in/" 

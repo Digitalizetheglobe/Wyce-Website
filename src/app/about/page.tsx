@@ -7,6 +7,8 @@ import TeamSection from "./team";
 import OurBuilder from "./our-builders";
 import AnimatedHeader from "./AnimatedHeader";
 import { Metadata } from "next";
+import CounterSection from "./countersection";
+
 
 export const metadata: Metadata = {
   title: "WYCE Corp | Real Estate Developers in Pune",
@@ -26,6 +28,7 @@ const About = () => {
     <>
       <AnimatedHeader />
       <HeroSection />
+      <CounterSection />
       <VisionMissionSection />
       <OurBuilder />
       <ValuesSection />

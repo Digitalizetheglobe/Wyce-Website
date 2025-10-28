@@ -1,7 +1,8 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import emailjs from '@emailjs/browser';
 
 
 // Animation variants
@@ -17,6 +18,7 @@ const fadeInUp = {
 const Career = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [showThankYou, setShowThankYou] = useState(false);
+    const [isSubmitting, setIsSubmitting] = useState(false);
     const [formData, setFormData] = useState({
         name: "",
         email: "",
@@ -26,6 +28,16 @@ const Career = () => {
         resume: null as File | null
     });
     const [errors, setErrors] = useState<Record<string, string>>({});
+
+    // EmailJS configuration
+    const EMAILJS_SERVICE_ID = 'service_whdabtl';
+    const EMAILJS_TEMPLATE_ID = 'template_coo5mu6';
+    const EMAILJS_PUBLIC_KEY = 'T0yb7stlayE2PO5Hv';
+
+    // Initialize EmailJS
+    useEffect(() => {
+        emailjs.init(EMAILJS_PUBLIC_KEY);
+    }, []);
 
     const handleApplyNow = (position: string) => {
         setFormData(prev => ({ ...prev, position }));
@@ -131,28 +143,100 @@ const Career = () => {
         setErrors(prev => ({ ...prev, resume: "" }));
     };
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         if (validateForm()) {
-            // Here you would typically send the data to your backend
-            console.log("Form submitted:", formData);
+            setIsSubmitting(true);
             
-            // Show thank you message
-            setIsModalOpen(false);
-            setShowThankYou(true);
-            
-            // Reset form after 3 seconds
-            setTimeout(() => {
-                setShowThankYou(false);
-                setFormData({
-                    name: "",
-                    email: "",
-                    phone: "",
-                    message: "",
-                    position: "",
-                    resume: null
+            try {
+                // Get the form element
+                const form = e.target as HTMLFormElement;
+                
+                console.log("Form data:", {
+                    name: formData.name,
+                    email: formData.email,
+                    phone: formData.phone,
+                    message: formData.message,
+                    position: formData.position,
+                    resume: formData.resume?.name
                 });
-            }, 3000);
+                
+                // Try sending with sendForm first (for file attachments)
+                let response;
+                try {
+                    response = await emailjs.sendForm(
+                        EMAILJS_SERVICE_ID,
+                        EMAILJS_TEMPLATE_ID,
+                        form,
+                        EMAILJS_PUBLIC_KEY
+                    );
+                } catch (sendFormError) {
+                    console.log("sendForm failed, trying send method:", sendFormError);
+                    
+                    // Fallback to regular send method without file attachment
+                    const templateParams = {
+                        name: formData.name,
+                        email: formData.email,
+                        phone: formData.phone,
+                        message: formData.message,
+                        position: formData.position,
+                        resume_name: formData.resume?.name || 'No file uploaded',
+                        time: new Date().toLocaleString(),
+                        to_email: 'editaddress.digital@gmail.com'
+                    };
+                    
+                    response = await emailjs.send(
+                        EMAILJS_SERVICE_ID,
+                        EMAILJS_TEMPLATE_ID,
+                        templateParams,
+                        EMAILJS_PUBLIC_KEY
+                    );
+                }
+
+                console.log("Email sent successfully!", response);
+                
+                // Show thank you message
+                setIsModalOpen(false);
+                setShowThankYou(true);
+                
+                // Reset form after 3 seconds
+                setTimeout(() => {
+                    setShowThankYou(false);
+                    setFormData({
+                        name: "",
+                        email: "",
+                        phone: "",
+                        message: "",
+                        position: "",
+                        resume: null
+                    });
+                }, 3000);
+                
+            } catch (error) {
+                console.error("Error sending email:", error);
+                console.error("Error details:", {
+                    message: error instanceof Error ? error.message : 'Unknown error',
+                    stack: error instanceof Error ? error.stack : undefined,
+                    error: error
+                });
+                
+                // More specific error handling
+                let errorMessage = "There was an error sending your application. Please try again.";
+                
+                if (error instanceof Error) {
+                    if (error.message.includes('Invalid email')) {
+                        errorMessage = "Please check your email address and try again.";
+                    } else if (error.message.includes('Template')) {
+                        errorMessage = "There's an issue with the email template. Please contact support.";
+                    } else if (error.message.includes('Service')) {
+                        errorMessage = "Email service is temporarily unavailable. Please try again later.";
+                    }
+                }
+                
+                alert(errorMessage);
+            } finally {
+                setIsSubmitting(false);
+            }
         }
     };
 
@@ -202,7 +286,7 @@ const Career = () => {
                             </div>
 
                             {/* Form */}
-                            <form onSubmit={handleSubmit} className="space-y-4">
+                            <form onSubmit={handleSubmit} className="space-y-4" encType="multipart/form-data">
                                 {/* Position */}
                                 <div>
                                     <label className="block text-sm font-medium text-gray-300 mb-2">
@@ -303,6 +387,7 @@ const Career = () => {
                                             accept=".pdf,.doc,.docx"
                                             className="hidden"
                                             id="resume-upload"
+                                            required
                                         />
                                         <label
                                             htmlFor="resume-upload"
@@ -327,14 +412,30 @@ const Career = () => {
                                 <div className="flex gap-4 pt-4">
                                     <button
                                         type="submit"
-                                        className="flex-1 bg-[#B7AC88] text-white px-6 py-3 rounded-lg font-medium hover:bg-[#a49b76] transition cursor-pointer"
+                                        disabled={isSubmitting}
+                                        className={`flex-1 px-6 py-3 rounded-lg font-medium transition cursor-pointer flex items-center justify-center ${
+                                            isSubmitting 
+                                                ? 'bg-gray-600 text-gray-400 cursor-not-allowed' 
+                                                : 'bg-[#B7AC88] text-white hover:bg-[#a49b76]'
+                                        }`}
                                     >
-                                        Submit Application
+                                        {isSubmitting ? (
+                                            <>
+                                                <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                                    <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                                                    <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                                                </svg>
+                                                Submitting...
+                                            </>
+                                        ) : (
+                                            'Submit Application'
+                                        )}
                                     </button>
                                     <button
                                         type="button"
                                         onClick={handleCloseModal}
-                                        className="px-6 py-3 border border-gray-600 text-white rounded-lg font-medium hover:border-gray-400 transition cursor-pointer"
+                                        disabled={isSubmitting}
+                                        className="px-6 py-3 border border-gray-600 text-white rounded-lg font-medium hover:border-gray-400 transition cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
                                     >
                                         Cancel
                                     </button>

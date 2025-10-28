@@ -9,7 +9,7 @@ export default function Footer() {
       {/* Gradient background */}
       <div className="absolute inset-0 bg-[#0a0a0a] from-[#] to-[#4b432e]"></div>
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-4">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-4 ">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start border-b border-[#B7AC88]/60 pb-10 md:divide-x-2 md:divide-[#B7AC88]/60">
           {/* Left Section - Logo & Social */}
           <div className="flex flex-col items-left space-y-6">
@@ -35,6 +35,16 @@ export default function Footer() {
                 </a>
               ))}
             </div>
+
+            <div className="flex space-x-3">
+
+            </div>
+
+            
+            <div className="flex space-x-3">
+
+            </div>
+            
           </div>
 
           {/* left Section - Links */}
@@ -42,6 +52,7 @@ export default function Footer() {
             {[
               { name: "Our Story", href: "/" },
               { name: "About Us", href: "/about" },
+              { name: "Our Project", href: "/wyce-exclucity" },
               { name: "NRI Desk", href: "/nri-hub" },
               { name: "Blog", href: "/blog" }
             ].map((link, idx) => (

@@ -64,7 +64,7 @@ export default function TeamSection() {
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          our team is the embodiment of our belief in being Greater Together.
+          Our team is the embodiment of our belief in being Greater Together.
           A collective of visionaries, creators, and professionals each member brings years of expertise, fresh perspectives, and a shared commitment to excellence.
         </motion.p>
 
