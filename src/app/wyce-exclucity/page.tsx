@@ -7,7 +7,7 @@ import ProjectOverview from "./project/ProjectOverview";
 import GallerySection from "./gallery/GallerySection";
 import ContactSection from "./contact/ContactSection";
 import CtaSection from "./CTA/CtaSection";
-import TaglineSection from "./tagline/TaglineSection";
+// import TaglineSection from "./tagline/TaglineSection";
 
 export default function Home() {
   return (

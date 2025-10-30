@@ -35,7 +35,7 @@ export default function BavdhanSection() {
           className="absolute top-8 md:top-12 lg:top-16 left-0 right-0 z-10 px-4 md:px-8 text-left"
         >
           <p className="text-[#b8ae8a] text-base sm:text-lg md:text-xl lg:text-2xl font-medium uppercase">
-            EXPERIENCE WYCE exclucity — PUNE'S MOST PRESTIGIOUS PROJECT IN
+            EXPERIENCE WYCE exclucity — PUNE&apos;S MOST PRESTIGIOUS PROJECT IN
           </p>
         </motion.div>
       </div>
@@ -57,7 +57,7 @@ export default function BavdhanSection() {
           Experience <span className="font-bold">Wyce Exclucity.</span>
         </p>
         <p className="text-[#b8ae8a] text-base sm:text-lg md:text-xl lg:text-6xl mb-6 ">
-          Pune's most
+          Pune&apos;s most
         </p>
         <p className="text-[#b8ae8a] text-base sm:text-lg md:text-xl lg:text-6xl  mb-6">
           Prestigious project in

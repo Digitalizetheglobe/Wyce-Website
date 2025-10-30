@@ -50,7 +50,7 @@ export default function PricesSection() {
       y: 0,
       transition: {
         duration: 0.8,
-        ease: [0.6, -0.05, 0.01, 0.99] as any,
+        ease: [0.6, -0.05, 0.01, 0.99] as [number, number, number, number],
       },
     },
   };
@@ -79,7 +79,7 @@ export default function PricesSection() {
       rotateX: 0,
       transition: {
         duration: 0.8,
-        ease: [0.25, 0.46, 0.45, 0.94] as any,
+        ease: [0.25, 0.46, 0.45, 0.94] as [number, number, number, number],
       },
     },
   };
@@ -122,7 +122,7 @@ export default function PricesSection() {
           className="text-white-400 max-w-2xl mx-auto mb-12 font-raleway text-2xl"
           variants={descriptionVariants}
         >
-          Every property is more than just four walls—it's a promise of luxury,
+          Every property is more than just four walls—it&apos;s a promise of luxury,
           comfort and growth. Step into a lifestyle
         </motion.p>
 
