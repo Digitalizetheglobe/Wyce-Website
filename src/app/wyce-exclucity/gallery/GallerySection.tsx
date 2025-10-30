@@ -1,31 +1,30 @@
 "use client";
 import { motion } from "framer-motion";
-import Image from "next/image";
 
 export default function Gallery() {
   return (
-    <section className="bg-black text-center py-10">
+    <section className="bg-black text-center mt-15">
       {/* Animated Heading */}
       <motion.h2
-        className="text-3xl md:text-2xl text-[#fff] mb-2 font-bold"
+        className="text-3xl md:text-4xl font-bold text-[#B7AC88] mb-4"
         initial={{ opacity: 0, y: -30 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
         viewport={{ once: true, amount: 0.3 }}
       >
-        WYCE <span className="font-breathney text-[#b6a16b] ml-2">Exclucity</span>
+        Gallery
       </motion.h2>
 
       {/* Animated Paragraph */}
       <motion.p
-        className="text-white max-w-2xl text-lg mx-auto mb-12"
+        className="text-gray-400 max-w-2xl mx-auto mb-12"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.3, duration: 0.8 }}
         viewport={{ once: true, amount: 0.3 }}
       >
-         Where Thoughtful is Beautiful.
-          Every line, curve, and corner is crafted with purpose  creating spaces that feel as beautiful as they look.
+        Every property is more than just four walls—it’s a promise of luxury,
+        comfort and growth. Step into a lifestyle
       </motion.p>
 
       <div className="py-4 px-2 mx-auto max-w-screen-xl sm:py-4 lg:px-6">
@@ -39,11 +38,10 @@ export default function Gallery() {
             viewport={{ once: true, amount: 0.2 }}
           >
             <a className="group relative flex flex-col overflow-hidden rounded-lg px-4 pb-4 pt-40 flex-grow">
-              <Image
-                src="/images/landing-page/gallery/g1.jpg"
-                alt="Gallery image 1"
-                fill
-                className="object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out"
+              <img
+                src="../images/wyce-exclucity/gallery/g1.jpg"
+                alt=""
+                className="absolute inset-0 h-full w-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out"
               />
               <div className="absolute inset-0 bg-gradient-to-b from-gray-900/25 to-gray-900/5"></div>
             </a>
@@ -58,11 +56,10 @@ export default function Gallery() {
             viewport={{ once: true, amount: 0.2 }}
           >
             <a className="group relative flex flex-col overflow-hidden rounded-lg px-4 pb-4 pt-40 mb-4">
-              <Image
-                src="/images/landing-page/gallery/g2.jpg"
-                alt="Gallery image 2"
-                fill
-                className="object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out"
+              <img
+                src="../images/wyce-exclucity/gallery/g2.jpg"
+                alt=""
+                className="absolute inset-0 h-full w-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out"
               />
               <div className="absolute inset-0 bg-gradient-to-b from-gray-900/25 to-gray-900/5"></div>
             </a>
@@ -75,11 +72,10 @@ export default function Gallery() {
                 transition={{ delay: 0.3, duration: 0.6 }}
                 viewport={{ once: true, amount: 0.2 }}
               >
-                <Image
-                  src="/images/landing-page/gallery/g3.jpg"
-                  alt="Gallery image 3"
-                  fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out"
+                <img
+                  src="../images/wyce-exclucity/gallery/g3.jpg"
+                  alt=""
+                  className="absolute inset-0 h-full w-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out"
                 />
                 <div className="absolute inset-0 bg-gradient-to-b from-gray-900/25 to-gray-900/5"></div>
               </motion.a>
@@ -91,11 +87,10 @@ export default function Gallery() {
                 transition={{ delay: 0.4, duration: 0.6 }}
                 viewport={{ once: true, amount: 0.2 }}
               >
-                <Image
-                  src="/images/landing-page/gallery/g4.jpg"
-                  alt="Gallery image 4"
-                  fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out"
+                <img
+                  src="../images/wyce-exclucity/gallery/g4.jpg"
+                  alt=""
+                  className="absolute inset-0 h-full w-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out"
                 />
                 <div className="absolute inset-0 bg-gradient-to-b from-gray-900/25 to-gray-900/5"></div>
               </motion.a>
@@ -111,11 +106,10 @@ export default function Gallery() {
             viewport={{ once: true, amount: 0.2 }}
           >
             <a className="group relative flex flex-col overflow-hidden rounded-lg px-4 pb-4 pt-40 flex-grow">
-              <Image
-                src="/images/landing-page/gallery/g5.jpg"
-                alt="Gallery image 5"
-                fill
-                className="object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out"
+              <img
+                src="../images/wyce-exclucity/gallery/g5.jpg"
+                alt=""
+                className="absolute inset-0 h-full w-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out"
               />
               <div className="absolute inset-0 bg-gradient-to-b from-gray-900/25 to-gray-900/5"></div>
             </a>

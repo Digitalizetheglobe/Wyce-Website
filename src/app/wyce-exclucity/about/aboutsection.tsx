@@ -1,76 +1,75 @@
 "use client";
-import Image from "next/image";
 import { motion } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
+
 
 export default function AboutProject() {
   return (
     <section
-      className="relative w-full bg-black text-white py-16 px-6 md:px-12 lg:px-20 xl:px-32 pt-32  overflow-hidden bg-cover bg-center"
-      style={{ backgroundImage: "url('/images/landing-page/sec2bg.png')" }}
+      className="relative w-full  bg-cover bg-center bg-no-repeat flex items-center justify-center py-30 px-6 md:px-12 lg:px-20 xl:px-32"
+      style={{ backgroundImage: "url('/images/wyce-exclucity/about-banner.webp')" }}
     >
-      {/* Overlay (optional for better readability) */}
-      <div className="absolute inset-0 bg-black/60"></div>
+      {/* Overlay for better text readability */}
+      <div className="absolute inset-0 bg-black/20"></div>
 
-      <div className="relative z-10 max-w-7xl mx-auto">
-        {/* Top Text */}
+      <div className="relative z-10 max-w-6xl mx-auto text-center">
+
+        {/* Call to Action Text */}
         <motion.div
-          initial={{ opacity: 0, y: 50 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
           viewport={{ once: true }}
-          className="grid grid-cols-1 lg:grid-cols-2 gap-10 mb-12"
+          className="mb-12"
         >
-          <p className="text-gray-300 leading-relaxed text-lg">
-WYCE ExcluCity, located in Central Bavdhan , is the result of three trusted names and decades of experience coming together to create an iconic project. This prestigious development is built on an expansive 11-acre land parcel , ensuring maximum breathing and moving space.
+          <h1 className="text-2xl sm:text-2xl text-[#a78631] md:text-3xl lg:text-4xl font-semibold mb-3 sm:mb-4">WYCE EXCLU
+            <span className="font-breathney text-[#a78631]  text-[20px] sm:text-xl md:text-xl lg:text-2xl">City</span>
+          </h1>
 
-This landmark project introduces just 11 iconic high-rise towers , crafted for the select few who appreciate the epitome of exclusivity. It offers a mix of spacious premium residences: 2, 3, and 4 BHK homes.
+          <p className="text-lg md:text-xl text-gray-700">
+            Residence by Excellence
           </p>
-          <p className="text-gray-300 leading-relaxed text-lg">
-Experience a lifestyle that blends luxury and nature at WYCE ExcluCity. This residential marvel offers residences sized not by square feet, but by the scale of your dreams. The project is designed for elegance and rendezvous, where every convenience, recreation, and nature coexist in the most mindful way.
+          <p className="text-gray-800 leading-relaxed text-lg">
+            Some homes aren’t built—they’re destined. WYCE exclucity is where luxury meets innovation, creating a rhythm of modern living.
+          </p>
+          <p className="text-gray-800 leading-relaxed text-lg">
+            Spread across 12 acres in Bavdhan, this architectural marvel features 11 iconic towers of 34 floors, offering serene, premium living.
+          </p>
+          <p className="text-gray-800 leading-relaxed text-lg">
+            Experience refined spaces, elegant design, and a lifestyle crafted for those who seek exclucity and excellence.
+          </p>
 
+        </motion.div>
 
-
-The environment is crafted for balance and well-being , featuring over 70,000 sq. ft. of lifestyle amenities and approximately 60% green open spaces. From the 8,000 sq. ft. forest garden to the 1,50,000 sq. ft. of podium recreation , every detail is an invitation to live the Thoughtful life.
+        {/* Product Highlight */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.6 }}
+          viewport={{ once: true }}
+          className="mb-12"
+        >
+          <h3 className="text-2xl md:text-3xl font-bold text-[#b6a16b] mb-2">
+            EXQUISITE 2BHK, 3BHK & 4BHK LUXURY RESIDENCES
+          </h3>
+          <p className="text-lg md:text-xl font-semibold text-[#b6a16b]">
+            AT BAVDHAN, NEAR CHELLARAM HOSPITAL
           </p>
         </motion.div>
 
-        {/* Images Grid with staggered animation */}
+        {/* Brochure Button */}
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-4 gap-8"
-          initial="hidden"
-          whileInView="show"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.8 }}
           viewport={{ once: true }}
-          variants={{
-            hidden: {},
-            show: {
-              transition: { staggerChildren: 0.2 },
-            },
-          }}
+          className="flex justify-center"
         >
-          {[
-            { src: "/images/landing-page/sec2-1.jpeg", alt: "Living Room" },
-            { src: "/images/landing-page/sec2-2.jpeg", alt: "Modern Interior" },
-            { src: "/images/landing-page/sec2-3.jpeg", alt: "Chandelier Hall" },
-            { src: "/images/landing-page/sec2-4.jpeg", alt: "Bedroom" },
-          ].map((img, index) => (
-            <motion.div
-              key={index}
-              variants={{
-                hidden: { opacity: 0, y: 50 },
-                show: { opacity: 1, y: 0 },
-              }}
-              transition={{ duration: 0.8 }}
-              className="overflow-hidden shadow-lg w-full h-[400px] md:h-[300px]"
+
+        <button className="w-40 bg-gradient-to-r from-[#B7AC88] to-[#1F1403] hover:bg-gradient-to-l hover:bg-from-[#1F1403] hover:bg-to-[#B7AC88] text-white px-5 py-3 rounded-full shadow-md hover:opacity-90 transition cursor-pointer"
             >
-              <Image
-                src={img.src}
-                alt={img.alt}
-                width={800}
-                height={600}
-                className="rounded-lg object-cover w-full h-full hover:scale-105 transition-transform duration-500"
-              />
-            </motion.div>
-          ))}
+            Contact Us →
+        </button>
         </motion.div>
       </div>
     </section>

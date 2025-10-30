@@ -1,7 +1,6 @@
 "use client";
 import Image from "next/image";
-import { FaTwitter, FaYoutube, FaFacebookF, FaInstagram, } from "react-icons/fa";
-import "@fortawesome/fontawesome-free/css/all.min.css";
+import { FaTwitter, FaYoutube, FaFacebookF, FaInstagram, FaWhatsapp } from "react-icons/fa";
 import { FiPhone } from "react-icons/fi"; // Feather thin phone
 
 
@@ -10,14 +9,14 @@ export default function Footer() {
   return (
     <footer
       className="relative text-white py-20 pb-5 px-[10px] bg-cover bg-center"
-      style={{ backgroundImage: "url('/images/footer-bg.png')" }}
+      style={{ backgroundImage: "url('/images/wyce-exclucity/footer-bg.png')" }}
     >
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-[#B7AC88] ">
         {/* Left: Logo + Social Icons */}
         <div className="flex flex-col items-center md:items-start space-y-10 py-6 md:py-0 md:pr-6">
           <h2 className="flex items-center text-3xl font-bold tracking-wide space-x-2">
             <Image
-              src="/images/footer_logo.png"
+              src="/images/wyce-exclucity/footer_logo.png"
               alt="WYCE Logo"
               width={200}
               height={120}
@@ -59,21 +58,22 @@ export default function Footer() {
         {/* Middle: Navigation */}
         <div className="flex flex-col md:items-left space-y-3 py-6 md:px-18 align-start">
           <ul className="space-y-3 text-center md:text-left">
-            <li><a href="#" className="hover:text-gray-400">Home</a></li>
-            <li><a href="#" className="hover:text-gray-400">About</a></li>
-            <li><a href="#" className="hover:text-gray-400">Services</a></li>
-            <li><a href="#" className="hover:text-gray-400">Contact</a></li>
-            <li><a href="#" className="hover:text-gray-400">Privacy Policy</a></li>
+            <li><a href="#overview" className="hover:text-gray-400">Overview</a></li>
+            <li><a href="#about" className="hover:text-gray-400">About</a></li>
+            <li><a href="#project" className="hover:text-gray-400">Specification</a></li>
+            <li><a href="#price" className="hover:text-gray-400">Floor Plan</a></li>
+            <li><a href="#amenities" className="hover:text-gray-400">Amenities</a></li>
           </ul>
         </div>
 
         {/* Right: Contact Info */}
         <div className="flex flex-col items-center md:items-start space-y-3 py-6 md:pl-18 text-sm">
-          <p>+91 00000 00000</p>
-          <p>wyce@gmail.com</p>
+          <p>+91 75497 99799</p>
+          <p>sales@wycecorp.com</p>
           <p className="text-center md:text-left">
-            Plot No: 123 Bavdhan, near 16 no bus stop,<br />
-            Pune - 444110
+            WYCE Exclucity, CEC Office,
+            Siddharth Nagar, Bavdhan,
+            Pune, Maharashtra 411021
           </p>
         </div>
       </div>
@@ -103,7 +103,7 @@ export default function Footer() {
   className="fixed bottom-5 right-5 bg-green-500 text-white w-14 h-14 rounded-full shadow-lg hover:scale-110 transition-transform flex items-center justify-center"
   aria-label="Chat on WhatsApp"
 >
-  <i className="fa-brands fa-whatsapp text-white text-4xl"></i>
+  <FaWhatsapp className="text-white text-4xl" />
 </a>
 
 

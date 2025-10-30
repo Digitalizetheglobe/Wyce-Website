@@ -107,7 +107,7 @@ export default function Header() {
             <Link href="/" className="flex items-center">
               <Image
                 src="/images/logo.png"
-                alt="WYCE EXCLUSIVITY City"
+                alt="WYCE exclucity City"
                 width={400}
                 height={280}
                 className="h-10 sm:h-10 lg:h-30 xl:h-15 w-auto cursor-pointer"

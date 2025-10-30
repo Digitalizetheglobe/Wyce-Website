@@ -1,15 +1,17 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
+import { motion, useScroll, useTransform } from "framer-motion";
 
 const navItems = [
-  { name: "Home", path: "/" },
-  { name: "About", path: "/about" },
-  { name: "Properties", path: "/properties" },
-  { name: "Amenities", path: "/amenities" },
+  { name: "Overview", path: "#overview" },
+  { name: "About", path: "#about" },
+  { name: "Specification", path: "#project" },
+  { name: "Floor Plan", path: "#price" },
+  { name: "Amenities", path: "#amenities" },
 ];
 
 export default function Header() {
@@ -24,6 +26,19 @@ export default function Header() {
     message: "",
   });
   const [error, setError] = useState("");
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  // Scroll detection
+  const { scrollY } = useScroll();
+  const headerY = useTransform(scrollY, [0, 100], [-100, 0]);
+  const headerOpacity = useTransform(scrollY, [0, 100], [0, 1]);
+
+  useEffect(() => {
+    const unsubscribe = scrollY.on("change", (latest) => {
+      setIsScrolled(latest > 50);
+    });
+    return unsubscribe;
+  }, [scrollY]);
 
   // Validation
   const validateForm = () => {
@@ -56,12 +71,27 @@ export default function Header() {
   };
 
   return (
-    <header className="bg-black text-white fixed top-0 w-full z-50 shadow-md">
+    <motion.header 
+      className="bg-black text-white fixed top-0 w-full z-50 shadow-md"
+      style={{ 
+        y: headerY,
+        opacity: headerOpacity
+      }}
+      initial={{ y: -100, opacity: 0 }}
+      animate={{ 
+        y: isScrolled ? 0 : -100,
+        opacity: isScrolled ? 1 : 0
+      }}
+      transition={{ 
+        duration: 0.5,
+        ease: "easeInOut"
+      }}
+    >
       <div className="max-w-7xl mx-auto px-6 flex justify-between items-center h-20">
         {/* Logo */}
         <Link href="/" className="flex items-center">
           <Image
-            src="/images/logo.png"
+            src="/images/wyce-exclucity/logo.png"
             alt="Wyse Logo"
             width={130}
             height={50}
@@ -72,14 +102,14 @@ export default function Header() {
 
         {/* Desktop Nav (center) */}
         <nav className="hidden md:flex flex-1 justify-center space-x-10">
-          {navItems.map((item) => (
+          {navItems.map((item, index) => (
             <Link
-              key={item.path}
+              key={`${item.path}-${index}`}
               href={item.path}
               className={`${
                 pathname === item.path
-                  ? "text-[#B7AC88]  font-medium"
-                  : "text-gray-200 hover:text-[#B7AC88] "
+                  ? "text-yellow-400 font-medium"
+                  : "text-gray-200 hover:text-yellow-400"
               } transition-colors`}
             >
               {item.name}
@@ -109,14 +139,14 @@ export default function Header() {
       {/* Mobile Menu */}
       {menuOpen && (
         <div className="md:hidden bg-black px-6 py-4 space-y-4">
-          {navItems.map((item) => (
+          {navItems.map((item, index) => (
             <Link
-              key={item.path}
+              key={`${item.path}-${index}`}
               href={item.path}
               className={`block ${
                 pathname === item.path
-                  ? "text-[#B7AC88] font-medium"
-                  : "text-gray-200 hover:text-[#B7AC88]"
+                  ? "text-yellow-400 font-medium"
+                  : "text-gray-200 hover:text-yellow-400"
               } transition-colors`}
               onClick={() => setMenuOpen(false)}
             >
@@ -244,6 +274,6 @@ export default function Header() {
           }
         }
       `}</style>
-    </header>
+    </motion.header>
   );
 }

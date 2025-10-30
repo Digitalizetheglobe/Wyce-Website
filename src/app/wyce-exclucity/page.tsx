@@ -1,37 +1,40 @@
-
 import Hero from "./hero/Herosection";
-import AboutProject from "./about/aboutsection";
-import VideoSection from "./video/VideoSection";
-import AmenitiesCarousel from "./amenties/Amenities";
-import Gallery from "./gallery/GallerySection";
-import { Metadata } from "next";
+import AboutSection from "./about/aboutsection";
+import BavdhanSection from "./bavdhan/BavdhanSection";
+import Amenities from "./amenties/Amenities";
+import PriceSection from "./price/PriceSection";
+import ProjectOverview from "./project/ProjectOverview";
+import GallerySection from "./gallery/GallerySection";
+import ContactSection from "./contact/ContactSection";
+import CtaSection from "./CTA/CtaSection";
+import TaglineSection from "./tagline/TaglineSection";
 
-export const metadata: Metadata = {
-  title: "Buy Luxury Flats in Bavdhan, Pune | WYCE Exclucity",
-  description: "WYCE Exclucity in Bavdhan, Pune offers spacious 2, 3 & 4 BHK luxury flats with modern amenities, excellent connectivity, and a premium lifestyle.",
-  keywords: "wyce exclucity, flats in bavdhan, 2 bhk flats in bavdhan, luxury flats in bavdhan, 3 bhk flats in Bavdhan, 4 bhk flats in Bavdhan, flats for sale in bavdhan, premium homes near kothrud, flats in Pune",
-  robots: "index, follow",
-  authors: [{ name: "WYCE Corp" }],
-  publisher: "WYCE Corp",
-  alternates: {
-    canonical: "https://www.wycecorp.com/wyce-exclucity"
-  }
-};
-
-
-
-
-export default function WyceExclucityPage() {
+export default function Home() {
   return (
-    <main className="bg-black overflow-x-hidden">
-
-      <Hero />
-      <AboutProject />
-      <VideoSection />
-      <AmenitiesCarousel />
-
-      <Gallery />
-
-    </main>
+    <div className="min-h-screen">
+      {/* Video Hero Section */}
+      <section id="overview">
+        <Hero />
+      </section>
+      
+      {/* Other Sections */}
+      <section id="about">
+        <AboutSection />
+      </section>
+      <BavdhanSection />
+      <section id="price">
+        <PriceSection />
+      </section>
+      <section id="amenities">
+        <Amenities />
+      </section>
+      <section id="project">
+        <ProjectOverview />
+      </section>
+      {/* <TaglineSection /> */}
+      <GallerySection />
+      <ContactSection />
+      <CtaSection />
+    </div>
   );
 }

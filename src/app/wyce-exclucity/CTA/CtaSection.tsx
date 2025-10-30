@@ -5,12 +5,12 @@ export default function AboutProject() {
   return (
     <section
       className="relative w-full bg-black text-white h-screen py-40 px-6 lg:px-30 overflow-hidden bg-image bg-cover bg-center"
-      style={{ backgroundImage: "url('/images/landing-page/sec2bg.png')" }}
+      style={{ backgroundImage: "url('/images/wyce-exclucity/sec2bg.png')" }}
     >
       <div
         className="relative flex items-center justify-center py-16 px-6"
         style={{
-          backgroundImage: "url('/images/landing-page/cta-bg.png')",
+          backgroundImage: "url('/images/wyce-exclucity/cta-bg.png')",
           backgroundSize: "cover",
           backgroundPosition: "center",
           borderRadius: "16px",
