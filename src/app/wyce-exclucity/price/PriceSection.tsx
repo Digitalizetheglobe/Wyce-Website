@@ -304,7 +304,7 @@ export default function PricesSection() {
                       delay: 0.6 + index * 0.1,
                     }}
                   >
-                    Book Now
+                    View Plan
                   </motion.button>
                 </div>
               </motion.div>

@@ -49,7 +49,7 @@ export default function Footer() {
           </div>
 
           {/* left Section - Links */}
-          <div className="flex flex-col items-left md:items-left space-y-3 px-6">
+          <div className="flex flex-col items-left md:items-left space-y-3 ">
             {[
               { name: "Overview", href: "/" },
               { name: "About", href: "#about" },

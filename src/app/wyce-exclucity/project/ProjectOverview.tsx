@@ -2,7 +2,7 @@ export default function ProjectOverview() {
   return (
     <section
       id="project-overview"
-      className="relative w-full h-[90vh] md:h-[90vh] lg:h-[100vh] bg-[url('/images/wyce-exclucity/project-mobile.jpg')] md:bg-[url('/images/wyce-exclucity/project-mobile.jpg')] lg:bg-[url('/images/wyce-exclucity/project-laptop.jpg')] bg-cover bg-center"
+      className="relative w-full h-[60vh] md:h-[90vh] lg:h-[100vh] bg-[url('/images/wyce-exclucity/project-mobile.jpg')] md:bg-[url('/images/wyce-exclucity/project-mobile.jpg')] lg:bg-[url('/images/wyce-exclucity/project-laptop.jpg')] bg-cover bg-center"
     >
       <div className="absolute inset-0 bg-black/50"></div>
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center pt-12 sm:pt-16 md:pt-20 justify-start">
@@ -11,7 +11,7 @@ export default function ProjectOverview() {
           Project Highlights
         </h2>
         <div className="bg-black/50 backdrop-blur-sm rounded-xl border border-[#b7a863] p-6 sm:p-8 md:p-10 shadow-lg w-full mt-6 sm:mt-8 md:mt-10">
-          <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-6 sm:gap-x-8 md:gap-x-10 gap-y-4 sm:gap-y-5 text-sm sm:text-base md:text-lg leading-relaxed mx-auto text-left max-w-6xl">
+          <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-6 sm:gap-x-8 md:gap-x-10 gap-y-4 sm:gap-y-5 text-md sm:text-base md:text-lg leading-relaxed mx-auto text-center max-w-6xl">
             <li>4, 3 & 2 BHK premium residences</li>
             <li>7,000 acres of green ambience</li>
             <li>70,000 sq. ft. of lifestyle amenities</li>

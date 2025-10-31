@@ -7,15 +7,15 @@ export default function BavdhanSection() {
 
       {/* Mobile Background */}
       <div
-        className="block md:hidden relative w-full min-h-[110vh] flex items-center justify-center px-6 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: "url('/images/wyce-exclucity/bavdhan-mobile.jpg')" }}
+        className="block md:hidden relative w-full min-h-[60vh] flex items-start pt-28 justify-center px-6 bg-contain bg-center bg-no-repeat"
+        style={{ backgroundImage: "url('/images/wyce-exclucity/bavdhan-mobile.png')" }}
       >
         <motion.div
           initial={{ opacity: 0, y: -10 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.1 }}
           viewport={{ once: true }}
-          className="w-full max-w-3xl text-center"
+          className="w-full max-w-3xl text-center "
         >
           <p className="text-[#b8ae8a] text-5xl sm:text-4xl md:text-5xl mb-3 ">
             Experience <span className="font-bold">Wyce Exclucity.</span>

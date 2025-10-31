@@ -79,7 +79,7 @@ export default function ContactSection() {
     <>
     <section
       id="contact"
-      className="relative bg-black text-white py-12 sm:py-16 md:py-10 overflow-hidden"
+      className="relative bg-black text-white pb-16 sm:py-16 md:py-10 overflow-hidden"
       style={{ backgroundImage: "url('/images/bg-image.png')", backgroundSize: "cover", backgroundPosition: "center" }}
     >
 
