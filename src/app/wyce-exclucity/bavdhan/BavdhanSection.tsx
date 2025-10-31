@@ -7,7 +7,7 @@ export default function BavdhanSection() {
 
       {/* Mobile Background */}
       <div
-        className="block md:hidden relative w-full min-h-[60vh] flex items-start pt-28 justify-center px-6 bg-contain bg-center bg-no-repeat"
+        className="block md:hidden relative w-full min-h-[62vh] flex items-start pt-20 justify-center px-6 bg-contain bg-center bg-no-repeat"
         style={{ backgroundImage: "url('/images/wyce-exclucity/bavdhan-mobile.png')" }}
       >
         <motion.div
@@ -17,13 +17,13 @@ export default function BavdhanSection() {
           viewport={{ once: true }}
           className="w-full max-w-3xl text-center "
         >
-          <p className="text-[#b8ae8a] text-5xl sm:text-4xl md:text-5xl mb-3 ">
+          <p className="text-[#b8ae8a] text-3xl sm:text-3xl  mb-3 ">
             Experience <span className="font-bold">Wyce Exclucity.</span>
           </p>
-          <p className="text-[#b8ae8a] text-5xl sm:text-4xl md:text-5xl mb-3">
+          <p className="text-[#b8ae8a] text-3xl sm:text-3xl ">
             Pune&apos;s most
           </p>
-          <p className="text-[#b8ae8a] text-5xl sm:text-4xl md:text-5xl">
+          <p className="text-[#b8ae8a] text-3xl sm:text-3xl ">
             Prestigious project
           </p>
         </motion.div>

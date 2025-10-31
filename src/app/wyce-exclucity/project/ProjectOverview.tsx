@@ -2,7 +2,7 @@ export default function ProjectOverview() {
   return (
     <section
       id="project-overview"
-      className="relative w-full h-[60vh] md:h-[90vh] lg:h-[100vh] bg-[url('/images/wyce-exclucity/project-mobile.jpg')] md:bg-[url('/images/wyce-exclucity/project-mobile.jpg')] lg:bg-[url('/images/wyce-exclucity/project-laptop.jpg')] bg-cover bg-center"
+      className="relative w-full h-[90vh] md:h-[90vh] lg:h-[100vh] bg-[url('/images/wyce-exclucity/project-mobile.jpg')] md:bg-[url('/images/wyce-exclucity/project-mobile.jpg')] lg:bg-[url('/images/wyce-exclucity/project-laptop.jpg')] bg-cover bg-center"
     >
       <div className="absolute inset-0 bg-black/50"></div>
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center pt-12 sm:pt-16 md:pt-20 justify-start">

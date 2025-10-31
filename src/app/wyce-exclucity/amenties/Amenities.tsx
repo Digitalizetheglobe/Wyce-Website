@@ -529,7 +529,7 @@ export default function AmenitiesCarousel() {
 
   return (
     <div 
-      className="w-full flex flex-col items-center pb-12 relative  bg-white"    >
+      className="w-full flex flex-col items-center pb-0 relative  bg-white"    >
 
       {/* Heading */}
       <div
