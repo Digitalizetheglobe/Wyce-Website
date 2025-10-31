@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 // removed motion, AnimatePresence import
 
 export default function AmenitiesCarousel() {
@@ -53,25 +53,6 @@ export default function AmenitiesCarousel() {
       { icon: "/images/wyce-exclucity/icons/wyce_icons[1]-47.svg", text: "Velvet Entrance" },
       { icon: "/images/wyce-exclucity/icons/wyce_icons[1]-48.svg", text: "The Breezway" },
   ];
-
-  const groups = [
-    [allAmenities[0], allAmenities[1], allAmenities[2]],
-    [allAmenities[3], allAmenities[4], allAmenities[5]],
-    [allAmenities[6], allAmenities[7], allAmenities[8]],
-    [allAmenities[9], allAmenities[10], allAmenities[11]],
-    [allAmenities[12], allAmenities[13], allAmenities[14]],
-    [allAmenities[15], allAmenities[16], allAmenities[17]],
-    [allAmenities[18], allAmenities[19], allAmenities[20]],
-    [allAmenities[21], allAmenities[22], allAmenities[23]],
-    [allAmenities[24], allAmenities[25], allAmenities[26]],
-    [allAmenities[27], allAmenities[28], allAmenities[29]],
-    [allAmenities[30], allAmenities[31], allAmenities[32]],
-    [allAmenities[33], allAmenities[34], allAmenities[35]],
-    [allAmenities[36], allAmenities[37], allAmenities[38]],
-    [allAmenities[39], allAmenities[40], allAmenities[41]],
-    [allAmenities[42], allAmenities[43], allAmenities[44]],
-    [allAmenities[45], allAmenities[46]],
-  ].map(group => group.filter(item => item && item.icon && item.text));
 
   const tabs = ["Nature", "Sports & Activity ", "Social & Entertainment"];
   const [activeTab, setActiveTab] = useState(0);
@@ -273,7 +254,8 @@ export default function AmenitiesCarousel() {
     );
   };
 
-  // Design 2: Large Card View
+  // Design 2: Large Card View (unused but kept for potential future use)
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const CardView = () => (
     <div className="relative w-full max-w-[1400px] overflow-hidden px-4">
       <div

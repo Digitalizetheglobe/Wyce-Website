@@ -1,6 +1,5 @@
 "use client";
 import { motion } from "framer-motion";
-import { useEffect, useRef, useState } from "react";
 
 
 export default function AboutProject() {
@@ -30,7 +29,7 @@ export default function AboutProject() {
             Residence by Excellence
           </p>
           <p className="text-gray-800 leading-relaxed text-sm sm:text-base md:text-lg px-2">
-            Some homes aren't built—they're destined. WYCE exclucity is where luxury meets innovation, creating a rhythm of modern living.
+            Some homes aren&apos;t built—they&apos;re destined. WYCE exclucity is where luxury meets innovation, creating a rhythm of modern living.
           </p>
           <p className="text-gray-800 leading-relaxed text-sm sm:text-base md:text-lg px-2">
             Spread across 12 acres in Bavdhan, this architectural marvel features 11 iconic towers of 34 floors, offering serene, premium living.

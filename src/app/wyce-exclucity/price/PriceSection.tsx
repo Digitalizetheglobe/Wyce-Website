@@ -1,11 +1,9 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
 import { motion } from "framer-motion";
 
 export default function PricesSection() {
-  const [showModal, setShowModal] = useState(false);
 
   const homes = [
     {
@@ -201,7 +199,6 @@ export default function PricesSection() {
                 {/* Button */}
                 <div className="flex justify-center">
                   <motion.button
-                    onClick={() => setShowModal(true)}
                     className="bg-gradient-to-r from-[#B7AC88] to-[#1F1403] text-white 
                       px-[28px] py-[10px] rounded-full shadow-md hover:opacity-90 
                       transition text-xs font-medium cursor-pointer"
