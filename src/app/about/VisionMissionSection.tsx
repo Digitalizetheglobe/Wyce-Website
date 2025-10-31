@@ -6,6 +6,8 @@ import { Raleway } from "next/font/google";
 const railway = Raleway({
   subsets: ["latin"],
   weight: "300",
+  display: "swap",
+  fallback: ["Arial", "Helvetica", "sans-serif"],
 });
 export default function VisionMissionSection() {
   return (

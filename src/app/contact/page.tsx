@@ -5,6 +5,9 @@ import {
     FaPhoneAlt,
 } from "react-icons/fa";
 
+// Force dynamic rendering to avoid prerendering issues
+export const dynamic = 'force-dynamic';
+
 
 const Contact = () => {
     const [formData, setFormData] = useState({

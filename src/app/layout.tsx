@@ -26,18 +26,24 @@ const raleway = Raleway({
   variable: "--font-raleway",
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700", "800", "900"],
+  display: "swap",
+  fallback: ["Arial", "Helvetica", "sans-serif"],
 });
 
 const cinzel = Cinzel({
   variable: "--font-cinzel",
   subsets: ["latin"],
   weight: ["400", "700"],
+  display: "swap",
+  fallback: ["serif"],
 });
 
 const greatVibes = Great_Vibes({
   variable: "--font-great-vibes",
   subsets: ["latin"],
   weight: ["400"],
+  display: "swap",
+  fallback: ["cursive"],
 });
 
 
