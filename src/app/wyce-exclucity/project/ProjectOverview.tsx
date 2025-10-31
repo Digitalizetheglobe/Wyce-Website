@@ -2,16 +2,16 @@ export default function ProjectOverview() {
   return (
     <section
       id="project-overview"
-      className="relative w-full h-[60vh] md:h-[70vh] lg:h-[110vh] bg-[url('/images/wyce-exclucity/project-mobile.jpg')] md:bg-[url('/images/wyce-exclucity/project-tab.jpg')] lg:bg-[url('/images/wyce-exclucity/project-laptop.jpg')] bg-cover bg-center"
+      className="relative w-full h-[90vh] md:h-[90vh] lg:h-[110vh] bg-[url('/images/wyce-exclucity/project-mobile.jpg')] md:bg-[url('/images/wyce-exclucity/project-mobile.jpg')] lg:bg-[url('/images/wyce-exclucity/project-laptop.jpg')] bg-cover bg-center"
     >
       <div className="absolute inset-0 bg-black/50"></div>
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-start pt-20 justify-start">
-      <div className="w-full max-w-3xl mx-auto flex flex-col justify-center items-center min-h-[60vh]">
-        <h2 className="text-5xl md:text-6xl font-bold mb-10 text-[#b7a863] font-breathney text-center">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-start pt-12 sm:pt-16 md:pt-20 justify-start overflow-hidden">
+      <div className="w-full max-w-3xl mx-auto flex flex-col justify-center items-center min-h-[50vh] sm:min-h-[60vh] px-2 sm:px-4">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 sm:mb-8 md:mb-10 text-[#b7a863] font-breathney text-center px-2">
           Project Highlights
         </h2>
-        <div className="bg-white/20 backdrop-blur-sm rounded-xl border border-[#b7a863] p-10 shadow-lg w-full mt-10">
-          <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-5 text-base md:text-lg leading-relaxed mx-auto text-left max-w-6xl">
+        <div className="bg-white/20 backdrop-blur-sm rounded-xl border border-[#b7a863] p-6 sm:p-8 md:p-10 shadow-lg w-full mt-6 sm:mt-8 md:mt-10">
+          <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-6 sm:gap-x-8 md:gap-x-10 gap-y-4 sm:gap-y-5 text-sm sm:text-base md:text-lg leading-relaxed mx-auto text-left max-w-6xl">
             <li>4, 3 & 2 BHK premium residences</li>
             <li>7,000 acres of green ambience</li>
             <li>70,000 sq. ft. of lifestyle amenities</li>

@@ -8,7 +8,7 @@ import { FiPhone } from "react-icons/fi"; // Feather thin phone
 export default function Footer() {
   return (
     <footer
-      className="relative text-white py-20 pb-5 px-[10px] bg-cover bg-center"
+      className="relative text-white py-12 sm:py-16 md:py-20 pb-5 px-4 sm:px-6 md:px-8 lg:px-10 bg-cover bg-center overflow-hidden"
       style={{ backgroundImage: "url('/images/wyce-exclucity/footer-bg.png')" }}
     >
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-[#B7AC88] ">

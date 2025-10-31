@@ -24,8 +24,8 @@ export default function ContactUs() {
       </motion.section>
 
       {/* Contact Section */}
-      <section className="relative -mt-45 z-10 w-full bg-transparent text-white px-6 lg:px-20">
-        <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-10">
+      <section className="relative -mt-32 sm:-mt-40 md:-mt-45 z-10 w-full bg-transparent text-white px-4 sm:px-6 md:px-8 lg:px-12 xl:px-20 overflow-hidden">
+        <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-6 md:gap-10">
           {/* Left: Map */}
           <motion.div
             className="lg:w-1/2 w-full h-[550px] rounded-lg overflow-hidden shadow-lg"

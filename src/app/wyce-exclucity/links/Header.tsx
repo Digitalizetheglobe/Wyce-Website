@@ -87,7 +87,7 @@ export default function Header() {
         ease: "easeInOut"
       }}
     >
-      <div className="max-w-7xl mx-auto px-6 flex justify-between items-center h-20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 flex justify-between items-center h-20 overflow-hidden">
         {/* Logo */}
         <Link href="/" className="flex items-center">
           <Image

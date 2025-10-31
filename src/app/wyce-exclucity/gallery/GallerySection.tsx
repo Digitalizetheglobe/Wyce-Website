@@ -27,7 +27,7 @@ export default function Gallery() {
         comfort and growth. Step into a lifestyle
       </motion.p>
 
-      <div className="py-4 px-2 mx-auto max-w-screen-xl sm:py-4 lg:px-6">
+      <div className="py-4 px-4 sm:px-6 md:px-8 mx-auto max-w-screen-xl sm:py-4 lg:px-6 overflow-hidden">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-4 h-full">
           {/* Card 1 */}
           <motion.div

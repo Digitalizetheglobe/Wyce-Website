@@ -16,15 +16,15 @@ export default function Hero() {
   return (
     <section
       ref={ref}
-      className="relative w-full h-screen overflow-hidden "
+      className="relative w-full h-screen overflow-hidden"
     >
       {/* Full-screen Video */}
       <motion.div
-        className="absolute inset-0 w-full h-250 "
+        className="absolute inset-0 w-full h-full"
         style={{ y, opacity }}
       >
         <video
-          className="w-full h-[650px] object-cover"
+          className="w-full h-full object-cover"
           autoPlay
           loop
           playsInline

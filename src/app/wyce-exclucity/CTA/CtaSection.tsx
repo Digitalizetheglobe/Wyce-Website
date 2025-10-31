@@ -4,11 +4,11 @@ import { motion } from "framer-motion";
 export default function AboutProject() {
   return (
     <section
-      className="relative w-full bg-black text-white h-screen py-40 px-6 lg:px-30 overflow-hidden bg-image bg-cover bg-center"
+      className="relative w-full bg-black text-white h-screen py-20 sm:py-32 md:py-40 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-20 overflow-hidden bg-image bg-cover bg-center"
       style={{ backgroundImage: "url('/images/wyce-exclucity/sec2bg.png')" }}
     >
       <div
-        className="relative flex items-center justify-center py-16 px-6"
+        className="relative flex items-center justify-center py-12 sm:py-14 md:py-16 px-4 sm:px-6"
         style={{
           backgroundImage: "url('/images/wyce-exclucity/cta-bg.png')",
           backgroundSize: "cover",

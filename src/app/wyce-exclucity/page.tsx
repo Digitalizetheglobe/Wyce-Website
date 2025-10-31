@@ -11,7 +11,7 @@ import CtaSection from "./CTA/CtaSection";
 
 export default function Home() {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen overflow-x-hidden">
       {/* Video Hero Section */}
       <section id="overview">
         <Hero />

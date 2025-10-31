@@ -11,12 +11,10 @@ export const metadata = {
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en">
-      <body suppressHydrationWarning={true}>
-        <Header />
-        {children}
-        <FooterSection />
-      </body>
-    </html>
+    <div className="overflow-x-hidden">
+      <Header />
+      {children}
+      <FooterSection />
+    </div>
   );
 }

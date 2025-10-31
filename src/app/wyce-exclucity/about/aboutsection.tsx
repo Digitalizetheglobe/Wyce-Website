@@ -6,7 +6,7 @@ import { useEffect, useRef, useState } from "react";
 export default function AboutProject() {
   return (
     <section
-      className="relative w-full  bg-cover bg-center bg-no-repeat flex items-center justify-center py-30 px-6 md:px-12 lg:px-20 xl:px-32"
+      className="relative w-full bg-cover bg-center bg-no-repeat flex items-center justify-center py-16 sm:py-20 md:py-24 lg:py-30 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-20 overflow-hidden"
       style={{ backgroundImage: "url('/images/wyce-exclucity/about-banner.webp')" }}
     >
       {/* Overlay for better text readability */}
@@ -22,20 +22,20 @@ export default function AboutProject() {
           viewport={{ once: true }}
           className="mb-12"
         >
-          <h1 className="text-2xl sm:text-2xl text-[#a78631] md:text-3xl lg:text-4xl font-semibold mb-3 sm:mb-4">WYCE EXCLU
-            <span className="font-breathney text-[#a78631]  text-[20px] sm:text-xl md:text-xl lg:text-2xl">City</span>
+          <h1 className="text-xl sm:text-2xl text-[#a78631] md:text-3xl lg:text-4xl font-semibold mb-3 sm:mb-4 px-2">WYCE EXCLU
+            <span className="font-breathney text-[#a78631] text-base sm:text-lg md:text-xl lg:text-2xl">City</span>
           </h1>
 
-          <p className="text-lg md:text-xl text-gray-700">
+          <p className="text-base sm:text-lg md:text-xl text-gray-700 px-2">
             Residence by Excellence
           </p>
-          <p className="text-gray-800 leading-relaxed text-lg">
-            Some homes aren’t built—they’re destined. WYCE exclucity is where luxury meets innovation, creating a rhythm of modern living.
+          <p className="text-gray-800 leading-relaxed text-sm sm:text-base md:text-lg px-2">
+            Some homes aren't built—they're destined. WYCE exclucity is where luxury meets innovation, creating a rhythm of modern living.
           </p>
-          <p className="text-gray-800 leading-relaxed text-lg">
+          <p className="text-gray-800 leading-relaxed text-sm sm:text-base md:text-lg px-2">
             Spread across 12 acres in Bavdhan, this architectural marvel features 11 iconic towers of 34 floors, offering serene, premium living.
           </p>
-          <p className="text-gray-800 leading-relaxed text-lg">
+          <p className="text-gray-800 leading-relaxed text-sm sm:text-base md:text-lg px-2">
             Experience refined spaces, elegant design, and a lifestyle crafted for those who seek exclucity and excellence.
           </p>
 
@@ -49,10 +49,10 @@ export default function AboutProject() {
           viewport={{ once: true }}
           className="mb-12"
         >
-          <h3 className="text-2xl md:text-3xl font-bold text-[#b6a16b] mb-2">
+          <h3 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-[#b6a16b] mb-2 px-2">
             EXQUISITE 2BHK, 3BHK & 4BHK LUXURY RESIDENCES
           </h3>
-          <p className="text-lg md:text-xl font-semibold text-[#b6a16b]">
+          <p className="text-sm sm:text-base md:text-lg lg:text-xl font-semibold text-[#b6a16b] px-2">
             AT BAVDHAN, NEAR CHELLARAM HOSPITAL
           </p>
         </motion.div>

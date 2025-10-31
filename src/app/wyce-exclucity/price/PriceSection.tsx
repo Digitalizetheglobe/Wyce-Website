@@ -12,21 +12,21 @@ export default function PricesSection() {
       img: "/images/wyce-exclucity/price1.png",
       title: "4BHK Homes",
       desc: "Compact, comfortable, and perfect for young professionals or small families.",
-      size: "Starting from 450 sq. ft.",
+      size: "Starting from 1898 sq. ft.",
       price: "₹40 Lakhs*",
     },
     {
       img: "/images/wyce-exclucity/price2.png",
       title: "3BHK Homes",
       desc: "Spacious and ideal for growing families with extra room for comfort.",
-      size: "Starting from 650 sq. ft.",
+      size: "Starting from 1256 sq. ft.",
       price: "₹60 Lakhs*",
     },
     {
       img: "/images/wyce-exclucity/price3.png",
       title: "2BHK Homes",
       desc: "Luxury living with ample space for big families and premium lifestyle.",
-      size: "Starting from 900 sq. ft.",
+      size: "Starting from 834 sq. ft.",
       price: "₹90 Lakhs*",
     },
   ];
@@ -103,7 +103,7 @@ export default function PricesSection() {
   };
 
   return (
-    <section className="w-full bg-black text-white py-16 px-6 pt-40 overflow-hidden">
+    <section className="w-full bg-black text-white py-16 px-4 sm:px-6 md:px-8 pt-24 sm:pt-32 md:pt-40 overflow-hidden">
       <motion.div
         className="max-w-7xl mx-auto text-center"
         initial="hidden"

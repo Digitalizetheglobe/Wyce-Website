@@ -90,18 +90,18 @@ export default function AmenitiesCarousel() {
     ];
 
     return (
-      <div className="w-7xl min-h-[600px] lg:min-h-[800px] px-6" style={{ backgroundImage: "url('/images/wyce-exclucity/amenities12.png')", backgroundSize: "contain", backgroundPosition: "center", backgroundRepeat: "no-repeat" }}>
-        <div className="container mx-auto px-5 lg:px-8 xl:px-10 py-8 lg:py-10 h-full">
-          <div className="flex flex-col lg:flex-row items-end gap-8 lg:gap-12 xl:gap-16 h-full min-h-[400px] lg:min-h-[650px]">
+      <div className="w-full max-w-7xl mx-auto min-h-[600px] lg:min-h-[800px] px-4 sm:px-6 lg:px-6 lg:bg-[url('/images/wyce-exclucity/amenities12.png')] bg-contain bg-center bg-no-repeat overflow-hidden">
+        <div className="container mx-auto px-2 sm:px-4 md:px-5 lg:px-8 xl:px-10 py-8 lg:py-10 h-full">
+          <div className="flex flex-col lg:flex-row items-center lg:items-end justify-center lg:justify-start gap-8 lg:gap-12 xl:gap-16 h-full min-h-[400px] lg:min-h-[650px]">
             {/* Left Side - Images Collage */}
-            <div className="w-full lg:w-1/3 flex flex-col gap-4 lg:gap-6">
+            <div className="w-full lg:w-1/3 flex flex-col gap-4 lg:gap-6 hidden lg:block">
               
             </div>
 
             {/* Right Side - Text Content */}
-            <div className="w-full lg:w-1/2 flex flex-col ">
+            <div className="w-full lg:w-1/2 flex flex-col items-center lg:items-start">
               {/* Title Section */}
-              <div className="mb-8 lg:mb-10 lg:mb-14">
+              <div className="mb-8 lg:mb-10 lg:mb-14 text-center lg:text-left">
                 <h2 className="text-3xl lg:text-3xl font-Raleway font-normal text-[#2a2a2a] mb-2 leading-tight">
                   Peace, Crafted Like
                 </h2>
@@ -111,11 +111,11 @@ export default function AmenitiesCarousel() {
               </div>
 
               {/* Amenities Grid */}
-              <div className="grid grid-cols-2 gap-x-6 gap-y-6 lg:gap-x-8 lg:gap-y-8">
+              <div className="grid grid-cols-2 gap-x-6 gap-y-6 lg:gap-x-8 lg:gap-y-8 w-full max-w-md lg:max-w-none">
                 {natureAmenities.map((item, index) => (
                   <div
                     key={index}
-                    className="flex items-center gap-4"
+                    className="flex items-center gap-3 lg:gap-4"
                   >
                     <div className="flex-shrink-0 w-12 h-12 lg:w-14 lg:h-14">
                       <img
@@ -128,7 +128,7 @@ export default function AmenitiesCarousel() {
                         }}
                       />
                     </div>
-                    <span className="text-base lg:text-lg font-normal text-[#2a2a2a]">
+                    <span className="text-sm lg:text-lg font-normal text-[#2a2a2a]">
                       {item.text}
                     </span>
                   </div>
@@ -165,27 +165,27 @@ export default function AmenitiesCarousel() {
     ];
 
     return (
-      <div className="w-7xl min-h-[600px] lg:min-h-[800px] px-6 relative" style={{ backgroundImage: "url('/images/wyce-exclucity/a2.png')", backgroundSize: "contain", backgroundPosition: "center", backgroundRepeat: "no-repeat" }}>
-        <div className="container mx-auto px-5 lg:px-8 xl:px-10 py-8 lg:py-10 h-full">
-          <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12 xl:gap-16 h-full min-h-[400px] lg:min-h-[650px]">
+      <div className="w-full max-w-7xl mx-auto min-h-[700px] md:min-h-[750px] lg:min-h-[800px] px-4 sm:px-6 lg:px-6 relative lg:bg-[url('/images/wyce-exclucity/a2.png')] bg-contain bg-center bg-no-repeat overflow-hidden">
+        <div className="container mx-auto px-2 sm:px-4 md:px-5 lg:px-8 xl:px-10 py-8 lg:py-10 h-full">
+          <div className="flex flex-col lg:flex-row items-center justify-center lg:justify-start gap-8 lg:gap-12 xl:gap-16 h-full min-h-[400px] lg:min-h-[650px]">
             {/* Left Side - Text Content positioned on background image */}
-            <div className="w-full lg:w-2/3 flex flex-col relative z-10">
+            <div className="w-full lg:w-2/3 flex flex-col relative z-10 items-center lg:items-start">
               {/* Title Section */}
-              <div className="mb-8 lg:mb-5">
-                <h2 className="text-3xl lg:text-3xl font-Raleway font-normal text-black mb-2 leading-tight">
+              <div className="mb-8 lg:mb-5 text-center lg:text-left">
+                <h2 className="text-2xl md:text-3xl lg:text-3xl font-Raleway font-normal text-black mb-2 leading-tight">
                   Created to make you exclaim
                 </h2>
-                <h3 className="text-5xl lg:text-4xl font-breathney text-[#B7AC88] mt-2 ml-4 leading-tight ">
+                <h3 className="text-4xl md:text-5xl lg:text-4xl font-breathney text-[#B7AC88] mt-2 lg:ml-4 leading-tight">
                   just one more game!
                 </h3>
               </div>
 
               {/* Two Column Layout for Amenities */}
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-8 lg:gap-x-12 gap-y-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-x-8 lg:gap-x-12 gap-y-6 w-full max-w-2xl lg:max-w-none">
                 {/* Outdoor Indulgences */}
                 <div className="flex flex-col">
                   <h4
-                    className="text-lg lg:text-xl font-Raleway font-semibold text-[#2a2a2a] mb-4"
+                    className="text-lg lg:text-xl font-Raleway font-semibold text-[#2a2a2a] mb-4 text-center md:text-left"
                   >
                     Outdoor Indulgences:
                   </h4>
@@ -195,7 +195,7 @@ export default function AmenitiesCarousel() {
                         key={index}
                         className="flex items-center pb-2 pt-2 relative"
                       >
-                        <div className="flex-shrink-0 w-9 h-9">
+                        <div className="flex-shrink-0 w-12 h-12 lg:w-14 lg:h-14">
                           <img
                             src={item.icon}
                             alt={item.text}
@@ -206,17 +206,16 @@ export default function AmenitiesCarousel() {
                             }}
                           />
                         </div>
-                        <span className="text-sm lg:text-base font-normal text-[#2a2a2a] font-Raleway ml-3">
+                        <span className="text-sm md:text-base lg:text-lg font-normal text-[#2a2a2a] font-Raleway ml-3">
                           {item.text}
                         </span>
-                        {/* Custom Border - customizable width and height */}
+                        {/* Custom Border - hidden on mobile/tablet, visible on laptop */}
                         <div 
-                          className="absolute bottom-0 bg-[#B7AC88]/70"
+                          className="hidden lg:block absolute bottom-0 bg-[#B7AC88]/70"
                           style={{ 
-                            width: "calc(60% - 20px)", // Starts after icon (32px) + gap (12px), adjust as needed
-                            height: "2px", // Border thickness - change this value to adjust height
-                            left: "50px" // Start position after icon and gap
-
+                            width: "calc(60% - 20px)",
+                            height: "2px",
+                            left: "56px"
                           }}
                         />
                       </div>
@@ -227,7 +226,7 @@ export default function AmenitiesCarousel() {
                 {/* Indoor Activities */}
                 <div className="flex flex-col">
                   <h4
-                    className="text-lg lg:text-xl font-Raleway font-semibold text-[#2a2a2a] mb-4"
+                    className="text-lg lg:text-xl font-Raleway font-semibold text-[#2a2a2a] mb-4 text-center md:text-left"
                   >
                     Indoor Activities:
                   </h4>
@@ -235,9 +234,9 @@ export default function AmenitiesCarousel() {
                     {indoorAmenities.map((item, index) => (
                       <div
                         key={index}
-                        className="flex items-center gap-3 pb-2 pt-2 relative"
+                        className="flex items-center gap-3 lg:gap-4 pb-2 pt-2 relative"
                       >
-                        <div className="flex-shrink-0 w-8 h-8">
+                        <div className="flex-shrink-0 w-12 h-12 lg:w-14 lg:h-14">
                           <img
                             src={item.icon}
                             alt={item.text}
@@ -248,17 +247,16 @@ export default function AmenitiesCarousel() {
                             }}
                           />
                         </div>
-                        <span className="text-sm lg:text-base font-normal text-[#2a2a2a] font-Raleway">
+                        <span className="text-sm md:text-base lg:text-lg font-normal text-[#2a2a2a] font-Raleway">
                           {item.text}
                         </span>
-                        {/* Custom Border - customizable width and height */}
+                        {/* Custom Border - hidden on mobile/tablet, visible on laptop */}
                         <div 
-                          className="absolute bottom-0 bg-[#B7AC88]/70"
+                          className="hidden lg:block absolute bottom-0 bg-[#B7AC88]/70"
                           style={{ 
-                            width: "calc(60% - 20px)", // Starts after icon (32px) + gap (12px), adjust as needed
-                            height: "2px", // Border thickness - change this value to adjust height
-                            left: "50px" // Start position after icon and gap
-
+                            width: "calc(60% - 20px)",
+                            height: "2px",
+                            left: "56px"
                           }}
                         />
                       </div>
@@ -329,34 +327,37 @@ export default function AmenitiesCarousel() {
     ];
 
     return (
-      <div className="w-7xl min-h-[600px] lg:min-h-[800px] px-6 relative" style={{ backgroundImage: "url('/images/wyce-exclucity/a3.png')", backgroundSize: "contain", backgroundPosition: "center", backgroundRepeat: "no-repeat" }}>
-        <div className="container mx-auto px-5 lg:px-8 xl:px-10 py-8 lg:py-10 h-full">
-          <div className="flex flex-col lg:flex-row items-start gap-8 lg:gap-12 xl:gap-16 h-full min-h-[400px] lg:min-h-[650px]" >
+      <div className="w-full max-w-7xl mx-auto min-h-[700px] md:min-h-[750px] lg:min-h-[800px] px-4 sm:px-6 lg:px-6 relative lg:bg-[url('/images/wyce-exclucity/a3.png')] bg-contain bg-center bg-no-repeat overflow-hidden">
+        <div className="container mx-auto px-2 sm:px-4 md:px-5 lg:px-8 xl:px-10 py-8 lg:py-0 h-full">
+          <div className="flex flex-col lg:flex-row items-center lg:items-start justify-center lg:justify-start gap-8 lg:gap-12 xl:gap-16 h-full min-h-[400px] lg:min-h-[650px]">
             {/* Left Side - Text Content only; right-side image is part of banner */}
-            <div className="w-full lg:w-2/3 flex flex-col relative z-10 pt-45">
+            <div className="w-full lg:w-2/3 flex flex-col relative z-10 lg:pt-55 items-center lg:items-start">
               {/* Title Section */}
-              <div className="mb-6 lg:mb-8">
-                <h2 className="text-3xl lg:text-3xl font-Raleway font-normal text-black mb-2 leading-tight">
-                  Created to make you exclaim
+              <div className="mb-6 lg:mb-8 text-center lg:text-left">
+                <h2 className="text-2xl md:text-3xl lg:text-3xl font-Raleway font-normal text-black mb-2 leading-tight">
+                  Social Connections,
                 </h2>
-                <h3 className="text-5xl lg:text-4xl font-breathney text-[#B7AC88] mt-2 ml-4 leading-tight ">
-                  just one more game!
+                <h3 className="text-4xl md:text-5xl lg:text-4xl font-breathney text-[#B7AC88] mt-2 lg:ml-4 leading-tight">
+                  Mindfully
+                </h3>
+                <h3 className="text-2xl md:text-3xl lg:text-3xl font-Raleway font-normal text-black mb-2 leading-tight">
+                  Designed
                 </h3>
               </div>
 
               {/* Two Column Amenities List */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-5">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 md:gap-x-10 gap-y-5 w-full max-w-2xl lg:max-w-none">
                 {/* Left column */}
                 <div className="flex flex-col">
                   {leftColumn.map((item, index) => (
                     <div
                       key={index}
-                      className="flex items-center gap-3 py-2"
+                      className="flex items-center gap-3 lg:gap-4 py-2"
                     >
-                      <div className="flex-shrink-0 w-10 h-10">
+                      <div className="flex-shrink-0 w-12 h-12 lg:w-14 lg:h-14">
                         <img src={item.icon} alt={item.text} className="w-full h-full object-contain" style={{ filter: "none", color: "#B7AC88" }} />
                       </div>
-                      <span className="text-md lg:text-base font-Raleway text-[#2a2a2a]">{item.text}</span>
+                      <span className="text-sm md:text-base lg:text-lg font-normal font-Raleway text-[#2a2a2a]">{item.text}</span>
                     </div>
                   ))}
                 </div>
@@ -365,12 +366,12 @@ export default function AmenitiesCarousel() {
                   {rightColumn.map((item, index) => (
                     <div
                       key={index}
-                      className="flex items-center gap-3 py-2"
+                      className="flex items-center gap-3 lg:gap-4 py-2"
                     >
-                      <div className="flex-shrink-0 w-10 h-10">
+                      <div className="flex-shrink-0 w-12 h-12 lg:w-14 lg:h-14">
                         <img src={item.icon} alt={item.text} className="w-full h-full object-contain" style={{ filter: "none", color: "#B7AC88" }} />
                       </div>
-                      <span className="text-md lg:text-base font-Raleway text-[#2a2a2a]">{item.text}</span>
+                      <span className="text-sm md:text-base lg:text-lg font-normal font-Raleway text-[#2a2a2a]">{item.text}</span>
                     </div>
                   ))}
                 </div>
@@ -526,7 +527,8 @@ export default function AmenitiesCarousel() {
 
   return (
     <div 
-      className="w-full flex flex-col items-center py-12 relative  bg-white"    >
+      className="w-full flex flex-col items-center py-12 relative bg-white overflow-hidden"
+    >
 
       {/* Heading */}
       <div
@@ -547,7 +549,7 @@ export default function AmenitiesCarousel() {
 
       {/* Tab Navigation */}
           <div
-        className="flex flex-wrap justify-center gap-4 px-4"
+        className="flex flex-wrap justify-center gap-4 px-4 sm:px-6"
       >
         {tabs.map((tab, index) => (
           <button
