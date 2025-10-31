@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 // removed motion, AnimatePresence import
 
 export default function AmenitiesCarousel() {
@@ -53,25 +53,6 @@ export default function AmenitiesCarousel() {
       { icon: "/images/wyce-exclucity/icons/wyce_icons[1]-47.svg", text: "Velvet Entrance" },
       { icon: "/images/wyce-exclucity/icons/wyce_icons[1]-48.svg", text: "The Breezway" },
   ];
-
-  const groups = [
-    [allAmenities[0], allAmenities[1], allAmenities[2]],
-    [allAmenities[3], allAmenities[4], allAmenities[5]],
-    [allAmenities[6], allAmenities[7], allAmenities[8]],
-    [allAmenities[9], allAmenities[10], allAmenities[11]],
-    [allAmenities[12], allAmenities[13], allAmenities[14]],
-    [allAmenities[15], allAmenities[16], allAmenities[17]],
-    [allAmenities[18], allAmenities[19], allAmenities[20]],
-    [allAmenities[21], allAmenities[22], allAmenities[23]],
-    [allAmenities[24], allAmenities[25], allAmenities[26]],
-    [allAmenities[27], allAmenities[28], allAmenities[29]],
-    [allAmenities[30], allAmenities[31], allAmenities[32]],
-    [allAmenities[33], allAmenities[34], allAmenities[35]],
-    [allAmenities[36], allAmenities[37], allAmenities[38]],
-    [allAmenities[39], allAmenities[40], allAmenities[41]],
-    [allAmenities[42], allAmenities[43], allAmenities[44]],
-    [allAmenities[45], allAmenities[46]],
-  ].map(group => group.filter(item => item && item.icon && item.text));
 
   const tabs = ["Nature", "Sports & Activity ", "Social & Entertainment"];
   const [activeTab, setActiveTab] = useState(0);
@@ -305,38 +286,6 @@ export default function AmenitiesCarousel() {
       </div>
     );
   };
-
-  // Design 2: Large Card View
-  const CardView = () => (
-    <div className="relative w-full max-w-[1400px] overflow-hidden px-4">
-      <div
-        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
-      >
-        {allAmenities.slice(0, 24).map((item, index) => (
-          <div
-            key={index}
-            className="group relative bg-gradient-to-br from-[#47351B]/30 to-[#B7AC88]/10 rounded-2xl p-6 border border-[#B7AC88]/20 hover:border-[#B7AC88]/50 transition-all duration-300 cursor-pointer"
-          >
-            <div className="flex flex-col items-center text-center gap-4">
-              <div
-                className="relative w-24 h-24 bg-gradient-to-br from-[#B7AC88] to-[#47351B] rounded-2xl p-4 flex items-center justify-center"
-              >
-                <img
-                  src={item.icon}
-                  alt={item.text}
-                  className="w-full h-full object-contain filter brightness-0 invert"
-                />
-              </div>
-              <h3 className="text-lg font-semibold font-Raleway text-[#B7AC88] leading-tight">
-                {item.text}
-              </h3>
-            </div>
-            <div className="absolute inset-0 bg-gradient-to-br from-[#B7AC88]/0 to-[#B7AC88]/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-          </div>
-        ))}
-      </div>
-    </div>
-  );
 
   // Design 2B: Social & Entertainment - Left Content on Banner (a3.png)
   const SocialEntertainmentView = () => {

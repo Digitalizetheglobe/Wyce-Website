@@ -29,7 +29,7 @@ export default function AboutProject() {
             Residence by Excellencez
           </p>
           <p className="text-gray-800 text-lg text-justify md:text-center" style={{ lineHeight: '2.2' }}>
-            Some homes aren't built they're destined. WYCE Exclucity redefines urban luxury where innovation and elegance flow in harmony.
+            Some homes aren&apos;t built they&apos;re destined. WYCE Exclucity redefines urban luxury where innovation and elegance flow in harmony.
           </p>
           <p className="text-gray-800 text-lg text-justify md:text-center" style={{ lineHeight: '2.2' }}>
             Spread across 11 acres in Bavdhan, this architectural masterpiece rises through 11 iconic towers of 35 floors, offering a serene and elevated lifestyle.Experience refined living, timeless design, and a world crafted for those who seek exclusivity and excellence.
