@@ -11,7 +11,7 @@ import CtaSection from "./CTA/CtaSection";
 
 export default function Home() {
   return (
-    <div className="min-h-screen overflow-x-hidden">
+    <div className="min-h-screen">
       {/* Video Hero Section */}
       <section id="overview">
         <Hero />
@@ -34,7 +34,6 @@ export default function Home() {
       {/* <TaglineSection /> */}
       <GallerySection />
       <ContactSection />
-      <CtaSection />
     </div>
   );
 }

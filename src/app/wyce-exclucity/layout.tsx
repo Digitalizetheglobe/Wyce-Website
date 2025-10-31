@@ -1,7 +1,7 @@
 import "./globals.css";
 import type { ReactNode } from "react";
 import Header from "./links/Header";
-import FooterSection from "./links/Footer";
+import Footer from "./links/foor";
 
 
 export const metadata = {
@@ -11,10 +11,10 @@ export const metadata = {
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <div className="overflow-x-hidden">
+    <>
       <Header />
       {children}
-      <FooterSection />
-    </div>
+      <Footer />
+    </>
   );
 }

@@ -1,9 +1,98 @@
 "use client";
 
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 export default function PricesSection() {
+  const [showModal, setShowModal] = useState(false);
+  
+  const [formData, setFormData] = useState({
+    firstName: "",
+    phone: "",
+    email: "",
+    message: "",
+  });
+  
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<{
+    type: "success" | "error" | null;
+    message: string;
+  }>({ type: null, message: "" });
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus({ type: null, message: "" });
+
+    try {
+      const response = await fetch(
+        "https://leadquest.corelto.co/public/companies/040487f0-dbe9-485a-bb4b-ab881fa7fdbb/leads-all",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            name: formData.firstName,
+            mobile: formData.phone,
+            email: formData.email,
+            project: "Wyce ExcluCity",
+            source: "Website",
+            sub_source: "",
+            user_email: "",
+            comment: formData.message,
+          }),
+        }
+      );
+
+      if (response.ok) {
+        setSubmitStatus({
+          type: "success",
+          message: "Thank you! Your message has been sent successfully.",
+        });
+        // Reset form
+        setFormData({
+          firstName: "",
+          phone: "",
+          email: "",
+          message: "",
+        });
+        // Close modal after 3 seconds on success
+        setTimeout(() => {
+          setShowModal(false);
+          setSubmitStatus({ type: null, message: "" });
+        }, 3000);
+      } else {
+        throw new Error("Failed to submit form");
+      }
+    } catch (error) {
+      setSubmitStatus({
+        type: "error",
+        message: "Something went wrong. Please try again later.",
+      });
+      console.error("Form submission error:", error);
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  const handleCloseModal = () => {
+    setShowModal(false);
+    setSubmitStatus({ type: null, message: "" });
+    // Reset form when closing
+    setFormData({
+      firstName: "",
+      phone: "",
+      email: "",
+      message: "",
+    });
+  };
 
   const homes = [
     {
@@ -101,7 +190,7 @@ export default function PricesSection() {
   };
 
   return (
-    <section className="w-full bg-black text-white py-16 px-4 sm:px-6 md:px-8 pt-24 sm:pt-32 md:pt-40 overflow-hidden">
+    <section className="w-full bg-black text-white py-16 px-6  overflow-hidden">
       <motion.div
         className="max-w-7xl mx-auto text-center"
         initial="hidden"
@@ -165,7 +254,7 @@ export default function PricesSection() {
 
               {/* Bottom Content */}
               <motion.div
-                className="p-4 mx-4 -mt-14 z-10 border border-[#866448] rounded-2xl 
+                className="p-6 h-40 mx-4 -mt-14 z-10 border border-[#866448] rounded-2xl 
                   text-center text-white flex flex-col justify-between backdrop-blur-sm"
                 style={{
                   backgroundImage: "url('/images/wyce-exclucity/bg-price.png')",
@@ -199,9 +288,10 @@ export default function PricesSection() {
                 {/* Button */}
                 <div className="flex justify-center">
                   <motion.button
-                    className="bg-gradient-to-r from-[#B7AC88] to-[#1F1403] text-white 
-                      px-[28px] py-[10px] rounded-full shadow-md hover:opacity-90 
-                      transition text-xs font-medium cursor-pointer"
+                    onClick={() => setShowModal(true)}
+                    className="bg-gradient-to-r bg-[white] text-[#B7AC88] 
+                      px-[20px] py-[4px] shadow-md hover:opacity-90 
+                      transition text-[15px] font-medium cursor-pointer hover:text-white hover:bg-[#b7ac88] rounded-sm"
                     whileHover={{
                       scale: 1.15,
                       boxShadow: "0 0 25px rgba(183, 172, 136, 0.5)",
@@ -214,7 +304,7 @@ export default function PricesSection() {
                       delay: 0.6 + index * 0.1,
                     }}
                   >
-                    Read More
+                    Book Now
                   </motion.button>
                 </div>
               </motion.div>
@@ -222,6 +312,189 @@ export default function PricesSection() {
           ))}
         </motion.div>
       </motion.div>
+
+      {/* Modal */}
+      <AnimatePresence>
+        {showModal && (
+          <motion.div
+            className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={handleCloseModal}
+          >
+            <motion.div
+              className="relative bg-black border border-[#866448] rounded-lg shadow-2xl max-w-lg w-full p-6 sm:p-8 max-h-[90vh] overflow-y-auto"
+              initial={{ opacity: 0, scale: 0.9, y: 20 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.9, y: 20 }}
+              transition={{ duration: 0.3 }}
+              onClick={(e) => e.stopPropagation()}
+            >
+              {/* Close Button */}
+              <button
+                onClick={handleCloseModal}
+                className="absolute top-4 right-4 text-gray-400 hover:text-white transition-colors text-2xl leading-none"
+                aria-label="Close modal"
+              >
+                ×
+              </button>
+
+              {/* Form Heading */}
+              <motion.h2
+                className="text-2xl sm:text-3xl mb-3 sm:mb-4 text-center text-[#B7AC88] font-bold"
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+              >
+                Book Site Visit
+              </motion.h2>
+
+
+              {/* Status Message */}
+              {submitStatus.type && (
+                <motion.div
+                  className={`mb-6 p-4 rounded-md ${
+                    submitStatus.type === "success"
+                      ? "bg-green-900/50 border border-green-600 text-green-200"
+                      : "bg-red-900/50 border border-red-600 text-red-200"
+                  }`}
+                  initial={{ opacity: 0, y: -20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5 }}
+                >
+                  {submitStatus.message}
+                </motion.div>
+              )}
+
+              {/* Form */}
+              <motion.form
+                onSubmit={handleSubmit}
+                className="grid grid-cols-1 gap-3 sm:gap-4"
+                initial="hidden"
+                animate="visible"
+                variants={{
+                  hidden: {},
+                  visible: {
+                    transition: { staggerChildren: 0.15 },
+                  },
+                }}
+              >
+                <motion.div
+                  variants={{
+                    hidden: { opacity: 0, y: 20 },
+                    visible: { opacity: 1, y: 0 },
+                  }}
+                  transition={{ duration: 0.6 }}
+                >
+                  <input
+                    type="text"
+                    name="firstName"
+                    value={formData.firstName}
+                    onChange={handleChange}
+                    placeholder="First Name*"
+                    required
+                    className="w-full p-2.5 sm:p-3 text-sm sm:text-base rounded border border-gray-600 bg-transparent text-white placeholder-gray-400 focus:outline-none focus:border-[#B7AC88] transition-colors"
+                  />
+                </motion.div>
+
+                <motion.div
+                  variants={{
+                    hidden: { opacity: 0, y: 20 },
+                    visible: { opacity: 1, y: 0 },
+                  }}
+                  transition={{ duration: 0.6, delay: 0.1 }}
+                >
+                  <input
+                    type="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    placeholder="Email*"
+                    required
+                    className="w-full p-2.5 sm:p-3 text-sm sm:text-base rounded border border-gray-600 bg-transparent text-white placeholder-gray-400 focus:outline-none focus:border-[#B7AC88] transition-colors"
+                  />
+                </motion.div>
+
+                <motion.div
+                  variants={{
+                    hidden: { opacity: 0, y: 20 },
+                    visible: { opacity: 1, y: 0 },
+                  }}
+                  transition={{ duration: 0.6, delay: 0.2 }}
+                >
+                  <input
+                    type="tel"
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleChange}
+                    placeholder="Contact*"
+                    required
+                    className="w-full p-2.5 sm:p-3 text-sm sm:text-base rounded border border-gray-600 bg-transparent text-white placeholder-gray-400 focus:outline-none focus:border-[#B7AC88] transition-colors"
+                  />
+                </motion.div>
+
+                <motion.div
+                  variants={{
+                    hidden: { opacity: 0, y: 20 },
+                    visible: { opacity: 1, y: 0 },
+                  }}
+                  transition={{ duration: 0.6, delay: 0.3 }}
+                >
+                  <textarea
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
+                    placeholder="Message"
+                    rows={4}
+                    className="w-full p-2.5 sm:p-3 text-sm sm:text-base rounded border border-gray-600 bg-transparent text-white placeholder-gray-400 focus:outline-none focus:border-[#B7AC88] transition-colors resize-none"
+                  />
+                </motion.div>
+
+                <motion.label
+                  className="col-span-full flex items-start gap-2 text-gray-300 text-xs sm:text-sm w-full"
+                  variants={{
+                    hidden: { opacity: 0, y: 10 },
+                    visible: { opacity: 1, y: 0 },
+                  }}
+                  transition={{ duration: 0.6, delay: 0.4 }}
+                >
+                  <input
+                    type="checkbox"
+                    className="mt-1 w-4 h-4 flex-shrink-0 cursor-pointer accent-[#B7AC88]"
+                  />
+                  <span className="flex-1">
+                    I agree with the terms and Privacy Policy and I declare that I
+                    have read the information that is required in accordance.
+                  </span>
+                </motion.label>
+
+                {/* Submit Button */}
+                <motion.div
+                  className="col-span-full flex justify-center mt-2 w-full"
+                  variants={{
+                    hidden: { opacity: 0, scale: 0.9 },
+                    visible: { opacity: 1, scale: 1 },
+                  }}
+                  transition={{ duration: 0.6, delay: 0.5 }}
+                >
+                  <button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className="border hover:text-[#B7AC88] hover:border-[#B7AC88] cursor-pointer
+                              text-white px-6 sm:px-12 py-2 sm:py-3 shadow-md text-bold border-2
+                              hover:scale-105 active:scale-95 transition-transform 
+                              text-sm sm:text-base font-bold w-full sm:w-auto max-w-md
+                              disabled:opacity-50 disabled:cursor-not-allowed"
+                  >
+                    {isSubmitting ? "SENDING..." : "Book Site Visit"}
+                  </button>
+                </motion.div>
+              </motion.form>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 }

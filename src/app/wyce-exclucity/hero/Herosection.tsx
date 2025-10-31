@@ -16,22 +16,27 @@ export default function Hero() {
   return (
     <section
       ref={ref}
-      className="relative w-full h-screen overflow-hidden"
+      className="relative w-full h-screen overflow-hidden "
     >
       {/* Full-screen Video */}
       <motion.div
-        className="absolute inset-0 w-full h-full"
+        className="absolute inset-0 w-full"
         style={{ y, opacity }}
       >
-        <video
-          className="w-full h-full object-cover"
-          autoPlay
-          loop
-          playsInline
-        >
-          <source src="/images/wyce-exclucity/about-video.webm" type="video/webm" />
-          Your browser does not support the video tag.
-        </video>
+        <iframe
+          className="w-full h-full absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 min-w-full min-h-full object-cover"
+          src="https://www.youtube.com/embed/Up1m6u-qcCU?controls=0&autoplay=1&mute=1&loop=1&playlist=Up1m6u-qcCU&modestbranding=1&rel=0&playsinline=1"
+          title="Hero Video"
+          allow="autoplay; encrypted-media; fullscreen"
+          allowFullScreen
+          style={{
+            pointerEvents: 'none',
+            width: '100vw',
+            height: '56.25vw',
+            minHeight: '100%',
+            minWidth: '100%'
+          }}
+        />
       </motion.div>
 
       {/* Optional subtle overlay for better text readability if needed later */}
