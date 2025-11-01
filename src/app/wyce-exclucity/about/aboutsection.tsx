@@ -25,9 +25,7 @@ export default function AboutProject() {
             <span className="font-breathney text-[#a78631]  text-[20px] sm:text-xl md:text-xl lg:text-2xl">City</span>
           </h1>
 
-          <p className="text-lg md:text-xl text-gray-700 leading-relaxed text-center" style={{ lineHeight: '1.8' }}>
-            Residence by Excellencez
-          </p>
+
           <p className="text-gray-800 text-lg text-justify md:text-center" style={{ lineHeight: '2' }}>
             Some homes aren&apos;t built they&apos;re destined. WYCE Exclucity redefines urban luxury where innovation and elegance flow in harmony.
           </p>
