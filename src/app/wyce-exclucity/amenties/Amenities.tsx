@@ -556,7 +556,7 @@ export default function AmenitiesCarousel() {
           <button
             key={index}
             onClick={() => setActiveTab(index)}
-            className="relative px-6 py-2 font-Raleway text-lg font-medium text-[#b7ac88] transition-colors duration-300 cursor-pointer"
+            className="relative px-6 py-2 font-Raleway text-lg font-bold text-[#b7ac88] transition-colors duration-300 cursor-pointer"
           >
             {tab}
             {activeTab === index && (
