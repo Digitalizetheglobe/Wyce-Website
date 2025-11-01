@@ -11,7 +11,7 @@ export default function ProjectOverview() {
           Project Highlights
         </h2>
         <div className="bg-black/50 backdrop-blur-sm rounded-xl border border-[#b7a863] p-6 sm:p-8 md:p-10 shadow-lg w-full mt-6 sm:mt-8 md:mt-10">
-          <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-6 sm:gap-x-8 md:gap-x-10 gap-y-4 sm:gap-y-5 text-md sm:text-base md:text-lg leading-relaxed mx-auto text-center max-w-6xl">
+          <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-6 sm:gap-x-8 md:gap-x-10 gap-y-4 sm:gap-y-5 text-md text-white md:text-lg leading-relaxed mx-auto text-center max-w-6xl">
             <li>4, 3 & 2 BHK premium residences</li>
             <li>7,000 acres of green ambience</li>
             <li>70,000 sq. ft. of lifestyle amenities</li>

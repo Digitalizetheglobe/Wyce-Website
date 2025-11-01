@@ -136,7 +136,7 @@ export default function BlogPage() {
                         <span className="text-sm text-gray-500">{post.date}</span>
                       </div>
                       <Link href={`/blog/${post.slug}`}>
-                        <button className="px-6 py-2 bg-[#B7AC88] text-white hover:bg-[#121212] hover:text-[#B7AC88] hover:border hover:border-[#B7AC88] transition-colors duration-300 font-medium cursor-pointer">
+                        <button className="px-2 py-2 bg-[#B7AC88] text-white hover:bg-[#121212] hover:text-[#B7AC88] hover:border hover:border-[#B7AC88] transition-colors duration-300 font-medium cursor-pointer">
                           Read More
                         </button>
                       </Link>

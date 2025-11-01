@@ -209,7 +209,7 @@ export default function PricesSection() {
           className="text-white-400 max-w-2xl mx-auto mb-12 font-raleway text-2xl"
           variants={descriptionVariants}
         >
-          Every property is more than just four walls—it&apos;s a promise of luxury,
+          Every property is more than just four walls it&apos;s a promise of luxury,
           comfort and growth. Step into a lifestyle
         </motion.p>
 

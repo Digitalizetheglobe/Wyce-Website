@@ -44,7 +44,7 @@ export default function Gallery() {
         transition={{ delay: 0.3, duration: 0.8 }}
         viewport={{ once: true, amount: 0.3 }}
       >
-        Every property is more than just four walls—it&apos;s a promise of luxury,
+        Every property is more than just four walls it&apos;s a promise of luxury,
         comfort and growth. Step into a lifestyle
       </motion.p>
 

@@ -543,7 +543,7 @@ export default function AmenitiesCarousel() {
         <p
           className="text-gray-700 max-w-4xl mx-auto mt-4 font-Raleway text-2xl"
         >
-          Experience Elevated Living WYCE Exclucity properties come packed with lifestyle-enhancing
+          Experience Elevated Living WYCE Exclucity properties come packed with lifestyle enhancing
           features that cater to all age groups.
         </p>
       </div>
