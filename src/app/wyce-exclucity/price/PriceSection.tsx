@@ -289,7 +289,7 @@ export default function PricesSection() {
                 <div className="flex justify-center">
                   <motion.button
                     onClick={() => setShowModal(true)}
-                    className="bg-gradient-to-r bg-[white] text-[#B7AC88] 
+                    className="bg-gradient-to-r bg-[white] text-black 
                       px-[20px] py-[4px] shadow-md hover:opacity-90 
                       transition text-[15px] font-medium cursor-pointer hover:text-white hover:bg-[#b7ac88] rounded-sm"
                     whileHover={{
