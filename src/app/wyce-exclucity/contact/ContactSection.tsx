@@ -19,7 +19,10 @@ export default function ContactSection() {
     message: string;
   }>({ type: null, message: "" });
   const [errors, setErrors] = useState<{
+    firstName?: string;
+    email?: string;
     phone?: string;
+    message?: string;
     consent?: string;
   }>({});
 
@@ -41,6 +44,11 @@ export default function ContactSection() {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
+    
+    // Clear errors when user types
+    if (errors[name as keyof typeof errors]) {
+      setErrors((prev) => ({ ...prev, [name]: undefined }));
+    }
   };
 
   const handleConsentChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -56,11 +64,34 @@ export default function ContactSection() {
     setSubmitStatus({ type: null, message: "" });
     
     // Validation
-    const newErrors: { phone?: string; consent?: string } = {};
+    const newErrors: {
+      firstName?: string;
+      email?: string;
+      phone?: string;
+      message?: string;
+      consent?: string;
+    } = {};
+    
+    // Validate first name
+    if (!formData.firstName.trim()) {
+      newErrors.firstName = "First name is required";
+    }
+    
+    // Validate email - must contain "@"
+    if (!formData.email.trim()) {
+      newErrors.email = "Email is required";
+    } else if (!formData.email.includes("@")) {
+      newErrors.email = "Email must contain '@'";
+    }
     
     // Validate phone number - must be exactly 10 digits
     if (!formData.phone || formData.phone.length !== 10) {
       newErrors.phone = "Please enter a valid 10-digit phone number";
+    }
+    
+    // Validate message
+    if (!formData.message.trim()) {
+      newErrors.message = "Message is required";
     }
     
     // Validate consent checkbox
@@ -241,8 +272,15 @@ export default function ContactSection() {
                   onChange={handleChange}
                   placeholder="First Name*"
                   required
-                  className="w-full p-2.5 sm:p-3 text-sm sm:text-base rounded border border-gray-600 bg-transparent text-white placeholder-gray-400 focus:outline-none focus:border-[#B7AC88] transition-colors"
+                  className={`w-full p-2.5 sm:p-3 text-sm sm:text-base rounded border bg-transparent text-white placeholder-gray-400 focus:outline-none transition-colors ${
+                    errors.firstName
+                      ? "border-red-500 focus:border-red-500"
+                      : "border-gray-600 focus:border-[#B7AC88]"
+                  }`}
                 />
+                {errors.firstName && (
+                  <p className="mt-1 text-xs sm:text-sm text-red-400">{errors.firstName}</p>
+                )}
               </motion.div>
 
               <motion.div
@@ -259,8 +297,15 @@ export default function ContactSection() {
                   onChange={handleChange}
                   placeholder="Email*"
                   required
-                  className="w-full p-2.5 sm:p-3 text-sm sm:text-base rounded border border-gray-600 bg-transparent text-white placeholder-gray-400 focus:outline-none focus:border-[#B7AC88] transition-colors"
+                  className={`w-full p-2.5 sm:p-3 text-sm sm:text-base rounded border bg-transparent text-white placeholder-gray-400 focus:outline-none transition-colors ${
+                    errors.email
+                      ? "border-red-500 focus:border-red-500"
+                      : "border-gray-600 focus:border-[#B7AC88]"
+                  }`}
                 />
+                {errors.email && (
+                  <p className="mt-1 text-xs sm:text-sm text-red-400">{errors.email}</p>
+                )}
               </motion.div>
 
               <motion.div
@@ -300,10 +345,18 @@ export default function ContactSection() {
                   name="message"
                   value={formData.message}
                   onChange={handleChange}
-                  placeholder="Message"
+                  placeholder="Message*"
                   rows={4}
-                  className="w-full p-2.5 sm:p-3 text-sm sm:text-base rounded border border-gray-600 bg-transparent text-white placeholder-gray-400 focus:outline-none focus:border-[#B7AC88] transition-colors resize-none"
+                  required
+                  className={`w-full p-2.5 sm:p-3 text-sm sm:text-base rounded border bg-transparent text-white placeholder-gray-400 focus:outline-none transition-colors resize-none ${
+                    errors.message
+                      ? "border-red-500 focus:border-red-500"
+                      : "border-gray-600 focus:border-[#B7AC88]"
+                  }`}
                 />
+                {errors.message && (
+                  <p className="mt-1 text-xs sm:text-sm text-red-400">{errors.message}</p>
+                )}
               </motion.div>
 
               <motion.div
