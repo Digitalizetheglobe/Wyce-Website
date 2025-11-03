@@ -3,10 +3,14 @@ import { Calendar, Tag, ArrowLeft } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import BlogSidebar from "@/app/blog/[slug]/BlogSidebar";
+import type { Metadata } from "next";
 
 // Blog content data
 interface BlogData {
   title: string;
+  metaTitle?: string;
+  metaDescription?: string;
+  keywords?: string;
   date: string;
   category: string;
   author: string;
@@ -16,7 +20,10 @@ interface BlogData {
 
 const blogContent: Record<string, BlogData> = {
   "bavhdan-wasn't-on-my-radar": {
-    title: "Bavdhan Wasn’t on My Radar... Until I Realized Everyone Smart Was Moving There",
+    title: "Bavdhan Wasn't on My Radar... Until I Realized Everyone Smart Was Moving There",
+    metaTitle: "Why Everyone Smart Is Moving to Bavdhan | Discover Pune's Fastest-Growing Neighbourhood Explore why",
+    metaDescription: "Bavdhan has become Pune's top choice for homebuyers and investors. From connectivity to lifestyle, find out what makes this smart suburb the next real estate hotspot.",
+    keywords: "Bavdhan Pune real estate, flats in Bavdhan, properties in Bavdhan, Pune real estate hotspot, Bavdhan investment, best area to live in Pune",
     date: "October 28, 2025",
     category: "Real Estate",
     author: "WYCE Team",
@@ -51,6 +58,9 @@ const blogContent: Record<string, BlogData> = {
   },
   "a-new-12-meter-road": {
     title: "A New 12-Meter Road Transforms Connectivity to Chandani Chowk",
+    metaTitle: "A New 12-Meter Road Boosts Connectivity to Chandani Chowk | Pune Development Update",
+    metaDescription: "Discover how the new 12-meter road is transforming connectivity to Chandani Chowk, Pune. Improved access, reduced travel time, and better infrastructure make this a major boost for residents and investors alike.",
+    keywords: "Chandani Chowk Pune, new 12 meter road Pune, Pune infrastructure development, Bavdhan connectivity, Chandani Chowk road update, Pune real estate growth, improved road connectivity Pune",
     date: "October 28, 2025",
     category: "Real Estate",
     author: "WYCE Team",
@@ -103,6 +113,35 @@ const recentPosts = [
   //   slug: "designing-connection",
   // },
 ];
+
+// Generate metadata for each blog post
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const resolvedParams = await params;
+  const post = blogContent[resolvedParams.slug];
+
+  if (!post) {
+    return {
+      title: "Post Not Found | WYCE Corp",
+      description: "The blog post you are looking for could not be found.",
+    };
+  }
+
+  return {
+    title: post.metaTitle || post.title,
+    description: post.metaDescription || "",
+    keywords: post.keywords || "",
+    robots: "index, follow",
+    authors: [{ name: "WYCE Corp" }],
+    publisher: "WYCE Corp",
+    alternates: {
+      canonical: `https://www.wycecorp.com/blog/${resolvedParams.slug}`,
+    },
+  };
+}
 
 export default async function BlogPostPage({ 
   params 
