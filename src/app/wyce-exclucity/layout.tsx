@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   authors: [{ name: "WYCE Corp" }],
   publisher: "WYCE Corp",
   alternates: {
-    canonical: "https://www.wycecorp.com/"
+    canonical: "https://www.wycecorp.com/wyce-exclucity"
   }
 };
 
