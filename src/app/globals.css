@@ -250,3 +250,7 @@ body {
 .blog-content li {
   color: white;
 }
+
+html, body {
+  overflow-x: hidden;
+}

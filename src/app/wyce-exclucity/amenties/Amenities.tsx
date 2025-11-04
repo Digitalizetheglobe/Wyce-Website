@@ -71,7 +71,7 @@ export default function AmenitiesCarousel() {
     ];
 
     return (
-      <div className="w-full lg:w-[1600px] min-h-[600px] lg:min-h-[800px] px-6 lg:bg-[url('/images/wyce-exclucity/am1.png')] bg-contain bg-center bg-no-repeat">
+      <div className="w-full lg:w-[1200px] xl:w-[1520px] min-h-[600px] lg:min-h-[800px] px-6 lg:bg-[url('/images/wyce-exclucity/am1.png')] bg-contain bg-center bg-no-repeat">
         <div className="container mx-auto px-5 lg:px-8 xl:px-10 py-8 lg:py-10 h-full">
           <div className="flex flex-col lg:flex-row items-center lg:items-start justify-center lg:justify-start gap-8 lg:gap-12 xl:gap-16 h-full min-h-[400px] lg:min-h-[650px]">
             {/* Left Side - Images Collage */}
@@ -80,9 +80,9 @@ export default function AmenitiesCarousel() {
             </div>
 
             {/* Right Side - Text Content */}
-            <div className="w-full lg:w-1/2 flex flex-col items-center lg:items-start lg:pt-20 sm:pt-0">
+            <div className="w-full lg:w-1/2 flex flex-col items-center lg:items-start lg:pt-20 sm:pt-0 relative z-10">
               {/* Title Section */}
-              <div className="mb-8 lg:mb-10 lg:mb-14 text-center lg:text-left">
+              <div className="mb-8 lg:mb-10 lg:mb-14 text-center lg:text-left w-full lg:hidden">
                 <h2 className="text-3xl lg:text-3xl font-Raleway font-normal text-[#2a2a2a] mb-2 leading-tight">
                   Peace, Crafted Like
                 </h2>
@@ -91,14 +91,14 @@ export default function AmenitiesCarousel() {
                 </h3>
               </div>
 
-              {/* Amenities Grid */}
-              <div className="grid grid-cols-2 gap-x-4 gap-y-6 lg:gap-x-0 lg:gap-y-8 w-full max-w-md lg:max-w-none justify-items-center lg:justify-items-start">
+              {/* Mobile/Tablet View - 2 Column Grid */}
+              <div className="lg:hidden grid grid-cols-2 gap-x-4 gap-y-6 w-full max-w-md justify-items-center">
                 {natureAmenities.map((item, index) => (
                   <div
                     key={index}
-                    className="flex items-center gap-3 lg:gap-2"
+                    className="flex items-center gap-3 w-full"
                   >
-                    <div className="flex-shrink-0 w-12 h-12 lg:w-20 lg:h-14">
+                    <div className="flex-shrink-0 w-12 h-12">
                       <img
                         src={item.icon}
                         alt={item.text}
@@ -109,12 +109,15 @@ export default function AmenitiesCarousel() {
                         }}
                       />
                     </div>
-                    <span className="text-sm lg:text-lg font-normal text-[#2a2a2a]">
+                    <span className="text-sm font-normal text-[#2a2a2a] font-Raleway">
                       {item.text}
                     </span>
                   </div>
                 ))}
               </div>
+
+
+
             </div>
           </div>
         </div>
@@ -191,62 +194,16 @@ export default function AmenitiesCarousel() {
                 </div>
               </div>
 
-              {/* Desktop View - Two Column Layout for Amenities */}
-              <div className="hidden lg:grid lg:grid-cols-2 gap-x-12 gap-y-6 w-full max-w-none justify-items-start">
-
-                                {/* Indoor Activities */}
-                <div className="flex flex-col w-full items-start">
-                  <h4
-                    className="text-lg lg:text-xl font-Raleway font-semibold text-[#2a2a2a] mb-4"
-                  >
-                    Indoor Activities:
-                  </h4>
+              {/* Desktop View - Two Column Grid */}
+              <div className="hidden lg:block w-full mt-4">
+                <div className="grid grid-cols-2 gap-x-8 gap-y-6 w-full max-w-4xl justify-items-start">
+                  {/* Outdoor Amenities Column */}
                   <div className="flex flex-col w-full items-start">
-                    {indoorAmenities.map((item, index) => (
-                      <div
-                        key={index}
-                        className="flex items-center gap-4 pb-2 pt-2 relative justify-start w-full"
-                      >
-                        <div className="flex-shrink-0 w-14 h-14">
-                          <img
-                            src={item.icon}
-                            alt={item.text}
-                            className="w-full h-full object-contain"
-                            style={{ 
-                              filter: "none",
-                              color: "#B7AC88"
-                            }}
-                          />
-                        </div>
-                        <span className="text-lg font-normal text-[#2a2a2a] font-Raleway">
-                          {item.text}
-                        </span>
-                        {/* Custom Border - visible on laptop */}
-                        <div 
-                          className="absolute bottom-0 bg-[#B7AC88]/70"
-                          style={{ 
-                            width: "calc(60% - 20px)",
-                            height: "2px",
-                            left: "56px"
-                          }}
-                        />
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Outdoor Indulgences */}
-                <div className="flex flex-col w-full items-start">
-                  <h4
-                    className="text-lg lg:text-xl font-Raleway font-semibold text-[#2a2a2a] mb-4"
-                  >
-                    Outdoor Indulgences:
-                  </h4>
-                  <div className="flex flex-col w-full items-start">
+                    <h4 className="text-lg font-semibold font-Raleway text-[#2a2a2a] mb-4">Outdoor</h4>
                     {outdoorAmenities.map((item, index) => (
                       <div
                         key={index}
-                        className="flex items-center pb-2 pt-2 relative justify-start w-full"
+                        className="flex items-center gap-4 py-2 justify-start w-full"
                       >
                         <div className="flex-shrink-0 w-14 h-14">
                           <img
@@ -259,25 +216,40 @@ export default function AmenitiesCarousel() {
                             }}
                           />
                         </div>
-                        <span className="text-lg font-normal text-[#2a2a2a] font-Raleway ml-3">
+                        <span className="text-lg font-normal font-Raleway text-[#2a2a2a]">
                           {item.text}
                         </span>
-                        {/* Custom Border - visible on laptop */}
-                        <div 
-                          className="absolute bottom-0 bg-[#B7AC88]/70"
-                          style={{ 
-                            width: "calc(60% - 20px)",
-                            height: "2px",
-                            left: "56px"
-                          }}
-                        />
+                      </div>
+                    ))}
+                  </div>
+                  {/* Indoor Amenities Column */}
+                  <div className="flex flex-col w-full items-start">
+                    <h4 className="text-lg font-semibold font-Raleway text-[#2a2a2a] mb-4">Indoor</h4>
+                    {indoorAmenities.map((item, index) => (
+                      <div
+                        key={index}
+                        className="flex items-center gap-4 py-2 justify-start w-full"
+                      >
+                        <div className="flex-shrink-0 w-14 h-14">
+                          <img
+                            src={item.icon}
+                            alt={item.text}
+                            className="w-full h-full object-contain"
+                            style={{ 
+                              filter: "none",
+                              color: "#B7AC88"
+                            }}
+                          />
+                        </div>
+                        <span className="text-lg font-normal font-Raleway text-[#2a2a2a]">
+                          {item.text}
+                        </span>
                       </div>
                     ))}
                   </div>
                 </div>
-
-
               </div>
+
             </div>
 
 
@@ -312,13 +284,13 @@ export default function AmenitiesCarousel() {
     const allSocialAmenities = [...leftColumn, ...rightColumn];
 
     return (
-      <div className="w-full lg:w-[1700px] min-h-[700px] md:min-h-[750px] lg:min-h-[750px] px-6 relative lg:bg-[url('/images/wyce-exclucity/am3.png')] bg-contain bg-center bg-no-repeat">
+      <div className="w-full lg:w-[1520px]  min-h-[700px] md:min-h-[750px] lg:min-h-[750px] relative lg:bg-[url('/images/wyce-exclucity/am3.png')] bg-contain bg-center bg-no-repeat overflow-hidden">
         <div className="container mx-auto px-5 lg:px-8 xl:px-20 py-8 lg:py-0 h-full">
           <div className="flex flex-col lg:flex-row items-center lg:items-start justify-center lg:justify-start gap-8 lg:gap-12 xl:gap-16 h-full min-h-[400px] lg:min-h-[650px]">
             {/* Left Side - Text Content only; right-side image is part of banner */}
-            <div className="w-full lg:w-2/3 flex flex-col relative z-10 lg:pt-15 items-center lg:items-start lg:pl-50">
+            <div className="w-full lg:w-2/3 flex flex-col relative z-10 lg:pt-15 items-center lg:items-start">
               {/* Title Section */}
-              <div className="mb-6 lg:mb-8 text-center lg:text-left">
+              <div className="mb-6 lg:mb-8 text-center lg:text-left lg:hidden">
                 <h2 className="text-2xl md:text-3xl lg:text-3xl font-Raleway font-normal text-black mb-2 leading-tight">
                   Social Connections,
                 </h2>
@@ -347,37 +319,6 @@ export default function AmenitiesCarousel() {
                 </div>
               </div>
 
-              {/* Desktop View - Two Column Amenities List */}
-              <div className="hidden lg:grid lg:grid-cols-2 gap-x-10 gap-y-5 w-full max-w-none justify-items-start">
-                {/* Right column */}
-                <div className="flex flex-col w-full items-start">
-                  {rightColumn.map((item, index) => (
-                    <div
-                      key={index}
-                      className="flex items-center gap-4 py-2 justify-start w-full"
-                    >
-                      <div className="flex-shrink-0 w-14 h-14">
-                        <img src={item.icon} alt={item.text} className="w-full h-full object-contain" style={{ filter: "none", color: "#B7AC88" }} />
-                      </div>
-                      <span className="text-lg font-normal font-Raleway text-[#2a2a2a]">{item.text}</span>
-                    </div>
-                  ))}
-                </div>
-                {/* Left column */}
-                <div className="flex flex-col w-full items-start">
-                  {leftColumn.map((item, index) => (
-                    <div
-                      key={index}
-                      className="flex items-center gap-4 py-2 justify-start w-full"
-                    >
-                      <div className="flex-shrink-0 w-14 h-14">
-                        <img src={item.icon} alt={item.text} className="w-full h-full object-contain" style={{ filter: "none", color: "#B7AC88" }} />
-                      </div>
-                      <span className="text-lg font-normal font-Raleway text-[#2a2a2a]">{item.text}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
             </div>
           </div>
         </div>
