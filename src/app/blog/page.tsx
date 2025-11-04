@@ -15,7 +15,7 @@ const blogPosts = [
     category: "Real Estate",
     date: "October 28, 2025",
     image: "/images/blog2.jpeg",
-    slug: "bavhdan-wasn't-on-my-radar",
+    slug: "bavdhan-wasn't-on-my-radar",
   },
   {
     id: 2,
@@ -35,7 +35,7 @@ const recentPosts = [
     id: 1,
     title: "Bavdhan Wasn’t on My Radar... Until I Realized Everyone Smart Was Moving There",
     date: "October 28, 2025",
-    slug: "bavhdan-wasn't-on-my-radar",
+    slug: "bavdhan-wasn't-on-my-radar",
   },
   {
     id: 2,

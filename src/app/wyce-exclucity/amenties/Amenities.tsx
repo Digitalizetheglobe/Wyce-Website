@@ -71,7 +71,7 @@ export default function AmenitiesCarousel() {
     ];
 
     return (
-      <div className="w-full lg:w-[1400px] min-h-[600px] lg:min-h-[800px] px-6 lg:bg-[url('/images/wyce-exclucity/am1.png')] bg-contain bg-center bg-no-repeat">
+      <div className="w-full lg:w-[1600px] min-h-[600px] lg:min-h-[800px] px-6 lg:bg-[url('/images/wyce-exclucity/am1.png')] bg-contain bg-center bg-no-repeat">
         <div className="container mx-auto px-5 lg:px-8 xl:px-10 py-8 lg:py-10 h-full">
           <div className="flex flex-col lg:flex-row items-center lg:items-start justify-center lg:justify-start gap-8 lg:gap-12 xl:gap-16 h-full min-h-[400px] lg:min-h-[650px]">
             {/* Left Side - Images Collage */}
@@ -149,7 +149,7 @@ export default function AmenitiesCarousel() {
     const allSportsAmenities = [...indoorAmenities, ...outdoorAmenities];
 
     return (
-      <div className="w-full lg:w-[1400px] min-h-[700px] md:min-h-[750px] lg:min-h-[800px] px-6 relative lg:bg-[url('/images/wyce-exclucity/am2.png')] bg-contain bg-center bg-no-repeat">
+      <div className="w-full lg:w-[1600px] min-h-[700px] md:min-h-[750px] lg:min-h-[800px] px-6 relative lg:bg-[url('/images/wyce-exclucity/am2.png')] bg-contain bg-center bg-no-repeat">
         <div className="container mx-auto px-5 lg:px-8 xl:px-10 py-8 lg:py-10 h-full">
           <div className="flex flex-col lg:flex-row items-center justify-center lg:justify-start gap-8 lg:gap-12 xl:gap-16 h-full min-h-[400px] lg:min-h-[650px]">
             {/* Left Side - Text Content positioned on background image */}
@@ -312,8 +312,8 @@ export default function AmenitiesCarousel() {
     const allSocialAmenities = [...leftColumn, ...rightColumn];
 
     return (
-      <div className="w-full lg:w-[1400px] min-h-[700px] md:min-h-[750px] lg:min-h-[700px] px-6 relative lg:bg-[url('/images/wyce-exclucity/am3.png')] bg-contain bg-center bg-no-repeat">
-        <div className="container mx-auto px-5 lg:px-8 xl:px-10 py-8 lg:py-0 h-full">
+      <div className="w-full lg:w-[1700px] min-h-[700px] md:min-h-[750px] lg:min-h-[750px] px-6 relative lg:bg-[url('/images/wyce-exclucity/am3.png')] bg-contain bg-center bg-no-repeat">
+        <div className="container mx-auto px-5 lg:px-8 xl:px-20 py-8 lg:py-0 h-full">
           <div className="flex flex-col lg:flex-row items-center lg:items-start justify-center lg:justify-start gap-8 lg:gap-12 xl:gap-16 h-full min-h-[400px] lg:min-h-[650px]">
             {/* Left Side - Text Content only; right-side image is part of banner */}
             <div className="w-full lg:w-2/3 flex flex-col relative z-10 lg:pt-15 items-center lg:items-start lg:pl-50">

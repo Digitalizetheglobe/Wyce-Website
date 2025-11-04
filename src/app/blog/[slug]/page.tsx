@@ -19,9 +19,9 @@ interface BlogData {
 }
 
 const blogContent: Record<string, BlogData> = {
-  "bavhdan-wasn't-on-my-radar": {
+  "bavdhan-wasn't-on-my-radar": {
     title: "Bavdhan Wasn't on My Radar... Until I Realized Everyone Smart Was Moving There",
-    metaTitle: "Why Everyone Smart Is Moving to Bavdhan | Discover Pune's Fastest-Growing Neighbourhood Explore why",
+    metaTitle: "Why Everyone Smart Is Moving to Bavdhan | Discover Pune's Fastest-Growing Neighbourhood",
     metaDescription: "Bavdhan has become Pune's top choice for homebuyers and investors. From connectivity to lifestyle, find out what makes this smart suburb the next real estate hotspot.",
     keywords: "Bavdhan Pune real estate, flats in Bavdhan, properties in Bavdhan, Pune real estate hotspot, Bavdhan investment, best area to live in Pune",
     date: "October 28, 2025",
@@ -86,7 +86,7 @@ const recentPosts = [
     id: 1,
     title: "Bavdhan Wasn’t on My Radar... Until I Realized Everyone Smart Was Moving There",
     date: "October 28, 2025",
-    slug: "bavhdan-wasn't-on-my-radar",
+    slug: "bavdhan-wasn't-on-my-radar",
   },
   {
     id: 2,
