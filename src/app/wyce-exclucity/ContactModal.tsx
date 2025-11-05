@@ -2,6 +2,8 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { submitLead } from "@/utils/submitLead";
+import SuccessPopup from "@/components/SuccessPopup";
 
 interface ContactModalProps {
   isOpen: boolean;
@@ -18,10 +20,8 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
 
   const [consentAccepted, setConsentAccepted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState<{
-    type: "success" | "error" | null;
-    message: string;
-  }>({ type: null, message: "" });
+  const [showSuccessPopup, setShowSuccessPopup] = useState(false);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [errors, setErrors] = useState<{
     firstName?: string;
     email?: string;
@@ -40,7 +40,8 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
         message: "",
       });
       setConsentAccepted(false);
-      setSubmitStatus({ type: null, message: "" });
+      setErrorMessage(null);
+      setShowSuccessPopup(false);
       setErrors({});
     }
   }, [isOpen]);
@@ -82,7 +83,8 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setSubmitStatus({ type: null, message: "" });
+    setErrorMessage(null);
+    setShowSuccessPopup(false);
     
     // Validation
     const newErrors: {
@@ -129,64 +131,55 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
     
     // Clear any previous errors
     setErrors({});
-    setIsSubmitting(true);
-
-    try {
-      const response = await fetch(
-        "https://leadquest.corelto.co/public/companies/040487f0-dbe9-485a-bb4b-ab881fa7fdbb/leads-all",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            name: formData.firstName,
-            mobile: formData.phone,
-            email: formData.email,
-            project: "Wyce ExcluCity",
-            source: "Website",
-            sub_source: "",
-            user_email: "",
-            comment: formData.message,
-          }),
-        }
-      );
-
-      if (response.ok) {
-        setSubmitStatus({
-          type: "success",
-          message: "Thank you! Your message has been sent successfully.",
-        });
-        // Reset form
-        setFormData({
-          firstName: "",
-          phone: "",
-          email: "",
-          message: "",
-        });
-        setConsentAccepted(false);
-        // Close modal after 3 seconds on success
-        setTimeout(() => {
-          onClose();
-          setSubmitStatus({ type: null, message: "" });
-        }, 3000);
-      } else {
-        throw new Error("Failed to submit form");
-      }
-    } catch (error) {
-      setSubmitStatus({
-        type: "error",
-        message: "Something went wrong. Please try again later.",
-      });
-      console.error("Form submission error:", error);
-    } finally {
-      setIsSubmitting(false);
+    
+    // Show success immediately (optimistic UI)
+    setShowSuccessPopup(true);
+    
+    // Reset form immediately
+    setFormData({
+      firstName: "",
+      phone: "",
+      email: "",
+      message: "",
+    });
+    setConsentAccepted(false);
+    
+    // Safely reset form if element exists
+    if (e.currentTarget) {
+      e.currentTarget.reset();
     }
+    
+    // Close modal after 3 seconds
+    setTimeout(() => {
+      onClose();
+      setShowSuccessPopup(false);
+    }, 3000);
+    
+    // Submit in background (non-blocking)
+    setIsSubmitting(false); // Form is already reset, so we're done
+    submitLead(
+      {
+        name: formData.firstName,
+        email: formData.email,
+        phone: formData.phone,
+        message: formData.message,
+      },
+      () => {
+        // Success callback (optional - already showed success)
+        console.log("✅ Form submission confirmed successful");
+      },
+      (error) => {
+        // Error callback - show error if submission fails
+        setShowSuccessPopup(false);
+        setErrorMessage(error || "Something went wrong. Please try again later.");
+      }
+    );
   };
 
   const handleCloseModal = () => {
     onClose();
-    setSubmitStatus({ type: null, message: "" });
+    setErrorMessage(null);
+    setShowSuccessPopup(false);
     setErrors({});
     // Reset form when closing
     setFormData({
@@ -199,6 +192,12 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
   };
 
   return (
+    <>
+      <SuccessPopup
+        isOpen={showSuccessPopup}
+        onClose={() => setShowSuccessPopup(false)}
+        message="✅ Message sent successfully!"
+      />
     <AnimatePresence>
       {isOpen && (
         <motion.div
@@ -235,19 +234,15 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
               Book Site Visit
             </motion.h2>
 
-            {/* Status Message */}
-            {submitStatus.type && (
+            {/* Error Message */}
+            {errorMessage && (
               <motion.div
-                className={`mb-6 p-4 rounded-md ${
-                  submitStatus.type === "success"
-                    ? "bg-green-900/50 border border-green-600 text-green-200"
-                    : "bg-red-900/50 border border-red-600 text-red-200"
-                }`}
+                className="mb-6 p-4 rounded-md bg-red-900/50 border border-red-600 text-red-200"
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
               >
-                {submitStatus.message}
+                {errorMessage}
               </motion.div>
             )}
 
@@ -418,6 +413,7 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
         </motion.div>
       )}
     </AnimatePresence>
+    </>
   );
 }
 

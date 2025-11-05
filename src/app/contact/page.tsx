@@ -4,6 +4,8 @@ import {
     FaMapMarkerAlt,
     FaPhoneAlt,
 } from "react-icons/fa";
+import { submitLead } from "@/utils/submitLead";
+import SuccessPopup from "@/components/SuccessPopup";
 
 // Force dynamic rendering to avoid prerendering issues
 export const dynamic = 'force-dynamic';
@@ -18,10 +20,8 @@ const Contact = () => {
     });
 
     const [isSubmitting, setIsSubmitting] = useState(false);
-    const [submitStatus, setSubmitStatus] = useState<{
-        type: "success" | "error" | null;
-        message: string;
-    }>({ type: null, message: "" });
+    const [showSuccessPopup, setShowSuccessPopup] = useState(false);
+    const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         const { name, value } = e.target;
@@ -30,57 +30,50 @@ const Contact = () => {
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        setIsSubmitting(true);
-        setSubmitStatus({ type: null, message: "" });
-
-        try {
-            const response = await fetch(
-                "https://leadquest.corelto.co/public/companies/040487f0-dbe9-485a-bb4b-ab881fa7fdbb/leads-all",
-                {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json",
-                    },
-                    body: JSON.stringify({
-                        name: formData.fullName,
-                        mobile: formData.phone,
-                        email: formData.email,
-                        project: "Wyce ExcluCity",
-                        source: "Website",
-                        sub_source: "",
-                        user_email: "",
-                        comment: formData.message,
-                    }),
-                }
-            );
-
-            if (response.ok) {
-                setSubmitStatus({
-                    type: "success",
-                    message: "Thank you! Your message has been sent successfully.",
-                });
-                // Reset form
-                setFormData({
-                    fullName: "",
-                    phone: "",
-                    email: "",
-                    message: "",
-                });
-            } else {
-                throw new Error("Failed to submit form");
-            }
-        } catch (error) {
-            setSubmitStatus({
-                type: "error",
-                message: "Something went wrong. Please try again later.",
-            });
-            console.error("Form submission error:", error);
-        } finally {
-            setIsSubmitting(false);
+        setErrorMessage(null);
+        
+        // Show success immediately (optimistic UI)
+        setShowSuccessPopup(true);
+        
+        // Reset form immediately
+        setFormData({
+            fullName: "",
+            phone: "",
+            email: "",
+            message: "",
+        });
+        
+        // Safely reset form if element exists
+        if (e.currentTarget) {
+            e.currentTarget.reset();
         }
+        
+        // Submit in background (non-blocking)
+        setIsSubmitting(false);
+        submitLead(
+            {
+                name: formData.fullName,
+                email: formData.email,
+                phone: formData.phone,
+                message: formData.message,
+            },
+            () => {
+                console.log("✅ Form submission confirmed successful");
+            },
+            (error) => {
+                setShowSuccessPopup(false);
+                setErrorMessage(error || "Something went wrong. Please try again later.");
+            }
+        );
     };
 
     return (
+        <>
+            <SuccessPopup
+                isOpen={showSuccessPopup}
+                onClose={() => setShowSuccessPopup(false)}
+                message="✅ Message sent successfully!"
+            />
         <div className="w-full bg-black text-white">
             {/* Banner */}
             <div className="w-full h-64 flex flex-col items-center justify-center text-center bg-[#0a0a0a] border-b border-white/20 px-4">
@@ -138,16 +131,10 @@ const Contact = () => {
                 <div className="bg-[#2b2b2b] p-8 grid grid-cols-1 lg:grid-cols-3 gap-8">
                     {/* Form Section - Takes 2/3 width */}
                     <div className="lg:col-span-2 bg-[#00000099] p-8">
-                        {/* Status Message */}
-                        {submitStatus.type && (
-                            <div
-                                className={`mb-6 p-4 rounded-md ${
-                                    submitStatus.type === "success"
-                                        ? "bg-green-900/50 border border-green-600 text-green-200"
-                                        : "bg-red-900/50 border border-red-600 text-red-200"
-                                }`}
-                            >
-                                {submitStatus.message}
+                        {/* Error Message */}
+                        {errorMessage && (
+                            <div className="mb-6 p-4 rounded-md bg-red-900/50 border border-red-600 text-red-200">
+                                {errorMessage}
                             </div>
                         )}
                         
@@ -257,6 +244,7 @@ const Contact = () => {
                 </div>
             </div>
         </div>
+        </>
     );
 };
 

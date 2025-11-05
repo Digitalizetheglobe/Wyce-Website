@@ -2,6 +2,8 @@
 
 import { useState } from "react";
 import { motion } from "motion/react";
+import { submitLead } from "@/utils/submitLead";
+import SuccessPopup from "@/components/SuccessPopup";
 
 
 export default function ContactSection() {
@@ -14,10 +16,8 @@ export default function ContactSection() {
   
   const [consentAccepted, setConsentAccepted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState<{
-    type: "success" | "error" | null;
-    message: string;
-  }>({ type: null, message: "" });
+  const [showSuccessPopup, setShowSuccessPopup] = useState(false);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [errors, setErrors] = useState<{
     firstName?: string;
     email?: string;
@@ -61,7 +61,8 @@ export default function ContactSection() {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setSubmitStatus({ type: null, message: "" });
+    setErrorMessage(null);
+    setShowSuccessPopup(false);
     
     // Validation
     const newErrors: {
@@ -108,58 +109,50 @@ export default function ContactSection() {
     
     // Clear any previous errors
     setErrors({});
-    setIsSubmitting(true);
-
-    try {
-      const response = await fetch(
-        "https://leadquest.corelto.co/public/companies/040487f0-dbe9-485a-bb4b-ab881fa7fdbb/leads-all",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            name: formData.firstName,
-            mobile: formData.phone,
-            email: formData.email,
-            project: "Wyce ExcluCity",
-            source: "Website",
-            sub_source: "",
-            user_email: "",
-            comment: formData.message,
-          }),
-        }
-      );
-
-      if (response.ok) {
-        setSubmitStatus({
-          type: "success",
-          message: "Thank you! Your message has been sent successfully.",
-        });
-        // Reset form
-        setFormData({
-          firstName: "",
-          phone: "",
-          email: "",
-          message: "",
-        });
-        setConsentAccepted(false);
-      } else {
-        throw new Error("Failed to submit form");
-      }
-    } catch (error) {
-      setSubmitStatus({
-        type: "error",
-        message: "Something went wrong. Please try again later.",
-      });
-      console.error("Form submission error:", error);
-    } finally {
-      setIsSubmitting(false);
+    
+    // Show success immediately (optimistic UI)
+    setShowSuccessPopup(true);
+    
+    // Reset form immediately
+    setFormData({
+      firstName: "",
+      phone: "",
+      email: "",
+      message: "",
+    });
+    setConsentAccepted(false);
+    
+    // Safely reset form if element exists
+    if (e.currentTarget) {
+      e.currentTarget.reset();
     }
+    
+    // Submit in background (non-blocking)
+    setIsSubmitting(false);
+    submitLead(
+      {
+        name: formData.firstName,
+        email: formData.email,
+        phone: formData.phone,
+        message: formData.message,
+      },
+      () => {
+        console.log("✅ Form submission confirmed successful");
+      },
+      (error) => {
+        setShowSuccessPopup(false);
+        setErrorMessage(error || "Something went wrong. Please try again later.");
+      }
+    );
   };
 
   return (
     <>
+      <SuccessPopup
+        isOpen={showSuccessPopup}
+        onClose={() => setShowSuccessPopup(false)}
+        message="✅ Message sent successfully!"
+      />
     <section
       id="contact"
       className="relative bg-black text-white pb-16 sm:py-5 md:py-10 overflow-hidden"
@@ -228,19 +221,15 @@ export default function ContactSection() {
               out the form below and we will get back with you shortly.
             </motion.p>
 
-            {/* Status Message */}
-            {submitStatus.type && (
+            {/* Error Message */}
+            {errorMessage && (
               <motion.div
-                className={`mb-6 p-4 rounded-md ${
-                  submitStatus.type === "success"
-                    ? "bg-green-900/50 border border-green-600 text-green-200"
-                    : "bg-red-900/50 border border-red-600 text-red-200"
-                }`}
+                className="mb-6 p-4 rounded-md bg-red-900/50 border border-red-600 text-red-200"
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
               >
-                {submitStatus.message}
+                {errorMessage}
               </motion.div>
             )}
 
