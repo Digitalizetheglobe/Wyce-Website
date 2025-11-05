@@ -49,7 +49,7 @@ export async function POST(request: NextRequest) {
             data,
             status,
           });
-        } catch (parseError) {
+        } catch {
           // Response might be HTML or empty - still consider success if status is ok
           const text = await response.text();
           console.log("Google Apps Script response (non-JSON):", text.substring(0, 200));
@@ -64,8 +64,9 @@ export async function POST(request: NextRequest) {
         const errorText = await response.text();
         console.error(`Google Apps Script error (${status}):`, errorText.substring(0, 200));
       }
-    } catch (jsonError: any) {
-      console.error("JSON method failed:", jsonError.message);
+    } catch (jsonError: unknown) {
+      const errorMessage = jsonError instanceof Error ? jsonError.message : String(jsonError);
+      console.error("JSON method failed:", errorMessage);
     }
 
     // Try FormData as fallback
@@ -97,7 +98,7 @@ export async function POST(request: NextRequest) {
             data,
             status,
           });
-        } catch (parseError) {
+        } catch {
           // Response might be HTML, text, or empty
           const text = await response.text();
           console.log("Google Apps Script FormData response (non-JSON):", text.substring(0, 500));
@@ -119,8 +120,9 @@ export async function POST(request: NextRequest) {
         const errorText = await response.text();
         console.error(`Google Apps Script FormData error (${status}):`, errorText.substring(0, 200));
       }
-    } catch (formError: any) {
-      console.error("FormData method failed:", formError.message);
+    } catch (formError: unknown) {
+      const errorMessage = formError instanceof Error ? formError.message : String(formError);
+      console.error("FormData method failed:", errorMessage);
     }
 
     // Try URL-encoded as last resort
@@ -160,10 +162,11 @@ export async function POST(request: NextRequest) {
       { success: false, error: "All submission methods failed" },
       { status: 500 }
     );
-  } catch (error: any) {
+  } catch (error: unknown) {
+    const errorMessage = error instanceof Error ? error.message : "Internal server error";
     console.error("Error in submit-lead API:", error);
     return NextResponse.json(
-      { success: false, error: error.message || "Internal server error" },
+      { success: false, error: errorMessage },
       { status: 500 }
     );
   }

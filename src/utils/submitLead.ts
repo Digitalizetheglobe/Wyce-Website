@@ -61,8 +61,9 @@ export async function submitLead(
         }
       }
     })
-    .catch((error: any) => {
-      console.error("❌ Error submitting form:", error.message);
+    .catch((error: unknown) => {
+      const errorMessage = error instanceof Error ? error.message : String(error);
+      console.error("❌ Error submitting form:", errorMessage);
       if (onError) {
         onError("Network error. Your submission may not have been received.");
       }
