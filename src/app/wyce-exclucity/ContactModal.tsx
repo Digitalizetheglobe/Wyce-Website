@@ -271,7 +271,7 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
                   name="firstName"
                   value={formData.firstName}
                   onChange={handleChange}
-                  placeholder="First Name*"
+                  placeholder="Name*"
                   required
                   className={`w-full p-2.5 sm:p-3 text-sm sm:text-base rounded border bg-transparent text-white placeholder-gray-400 focus:outline-none transition-colors ${
                     errors.firstName
