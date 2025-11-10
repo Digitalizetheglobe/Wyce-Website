@@ -2,6 +2,7 @@ import { Raleway, Cinzel, Great_Vibes } from "next/font/google";
 import "./globals.css";
 import ClientLayoutShell from "./ClientLayoutShell";
 import { Metadata } from "next";
+import Script from "next/script";
 
 export const metadata: Metadata = {
   title: "Wyce Exclucity - 4, 3 & 2 BHK Premium Residences in Bavdhan Pune",
@@ -66,6 +67,23 @@ export default function RootLayout({
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
               gtag('config', 'G-K6VG584275');
+            `,
+          }}
+        />
+        {/* Google Ads Conversion Tracking */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=AW-17718626787"
+          strategy="afterInteractive"
+        />
+        <Script
+          id="google-ads-config"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'AW-17718626787');
             `,
           }}
         />
