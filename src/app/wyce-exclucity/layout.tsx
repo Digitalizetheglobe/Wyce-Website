@@ -3,6 +3,7 @@ import type { ReactNode } from "react";
 import type { Metadata } from "next";
 import Header from "./links/Header";
 import Footer from "./links/foor";
+import Script from "next/script";
 
 
 export const metadata: Metadata = {
@@ -26,6 +27,23 @@ export const metadata: Metadata = {
 export default function Layout({ children }: { children: ReactNode }) {
   return (
     <>
+      {/* Google Ads Conversion Tracking */}
+      <Script
+        src="https://www.googletagmanager.com/gtag/js?id=AW-17718626787"
+        strategy="afterInteractive"
+      />
+      <Script
+        id="google-ads-config-wyce-exclucity"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'AW-17718626787');
+          `,
+        }}
+      />
       <Header />
       {children}
       <Footer />
