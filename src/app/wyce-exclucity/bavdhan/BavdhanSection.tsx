@@ -6,7 +6,7 @@ export default function BavdhanSection() {
 
       {/* Mobile Background */}
       <div
-        className="block md:hidden relative w-full min-h-[100vh] flex items-start pt-20 justify-center px-6 bg-cover bg-center bg-no-repeat"
+        className="block md:hidden relative w-full min-h-[70vh] flex items-start pt-20 justify-center px-6 bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: "url('/images/wyce-exclucity/bavdhan-mobile.png')" }}
       >
 
