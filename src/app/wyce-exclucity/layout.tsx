@@ -44,6 +44,15 @@ export default function Layout({ children }: { children: ReactNode }) {
           `,
         }}
       />
+      <Script
+        id="google-ads-conversion-wyce-exclucity"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: `
+            gtag('event', 'conversion', {'send_to': 'AW-17718626787/7kccCKDq9sIbEOOT84BC'});
+          `,
+        }}
+      />
       <Header />
       {children}
       <Footer />
