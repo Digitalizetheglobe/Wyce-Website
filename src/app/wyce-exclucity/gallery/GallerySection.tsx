@@ -1,6 +1,7 @@
 "use client";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
+import Image from "next/image";
 
 export default function Gallery() {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
@@ -62,10 +63,11 @@ export default function Gallery() {
               className="group relative flex flex-col overflow-hidden rounded-lg px-4 pb-4 pt-40 flex-grow cursor-pointer"
               onClick={() => handleImageClick(images[0])}
             >
-              <img
+              <Image
                 src={images[0]}
                 alt="Gallery image 1"
-                className="absolute inset-0 h-full w-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out"
+                fill
+                className="object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out"
               />
               <div className="absolute inset-0 bg-gradient-to-b from-gray-900/25 to-gray-900/5"></div>
             </div>
@@ -83,10 +85,11 @@ export default function Gallery() {
               className="group relative flex flex-col overflow-hidden rounded-lg px-4 pb-4 pt-40 mb-4 cursor-pointer"
               onClick={() => handleImageClick(images[1])}
             >
-              <img
+              <Image
                 src={images[1]}
                 alt="Gallery image 2"
-                className="absolute inset-0 h-full w-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out"
+                fill
+                className="object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out"
               />
               <div className="absolute inset-0 bg-gradient-to-b from-gray-900/25 to-gray-900/5"></div>
             </div>
@@ -100,10 +103,11 @@ export default function Gallery() {
                 viewport={{ once: true, amount: 0.2 }}
                 onClick={() => handleImageClick(images[2])}
               >
-                <img
+                <Image
                   src={images[2]}
                   alt="Gallery image 3"
-                  className="absolute inset-0 h-full w-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out"
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out"
                 />
                 <div className="absolute inset-0 bg-gradient-to-b from-gray-900/25 to-gray-900/5"></div>
               </motion.div>
@@ -116,10 +120,11 @@ export default function Gallery() {
                 viewport={{ once: true, amount: 0.2 }}
                 onClick={() => handleImageClick(images[3])}
               >
-                <img
+                <Image
                   src={images[3]}
                   alt="Gallery image 4"
-                  className="absolute inset-0 h-full w-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out"
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out"
                 />
                 <div className="absolute inset-0 bg-gradient-to-b from-gray-900/25 to-gray-900/5"></div>
               </motion.div>
@@ -138,10 +143,11 @@ export default function Gallery() {
               className="group relative flex flex-col overflow-hidden rounded-lg px-4 pb-4 pt-40 flex-grow cursor-pointer"
               onClick={() => handleImageClick(images[4])}
             >
-              <img
+              <Image
                 src={images[4]}
                 alt="Gallery image 5"
-                className="absolute inset-0 h-full w-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out"
+                fill
+                className="object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out"
               />
               <div className="absolute inset-0 bg-gradient-to-b from-gray-900/25 to-gray-900/5"></div>
             </div>
@@ -167,11 +173,15 @@ export default function Gallery() {
               transition={{ duration: 0.3 }}
               onClick={(e) => e.stopPropagation()}
             >
-              <img
-                src={selectedImage}
-                alt="Gallery view"
-                className="max-w-full max-h-[90vh] object-contain rounded-lg"
-              />
+              {selectedImage && (
+                <Image
+                  src={selectedImage}
+                  alt="Gallery view"
+                  width={1200}
+                  height={800}
+                  className="max-w-full max-h-[90vh] object-contain rounded-lg"
+                />
+              )}
               <button
                 onClick={closeModal}
                 className="absolute top-4 right-4 text-white bg-black/50 hover:bg-black/70 rounded-full p-3 transition-colors duration-200 z-10 cursor-pointer"

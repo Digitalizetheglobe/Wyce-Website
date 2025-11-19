@@ -35,33 +35,38 @@ const Contact = () => {
         setShowSuccessPopup(false);
 
         try {
-            const success = await submitLead({
-                name: formData.fullName,
-                email: formData.email,
-                phone: formData.phone,
-                message: formData.message,
-            });
-
-            if (success) {
-                setShowSuccessPopup(true);
-                // Reset form
-                setFormData({
-                    fullName: "",
-                    phone: "",
-                    email: "",
-                    message: "",
-                });
-                // Safely reset form if element exists
-                if (e.currentTarget) {
-                    e.currentTarget.reset();
+            submitLead(
+                {
+                    name: formData.fullName,
+                    email: formData.email,
+                    phone: formData.phone,
+                    message: formData.message,
+                },
+                () => {
+                    // Success callback
+                    setShowSuccessPopup(true);
+                    // Reset form
+                    setFormData({
+                        fullName: "",
+                        phone: "",
+                        email: "",
+                        message: "",
+                    });
+                    // Safely reset form if element exists
+                    if (e.currentTarget) {
+                        e.currentTarget.reset();
+                    }
+                    setIsSubmitting(false);
+                },
+                (error) => {
+                    // Error callback
+                    setErrorMessage(error || "Something went wrong. Please try again later.");
+                    setIsSubmitting(false);
                 }
-            } else {
-                setErrorMessage("Something went wrong. Please try again later.");
-            }
+            );
         } catch (error) {
             setErrorMessage("Something went wrong. Please try again later.");
             console.error("Form submission error:", error);
-        } finally {
             setIsSubmitting(false);
         }
     };
