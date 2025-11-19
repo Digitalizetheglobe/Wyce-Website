@@ -112,11 +112,6 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
       newErrors.phone = "Please enter a valid 10-digit phone number";
     }
     
-    // Validate message
-    if (!formData.message.trim()) {
-      newErrors.message = "Message is required";
-    }
-    
     // Validate consent checkbox
     if (!consentAccepted) {
       newErrors.consent = "Please accept the terms and Privacy Policy to continue";
@@ -346,9 +341,8 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
                   name="message"
                   value={formData.message}
                   onChange={handleChange}
-                  placeholder="Message*"
+                  placeholder="Message"
                   rows={4}
-                  required
                   className={`w-full p-2.5 sm:p-3 text-sm sm:text-base rounded border bg-transparent text-white placeholder-gray-400 focus:outline-none transition-colors resize-none ${
                     errors.message
                       ? "border-red-500 focus:border-red-500"

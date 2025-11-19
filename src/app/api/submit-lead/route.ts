@@ -5,13 +5,16 @@ export async function POST(request: NextRequest) {
     const body = await request.json();
     const { name, email, phone, message } = body;
 
-    // Validate required fields
-    if (!name || !email || !phone || !message) {
+    // Validate required fields (message is optional)
+    if (!name || !email || !phone) {
       return NextResponse.json(
-        { success: false, error: "All fields are required" },
+        { success: false, error: "Name, email, and phone are required" },
         { status: 400 }
       );
     }
+
+    // Google Apps Script requires a non-empty message, so use a default if empty
+    const messageToSend = (message && message.trim()) || "No message provided";
 
     // Google Apps Script Web App URL
     // This is your Web App URL from Google Apps Script deployment
@@ -29,7 +32,7 @@ export async function POST(request: NextRequest) {
           name,
           email,
           phone,
-          message,
+          message: messageToSend,
         }),
         redirect: "follow", // Follow redirects
       });
@@ -75,7 +78,7 @@ export async function POST(request: NextRequest) {
       formData.append("name", name);
       formData.append("email", email);
       formData.append("phone", phone);
-      formData.append("message", message);
+      formData.append("message", messageToSend);
 
       const response = await fetch(scriptUrl, {
         method: "POST",
@@ -130,7 +133,7 @@ export async function POST(request: NextRequest) {
     params.append("name", name);
     params.append("email", email);
     params.append("phone", phone);
-    params.append("message", message);
+    params.append("message", messageToSend);
 
     const response = await fetch(scriptUrl, {
       method: "POST",

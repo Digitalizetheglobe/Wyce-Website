@@ -3,7 +3,7 @@ import AboutSection from "@/components/AboutSection";
 import CounterSection from "@/components/CounterSection";
 import ProjectSection from '@/components/ProjectSection';
 
-import ContactSection from '@/components/ContactSection';
+import ContactSection from '@/app/wyce-exclucity/contact/ContactSection';
 
 export default function Home() {
   return (

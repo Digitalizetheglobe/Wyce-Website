@@ -30,41 +30,40 @@ const Contact = () => {
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
+        setIsSubmitting(true);
         setErrorMessage(null);
-        
-        // Show success immediately (optimistic UI)
-        setShowSuccessPopup(true);
-        
-        // Reset form immediately
-        setFormData({
-            fullName: "",
-            phone: "",
-            email: "",
-            message: "",
-        });
-        
-        // Safely reset form if element exists
-        if (e.currentTarget) {
-            e.currentTarget.reset();
-        }
-        
-        // Submit in background (non-blocking)
-        setIsSubmitting(false);
-        submitLead(
-            {
+        setShowSuccessPopup(false);
+
+        try {
+            const success = await submitLead({
                 name: formData.fullName,
                 email: formData.email,
                 phone: formData.phone,
                 message: formData.message,
-            },
-            () => {
-                console.log("✅ Form submission confirmed successful");
-            },
-            (error) => {
-                setShowSuccessPopup(false);
-                setErrorMessage(error || "Something went wrong. Please try again later.");
+            });
+
+            if (success) {
+                setShowSuccessPopup(true);
+                // Reset form
+                setFormData({
+                    fullName: "",
+                    phone: "",
+                    email: "",
+                    message: "",
+                });
+                // Safely reset form if element exists
+                if (e.currentTarget) {
+                    e.currentTarget.reset();
+                }
+            } else {
+                setErrorMessage("Something went wrong. Please try again later.");
             }
-        );
+        } catch (error) {
+            setErrorMessage("Something went wrong. Please try again later.");
+            console.error("Form submission error:", error);
+        } finally {
+            setIsSubmitting(false);
+        }
     };
 
     return (

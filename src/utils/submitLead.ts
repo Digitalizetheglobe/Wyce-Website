@@ -11,7 +11,7 @@ export async function submitLead(
     name: string;
     email: string;
     phone: string;
-    message: string;
+    message?: string; // Message is now optional
   },
   onSuccess?: () => void,
   onError?: (error: string) => void
@@ -26,7 +26,7 @@ export async function submitLead(
       name: formData.name,
       email: formData.email,
       phone: formData.phone,
-      message: formData.message,
+      message: formData.message || "", // Send empty string if message is not provided
     }),
   })
     .then(async (response) => {
