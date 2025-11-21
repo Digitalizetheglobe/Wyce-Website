@@ -27,6 +27,26 @@ const blogPosts = [
     image: "/images/blog-4.jpg",
     slug: "a-new-12-meter-road",
   },
+  {
+    id: 3,
+    title: "3 BHK and 4 BHK in Bavdhan: Investment vs. Lifestyle—Which Configuration is Right for You?",
+    excerpt:
+      "Choosing a new home is one of the biggest decisions you'll ever make, especially in a prime location like Bavdhan, Pune. When exploring the thriving real estate market here, the choice often comes down to a 3 BHK or a 4 BHK apartment. This decision is not just about size; it's about aligning your purchase with your ultimate goal—be it a growing lifestyle or a smart investment.",
+    category: "Real Estate",
+    date: "November 15, 2025",
+    image: "/images/blog5.jpeg",
+    slug: "3-bhk-and-4-bhk-in-bavdhan-investment-vs-lifestyle-which-configuration-is-right-for-you",
+  },
+  {
+    id: 4,
+    title: "Beyond the Square Footage: A Deep Dive into Wyce's Exclusive Design Philosophy",
+    excerpt:
+      "In the bustling real estate market of Pune, particularly in a coveted location like Bavdhan, many developers promise luxury. But at Wyce Corp, we believe true luxury extends far beyond the square footage. It's an immersive experience, a thoughtful integration of aesthetics, functionality, and sustainability, culminating in what we proudly call Wyce's Exclusive Design Philosophy.",
+    category: "Real Estate",
+    date: "November 20, 2025",
+    image: "/images/blog3.jpeg",
+    slug: "beyond-the-square-footage-a-deep-dive-into-wyces-exclusive-design-philosophy",
+  },
 
 ];
 
@@ -42,6 +62,18 @@ const recentPosts = [
     title: "A New 12-Meter Road Transforms Connectivity to Chandani Chowk",
     date: "October 28, 2025",
     slug: "a-new-12-meter-road",
+  },
+  {
+    id: 3,
+    title: "3 BHK and 4 BHK in Bavdhan: Investment vs. Lifestyle—Which Configuration is Right for You?",
+    date: "November 15, 2025",
+    slug: "3-bhk-and-4-bhk-in-bavdhan-investment-vs-lifestyle-which-configuration-is-right-for-you",
+  },
+  {
+    id: 4,
+    title: "Beyond the Square Footage: A Deep Dive into Wyce's Exclusive Design Philosophy",
+    date: "November 20, 2025",
+    slug: "beyond-the-square-footage-a-deep-dive-into-wyces-exclusive-design-philosophy",
   },
   // {
   //   id: 3,
