@@ -58,7 +58,7 @@ export default function StickyButtons() {
           className="w-35 bg-gradient-to-r from-[#B7AC88] to-[#1F1403] hover:bg-gradient-to-l hover:bg-from-[#1F1403] hover:bg-to-[#B7AC88] text-white px-5 py-3  shadow-md hover:opacity-90 transition cursor-pointer"
           aria-label="I'm Interested"
         >
-          I'M Interested
+          I&apos;M Interested
         </button>
       </div>
 
