@@ -6,6 +6,7 @@ import PriceSection from "./price/PriceSection";
 import ProjectOverview from "./project/ProjectOverview";
 import GallerySection from "./gallery/GallerySection";
 import ContactSection from "./contact/ContactSection";
+import StickyButtons from "./StickyButtons";
 // import TaglineSection from "./tagline/TaglineSection";
 
 export default function Home() {
@@ -33,6 +34,9 @@ export default function Home() {
       {/* <TaglineSection /> */}
       <GallerySection />
       <ContactSection />
+      
+      {/* Sticky Buttons */}
+      <StickyButtons />
     </div>
   );
 }

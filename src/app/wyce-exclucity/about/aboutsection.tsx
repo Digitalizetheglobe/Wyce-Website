@@ -1,8 +1,12 @@
 "use client";
 import { motion } from "framer-motion";
+import { useState } from "react";
+import ContactModal from "../ContactModal";
 
 
 export default function AboutProject() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   return (
     <section
       className="relative w-full  bg-cover bg-center bg-no-repeat flex items-center justify-center py-20 px-6 md:px-12 lg:px-20 xl:px-32"
@@ -62,19 +66,15 @@ export default function AboutProject() {
         >
 
         <button 
-          onClick={() => {
-            const contactSection = document.getElementById('contact');
-            if (contactSection) {
-              contactSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            }
-          }}
-          className="w-40 bg-gradient-to-r from-[#B7AC88] to-[#1F1403] hover:bg-gradient-to-l hover:bg-from-[#1F1403] hover:bg-to-[#B7AC88] text-white px-5 py-3  shadow-md hover:opacity-90 transition cursor-pointer"
+          onClick={() => setIsModalOpen(true)}
+          className="w-55 bg-gradient-to-r from-[#B7AC88] to-[#1F1403] hover:bg-gradient-to-l hover:bg-from-[#1F1403] hover:bg-to-[#B7AC88] text-white px-5 py-3  shadow-md hover:opacity-90 transition cursor-pointer"
         >
-            Enquire Now →
+            Download Brochure →
         </button>
 
         </motion.div>
       </div>
+      <ContactModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </section>
   );
 }

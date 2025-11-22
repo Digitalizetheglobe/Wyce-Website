@@ -5,7 +5,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { motion, useScroll, useTransform } from "framer-motion";
-import ContactModal from "../ContactModal";
 
 const navItems = [
   { name: "Overview", path: "#overview" },
@@ -19,7 +18,6 @@ export default function Header() {
   const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [showModal, setShowModal] = useState(false);
 
   // Scroll detection
   const { scrollY } = useScroll();
@@ -83,11 +81,11 @@ export default function Header() {
 
         {/* Desktop Contact Button (right) */}
         <div className="hidden md:flex">
-          <button
-            onClick={() => setShowModal(true)}
+          <a
+            href="tel:7549799799"
             className="border-2 lg:border-[3px] border-white border-solid text-white px-3 sm:px-4 py-1.5 sm:py-2 text-sm lg:text-base hover:bg-white hover:text-black transition-colors flex items-center cursor-pointer"
           >
-            <span className="hidden xl:inline">Contact Us</span>
+            <span className="hidden xl:inline">Instant a CallBack</span>
             <span className="xl:hidden">Contact</span>
             <svg
               className="ml-1 h-3 w-3 sm:h-4 sm:w-4"
@@ -102,7 +100,7 @@ export default function Header() {
                 d="M9 5l7 7-7 7"
               />
             </svg>
-          </button>
+          </a>
         </div>
 
         {/* Mobile Hamburger */}
@@ -131,15 +129,13 @@ export default function Header() {
               {item.name}
             </Link>
           ))}
-          <button
-            onClick={() => {
-              setMenuOpen(false);
-              setShowModal(true);
-            }}
-            className="w-full bg-gradient-to-r from-[#B7AC88] to-[#1F1403] hover:bg-gradient-to-l hover:bg-from-[#1F1403] hover:bg-to-[#B7AC88] text-white px-5 py-2 rounded-full shadow-md hover:opacity-90 transition cursor-pointer"
+          <a
+            href="tel:7549799799"
+            onClick={() => setMenuOpen(false)}
+            className="w-full bg-gradient-to-r from-[#B7AC88] to-[#1F1403] hover:bg-gradient-to-l hover:bg-from-[#1F1403] hover:bg-to-[#B7AC88] text-white px-5 py-2 rounded-full shadow-md hover:opacity-90 transition cursor-pointer text-center block"
           >
-            Contact Us →
-          </button>
+            Instant a CallBack →
+          </a>
         </div>
       )}
 
@@ -159,9 +155,6 @@ export default function Header() {
           }
         }
       `}</style>
-      
-      {/* Contact Modal */}
-      <ContactModal isOpen={showModal} onClose={() => setShowModal(false)} />
     </motion.header>
     </>
   );

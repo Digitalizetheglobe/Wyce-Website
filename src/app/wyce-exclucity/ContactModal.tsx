@@ -130,6 +130,21 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
     // Show success immediately (optimistic UI)
     setShowSuccessPopup(true);
     
+    // Download brochure PDF
+    const downloadBrochure = () => {
+      const link = document.createElement('a');
+      link.href = '/images/landing-page/Brochure.pdf';
+      link.download = 'broucher.pdf';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    };
+    
+    // Download brochure after a short delay to ensure form submission is processed
+    setTimeout(() => {
+      downloadBrochure();
+    }, 500);
+    
     // Reset form immediately
     setFormData({
       firstName: "",
