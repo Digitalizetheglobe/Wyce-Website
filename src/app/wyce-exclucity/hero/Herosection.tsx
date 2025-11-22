@@ -214,7 +214,7 @@ export default function Hero() {
                 ease: "easeInOut",
               }}
             >
-              Booking Open: Limited Time Only
+              Booking open - Limited period only
             </motion.span>
           </div>
 
@@ -259,7 +259,7 @@ export default function Hero() {
                 }}
               >
                 <span className="text-[#B7AC88]">✓</span>
-                <span>Easy Flexipay Options</span>
+                <span>Easy Payment Plan</span>
               </motion.li>
               <motion.li
                 className="flex items-center gap-2 bg-[#e8e5d8] rounded-xl p-1 pl-2 "
@@ -274,7 +274,7 @@ export default function Hero() {
                 }}
               >
                 <span className="text-[#B7AC88]">✓</span>
-                <span>Get Early Buy Discounts</span>
+                <span>Exclusive discount upto 3Lac*</span>
               </motion.li>
             </ul>
           </div>
@@ -282,10 +282,10 @@ export default function Hero() {
           {/* Pricing */}
           <div className="mb-4">
             <p className="text-sm lg:text-base text-gray-700">
-              <strong className="text-gray-800">Ultra Luxurious 4, 3 & 2 BHK</strong>
+              <strong className="text-gray-800">Premium apartment 4,3,2bhk</strong>
             </p>
             <p className="text-base lg:text-lg font-bold text-[#B7AC88] mt-1">
-              Starts At ₹ 2.30 Cr Onwards
+              Starts at 99Lac* Onwards
             </p>
           </div>
 

@@ -265,7 +265,7 @@ export default function BrochureDownloadModal({ isOpen, onClose }: BrochureDownl
                         </svg>
                       </div>
                       <div>
-                        <h4 className="font-semibold text-gray-800 mb-1 text-sm sm:text-base">Prelaunch Offer</h4>
+                        <h4 className="font-semibold text-gray-800 mb-1 text-sm sm:text-base">Unmatched Price</h4>
                         <p className="text-xs sm:text-sm text-gray-600">Best deals and exclusive offers</p>
                       </div>
                     </div>
