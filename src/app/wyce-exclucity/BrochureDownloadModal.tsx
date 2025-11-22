@@ -250,12 +250,22 @@ export default function BrochureDownloadModal({ isOpen, onClose }: BrochureDownl
                     </div>
                     <div className="flex items-start gap-3 sm:gap-4">
                       <div className="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 bg-[#B7AC88] rounded-full flex items-center justify-center">
-                        <svg className="w-5 h-5 sm:w-6 sm:h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        <svg
+                          className="w-5 h-5 sm:w-6 sm:h-6 text-white"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M7 6h10M7 12h10M9 6a4 4 0 014 4c0 2.21-1.79 4-4 4h0l7 6"
+                          />
                         </svg>
                       </div>
                       <div>
-                        <h4 className="font-semibold text-gray-800 mb-1 text-sm sm:text-base">Unmatched Price</h4>
+                        <h4 className="font-semibold text-gray-800 mb-1 text-sm sm:text-base">Prelaunch Offer</h4>
                         <p className="text-xs sm:text-sm text-gray-600">Best deals and exclusive offers</p>
                       </div>
                     </div>
