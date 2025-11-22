@@ -203,9 +203,19 @@ export default function Hero() {
 
           {/* Booking Status */}
           <div className="mb-4">
-            <span className="inline-block bg-[#B7AC88] text-white text-xs lg:text-sm px-3 py-1 rounded-full font-semibold">
+            <motion.span
+              className="inline-block bg-[#B7AC88] text-white text-xs lg:text-sm px-3 py-1 rounded-full font-semibold"
+              animate={{
+                scale: [1, 1.05, 1],
+              }}
+              transition={{
+                duration: 1.5,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+            >
               Booking Open: Limited Time Only
-            </span>
+            </motion.span>
           </div>
 
           {/* Rating */}
@@ -234,17 +244,38 @@ export default function Hero() {
           </div>
 
           {/* Offers Section */}
-          <div className="mb-4 bg-gradient-to-r from-[#f8f6f0] to-[#e8e5d8] p-3 rounded-lg">
+          <div className="mb-4  p-3 rounded-lg">
             <p className="text-xs lg:text-sm font-semibold text-gray-800 mb-2">Spot Booking Offers Available</p>
             <ul className="space-y-1 text-xs lg:text-sm text-gray-700">
-              <li className="flex items-center gap-2">
+              <motion.li
+                className="flex items-center gap-2 bg-[#e8e5d8] rounded-xl p-1 pl-2"
+                animate={{
+                  scale: [1, 1.05, 1],
+                }}
+                transition={{
+                  duration: 1.5,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
+              >
                 <span className="text-[#B7AC88]">✓</span>
                 <span>Easy Flexipay Options</span>
-              </li>
-              <li className="flex items-center gap-2">
+              </motion.li>
+              <motion.li
+                className="flex items-center gap-2 bg-[#e8e5d8] rounded-xl p-1 pl-2 "
+                animate={{
+                  scale: [1, 1.05, 1],
+                }}
+                transition={{
+                  duration: 1.5,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                  delay: 0.75,
+                }}
+              >
                 <span className="text-[#B7AC88]">✓</span>
                 <span>Get Early Buy Discounts</span>
-              </li>
+              </motion.li>
             </ul>
           </div>
 
@@ -259,13 +290,23 @@ export default function Hero() {
           </div>
 
           {/* Download Brochure Button */}
-          <button
+          <motion.button
             onClick={() => setIsBrochureModalOpen(true)}
             className="w-full bg-[#B7AC88] hover:bg-[#9d9168] text-white px-6 py-3 rounded-lg font-semibold text-sm lg:text-base shadow-md hover:shadow-lg transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer"
+            whileHover={{
+              scale: 1.05,
+            }}
+            whileTap={{
+              scale: 0.99,
+            }}
+            transition={{
+              type: "spring",
+              stiffness: 400,
+              damping: 17,
+            }}
           >
-
             Book a Site Visit
-          </button>
+          </motion.button>
         </motion.div>
       </div>
 

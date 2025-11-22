@@ -5,6 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { motion, useScroll, useTransform } from "framer-motion";
+import { Download } from "lucide-react";
 
 const navItems = [
   { name: "Overview", path: "#overview" },
@@ -79,27 +80,37 @@ export default function Header() {
           ))}
         </nav>
 
-        {/* Desktop Contact Button (right) */}
-        <div className="hidden md:flex">
+        {/* Desktop Buttons (right) */}
+        <div className="hidden md:flex items-center gap-3">
+          {/* Download Brochure Button */}
+          <a
+            href="#"
+            className="border-2 lg:border-[3px] border-white border-solid text-white px-3 sm:px-4 py-1.5 sm:py-2 text-sm lg:text-base hover:bg-white hover:text-black transition-colors flex items-center cursor-pointer"
+          >
+            <motion.div
+              animate={{
+                y: [0, -5, 0],
+              }}
+              transition={{
+                duration: 1.5,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+            >
+              <Download className="h-4 w-4 sm:h-5 sm:w-5" />
+            </motion.div>
+            <span className="ml-2 hidden xl:inline">Download Brochure</span>
+            <span className="ml-2 xl:hidden">Brochure</span>
+          </a>
+          
+          {/* Contact Button */}
           <a
             href="tel:7549799799"
             className="border-2 lg:border-[3px] border-white border-solid text-white px-3 sm:px-4 py-1.5 sm:py-2 text-sm lg:text-base hover:bg-white hover:text-black transition-colors flex items-center cursor-pointer"
           >
-            <span className="hidden xl:inline">Instant a CallBack</span>
+            <span className="hidden xl:inline">Call : +91 75497 99799</span>
             <span className="xl:hidden">Contact</span>
-            <svg
-              className="ml-1 h-3 w-3 sm:h-4 sm:w-4"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M9 5l7 7-7 7"
-              />
-            </svg>
+
           </a>
         </div>
 
@@ -130,11 +141,30 @@ export default function Header() {
             </Link>
           ))}
           <a
+            href="#"
+            onClick={() => setMenuOpen(false)}
+            className="w-full border-2 border-white border-solid text-white px-5 py-2 rounded-full hover:bg-white hover:text-black transition-colors cursor-pointer text-center flex items-center justify-center gap-2"
+          >
+            <motion.div
+              animate={{
+                y: [0, -5, 0],
+              }}
+              transition={{
+                duration: 1.5,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+            >
+              <Download className="h-5 w-5" />
+            </motion.div>
+            <span>Download Brochure</span>
+          </a>
+          <a
             href="tel:7549799799"
             onClick={() => setMenuOpen(false)}
             className="w-full bg-gradient-to-r from-[#B7AC88] to-[#1F1403] hover:bg-gradient-to-l hover:bg-from-[#1F1403] hover:bg-to-[#B7AC88] text-white px-5 py-2 rounded-full shadow-md hover:opacity-90 transition cursor-pointer text-center block"
           >
-            Instant a CallBack →
+            Call : +91 75497 99799 
           </a>
         </div>
       )}
