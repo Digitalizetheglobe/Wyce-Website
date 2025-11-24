@@ -6,6 +6,7 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Download } from "lucide-react";
+import ContactModal from "../ContactModal";
 
 const navItems = [
   { name: "Overview", path: "#overview" },
@@ -19,6 +20,7 @@ export default function Header() {
   const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   // Scroll detection
   const { scrollY } = useScroll();
@@ -83,8 +85,8 @@ export default function Header() {
         {/* Desktop Buttons (right) */}
         <div className="hidden md:flex items-center gap-3">
           {/* Download Brochure Button */}
-          <a
-            href="#"
+          <button
+            onClick={() => setIsModalOpen(true)}
             className="border-2 lg:border-[3px] border-white border-solid text-white px-3 sm:px-4 py-1.5 sm:py-2 text-sm lg:text-base hover:bg-white hover:text-black transition-colors flex items-center cursor-pointer"
           >
             <motion.div
@@ -101,7 +103,7 @@ export default function Header() {
             </motion.div>
             <span className="ml-2 hidden xl:inline">Download Brochure</span>
             <span className="ml-2 xl:hidden">Brochure</span>
-          </a>
+          </button>
           
           {/* Contact Button */}
           <a
@@ -140,9 +142,11 @@ export default function Header() {
               {item.name}
             </Link>
           ))}
-          <a
-            href="#"
-            onClick={() => setMenuOpen(false)}
+          <button
+            onClick={() => {
+              setIsModalOpen(true);
+              setMenuOpen(false);
+            }}
             className="w-full border-2 border-white border-solid text-white px-5 py-2 rounded-full hover:bg-white hover:text-black transition-colors cursor-pointer text-center flex items-center justify-center gap-2"
           >
             <motion.div
@@ -158,7 +162,7 @@ export default function Header() {
               <Download className="h-5 w-5" />
             </motion.div>
             <span>Download Brochure</span>
-          </a>
+          </button>
           <a
             href="tel:7549799799"
             onClick={() => setMenuOpen(false)}
@@ -186,6 +190,9 @@ export default function Header() {
         }
       `}</style>
     </motion.header>
+    
+    {/* Contact Modal */}
+    <ContactModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </>
   );
 }
