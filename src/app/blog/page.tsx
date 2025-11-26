@@ -47,6 +47,46 @@ const blogPosts = [
     image: "/images/blog3.jpeg",
     slug: "beyond-the-square-footage-a-deep-dive-into-wyces-exclusive-design-philosophy",
   },
+  {
+    id: 5,
+    title: "The 3 Investment Types in Real Estate That Guarantee Long-Term Wealth (And Where Wyce Fits In)",
+    excerpt:
+      "Learn the three proven real estate investment types—capital appreciation, rental yield, and dual utility—and discover how Wyce Corp in Bavdhan, Pune, helps investors build long-term wealth with premium 3 & 4 BHK residences.",
+    category: "Real Estate",
+    date: "November 21, 2025",
+    image: "/images/blog4.jpeg",
+    slug: "the-3-investment-types-in-real-estate-that-guarantee-long-term-wealth-and-where-wyce-fits-in",
+  },
+  {
+    id: 6,
+    title: "Tax Benefits and Compliance for NRIs Investing with Wyce Corp in Pune",
+    excerpt:
+      "Maximize your ROI as an NRI investing in Bavdhan, Pune real estate with Wyce Corp. Discover tax benefits on home loans, rental income deductions, capital gains advantages, and DTAA compliance for a seamless, profitable investment.",
+    category: "Real Estate",
+    date: "November 22, 2025",
+    image: "/images/blog2.jpeg",
+    slug: "tax-benefits-and-compliance-for-nris-investing-with-wyce-corp-in-pune",
+  },
+  {
+    id: 7,
+    title: "A Global Lifestyle, Back Home: What Makes Wyce Residences Ideal for the Returning NRI",
+    excerpt:
+      "Invest in Wyce Residences in Bavdhan, Pune, and enjoy a seamless NRI homecoming with 2, 3 & 4 BHK luxury flats, world-class amenities, strategic connectivity, and complete support for a global-standard lifestyle.",
+    category: "Real Estate",
+    date: "November 23, 2025",
+    image: "/images/blog3.jpeg",
+    slug: "a-global-lifestyle-back-home-what-makes-wyce-residences-ideal-for-the-returning-nri",
+  },
+  {
+    id: 8,
+    title: "Wyce Corp's 7 Pillars of Exclusivity: Experience The Difference of a World-Class Home",
+    excerpt:
+      "Discover what defines a premium residence in Bavdhan with Wyce Corp's 7 Pillars of Exclusivity. Explore luxury 2, 3 & 4 BHK flats combining superior construction, world-class amenities, smart technology, and strategic location for NRIs and investors in Pune.",
+    category: "Real Estate",
+    date: "November 25, 2025",
+    image: "/images/blog5.jpeg",
+    slug: "wyce-corps-7-pillars-of-exclusivity-experience-the-difference-of-a-world-class-home",
+  },
 
 ];
 
@@ -74,6 +114,30 @@ const recentPosts = [
     title: "Beyond the Square Footage: A Deep Dive into Wyce's Exclusive Design Philosophy",
     date: "November 20, 2025",
     slug: "beyond-the-square-footage-a-deep-dive-into-wyces-exclusive-design-philosophy",
+  },
+  {
+    id: 5,
+    title: "The 3 Investment Types in Real Estate That Guarantee Long-Term Wealth (And Where Wyce Fits In)",
+    date: "November 21, 2025",
+    slug: "the-3-investment-types-in-real-estate-that-guarantee-long-term-wealth-and-where-wyce-fits-in",
+  },
+  {
+    id: 6,
+    title: "Tax Benefits and Compliance for NRIs Investing with Wyce Corp in Pune",
+    date: "November 22, 2025",
+    slug: "tax-benefits-and-compliance-for-nris-investing-with-wyce-corp-in-pune",
+  },
+  {
+    id: 7,
+    title: "A Global Lifestyle, Back Home: What Makes Wyce Residences Ideal for the Returning NRI",
+    date: "November 23, 2025",
+    slug: "a-global-lifestyle-back-home-what-makes-wyce-residences-ideal-for-the-returning-nri",
+  },
+  {
+    id: 8,
+    title: "Wyce Corp's 7 Pillars of Exclusivity: Experience The Difference of a World-Class Home",
+    date: "November 25, 2025",
+    slug: "wyce-corps-7-pillars-of-exclusivity-experience-the-difference-of-a-world-class-home",
   },
   // {
   //   id: 3,

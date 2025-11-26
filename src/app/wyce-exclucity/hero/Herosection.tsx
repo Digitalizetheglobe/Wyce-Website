@@ -34,23 +34,23 @@ export default function Hero() {
 
   // Desktop images
   const desktopImages = [
+    "/images/landing-page/web-banner3.jpg",
     "/images/landing-page/web-banner1.jpg",
     "/images/landing-page/web-banner2.jpg",
-    "/images/landing-page/web-banner3.jpg",
   ];
 
   // Tablet images
   const tabletImages = [
+    "/images/landing-page/tab-banner3.jpg",
     "/images/landing-page/tab-banner1.jpg",
     "/images/landing-page/tab-banner2.jpg",
-    "/images/landing-page/tab-banner3.jpg",
   ];
 
   // Mobile images
   const mobileImages = [
+    "/images/landing-page/mobile-banner3.jpg",
     "/images/landing-page/mobile-banner1.jpg",
     "/images/landing-page/mobile-banner2.jpg",
-    "/images/landing-page/mobile-banner3.jpg",
   ];
 
   const [currentDesktopIndex, setCurrentDesktopIndex] = useState(0);
