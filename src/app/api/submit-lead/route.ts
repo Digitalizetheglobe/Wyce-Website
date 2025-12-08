@@ -3,7 +3,7 @@ import { NextRequest, NextResponse } from "next/server";
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
-    const { name, email, phone, message } = body;
+    const { name, email, phone, message, otpVerified } = body;
 
     // Validate required fields (message is optional)
     if (!name || !email || !phone) {
@@ -15,6 +15,19 @@ export async function POST(request: NextRequest) {
 
     // Google Apps Script requires a non-empty message, so use a default if empty
     const messageToSend = (message && message.trim()) || "No message provided";
+    
+    // OTP verification status (default to false if not provided)
+    const isOtpVerified = otpVerified === true;
+    
+    // Log the data being sent for debugging
+    console.log("📤 Sending to Google Sheets:", {
+      name,
+      email,
+      phone,
+      message: messageToSend,
+      otpVerified: isOtpVerified,
+      otpVerifiedType: typeof otpVerified,
+    });
 
     // Google Apps Script Web App URL
     // This is your Web App URL from Google Apps Script deployment
@@ -33,6 +46,7 @@ export async function POST(request: NextRequest) {
           email,
           phone,
           message: messageToSend,
+          otpVerified: isOtpVerified ? "true" : "false", // Send as string for better compatibility
         }),
         redirect: "follow", // Follow redirects
       });
@@ -79,6 +93,7 @@ export async function POST(request: NextRequest) {
       formData.append("email", email);
       formData.append("phone", phone);
       formData.append("message", messageToSend);
+      formData.append("otpVerified", isOtpVerified ? "true" : "false");
 
       const response = await fetch(scriptUrl, {
         method: "POST",
@@ -134,6 +149,7 @@ export async function POST(request: NextRequest) {
     params.append("email", email);
     params.append("phone", phone);
     params.append("message", messageToSend);
+    params.append("otpVerified", isOtpVerified ? "true" : "false");
 
     const response = await fetch(scriptUrl, {
       method: "POST",
