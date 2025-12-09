@@ -323,7 +323,6 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
           handleOTPSkip();
         }}
         onVerify={handleOTPVerify}
-        onSkip={handleOTPSkip}
         phoneNumber={formData.phone}
         error={otpError}
       />

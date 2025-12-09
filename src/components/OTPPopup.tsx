@@ -7,7 +7,6 @@ interface OTPPopupProps {
   isOpen: boolean;
   onClose: () => void;
   onVerify: (otp: string) => void;
-  onSkip?: () => void;
   phoneNumber: string;
   error?: string;
 }
@@ -16,7 +15,6 @@ export default function OTPPopup({
   isOpen,
   onClose,
   onVerify,
-  onSkip,
   phoneNumber,
   error,
 }: OTPPopupProps) {
@@ -171,20 +169,10 @@ export default function OTPPopup({
                         text-white px-6 py-3 shadow-md text-bold border-2
                         hover:scale-105 active:scale-95 transition-transform 
                         text-base font-bold
-                        disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 mb-3"
+                        disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
           >
             Verify OTP
           </button>
-
-          {/* Skip Button (Optional) */}
-          {onSkip && (
-            <button
-              onClick={onSkip}
-              className="w-full text-gray-400 hover:text-white text-sm transition-colors"
-            >
-              Skip verification
-            </button>
-          )}
         </motion.div>
       </motion.div>
     </AnimatePresence>

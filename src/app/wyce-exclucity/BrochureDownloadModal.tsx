@@ -324,7 +324,6 @@ export default function BrochureDownloadModal({ isOpen, onClose }: BrochureDownl
           handleOTPSkip();
         }}
         onVerify={handleOTPVerify}
-        onSkip={handleOTPSkip}
         phoneNumber={formData.phone}
         error={otpError}
       />

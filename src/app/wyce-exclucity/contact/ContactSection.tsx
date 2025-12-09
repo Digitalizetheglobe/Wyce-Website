@@ -260,7 +260,6 @@ export default function ContactSection() {
           handleOTPSkip();
         }}
         onVerify={handleOTPVerify}
-        onSkip={handleOTPSkip}
         phoneNumber={formData.phone}
         error={otpError}
       />
