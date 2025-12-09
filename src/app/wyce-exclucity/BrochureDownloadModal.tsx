@@ -569,7 +569,7 @@ export default function BrochureDownloadModal({ isOpen, onClose }: BrochureDownl
                       )}
                     </motion.div>
 
-                    {/* Submit Button */}
+                    {/* Submit Button with OTP verification */}
                     <motion.div
                       className="col-span-full flex justify-center mt-2 w-full"
                       variants={{
