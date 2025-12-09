@@ -25,11 +25,22 @@ export async function sendOTP(
       }
     }
 
-    const apiUrl = `https://api.ultramsg.com/instance148323/messages/chat?token=2x4lm3o0xznfnl3h`;
+    // Get API credentials from environment variables
+    const apiUrl = process.env.ULTRAMSG_API_URL || "https://api.ultramsg.com/instance148323/messages/chat";
+    const apiToken = process.env.ULTRAMSG_API_TOKEN;
     
+    if (!apiToken) {
+      console.error("ULTRAMSG_API_TOKEN is not configured");
+      return {
+        success: false,
+        error: "OTP service is not configured. Please contact support.",
+      };
+    }
+    
+    const fullApiUrl = `${apiUrl}?token=${apiToken}`;
     const message = `Your OTP for Wyce Exclucity is: ${otp}. Please enter this code to verify your submission.`;
 
-    const response = await fetch(apiUrl, {
+    const response = await fetch(fullApiUrl, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

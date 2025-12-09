@@ -6,7 +6,6 @@ import { submitLead } from "@/utils/submitLead";
 import SuccessPopup from "@/components/SuccessPopup";
 import OTPPopup from "@/components/OTPPopup";
 import { sendOTP, generateOTP } from "@/utils/sendOTP";
-import Image from "next/image";
 
 interface BrochureDownloadModalProps {
   isOpen: boolean;
@@ -38,7 +37,6 @@ export default function BrochureDownloadModal({ isOpen, onClose }: BrochureDownl
   const [otpCode, setOtpCode] = useState<string>("");
   const [otpError, setOtpError] = useState<string>("");
   const [isSendingOTP, setIsSendingOTP] = useState(false);
-  const [otpVerified, setOtpVerified] = useState(false);
   const [formDataToSubmit, setFormDataToSubmit] = useState<{
     name: string;
     email: string;
@@ -63,7 +61,6 @@ export default function BrochureDownloadModal({ isOpen, onClose }: BrochureDownl
       setOtpCode("");
       setOtpError("");
       setIsSendingOTP(false);
-      setOtpVerified(false);
       setFormDataToSubmit(null);
     }
   }, [isOpen]);
@@ -198,7 +195,6 @@ export default function BrochureDownloadModal({ isOpen, onClose }: BrochureDownl
   const handleOTPVerify = (enteredOtp: string) => {
     if (enteredOtp === otpCode) {
       // OTP is correct
-      setOtpVerified(true);
       setShowOTPPopup(false);
       setOtpError("");
       

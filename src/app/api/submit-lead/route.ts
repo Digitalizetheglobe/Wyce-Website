@@ -1,9 +1,59 @@
 import { NextRequest, NextResponse } from "next/server";
 
+// Simple rate limiting store (in production, use Redis or similar)
+const requestCounts = new Map<string, { count: number; resetTime: number }>();
+const RATE_LIMIT = 5; // Max 5 requests
+const RATE_LIMIT_WINDOW = 60000; // 1 minute
+
+function checkRateLimit(ip: string): boolean {
+  const now = Date.now();
+  const record = requestCounts.get(ip);
+  
+  if (!record || now > record.resetTime) {
+    requestCounts.set(ip, { count: 1, resetTime: now + RATE_LIMIT_WINDOW });
+    return true;
+  }
+  
+  if (record.count >= RATE_LIMIT) {
+    return false;
+  }
+  
+  record.count++;
+  return true;
+}
+
+// Sanitize input to prevent XSS
+function sanitizeInput(input: string): string {
+  return input
+    .replace(/[<>]/g, '') // Remove < and >
+    .replace(/javascript:/gi, '') // Remove javascript: protocol
+    .replace(/on\w+=/gi, '') // Remove event handlers
+    .trim()
+    .slice(0, 1000); // Limit length
+}
+
 export async function POST(request: NextRequest) {
   try {
+    // Rate limiting
+    const ip = request.headers.get('x-forwarded-for') || 
+               request.headers.get('x-real-ip') || 
+               'unknown';
+    
+    if (!checkRateLimit(ip)) {
+      return NextResponse.json(
+        { success: false, error: "Too many requests. Please try again later." },
+        { status: 429 }
+      );
+    }
+
     const body = await request.json();
-    const { name, email, phone, message, otpVerified } = body;
+    let { name, email, phone, message, otpVerified } = body;
+
+    // Sanitize inputs
+    name = sanitizeInput(String(name || ''));
+    email = sanitizeInput(String(email || ''));
+    phone = sanitizeInput(String(phone || ''));
+    message = message ? sanitizeInput(String(message)) : '';
 
     // Validate required fields (message is optional)
     if (!name || !email || !phone) {
@@ -13,8 +63,26 @@ export async function POST(request: NextRequest) {
       );
     }
 
+    // Validate email format
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      return NextResponse.json(
+        { success: false, error: "Invalid email format" },
+        { status: 400 }
+      );
+    }
+
+    // Validate phone (should be digits only, 10 digits)
+    const phoneRegex = /^\d{10}$/;
+    if (!phoneRegex.test(phone)) {
+      return NextResponse.json(
+        { success: false, error: "Invalid phone number format" },
+        { status: 400 }
+      );
+    }
+
     // Google Apps Script requires a non-empty message, so use a default if empty
-    const messageToSend = (message && message.trim()) || "No message provided";
+    const messageToSend = message || "No message provided";
     
     // OTP verification status (default to false if not provided)
     const isOtpVerified = otpVerified === true;
@@ -29,10 +97,16 @@ export async function POST(request: NextRequest) {
       otpVerifiedType: typeof otpVerified,
     });
 
-    // Google Apps Script Web App URL
-    // This is your Web App URL from Google Apps Script deployment
-    const scriptUrl =
-      "https://script.google.com/macros/s/AKfycbzov0JFTSJe_1NUbCVWBaug12w1WKvAO2hjZbxXWFFuVJoBG1Tka6o00aQiE8KgqswMyw/exec";
+    // Google Apps Script Web App URL from environment variables
+    const scriptUrl = process.env.GOOGLE_APPS_SCRIPT_URL;
+    
+    if (!scriptUrl) {
+      console.error("GOOGLE_APPS_SCRIPT_URL is not configured");
+      return NextResponse.json(
+        { success: false, error: "Submission service is not configured" },
+        { status: 500 }
+      );
+    }
 
     // Try JSON first
     try {

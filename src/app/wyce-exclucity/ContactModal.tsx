@@ -37,7 +37,6 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
   const [otpCode, setOtpCode] = useState<string>("");
   const [otpError, setOtpError] = useState<string>("");
   const [isSendingOTP, setIsSendingOTP] = useState(false);
-  const [otpVerified, setOtpVerified] = useState(false);
   const [formDataToSubmit, setFormDataToSubmit] = useState<{
     name: string;
     email: string;
@@ -62,7 +61,6 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
       setOtpCode("");
       setOtpError("");
       setIsSendingOTP(false);
-      setOtpVerified(false);
       setFormDataToSubmit(null);
     }
   }, [isOpen]);
@@ -197,7 +195,6 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
   const handleOTPVerify = (enteredOtp: string) => {
     if (enteredOtp === otpCode) {
       // OTP is correct
-      setOtpVerified(true);
       setShowOTPPopup(false);
       setOtpError("");
       

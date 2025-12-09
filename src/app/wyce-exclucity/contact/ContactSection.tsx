@@ -33,7 +33,6 @@ export default function ContactSection() {
   const [otpCode, setOtpCode] = useState<string>("");
   const [otpError, setOtpError] = useState<string>("");
   const [isSendingOTP, setIsSendingOTP] = useState(false);
-  const [otpVerified, setOtpVerified] = useState(false);
   const [formDataToSubmit, setFormDataToSubmit] = useState<{
     name: string;
     email: string;
@@ -169,7 +168,6 @@ export default function ContactSection() {
   const handleOTPVerify = (enteredOtp: string) => {
     if (enteredOtp === otpCode) {
       // OTP is correct
-      setOtpVerified(true);
       setShowOTPPopup(false);
       setOtpError("");
       
