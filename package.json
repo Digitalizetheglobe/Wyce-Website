@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
-    "build": "next build --turbopack",
+    "build": "CI=true next build --turbopack",
+    "build:production": "CI=true NODE_ENV=production next build --turbopack",
     "start": "next start",
     "lint": "eslint"
   },
