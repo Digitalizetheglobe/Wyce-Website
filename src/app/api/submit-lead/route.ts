@@ -47,7 +47,8 @@ export async function POST(request: NextRequest) {
     }
 
     const body = await request.json();
-    let { name, email, phone, message, otpVerified } = body;
+    let { name, email, phone, message } = body;
+    const { otpVerified } = body;
 
     // Sanitize inputs
     name = sanitizeInput(String(name || ''));
