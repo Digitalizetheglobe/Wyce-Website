@@ -34,11 +34,19 @@ export async function POST(request: NextRequest) {
     
     if (!apiToken) {
       console.error("ULTRAMSG_API_TOKEN is not configured in environment variables");
+      console.error("Available env vars:", Object.keys(process.env).filter(key => key.includes('ULTRAMSG') || key.includes('ULTRA')));
+      
       return NextResponse.json(
         { 
           success: false, 
           error: "OTP service is not configured. Please contact support.",
-          details: process.env.NODE_ENV === "development" ? "ULTRAMSG_API_TOKEN environment variable is missing" : undefined
+          debug: process.env.NODE_ENV === "development" ? {
+            message: "ULTRAMSG_API_TOKEN environment variable is missing",
+            hint: "Add ULTRAMSG_API_TOKEN in Vercel Settings → Environment Variables, then redeploy"
+          } : {
+            message: "Environment variable not found",
+            hint: "Please add ULTRAMSG_API_TOKEN in Vercel and redeploy. Check /api/check-env to verify configuration."
+          }
         },
         { status: 500 }
       );
