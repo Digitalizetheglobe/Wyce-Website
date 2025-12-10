@@ -251,6 +251,56 @@ body {
   color: white;
 }
 
+.blog-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 2rem 0;
+  overflow-x: auto;
+  display: block;
+}
+
+.blog-content table thead {
+  background-color: #B7AC88;
+}
+
+.blog-content table thead th {
+  color: #000;
+  padding: 12px;
+  text-align: left;
+  border: 1px solid #B7AC88;
+  font-weight: 600;
+}
+
+.blog-content table tbody tr {
+  border: 1px solid #B7AC88;
+}
+
+.blog-content table tbody tr:nth-child(even) {
+  background-color: rgba(183, 172, 136, 0.1);
+}
+
+.blog-content table tbody td {
+  color: #fff;
+  padding: 12px;
+  border: 1px solid #B7AC88;
+}
+
+.blog-content table tbody td strong {
+  color: #fff;
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .blog-content table {
+    font-size: 0.875rem;
+  }
+  
+  .blog-content table thead th,
+  .blog-content table tbody td {
+    padding: 8px;
+  }
+}
+
 html, body {
   overflow-x: hidden;
 }

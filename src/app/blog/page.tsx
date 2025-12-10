@@ -8,8 +8,28 @@ import Image from "next/image";
 // Blog posts data
 const blogPosts = [
   {
+    id: 11,
+    title: "The New Rule of 5: How Infrastructure is Redefining Pune's Property ROI Game",
+    excerpt:
+      "The old adage in real estate was 'Location, Location, Location.' Today, in Pune, it has been rewritten: 'Location, powered by Connectivity, equals exponential High ROI.' Pune is undergoing an unprecedented infrastructure transformation, moving beyond congested city limits to embrace a future defined by high-speed movement.",
+    category: "Real Estate",
+    date: "December 9, 2025",
+    image: "/images/blog-4.jpg",
+    slug: "the-new-rule-of-5-how-infrastructure-is-redefining-punes-property-roi-game",
+  },
+  {
+    id: 10,
+    title: "Rent vs. EMI: Why Your Pune Home Loan Puts Substantially More Money Back in Your Wallet",
+    excerpt:
+      "For years, the 'Rent vs. Buy' debate has dominated financial planning, especially for ambitious professionals in dynamic cities like Pune. The reality, particularly as the Tax Season (December/January) approaches, is that when you factor in tax savings and Pune's explosive real estate growth, investing in a residential project far outshines renting, making it the smarter financial decision.",
+    category: "Real Estate",
+    date: "December 7, 2025",
+    image: "/images/blog4.jpeg",
+    slug: "rent-vs-emi-why-your-pune-home-loan-puts-substantially-more-money-back-in-your-wallet",
+  },
+  {
     id: 1,
-    title: "Bavdhan Wasn’t on My Radar... Until I Realized Everyone Smart Was Moving There",
+    title: "Bavdhan Wasn't on My Radar... Until I Realized Everyone Smart Was Moving There",
     excerpt:
       "When you think of Pune’s dream neighbourhoods, the usual suspects come to mind - Baner,Hinjawadi, Koregaon Park. The well-known, well-hyped areas where everyone assumes you’d want to live.",
     category: "Real Estate",
@@ -87,13 +107,35 @@ const blogPosts = [
     image: "/images/blog5.jpeg",
     slug: "wyce-corps-7-pillars-of-exclusivity-experience-the-difference-of-a-world-class-home",
   },
+  {
+    id: 9,
+    title: "Your End-of-Year Wealth Plan: The Ultimate Home Loan Tax Benefit Checklist for FY 2025-26",
+    excerpt:
+      "Maximize your tax savings with our comprehensive guide to home loan tax benefits for FY 2025-26. Learn about Section 80C and Section 24(b) deductions, and discover how ready-to-move-in properties like Wyce Exclucity can help you save immediately.",
+    category: "Real Estate",
+    date: "December 5, 2025",
+    image: "/images/blog2.jpeg",
+    slug: "your-end-of-year-wealth-plan-the-ultimate-home-loan-tax-benefit-checklist-for-fy-2025-26",
+  },
 
 ];
 
 const recentPosts = [
   {
+    id: 11,
+    title: "The New Rule of 5: How Infrastructure is Redefining Pune's Property ROI Game",
+    date: "December 9, 2025",
+    slug: "the-new-rule-of-5-how-infrastructure-is-redefining-punes-property-roi-game",
+  },
+  {
+    id: 10,
+    title: "Rent vs. EMI: Why Your Pune Home Loan Puts Substantially More Money Back in Your Wallet",
+    date: "December 7, 2025",
+    slug: "rent-vs-emi-why-your-pune-home-loan-puts-substantially-more-money-back-in-your-wallet",
+  },
+  {
     id: 1,
-    title: "Bavdhan Wasn’t on My Radar... Until I Realized Everyone Smart Was Moving There",
+    title: "Bavdhan Wasn't on My Radar... Until I Realized Everyone Smart Was Moving There",
     date: "October 28, 2025",
     slug: "bavdhan-wasn't-on-my-radar",
   },
@@ -138,6 +180,12 @@ const recentPosts = [
     title: "Wyce Corp's 7 Pillars of Exclusivity: Experience The Difference of a World-Class Home",
     date: "November 25, 2025",
     slug: "wyce-corps-7-pillars-of-exclusivity-experience-the-difference-of-a-world-class-home",
+  },
+  {
+    id: 9,
+    title: "Your End-of-Year Wealth Plan: The Ultimate Home Loan Tax Benefit Checklist for FY 2025-26",
+    date: "December 5, 2025",
+    slug: "your-end-of-year-wealth-plan-the-ultimate-home-loan-tax-benefit-checklist-for-fy-2025-26",
   },
   // {
   //   id: 3,

@@ -19,6 +19,90 @@ interface BlogData {
 }
 
 const blogContent: Record<string, BlogData> = {
+  "the-new-rule-of-5-how-infrastructure-is-redefining-punes-property-roi-game": {
+    title: "The New Rule of 5: How Infrastructure is Redefining Pune's Property ROI Game",
+    metaTitle: "The New Rule of 5: How Infrastructure is Redefining Pune's Property ROI Game | WYCE Corp",
+    metaDescription: "Discover how Pune's Metro and Ring Road infrastructure projects are transforming property values and creating the New Rule of 5 for high ROI investments. Learn why investing in a residential project near Metro corridors and Ring Road alignment is the smart move.",
+    keywords: "Pune Metro property investment, Pune Ring Road, property ROI Pune, Metro proximity investment, infrastructure real estate Pune, high ROI property Pune, residential project Pune, property appreciation Pune, Wyce Exclucity",
+    date: "December 9, 2025",
+    category: "Real Estate",
+    author: "WYCE Team",
+    image: "/images/blog-4.jpg",
+    content: `
+      <p>The old adage in real estate was "Location, Location, Location." Today, in Pune, it has been rewritten: "Location, powered by Connectivity, equals exponential High ROI."</p>
+      <p>Pune is undergoing an unprecedented infrastructure transformation, moving beyond congested city limits to embrace a future defined by high-speed movement. This is not just about reducing commute times; it's about fundamentally redrawing the property value map and creating a clear path for achieving superior Return on Investment on your residential project purchase.</p>
+      <p>Wise investors are following the route of the Ring Road and the Metro. Are you?</p>
+
+      <h2>1. The Metro Effect: Cutting Commute, Multiplying Value</h2>
+      <p>Pune's expanding Metro network is arguably the biggest catalyst for real estate growth today.</p>
+      
+      <h3>Hinjawadi-Shivajinagar Line (Line 3)</h3>
+      <p>With sections slated for completion in the next year (March 2026), this line directly addresses the long-standing commute challenge for professionals in Pune's massive IT hub.</p>
+      
+      <p><strong>The Impact:</strong> Areas along the Metro corridor historically experience 15% to 25% appreciation in property value compared to non-metro zones. This immediate boost in connectivity makes apartments near proposed stations a prime investment for both rental yield and capital gains.</p>
+      
+      <p><strong>The Power of Proximity:</strong> A residential project that offers seamless access to a Metro station becomes instantly more desirable, ensuring liquidity and a stable High ROI.</p>
+
+      <h2>2. The Game-Changer: The Pune Ring Road Project</h2>
+      <p>The Inner and Outer Ring Road projects are set to unlock vast, untapped potential in the Pune Metropolitan Region. Expected to be operational in phases over the next couple of years, this 170+ km network will bypass city congestion and link every major national highway.</p>
+      
+      <p><strong>Seamless Connectivity:</strong> The Ring Road will drastically reduce travel time between peripheral employment hubs (like Chakan, Hinjawadi, and Kharadi) and the rest of the city, boosting regional connectivity like never before.</p>
+      
+      <p><strong>Decentralized Appreciation:</strong> By linking multiple satellite towns, the Ring Road creates brand-new economic corridors. Properties that currently seem 'peripheral' will soon find themselves at the heart of the new connectivity arc, driving significant land and asset appreciation for early investors.</p>
+
+      <h2>3. The New Rule of 5: Strategic Investment Pockets</h2>
+      <p>The confluence of these major infrastructure projects creates the "New Rule of 5" for investing in a residential project in Pune, guiding you to areas with assured High ROI:</p>
+      
+      <p><strong>1. Direct Metro Proximity:</strong> Guaranteed rental demand and premium pricing.</p>
+      <p><strong>2. Ring Road Alignment:</strong> Future-proofing against congestion and ensuring regional connectivity.</p>
+      <p><strong>3. Proximity to IT/Industrial Zones:</strong> Sustained demand from a robust job market.</p>
+      <p><strong>4. Integrated Township Ecosystems:</strong> Desirable lifestyle that commands higher resale value.</p>
+      <p><strong>5. Quality of Construction:</strong> Superior homes maintain value and appreciation better.</p>
+
+      <h2>Why Wyce Exclucity is a Future-Ready Investment</h2>
+      <p>Wyce Exclucity is strategically located to capitalize on this infrastructure boom. Its position ensures residents benefit from exceptional connectivity to the emerging economic hubs influenced by both the Metro and the Ring Road, translating your purchase into a future-proof asset.</p>
+      
+      <p>Investing in a residential project today means buying into tomorrow's Pune—a city where mobility and accessibility define premium value. Don't wait for the infrastructure to complete; invest where the future is being built to secure your High ROI.</p>
+      
+      <p>Interested in knowing the projected appreciation rates near the new infrastructure corridors?</p>
+    `,
+  },
+  "rent-vs-emi-why-your-pune-home-loan-puts-substantially-more-money-back-in-your-wallet": {
+    title: "Rent vs. EMI: Why Your Pune Home Loan Puts Substantially More Money Back in Your Wallet",
+    metaTitle: "Rent vs. EMI: Why Your Pune Home Loan Puts Substantially More Money Back in Your Wallet | WYCE Corp",
+    metaDescription: "Discover why investing in a Pune home loan far outshines renting. Learn about tax savings, capital appreciation, and how EMI payments build wealth while rent payments vanish. Explore ready-to-move-in properties at Wyce Exclucity.",
+    keywords: "rent vs buy Pune, home loan tax benefits Pune, EMI vs rent, Pune real estate investment, Wyce Exclucity Pune, home loan tax savings, Section 80C, Section 24(b), capital appreciation Pune, property investment Pune",
+    date: "December 7, 2025",
+    category: "Real Estate",
+    author: "WYCE Team",
+    image: "/images/blog4.jpeg",
+    content: `
+      <p>For years, the 'Rent vs. Buy' debate has dominated financial planning, especially for ambitious professionals in dynamic cities like Pune. The reality, particularly as the Tax Season (December/January) approaches, is that when you factor in tax savings and Pune's explosive real estate growth, investing in a residential project far outshines renting, making it the smarter financial decision.</p>
+      <p>It's time to stop paying dead rent and start building real wealth.</p>
+
+      <h2>The Hidden Power of the EMI: Unlocking Tax Savings</h2>
+      <p>A rent receipt is a pure expense with limited tax benefits (HRA). An EMI, however, is a wealth-creation tool disguised as a monthly payment.</p>
+      <p>For a homeowner who takes a Home Loan in Pune, the government offers significant incentives:</p>
+
+      <h3>Direct Tax Deduction (Up to ₹3.5 Lakhs Annually):</h3>
+      <p><strong>Section 80C:</strong> Deduct up to ₹1.5 Lakh on the principal repayment of your loan. This is money that goes directly towards building your asset.</p>
+      <p><strong>Section 24(b):</strong> Deduct up to ₹2 Lakh on the interest component of your loan for a self-occupied property. This dramatically lowers your taxable income.</p>
+      <p>In contrast, the benefit from HRA (House Rent Allowance) is often a fraction of this, offering only short-term relief without building any equity. By buying a ready-to-move-in home now, you immediately activate these powerful tax benefits for the current financial year.</p>
+
+      <h2>The Appreciation Advantage: Pune's Capital Gains</h2>
+      <p>Rent money vanishes; EMI payments come back to you magnified through capital appreciation.</p>
+      <p>Pune's strategic growth—driven by IT hubs, major infrastructure projects (like the Metro and Ring Road), and excellent connectivity—has consistently delivered strong Return on Investment (ROI). Average property values in key growth corridors have seen a significant increase (recent data suggests an annual rise of ~6%-9%).</p>
+      <p><strong>The Renter:</strong> Pays ₹30,000 in rent over five years (₹18 Lakh), and the landlord's property value increases by (for example) 40%. The renter gains nothing.</p>
+      <p><strong>The Homeowner:</strong> Pays ₹30,000 in EMI (where a portion goes toward principal). Over five years, they've built equity, enjoyed up to ₹17.5 Lakh in tax benefits, and seen their investment appreciate by a significant amount.</p>
+      <p>This property appreciation is the engine that drives your High ROI, turning your monthly payment from a liability into an asset.</p>
+
+      <h2>Smart Investing in Pune: The Wyce Exclucity Edge</h2>
+      <p>When investing in a residential project, location is everything. Projects like Wyce Exclucity are strategically situated to capitalize on Pune's future growth, ensuring superior connectivity to key employment and social hubs.</p>
+      <p>Choosing a premium, integrated community is not just about a better lifestyle; it protects and enhances your long-term return on investment by attracting high-quality tenants and buyers when the time comes to sell.</p>
+      <p>Stop renting your present; start investing in your future. The financial discipline of the EMI, coupled with the security of a tangible asset and substantial tax savings, is the clearest path to financial freedom in Pune.</p>
+      <p>Ready to turn your rent payments into equity? Discover the High ROI potential of a ready-to-move-in home at Wyce Exclucity today.</p>
+    `,
+  },
   "bavdhan-wasn't-on-my-radar": {
     title: "Bavdhan Wasn't on My Radar... Until I Realized Everyone Smart Was Moving There",
     metaTitle: "Why Everyone Smart Is Moving to Bavdhan | Discover Pune's Fastest-Growing Neighbourhood",
@@ -380,13 +464,114 @@ const blogContent: Record<string, BlogData> = {
       <p>By choosing a property defined by these 7 Pillars of Exclusivity, you are not just buying a home; you are securing a commitment to a world-class home and a superior, guaranteed investment.</p>
     `,
   },
+  "your-end-of-year-wealth-plan-the-ultimate-home-loan-tax-benefit-checklist-for-fy-2025-26": {
+    title: "Your End-of-Year Wealth Plan: The Ultimate Home Loan Tax Benefit Checklist for FY 2025-26",
+    metaTitle: "Your End-of-Year Wealth Plan: The Ultimate Home Loan Tax Benefit Checklist for FY 2025-26 | WYCE Corp",
+    metaDescription: "Maximize your tax savings with our comprehensive guide to home loan tax benefits for FY 2025-26. Learn about Section 80C and Section 24(b) deductions, and discover how ready-to-move-in properties like Wyce Exclucity can help you save immediately.",
+    keywords: "home loan tax benefits, Section 80C deduction, Section 24(b) deduction, tax savings FY 2025-26, ready to move in property Pune, Wyce Exclucity Pune, home loan principal deduction, home loan interest deduction, tax planning Pune, property tax benefits",
+    date: "December 5, 2025",
+    category: "Real Estate",
+    author: "WYCE Team",
+    image: "/images/blog2.jpeg",
+    content: `
+      <p>As the financial year draws to a close (December and January being peak tax planning months!), every salaried professional and astute investor looks for ways to legally reduce their tax burden. For those considering investing in a residential project in a high-growth city like Pune, buying a home is not just a lifestyle upgrade—it's one of the most powerful tax-saving strategies available.</p>
+      <p>Specifically, choosing a ready-to-move-in property like Wyce Exclucity now allows you to immediately unlock major Home Loan Tax Benefits for the current financial year (FY 2025-26).</p>
+      <p>Here is your essential checklist to maximize your savings under the Income Tax Act.</p>
+
+      <h2>1. The Principal Payout: Section 80C Deduction</h2>
+      <p>This is the cornerstone of property tax savings. Section 80C allows you to deduct the principal amount of your home loan repayment from your taxable income.</p>
+      
+      <div style="overflow-x: auto; margin: 2rem 0;">
+        <table style="width: 100%; border-collapse: collapse; border: 1px solid #B7AC88;">
+          <thead>
+            <tr style="background-color: #B7AC88; color: #000;">
+              <th style="padding: 12px; text-align: left; border: 1px solid #B7AC88;">Component</th>
+              <th style="padding: 12px; text-align: left; border: 1px solid #B7AC88;">Deduction Limit (Annual)</th>
+              <th style="padding: 12px; text-align: left; border: 1px solid #B7AC88;">Key Condition</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border: 1px solid #B7AC88;">
+              <td style="padding: 12px; border: 1px solid #B7AC88; color: #fff;"><strong>Principal Repayment</strong></td>
+              <td style="padding: 12px; border: 1px solid #B7AC88; color: #fff;">Up to ₹1.5 Lakh</td>
+              <td style="padding: 12px; border: 1px solid #B7AC88; color: #fff;">Available only when you have possession of the property.</td>
+            </tr>
+            <tr style="border: 1px solid #B7AC88; background-color: rgba(183, 172, 136, 0.1);">
+              <td style="padding: 12px; border: 1px solid #B7AC88; color: #fff;"><strong>Stamp Duty & Registration</strong></td>
+              <td style="padding: 12px; border: 1px solid #B7AC88; color: #fff;">Included within the ₹1.5 Lakh limit.</td>
+              <td style="padding: 12px; border: 1px solid #B7AC88; color: #fff;">Can be claimed only in the financial year the expenses are paid.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>The Ready-to-Move-In Advantage:</h3>
+      <p>When you purchase a ready-to-move-in residential project like Wyce Exclucity in Pune, you get immediate possession. This means that every rupee of the principal component you repay in your EMIs from the date of possession until March 31, 2026, instantly qualifies for the ₹1.5 Lakh deduction under Section 80C. For under-construction projects, this benefit is deferred until possession.</p>
+
+      <h2>2. The Interest Advantage: Section 24(b) Deduction</h2>
+      <p>While Section 80C focuses on the principal, Section 24(b) provides substantial relief on the interest component of your Home Loan.</p>
+      
+      <div style="overflow-x: auto; margin: 2rem 0;">
+        <table style="width: 100%; border-collapse: collapse; border: 1px solid #B7AC88;">
+          <thead>
+            <tr style="background-color: #B7AC88; color: #000;">
+              <th style="padding: 12px; text-align: left; border: 1px solid #B7AC88;">Property Type</th>
+              <th style="padding: 12px; text-align: left; border: 1px solid #B7AC88;">Deduction Limit (Annual)</th>
+              <th style="padding: 12px; text-align: left; border: 1px solid #B7AC88;">Key Condition</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border: 1px solid #B7AC88;">
+              <td style="padding: 12px; border: 1px solid #B7AC88; color: #fff;"><strong>Self-Occupied Property</strong></td>
+              <td style="padding: 12px; border: 1px solid #B7AC88; color: #fff;">Up to ₹2 Lakh</td>
+              <td style="padding: 12px; border: 1px solid #B7AC88; color: #fff;">The house must be completed (or acquired) within 5 years of taking the loan.</td>
+            </tr>
+            <tr style="border: 1px solid #B7AC88; background-color: rgba(183, 172, 136, 0.1);">
+              <td style="padding: 12px; border: 1px solid #B7AC88; color: #fff;"><strong>Let-Out/Rented Property</strong></td>
+              <td style="padding: 12px; border: 1px solid #B7AC88; color: #fff;">No Limit (But net loss set-off capped at ₹2 Lakh)</td>
+              <td style="padding: 12px; border: 1px solid #B7AC88; color: #fff;">Full interest is deductible from the rental income.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>The Strategic Move for Q4:</h3>
+      <p>If you execute your purchase now, the substantial interest paid on your large Home Loan in the current financial year can be immediately claimed. For a self-occupied property, this ₹2 Lakh annual deduction significantly lowers your taxable income, translating directly into thousands of rupees in Tax Season savings.</p>
+
+      <h2>3. Checklist for Maximum Tax Savings (FY 2025-26)</h2>
+      <p>To ensure you lock in the maximum benefits this Tax Season, follow this high-intent checklist:</p>
+      <p><strong>Finalize Loan & Registration by March 31st:</strong> To claim stamp duty and registration charges under Section 80C for FY 2025-26, these payments must be made before the deadline.</p>
+      <p><strong>Obtain Possession Certificate:</strong> For both Section 80C and 24(b) benefits to kick in, possession is mandatory. A ready-to-move-in apartment in Pune ensures you have the necessary documentation immediately.</p>
+      <p><strong>Get the Interest Certificate:</strong> Your lender must provide a detailed certificate showing the split between Principal and Interest paid during the financial year. This is the primary document for your ITR filing.</p>
+      <p><strong>Consider a Joint Home Loan:</strong> If you are a co-owner and co-borrower, both individuals can claim the full ₹1.5 Lakh (80C) and ₹2 Lakh (24b) deductions separately, potentially doubling the total tax benefit on your investment.</p>
+
+      <h2>The Indirect Tie-in: Why Wyce Exclucity, Pune, Now?</h2>
+      <p>Investing in a residential project like Wyce Exclucity right now is not just about beating the Tax Season deadline; it's about making a smart financial move. Because it is a ready-to-move-in property in Pune, you bypass the delays and uncertainties of under-construction projects and immediately activate your tax-saving machinery.</p>
+      <p>Stop waiting for possession to start saving tax. Secure your Pune Home today, start your EMI repayments, and get those vital deductions finalized before the financial year ends!</p>
+
+      <p><strong>Disclaimer:</strong> Tax laws are subject to change. Consult a Chartered Accountant or a tax professional for personalized advice on your specific financial situation before making any investment decision.</p>
+      <p>Ready to calculate your potential tax savings on your new home?</p>
+    `,
+  },
 
 };
 
 const recentPosts = [
   {
+    id: 11,
+    title: "The New Rule of 5: How Infrastructure is Redefining Pune's Property ROI Game",
+    date: "December 9, 2025",
+    slug: "the-new-rule-of-5-how-infrastructure-is-redefining-punes-property-roi-game",
+  },
+  {
+    id: 10,
+    title: "Rent vs. EMI: Why Your Pune Home Loan Puts Substantially More Money Back in Your Wallet",
+    date: "December 7, 2025",
+    slug: "rent-vs-emi-why-your-pune-home-loan-puts-substantially-more-money-back-in-your-wallet",
+  },
+  {
     id: 1,
-    title: "Bavdhan Wasn’t on My Radar... Until I Realized Everyone Smart Was Moving There",
+    title: "Bavdhan Wasn't on My Radar... Until I Realized Everyone Smart Was Moving There",
     date: "October 28, 2025",
     slug: "bavdhan-wasn't-on-my-radar",
   },
@@ -431,6 +616,12 @@ const recentPosts = [
     title: "Wyce Corp's 7 Pillars of Exclusivity: Experience The Difference of a World-Class Home",
     date: "November 25, 2025",
     slug: "wyce-corps-7-pillars-of-exclusivity-experience-the-difference-of-a-world-class-home",
+  },
+  {
+    id: 9,
+    title: "Your End-of-Year Wealth Plan: The Ultimate Home Loan Tax Benefit Checklist for FY 2025-26",
+    date: "December 5, 2025",
+    slug: "your-end-of-year-wealth-plan-the-ultimate-home-loan-tax-benefit-checklist-for-fy-2025-26",
   },
   // {
   //   id: 3,
