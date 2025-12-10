@@ -33,9 +33,13 @@ export async function POST(request: NextRequest) {
     const apiToken = process.env.ULTRAMSG_API_TOKEN;
     
     if (!apiToken) {
-      console.error("ULTRAMSG_API_TOKEN is not configured");
+      console.error("ULTRAMSG_API_TOKEN is not configured in environment variables");
       return NextResponse.json(
-        { success: false, error: "OTP service is not configured. Please contact support." },
+        { 
+          success: false, 
+          error: "OTP service is not configured. Please contact support.",
+          details: process.env.NODE_ENV === "development" ? "ULTRAMSG_API_TOKEN environment variable is missing" : undefined
+        },
         { status: 500 }
       );
     }
@@ -101,9 +105,14 @@ export async function POST(request: NextRequest) {
     }
   } catch (error: unknown) {
     const errorMessage = error instanceof Error ? error.message : "Failed to send OTP";
-    console.error("Error sending OTP:", errorMessage);
+    const errorStack = error instanceof Error ? error.stack : undefined;
+    console.error("Error sending OTP:", errorMessage, errorStack);
     return NextResponse.json(
-      { success: false, error: "Network error. Please try again later." },
+      { 
+        success: false, 
+        error: "Network error. Please try again later.",
+        details: process.env.NODE_ENV === "development" ? errorMessage : undefined
+      },
       { status: 500 }
     );
   }
