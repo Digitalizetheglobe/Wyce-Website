@@ -19,12 +19,269 @@ interface BlogData {
 }
 
 const blogContent: Record<string, BlogData> = {
+  "q4-home-buying-guide-tax-savings-high-roi-first-time-buyers": {
+    title: "Your Q4 Power Move: The First-Time Homebuyer's Guide to Maximum Tax Planning and High ROI",
+    metaTitle: "Q4 Home Buying Guide: Tax Savings & High ROI for First-Time Buyers | WYCE Corp",
+    metaDescription: "From tax planning to high ROI, this Q4 guide shows first-time buyers and NRIs how to make the most of a home purchase in Pune.",
+    keywords: "Q4 home buying guide, first-time home buyer Pune, NRI investment Pune, real estate tax savings, high ROI property Pune, tax planning for home buyers",
+    date: "December 16, 2025",
+    category: "Real Estate",
+    author: "WYCE Team",
+    image: "/images/blog4.jpeg",
+    content: `
+      <p>The period from December to March (Q4) is crunch time for finance professionals everywhere. For a first-time homebuyer, this window represents the absolute best time to secure a Home Loan and lock in crucial tax benefits for the current fiscal year (FY 2025-26).</p>
+      <p>If you are looking for smart investment options that simultaneously reduce your tax burden, stop paying rent and start investing in a residential project in a high-growth market like Pune.</p>
+      <p>Here is your practical guide to leveraging your home purchase for the best tax planning and guaranteed Return on Investment (ROI).</p>
+
+      <h2>1. The Time is Now: Why Q4 Maximizes Your Tax Savings</h2>
+      <p>Timing your purchase is key to maximizing your annual deductions. By securing a ready-to-move-in home at Wyce Exclucity and registering it before March 31, 2026, you immediately unlock major tax relief for the entire FY 2025-26.</p>
+      
+      <div style="overflow-x: auto; margin: 2rem 0;">
+        <table style="width: 100%; border-collapse: collapse; border: 1px solid #B7AC88;">
+          <thead>
+            <tr style="background-color: #B7AC88; color: #000;">
+              <th style="padding: 12px; text-align: left; border: 1px solid #B7AC88;">Income Tax Section</th>
+              <th style="padding: 12px; text-align: left; border: 1px solid #B7AC88;">Benefit Unlocked</th>
+              <th style="padding: 12px; text-align: left; border: 1px solid #B7AC88;">The Q4 Advantage</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border: 1px solid #B7AC88;">
+              <td style="padding: 12px; border: 1px solid #B7AC88; color: #fff;"><strong>Section 24(b)</strong></td>
+              <td style="padding: 12px; border: 1px solid #B7AC88; color: #fff;">Deduction on Interest Paid (Up to ₹2 Lakhs)</td>
+              <td style="padding: 12px; border: 1px solid #B7AC88; color: #fff;">The interest component of your initial EMIs is the largest. Starting the loan now allows you to claim a full year's worth of interest deduction immediately against your income.</td>
+            </tr>
+            <tr style="border: 1px solid #B7AC88; background-color: rgba(183, 172, 136, 0.1);">
+              <td style="padding: 12px; border: 1px solid #B7AC88; color: #fff;"><strong>Section 80C</strong></td>
+              <td style="padding: 12px; border: 1px solid #B7AC88; color: #fff;">Deduction on Principal Repayment (Up to ₹1.5 Lakhs)</td>
+              <td style="padding: 12px; border: 1px solid #B7AC88; color: #fff;">Every rupee of principal paid in Q4, plus the one-time stamp duty and registration charges, qualifies for the deduction, helping you meet the full ₹1.5 Lakh limit.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p><strong>The Wyce Exclucity Edge:</strong> Choosing a ready project ensures you get immediate possession, which is a mandatory condition for claiming the Section 80C and 24(b) benefits. Don't wait on an under-construction property; lock in your tax savings now.</p>
+
+      <h2>2. Beyond ₹3.5 Lakhs: The First-Time Buyer Bonus</h2>
+      <p>While the standard deduction is a combined ₹3.5 Lakhs (₹2L interest + ₹1.5L principal), first-time homebuyers have historically been granted additional, powerful deductions:</p>
+      
+      <p><strong>Section 80EE & 80EEA:</strong> Although these sections had specific sanction date and property value limits (e.g., property value up to ₹45 Lakhs for 80EEA), if your loan was sanctioned during the eligible period or if new affordable housing schemes are introduced in the future, these sections can provide an additional deduction of up to ₹1.5 Lakh on the interest paid, further enhancing your tax savings.</p>
+      
+      <p><strong>Best Tax Planning Tip:</strong> Consult a tax professional to see if your property value and loan date make you eligible for any special first-time buyer benefits under the current fiscal year rules.</p>
+
+      <h2>3. Home Loan Documentation Checklist: Be Ready for Approval</h2>
+      <p>A smooth, fast loan approval process is vital for hitting the March 31 deadline. Have these documents ready before you even select your home at Wyce Exclucity:</p>
+      
+      <div style="overflow-x: auto; margin: 2rem 0;">
+        <table style="width: 100%; border-collapse: collapse; border: 1px solid #B7AC88;">
+          <thead>
+            <tr style="background-color: #B7AC88; color: #000;">
+              <th style="padding: 12px; text-align: left; border: 1px solid #B7AC88;">Document Category</th>
+              <th style="padding: 12px; text-align: left; border: 1px solid #B7AC88;">Salaried Individuals</th>
+              <th style="padding: 12px; text-align: left; border: 1px solid #B7AC88;">Self-Employed Individuals</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border: 1px solid #B7AC88;">
+              <td style="padding: 12px; border: 1px solid #B7AC88; color: #fff;"><strong>KYC</strong></td>
+              <td style="padding: 12px; border: 1px solid #B7AC88; color: #fff;">PAN Card, Aadhar Card, Passport</td>
+              <td style="padding: 12px; border: 1px solid #B7AC88; color: #fff;">PAN Card, Aadhar Card, Business Registration Certificate</td>
+            </tr>
+            <tr style="border: 1px solid #B7AC88; background-color: rgba(183, 172, 136, 0.1);">
+              <td style="padding: 12px; border: 1px solid #B7AC88; color: #fff;"><strong>Income Proof</strong></td>
+              <td style="padding: 12px; border: 1px solid #B7AC88; color: #fff;">Last 3 months' Salary Slips, Latest Form 16 & ITR</td>
+              <td style="padding: 12px; border: 1px solid #B7AC88; color: #fff;">Last 3 years' ITRs, Audited Balance Sheet & P&L Statements</td>
+            </tr>
+            <tr style="border: 1px solid #B7AC88;">
+              <td style="padding: 12px; border: 1px solid #B7AC88; color: #fff;"><strong>Bank Statements</strong></td>
+              <td style="padding: 12px; border: 1px solid #B7AC88; color: #fff;">Last 6 months' statement (Salary A/c)</td>
+              <td style="padding: 12px; border: 1px solid #B7AC88; color: #fff;">Last 6-12 months' statements (Savings & Business A/c)</td>
+            </tr>
+            <tr style="border: 1px solid #B7AC88; background-color: rgba(183, 172, 136, 0.1);">
+              <td style="padding: 12px; border: 1px solid #B7AC88; color: #fff;"><strong>Property Documents</strong></td>
+              <td style="padding: 12px; border: 1px solid #B7AC88; color: #fff;">Allotment Letter (from Wyce Exclucity), Sale Agreement Draft</td>
+              <td style="padding: 12px; border: 1px solid #B7AC88; color: #fff;">Allotment Letter, Sale Agreement Draft, Occupancy Certificate (Post-Possession)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>4. The NRI Investment Power Play</h2>
+      <p>The current moment is particularly advantageous for NRI Investments in Pune.</p>
+      
+      <p><strong>Currency Leverage:</strong> Favorable USD/INR exchange rates translate directly to lower effective property costs.</p>
+      
+      <p><strong>Repatriation Confidence:</strong> India's clear, relaxed rules allow NRIs to repatriate funds (up to USD 1 million per year or full repatriation of proceeds from up to two residential properties funded via NRE/FCNR).</p>
+      
+      <p><strong>High ROI Potential:</strong> Pune's stable and rapidly appreciating real estate market offers a secure long-term asset, providing reliable Return on Investment through rental income and capital appreciation.</p>
+
+      <h2>Final Takeaway</h2>
+      <p>The time you finalize your investment directly impacts the tax savings you secure. By choosing a high-quality, ready-to-move-in project in a high-growth area like Wyce Exclucity now, you are making the smartest financial decision of your year—securing a long-term asset while achieving the best tax planning possible for FY 2025-26.</p>
+    `,
+  },
+  "nri-property-management-in-pune-hassle-free-investment-guide": {
+    title: "The NRI's Guide to Hassle-Free Property Management in Pune: From Purchase to Payout",
+    metaTitle: "NRI Property Management in Pune | Hassle-Free Investment Guide | WYCE Corp",
+    metaDescription: "A complete guide for NRIs to hassle-free property management in Pune—from RERA-secure purchase to tenant management, rent, tax compliance, and payouts.",
+    keywords: "NRI property management in Pune, NRI investments in Pune, property management services for NRIs, hassle-free property management Pune, NRI rental property Pune, RERA approved projects in Pune, NRI real estate investment Pune",
+    date: "December 13, 2025",
+    category: "Real Estate",
+    author: "WYCE Team",
+    image: "/images/blog3.jpeg",
+    content: `
+      <p>NRI Investments in Pune have surged, driven by excellent capital appreciation potential and favorable currency exchange rates. However, one challenge consistently concerns the overseas investor: how to manage a property effectively from thousands of miles away.</p>
+      <p>The traditional headache of remote management—tenant screening, maintenance emergencies, tax compliance, and legal paperwork—no longer has to be a barrier to securing a lucrative Return on Investment (ROI). Modern, integrated property management services, coupled with regulatory transparency (RERA), have made owning an asset in Pune, such as an apartment in Wyce Exclucity, truly hassle-free.</p>
+      <p>Here is your end-to-end guide to turning your Pune property into a passive, profitable income generator.</p>
+
+      <h2>1. The Purchase Assurance: Leveraging RERA for Transparency</h2>
+      <p>The first step to hassle-free ownership is a secure purchase. The Real Estate (Regulation and Development) Act (RERA) provides critical protection for NRIs, safeguarding your initial investment.</p>
+      
+      <p><strong>Verified Projects Only:</strong> Always invest in RERA-registered projects like Wyce Exclucity. RERA mandates that developers provide transparent details on project plans, carpet area, and completion timelines, which is crucial for NRI Investments in Pune.</p>
+      
+      <p><strong>Clear Documentation:</strong> RERA ensures developers cannot sell the same unit multiple times and provides a legal framework for redressal in case of delays or disputes. This significantly reduces the risk of fraud and simplifies the due diligence process for you, the absentee owner.</p>
+
+      <h2>2. Tenant Acquisition: Securing Your Rental Yield</h2>
+      <p>Once you have the keys, the goal shifts to maximizing rental yield. Finding a reliable tenant who pays on time and maintains the property is often the greatest challenge for remote owners.</p>
+      
+      <p><strong>Professional Tenant Screening:</strong> Dedicated Property Management (PM) services eliminate the risk of ad-hoc tenant selection. They handle the complete lifecycle:</p>
+      
+      <p><strong>Marketing:</strong> Professional photoshoots, premium listings, and targeted marketing to attract high-quality corporate or IT professionals (ideal tenants for a project near Pune's tech hubs).</p>
+      
+      <p><strong>Verification:</strong> Thorough background checks, including employment and legal verification, to ensure financial stability and reliability.</p>
+      
+      <p><strong>Rental Assistance & Lease Management:</strong> The PM company manages the entire lease process—drafting RERA-compliant agreements, negotiating terms, and ensuring a seamless, paperless signing process that can be completed remotely.</p>
+
+      <h2>3. Day-to-Day Management: Maintenance and Rent Collection</h2>
+      <p>This is where a PM service earns its fee (typically 8% to 12% of the monthly rent in Pune for comprehensive services). They act as your on-ground representative for all operational tasks.</p>
+      
+      <div style="overflow-x: auto; margin: 2rem 0;">
+        <table style="width: 100%; border-collapse: collapse; border: 1px solid #B7AC88;">
+          <thead>
+            <tr style="background-color: #B7AC88; color: #000;">
+              <th style="padding: 12px; text-align: left; border: 1px solid #B7AC88;">Management Service</th>
+              <th style="padding: 12px; text-align: left; border: 1px solid #B7AC88;">How It Ensures Hassle-Free Ownership</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border: 1px solid #B7AC88;">
+              <td style="padding: 12px; border: 1px solid #B7AC88; color: #fff;"><strong>Rent Collection</strong></td>
+              <td style="padding: 12px; border: 1px solid #B7AC88; color: #fff;">Automated collection and timely deposit into your NRE/NRO account, solving currency and timing issues.</td>
+            </tr>
+            <tr style="border: 1px solid #B7AC88; background-color: rgba(183, 172, 136, 0.1);">
+              <td style="padding: 12px; border: 1px solid #B7AC88; color: #fff;"><strong>Maintenance</strong></td>
+              <td style="padding: 12px; border: 1px solid #B7AC88; color: #fff;">Handling all repairs (plumbing, electrical, aesthetic), coordination with vendors, and supervising work.</td>
+            </tr>
+            <tr style="border: 1px solid #B7AC88;">
+              <td style="padding: 12px; border: 1px solid #B7AC88; color: #fff;"><strong>Regular Inspections</strong></td>
+              <td style="padding: 12px; border: 1px solid #B7AC88; color: #fff;">Periodic property inspections with photo/video reports sent directly to you, ensuring the property is well-maintained.</td>
+            </tr>
+            <tr style="border: 1px solid #B7AC88; background-color: rgba(183, 172, 136, 0.1);">
+              <td style="padding: 12px; border: 1px solid #B7AC88; color: #fff;"><strong>Legal Compliance</strong></td>
+              <td style="padding: 12px; border: 1px solid #B7AC88; color: #fff;">Paying property taxes, municipal dues, and managing society liaison on your behalf.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>By outsourcing these tasks, you protect the physical integrity of your asset, safeguarding its long-term market value and securing your Return on Investment.</p>
+
+      <h2>4. Financial Compliance: Tax and Repatriation</h2>
+      <p>For NRIs, financial compliance is complex due to various tax regulations. An end-to-end service ensures you remain fully compliant, from rent collection to final payout.</p>
+      
+      <p><strong>TDS Compliance:</strong> In India, the tenant must deduct TDS (Tax Deducted at Source) on rent paid to an NRI landlord (currently ~30%). PM services ensure this crucial step is correctly handled and documented, preventing future tax issues.</p>
+      
+      <p><strong>Documentation for Repatriation:</strong> When you eventually sell your investment, the repatriation of funds requires Form 15CA/CB certificates. A good PM and associated legal counsel ensure you have a clean financial trail from day one, simplifying the process of remitting up to USD 1 million per financial year (or full repatriation for sale proceeds of up to two residential properties funded via NRE/FCNR).</p>
+
+      <h2>The Wyce Exclucity Advantage: Peace of Mind</h2>
+      <p>Investing in a residential project like Wyce Exclucity is made even smarter when you pair the quality of the asset with seamless management. You're investing in a property that is highly desirable, ensuring quick tenant acquisition and strong rental yield, which maximizes your passive Return on Investment.</p>
+      
+      <p>Don't let distance deter your global investment strategy. With professional property management, your Pune home is a secure, income-generating asset, giving you complete peace of mind, no matter your time zone.</p>
+      
+      <p>Ready to start generating passive income from your Pune property? Let us connect you with a trusted NRI property management partner.</p>
+    `,
+  },
+  "decoding-the-dollar-rupee-advantage-why-nri-investments-in-pune-are-surging": {
+    title: "Decoding the Dollar-Rupee Advantage: Why NRI Investments in Pune are Surging",
+    metaTitle: "Why NRI Investments in Pune Are Surging | Dollar-Rupee Advantage | WYCE Corp",
+    metaDescription: "The dollar-rupee advantage is driving NRI investments in Pune. Know why now is the right time to invest in Pune real estate.",
+    keywords: "NRI investments Pune, Pune real estate NRI, Dollar-Rupee advantage, invest in Pune real estate, Pune property investment, real estate investment India, NRI investment trends",
+    date: "December 11, 2025",
+    category: "Real Estate",
+    author: "WYCE Team",
+    image: "/images/blog2.jpeg",
+    content: `
+      <p>For Non-Resident Indians (NRIs) globally, the end of the year often signifies a time for family visits, but increasingly, it marks the optimal window for strategic financial decisions, especially in real estate. This Tax Season (December/January), a confluence of macroeconomic factors—chiefly the favorable dollar-rupee exchange rate and Pune's inherent stability—is driving a massive surge in NRI Investments in Pune.</p>
+      <p>If you've been sitting on foreign savings, now is the time to leverage the global currency market to secure your high-growth asset back home.</p>
+
+      <h2>1. The Exchange Rate Catalyst: Every Dollar Buys More</h2>
+      <p>The primary driver for the current NRI enthusiasm is the dollar's strength against the rupee. With the USD-INR exchange rate hovering around the ₹90 mark (current rate is approximately ₹90.74 as of mid-December 2025), every dollar you remit now yields significantly more rupees than it did just a few months ago.</p>
+      
+      <p><strong>The Math of Advantage:</strong> If a flat costs ₹1.5 Crore, a $10,000 remittance today fetches approximately ₹9,07,390, a substantial gain compared to previous years. This currency advantage effectively provides a built-in discount on the property price.</p>
+      
+      <p><strong>Optimal Timing (Dec/Jan):</strong> The period leading up to the fiscal year-end often coincides with a strong dollar as global financial movements peak. By capitalizing on this trend now, NRI investments in Pune lock in maximum conversion value, making the effective cost of a luxury apartment significantly lower.</p>
+
+      <h2>2. Pune: The Anchor of Stability and High Growth</h2>
+      <p>While other metropolitan markets are expensive and often volatile, Pune presents a unique blend of stability, growth, and high quality of life—perfect for the risk-averse, value-seeking NRI investor.</p>
+      
+      <div style="overflow-x: auto; margin: 2rem 0;">
+        <table style="width: 100%; border-collapse: collapse; border: 1px solid #B7AC88;">
+          <thead>
+            <tr style="background-color: #B7AC88; color: #000;">
+              <th style="padding: 12px; text-align: left; border: 1px solid #B7AC88;">Investment Metric</th>
+              <th style="padding: 12px; text-align: left; border: 1px solid #B7AC88;">Pune Advantage</th>
+              <th style="padding: 12px; text-align: left; border: 1px solid #B7AC88;">Why it Matters for NRIs</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border: 1px solid #B7AC88;">
+              <td style="padding: 12px; border: 1px solid #B7AC88; color: #fff;"><strong>Affordability</strong></td>
+              <td style="padding: 12px; border: 1px solid #B7AC88; color: #fff;">Lower entry cost than Mumbai/Bangalore.</td>
+              <td style="padding: 12px; border: 1px solid #B7AC88; color: #fff;">Easier to buy larger homes or diversify into multiple properties.</td>
+            </tr>
+            <tr style="border: 1px solid #B7AC88; background-color: rgba(183, 172, 136, 0.1);">
+              <td style="padding: 12px; border: 1px solid #B7AC88; color: #fff;"><strong>Economic Stability</strong></td>
+              <td style="padding: 12px; border: 1px solid #B7AC88; color: #fff;">Dual-engine growth (IT & Auto/Manufacturing).</td>
+              <td style="padding: 12px; border: 1px solid #B7AC88; color: #fff;">Ensures continuous job creation and sustained rental demand.</td>
+            </tr>
+            <tr style="border: 1px solid #B7AC88;">
+              <td style="padding: 12px; border: 1px solid #B7AC88; color: #fff;"><strong>Rental Yield</strong></td>
+              <td style="padding: 12px; border: 1px solid #B7AC88; color: #fff;">Typically higher (3-4%+) near IT hubs.</td>
+              <td style="padding: 12px; border: 1px solid #B7AC88; color: #fff;">Provides a secure, passive income stream in INR.</td>
+            </tr>
+            <tr style="border: 1px solid #B7AC88; background-color: rgba(183, 172, 136, 0.1);">
+              <td style="padding: 12px; border: 1px solid #B7AC88; color: #fff;"><strong>Quality of Life</strong></td>
+              <td style="padding: 12px; border: 1px solid #B7AC88; color: #fff;">Better weather, infrastructure, and educational hubs.</td>
+              <td style="padding: 12px; border: 1px solid #B7AC88; color: #fff;">Ideal for families and eventual retirement plans.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>Pune's focus on planned infrastructural development, including the Metro and Ring Road, ensures its connectivity will continue to drive property appreciation, giving investors confidence in a sustained Return on Investment.</p>
+
+      <h2>3. Simplified Repatriation: Clarity on the Exit Strategy</h2>
+      <p>A crucial concern for any overseas investor is the ability to eventually remit their gains. The Reserve Bank of India (RBI) and FEMA rules provide clear, relaxed guidelines that simplify the exit process, especially for NRI investments in Pune made using foreign funds.</p>
+      
+      <p><strong>Full Repatriation for NRE Funds:</strong> If you purchase the property by remitting funds via the NRE or FCNR route, you are allowed to repatriate the entire sale proceeds (capital and profits) for up to two residential properties in your lifetime. This rule offers an exceptional safety net and financial freedom.</p>
+      
+      <p><strong>USD 1 Million Limit:</strong> Even if the property was purchased through an NRO account, NRIs can repatriate up to USD 1 million per financial year, subject to tax compliance.</p>
+      
+      <p>These clear regulations make investing in a residential project like Wyce Exclucity a transparent and secure long-term strategy, removing the guesswork from financial planning.</p>
+
+      <h2>Why Wyce Exclucity, Pune, is the Smart NRI Choice</h2>
+      <p>By choosing a ready-to-move-in project like Wyce Exclucity now, NRIs immediately lock in the current favorable exchange rate, activate potential tax benefits for the current fiscal year, and secure a high-quality asset in one of India's most stable and rapidly appreciating markets.</p>
+      
+      <p>Seize the current dollar-rupee advantage to maximize your purchasing power and secure a premium piece of Pune real estate that promises both strong rental income and significant capital appreciation.</p>
+      
+      <p>Ready to calculate your real savings with the current exchange rate? Get a personalized investment consultation today.</p>
+    `,
+  },
   "the-new-rule-of-5-how-infrastructure-is-redefining-punes-property-roi-game": {
     title: "The New Rule of 5: How Infrastructure is Redefining Pune's Property ROI Game",
     metaTitle: "The New Rule of 5: How Infrastructure is Redefining Pune's Property ROI Game | WYCE Corp",
     metaDescription: "Discover how Pune's Metro and Ring Road infrastructure projects are transforming property values and creating the New Rule of 5 for high ROI investments. Learn why investing in a residential project near Metro corridors and Ring Road alignment is the smart move.",
     keywords: "Pune Metro property investment, Pune Ring Road, property ROI Pune, Metro proximity investment, infrastructure real estate Pune, high ROI property Pune, residential project Pune, property appreciation Pune, Wyce Exclucity",
-    date: "December 9, 2025",
+    date: "December 10, 2025",
     category: "Real Estate",
     author: "WYCE Team",
     image: "/images/blog-4.jpg",
@@ -558,9 +815,27 @@ const blogContent: Record<string, BlogData> = {
 
 const recentPosts = [
   {
+    id: 14,
+    title: "Your Q4 Power Move: The First-Time Homebuyer's Guide to Maximum Tax Planning and High ROI",
+    date: "December 16, 2025",
+    slug: "q4-home-buying-guide-tax-savings-high-roi-first-time-buyers",
+  },
+  {
+    id: 13,
+    title: "The NRI's Guide to Hassle-Free Property Management in Pune: From Purchase to Payout",
+    date: "December 13, 2025",
+    slug: "nri-property-management-in-pune-hassle-free-investment-guide",
+  },
+  {
+    id: 12,
+    title: "Decoding the Dollar-Rupee Advantage: Why NRI Investments in Pune are Surging",
+    date: "December 11, 2025",
+    slug: "decoding-the-dollar-rupee-advantage-why-nri-investments-in-pune-are-surging",
+  },
+  {
     id: 11,
     title: "The New Rule of 5: How Infrastructure is Redefining Pune's Property ROI Game",
-    date: "December 9, 2025",
+    date: "December 10, 2025",
     slug: "the-new-rule-of-5-how-infrastructure-is-redefining-punes-property-roi-game",
   },
   {

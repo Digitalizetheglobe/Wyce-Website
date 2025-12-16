@@ -8,12 +8,42 @@ import Image from "next/image";
 // Blog posts data
 const blogPosts = [
   {
+    id: 14,
+    title: "Your Q4 Power Move: The First-Time Homebuyer's Guide to Maximum Tax Planning and High ROI",
+    excerpt:
+      "The period from December to March (Q4) is crunch time for finance professionals everywhere. For a first-time homebuyer, this window represents the absolute best time to secure a Home Loan and lock in crucial tax benefits for the current fiscal year (FY 2025-26). If you are looking for smart investment options that simultaneously reduce your tax burden, stop paying rent and start investing in a residential project in a high-growth market like Pune.",
+    category: "Real Estate",
+    date: "December 16, 2025",
+    image: "/images/blog4.jpeg",
+    slug: "q4-home-buying-guide-tax-savings-high-roi-first-time-buyers",
+  },
+  {
+    id: 13,
+    title: "The NRI's Guide to Hassle-Free Property Management in Pune: From Purchase to Payout",
+    excerpt:
+      "NRI Investments in Pune have surged, driven by excellent capital appreciation potential and favorable currency exchange rates. However, one challenge consistently concerns the overseas investor: how to manage a property effectively from thousands of miles away. The traditional headache of remote management—tenant screening, maintenance emergencies, tax compliance, and legal paperwork—no longer has to be a barrier to securing a lucrative Return on Investment (ROI).",
+    category: "Real Estate",
+    date: "December 13, 2025",
+    image: "/images/blog3.jpeg",
+    slug: "nri-property-management-in-pune-hassle-free-investment-guide",
+  },
+  {
+    id: 12,
+    title: "Decoding the Dollar-Rupee Advantage: Why NRI Investments in Pune are Surging",
+    excerpt:
+      "For Non-Resident Indians (NRIs) globally, the end of the year often signifies a time for family visits, but increasingly, it marks the optimal window for strategic financial decisions, especially in real estate. This Tax Season (December/January), a confluence of macroeconomic factors—chiefly the favorable dollar-rupee exchange rate and Pune's inherent stability—is driving a massive surge in NRI Investments in Pune.",
+    category: "Real Estate",
+    date: "December 11, 2025",
+    image: "/images/blog2.jpeg",
+    slug: "decoding-the-dollar-rupee-advantage-why-nri-investments-in-pune-are-surging",
+  },
+  {
     id: 11,
     title: "The New Rule of 5: How Infrastructure is Redefining Pune's Property ROI Game",
     excerpt:
       "The old adage in real estate was 'Location, Location, Location.' Today, in Pune, it has been rewritten: 'Location, powered by Connectivity, equals exponential High ROI.' Pune is undergoing an unprecedented infrastructure transformation, moving beyond congested city limits to embrace a future defined by high-speed movement.",
     category: "Real Estate",
-    date: "December 9, 2025",
+    date: "December 10, 2025",
     image: "/images/blog-4.jpg",
     slug: "the-new-rule-of-5-how-infrastructure-is-redefining-punes-property-roi-game",
   },
@@ -122,9 +152,27 @@ const blogPosts = [
 
 const recentPosts = [
   {
+    id: 14,
+    title: "Your Q4 Power Move: The First-Time Homebuyer's Guide to Maximum Tax Planning and High ROI",
+    date: "December 16, 2025",
+    slug: "q4-home-buying-guide-tax-savings-high-roi-first-time-buyers",
+  },
+  {
+    id: 13,
+    title: "The NRI's Guide to Hassle-Free Property Management in Pune: From Purchase to Payout",
+    date: "December 13, 2025",
+    slug: "nri-property-management-in-pune-hassle-free-investment-guide",
+  },
+  {
+    id: 12,
+    title: "Decoding the Dollar-Rupee Advantage: Why NRI Investments in Pune are Surging",
+    date: "December 11, 2025",
+    slug: "decoding-the-dollar-rupee-advantage-why-nri-investments-in-pune-are-surging",
+  },
+  {
     id: 11,
     title: "The New Rule of 5: How Infrastructure is Redefining Pune's Property ROI Game",
-    date: "December 9, 2025",
+    date: "December 10, 2025",
     slug: "the-new-rule-of-5-how-infrastructure-is-redefining-punes-property-roi-game",
   },
   {
@@ -292,7 +340,7 @@ export default function BlogPage() {
 
             {/* Right Side - Sidebar */}
             <div className="lg:col-span-1">
-              <div className="sticky top-6 space-y-6">
+              <div className="sticky top-24 space-y-6 self-start">
               {/* Search Form */}
               <div className="bg-[#121212] shadow-md p-6">
                 <h3 className="text-xl text-white mb-4">
