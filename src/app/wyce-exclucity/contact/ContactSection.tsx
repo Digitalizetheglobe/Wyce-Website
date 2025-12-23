@@ -4,8 +4,6 @@ import { useState } from "react";
 import { motion } from "motion/react";
 import { submitLead } from "@/utils/submitLead";
 import SuccessPopup from "@/components/SuccessPopup";
-import OTPPopup from "@/components/OTPPopup";
-import { sendOTP, generateOTP } from "@/utils/sendOTP";
 
 
 export default function ContactSection() {
@@ -27,18 +25,6 @@ export default function ContactSection() {
     message?: string;
     consent?: string;
   }>({});
-  
-  // OTP related states
-  const [showOTPPopup, setShowOTPPopup] = useState(false);
-  const [otpCode, setOtpCode] = useState<string>("");
-  const [otpError, setOtpError] = useState<string>("");
-  const [isSendingOTP, setIsSendingOTP] = useState(false);
-  const [formDataToSubmit, setFormDataToSubmit] = useState<{
-    name: string;
-    email: string;
-    phone: string;
-    message: string;
-  } | null>(null);
 
   const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
@@ -54,10 +40,6 @@ export default function ContactSection() {
       setErrors((prev) => ({ ...prev, phone: undefined }));
     }
     
-    // Clear general error message when user types (in case of WhatsApp number error)
-    if (errorMessage && (errorMessage.includes("WhatsApp number") || errorMessage.includes("OTP is not verified"))) {
-      setErrorMessage(null);
-    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -82,7 +64,6 @@ export default function ContactSection() {
     e.preventDefault();
     setErrorMessage(null);
     setShowSuccessPopup(false);
-    setOtpError("");
     
     // Validation
     const newErrors: {
@@ -124,123 +105,38 @@ export default function ContactSection() {
     
     // Clear any previous errors
     setErrors({});
-    setIsSubmitting(true);
     
-    // Store form data for submission after OTP verification
-    const dataToSubmit = {
-      name: formData.firstName,
-      email: formData.email,
-      phone: formData.phone,
-      message: formData.message,
-    };
-    setFormDataToSubmit(dataToSubmit);
+    // Show success immediately (optimistic UI)
+    setShowSuccessPopup(true);
     
-    // Generate and send OTP
-    const newOtp = generateOTP();
-    setOtpCode(newOtp);
-    setIsSendingOTP(true);
-    
-    const otpResult = await sendOTP(formData.phone, newOtp);
-    setIsSendingOTP(false);
-    
-    if (!otpResult.success) {
-      // If WhatsApp number is invalid, show error in main form and prevent submission
-      if (otpResult.error?.includes("WhatsApp number") || otpResult.error?.includes("proper WhatsApp")) {
-        setErrorMessage("Please enter your proper WhatsApp number");
-        setIsSubmitting(false);
-        // Clear the stored form data since we're not submitting
-        setFormDataToSubmit(null);
-        return; // Stop here, don't show OTP popup
-      } else {
-        // For other errors, show error message and allow retry
-        setErrorMessage(otpResult.error || "Failed to send OTP. Please try again.");
-        setIsSubmitting(false);
-        setFormDataToSubmit(null);
-        return;
-      }
-    } else {
-      // Show OTP popup
-      setShowOTPPopup(true);
-      setIsSubmitting(false);
-    }
-  };
-
-  const handleOTPVerify = (enteredOtp: string) => {
-    if (enteredOtp === otpCode) {
-      // OTP is correct
-      setShowOTPPopup(false);
-      setOtpError("");
-      
-      // Submit form with verified status
-      if (formDataToSubmit) {
-        handleFormSubmission(formDataToSubmit, true);
-      }
-    } else {
-      // OTP is incorrect
-      setOtpError("Invalid OTP. Please try again.");
-    }
-  };
-
-  const handleOTPSkip = () => {
-    // User skipped OTP verification - show error but still submit to spreadsheet
-    setShowOTPPopup(false);
-    setErrorMessage("Message not sent. Your OTP is not verified.");
-    setIsSubmitting(false);
-    
-    // Still submit form data to spreadsheet with otpVerified: false
-    if (formDataToSubmit) {
-      handleFormSubmission(formDataToSubmit, false);
-    }
-  };
-
-  const handleFormSubmission = (
-    data: { name: string; email: string; phone: string; message: string },
-    verified: boolean
-  ) => {
-    // If OTP is not verified, show error message but still submit
-    if (!verified) {
-      // Keep error message visible, don't show success popup
-      // Don't download brochure or close modal
-      // Just submit the data silently
-    } else {
-      // OTP is verified - show success popup
-      setShowSuccessPopup(true);
-      
-      // Reset form
-      setFormData({
-        firstName: "",
-        phone: "",
-        email: "",
-        message: "",
-      });
-      setConsentAccepted(false);
-    }
-    
-    // Submit to spreadsheet with verification status (always submit, regardless of verification)
-    console.log("📝 Submitting form with OTP verification status:", {
-      name: data.name,
-      email: data.email,
-      phone: data.phone,
-      otpVerified: verified,
+    // Reset form immediately
+    setFormData({
+      firstName: "",
+      phone: "",
+      email: "",
+      message: "",
     });
+    setConsentAccepted(false);
     
+    // Safely reset form if element exists
+    if (e.currentTarget) {
+      e.currentTarget.reset();
+    }
+    
+    // Submit in background (non-blocking)
+    setIsSubmitting(false);
     submitLead(
       {
-        name: data.name,
-        email: data.email,
-        phone: data.phone,
-        message: data.message,
-        otpVerified: verified,
+        name: formData.firstName,
+        email: formData.email,
+        phone: formData.phone,
+        message: formData.message,
       },
       () => {
         console.log("✅ Form submission confirmed successful");
-        // If verified, success popup is already shown above
-        // If not verified, error message is already shown
       },
       (error) => {
-        if (verified) {
-          setShowSuccessPopup(false);
-        }
+        setShowSuccessPopup(false);
         setErrorMessage(error || "Something went wrong. Please try again later.");
       }
     );
@@ -252,16 +148,6 @@ export default function ContactSection() {
         isOpen={showSuccessPopup}
         onClose={() => setShowSuccessPopup(false)}
         message="✅ Message sent successfully!"
-      />
-      <OTPPopup
-        isOpen={showOTPPopup}
-        onClose={() => {
-          // When user closes OTP popup without verifying, show error
-          handleOTPSkip();
-        }}
-        onVerify={handleOTPVerify}
-        phoneNumber={formData.phone}
-        error={otpError}
       />
     <section
       id="contact"
@@ -502,11 +388,7 @@ export default function ContactSection() {
                               text-sm sm:text-base font-bold w-full sm:w-auto max-w-md
                               disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  {isSubmitting || isSendingOTP
-                    ? isSendingOTP
-                      ? "SENDING OTP..."
-                      : "SUBMITTING..."
-                    : "Book Site Visit"}
+                  {isSubmitting ? "SENDING..." : "Book Site Visit"}
                 </button>
               </motion.div>
             </motion.form>
