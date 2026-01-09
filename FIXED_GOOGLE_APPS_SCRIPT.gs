@@ -1,11 +1,20 @@
 /**
- * FIXED GOOGLE APPS SCRIPT CODE
+ * FIXED GOOGLE APPS SCRIPT CODE - FIXES SHEET SAVE ISSUE
+ * 
+ * This version ensures emails are sent even if sheet save fails
+ * and tries multiple sheet names to handle mismatches
  * 
  * Copy and paste this ENTIRE code into your Google Apps Script editor
  * Replace your current doPost function with this
  */
 
 function doPost(e) {
+  // Track success/failure for both operations
+  var sheetSaved = false;
+  var emailSent = false;
+  var sheetError = null;
+  var emailError = null;
+  
   try {
     // Check if event object exists (should always exist for Web App requests)
     if (!e) {
@@ -47,18 +56,27 @@ function doPost(e) {
     const name = data.name || data.firstName || '';
     const email = data.email || '';
     const phone = data.phone || '';
-    const message = data.message || '';
+    const message = data.message || 'No message provided'; // Make message optional with default
     
-    Logger.log('📋 Extracted data - Name: ' + name + ', Email: ' + email + ', Phone: ' + phone);
+    // Extract OTP verification status - handle both string "true"/"false" and boolean
+    let otpVerified = data.otpVerified || 'false';
+    if (otpVerified === true || otpVerified === 'true') {
+      otpVerified = true;
+    } else {
+      otpVerified = false;
+    }
     
-    // Validate required fields
-    if (!name || !email || !phone || !message) {
+    Logger.log('📋 Extracted data - Name: ' + name + ', Email: ' + email + ', Phone: ' + phone + ', OTP Verified: ' + otpVerified);
+    
+    // Validate required fields (message is now optional)
+    // IMPORTANT: Save ALL leads regardless of OTP verification status
+    if (!name || !email || !phone) {
       Logger.log('❌ Missing required fields');
       return ContentService
         .createTextOutput(JSON.stringify({
           result: 'error',
           error: 'Missing required fields',
-          received: { name, email, phone, message }
+          received: { name, email, phone, message, otpVerified }
         }))
         .setMimeType(ContentService.MimeType.JSON);
     }
@@ -67,61 +85,73 @@ function doPost(e) {
     // STEP 1: SAVE TO GOOGLE SHEET
     // ============================================
     try {
-      // IMPORTANT: Replace 'YOUR_SHEET_ID' with your actual Google Sheet ID
-      // Get the Sheet ID from the URL: https://docs.google.com/spreadsheets/d/SHEET_ID_HERE/edit
-      // Example: If URL is https://docs.google.com/spreadsheets/d/1abc123xyz/edit
-      // Then SHEET_ID = '1abc123xyz'
       const SHEET_ID = '1fK1THMHpGLpETVSa5Uh3IqBAL-4eOfmWmSqhSBByeSU';
       
       // Try to get the spreadsheet by ID
       var spreadsheet = SpreadsheetApp.openById(SHEET_ID);
       if (!spreadsheet) {
-        Logger.log('❌ Spreadsheet not found with ID: ' + SHEET_ID);
-        return ContentService
-          .createTextOutput(JSON.stringify({
-            result: 'error',
-            error: 'Spreadsheet not found. Please check Sheet ID: ' + SHEET_ID
-          }))
-          .setMimeType(ContentService.MimeType.JSON);
+        throw new Error('Spreadsheet not found with ID: ' + SHEET_ID);
       }
       
-      // Get the sheet by name
-      // NOTE: The sheet name is "Sheet1" - if you renamed it to "leads", change this to 'leads'
-      var sheet = spreadsheet.getSheetByName('Sheet1');
+      // Try multiple sheet names (common variations)
+      var sheet = null;
+      var sheetNames = ['Sheet1', 'leads', 'Leads', 'LEADS', 'Sheet 1'];
+      
+      for (var i = 0; i < sheetNames.length; i++) {
+        sheet = spreadsheet.getSheetByName(sheetNames[i]);
+        if (sheet) {
+          Logger.log('✅ Found sheet: ' + sheetNames[i]);
+          break;
+        }
+      }
       
       if (!sheet) {
-        Logger.log('❌ Sheet "Sheet1" not found!');
         // List available sheets for debugging
         var availableSheets = spreadsheet.getSheets().map(s => s.getName());
-        Logger.log('Available sheets: ' + JSON.stringify(availableSheets));
-        return ContentService
-          .createTextOutput(JSON.stringify({
-            result: 'error',
-            error: 'Sheet "Sheet1" not found. Please check sheet name.',
-            availableSheets: availableSheets
-          }))
-          .setMimeType(ContentService.MimeType.JSON);
+        Logger.log('❌ Sheet not found! Available sheets: ' + JSON.stringify(availableSheets));
+        throw new Error('Sheet not found. Tried: ' + sheetNames.join(', ') + '. Available: ' + availableSheets.join(', '));
       }
       
       // Append data to Google Sheet
+      // IMPORTANT: Save ALL leads regardless of OTP verification status
+      // Structure: Date, Name, Email, Phone, Message, OTP Verified
       sheet.appendRow([
         new Date(),
         name,
         email,
         phone,
-        message
+        message,
+        otpVerified  // Column F: OTP verification status (TRUE/FALSE)
       ]);
       
-      Logger.log('✅ Data saved to Google Sheet successfully');
-    } catch (sheetError) {
-      Logger.log('❌ Error saving to sheet: ' + sheetError.toString());
-      // Return error but don't stop execution - still try to send email
-      return ContentService
-        .createTextOutput(JSON.stringify({
-          result: 'error',
-          error: 'Failed to save to sheet: ' + sheetError.toString()
-        }))
-        .setMimeType(ContentService.MimeType.JSON);
+      sheetSaved = true;
+      Logger.log('✅ Data saved to Google Sheet successfully - OTP Verified: ' + otpVerified);
+      
+      // Apply formatting based on OTP status (optional - helps visually identify verified leads)
+      try {
+        var lastRow = sheet.getLastRow();
+        var otpStatusRange = sheet.getRange(lastRow, 6); // Column F (OTP status)
+        
+        if (otpVerified) {
+          // Verified leads - normal formatting (or green if you want)
+          otpStatusRange.setBackground('#ffffff');
+          otpStatusRange.setFontColor('#000000');
+        } else {
+          // Unverified leads - red background to highlight
+          var rowRange = sheet.getRange(lastRow, 1, 1, 6);
+          rowRange.setBackground('#ffcccc'); // Light red
+          rowRange.setFontColor('#cc0000'); // Dark red text
+          Logger.log('🔴 Applied RED formatting to row ' + lastRow + ' (OTP not verified)');
+        }
+      } catch (formatError) {
+        // Don't fail if formatting fails - data is already saved
+        Logger.log('⚠️ Could not apply formatting: ' + formatError.toString());
+      }
+    } catch (sheetErr) {
+      sheetError = sheetErr.toString();
+      Logger.log('❌ Error saving to sheet: ' + sheetError);
+      Logger.log('Stack trace: ' + (sheetErr.stack || 'No stack trace'));
+      // DON'T return here - continue to send email even if sheet save fails
     }
     
     // ============================================
@@ -130,14 +160,21 @@ function doPost(e) {
     try {
       // Your email recipients
       var recipients = "digitalwyce@gmail.com, anuj@wycecorp.com, rashmi@wycecorp.com";
-      var subject = "New Lead from Website";
+      
+      // Include OTP status and sheet save status in email subject
+      var otpStatus = otpVerified ? '✅ VERIFIED' : '⚠️ NOT VERIFIED';
+      var sheetStatus = sheetSaved ? '✅ Saved to Sheet' : '⚠️ Sheet Save Failed';
+      var subject = "New Lead from Website - " + otpStatus + " - " + sheetStatus;
+      
       var body = `
     <p><b>Name:</b> ${name}</p>
     <p><b>Email:</b> ${email}</p>
     <p><b>Phone:</b> ${phone}</p>
     <p><b>Message:</b> ${message}</p>
+    <p><b>OTP Verification:</b> ${otpStatus}</p>
     <br>
     <p>This lead was submitted via your website form.</p>
+    ${sheetError ? '<p style="color: red;"><b>⚠️ WARNING:</b> Failed to save to Google Sheet. Error: ' + sheetError + '</p>' : ''}
       `;
       
       // Send email
@@ -147,20 +184,46 @@ function doPost(e) {
         htmlBody: body
       });
       
+      emailSent = true;
       Logger.log('✅ Email sent successfully to: ' + recipients);
-    } catch (emailError) {
-      Logger.log('❌ Error sending email: ' + emailError.toString());
-      // Log error but still return success since data was saved
+    } catch (emailErr) {
+      emailError = emailErr.toString();
+      Logger.log('❌ Error sending email: ' + emailError);
+      Logger.log('Stack trace: ' + (emailErr.stack || 'No stack trace'));
     }
     
-    // Return success response (JSON format)
-    Logger.log('✅ Request processed successfully');
+    // ============================================
+    // STEP 3: RETURN RESPONSE
+    // ============================================
+    // Determine overall result
+    var result = {
+      result: 'success',
+      message: 'Form submitted successfully',
+      timestamp: new Date().toISOString(),
+      sheetSaved: sheetSaved,
+      emailSent: emailSent,
+      otpVerified: otpVerified
+    };
+    
+    // Add warnings if something failed
+    if (!sheetSaved) {
+      result.warning = 'Sheet save failed: ' + sheetError;
+      result.result = 'partial_success';
+    }
+    
+    if (!emailSent) {
+      result.error = 'Email send failed: ' + emailError;
+      if (!sheetSaved) {
+        result.result = 'error';
+      } else {
+        result.result = 'partial_success';
+      }
+    }
+    
+    Logger.log('✅ Request processed - Sheet: ' + (sheetSaved ? 'OK' : 'FAILED') + ', Email: ' + (emailSent ? 'OK' : 'FAILED'));
+    
     return ContentService
-      .createTextOutput(JSON.stringify({
-        result: 'success',
-        message: 'Form submitted successfully',
-        timestamp: new Date().toISOString()
-      }))
+      .createTextOutput(JSON.stringify(result))
       .setMimeType(ContentService.MimeType.JSON);
       
   } catch (error) {
@@ -190,7 +253,8 @@ function testScript() {
       name: 'Test User',
       email: 'test@example.com',
       phone: '1234567890',
-      message: 'This is a test message from the testScript function'
+      message: 'This is a test message from the testScript function',
+      otpVerified: 'false'  // Test unverified lead
     },
     postData: null // Simulate FormData (no postData, uses e.parameter)
   };
@@ -199,14 +263,15 @@ function testScript() {
   const result = doPost(testEvent);
   Logger.log('📋 Test result: ' + result.getContent());
   
-  // Also test with JSON
+  // Also test with JSON (verified lead)
   const testEventJSON = {
     postData: {
       contents: JSON.stringify({
         name: 'Test User JSON',
         email: 'testjson@example.com',
         phone: '0987654321',
-        message: 'This is a JSON test message'
+        message: 'This is a JSON test message',
+        otpVerified: 'true'  // Test verified lead
       })
     },
     parameter: {}
