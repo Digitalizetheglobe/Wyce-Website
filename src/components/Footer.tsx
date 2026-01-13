@@ -54,7 +54,7 @@ export default function Footer() {
               { name: "About Us", href: "/about" },
               { name: "Our Project", href: "/wyce-exclucity" },
               { name: "NRI Desk", href: "/nri-hub" },
-              { name: "Blog", href: "/blog" }
+              { name: "Certificates", href: "/certificates" }
             ].map((link, idx) => (
               <Link
                 key={idx}

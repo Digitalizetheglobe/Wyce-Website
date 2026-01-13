@@ -112,20 +112,53 @@ function doPost(e) {
         throw new Error('Sheet not found. Tried: ' + sheetNames.join(', ') + '. Available: ' + availableSheets.join(', '));
       }
       
-      // Append data to Google Sheet
-      // IMPORTANT: Save ALL leads regardless of OTP verification status
-      // Structure: Date, Name, Email, Phone, Message, OTP Verified
-      sheet.appendRow([
+      // Log sheet details for debugging
+      Logger.log('✅ Sheet found: ' + sheet.getName());
+      Logger.log('✅ Sheet ID: ' + spreadsheet.getId());
+      var lastRowBefore = sheet.getLastRow();
+      Logger.log('✅ Last row BEFORE append: ' + lastRowBefore);
+      
+      // Prepare data to append
+      var rowData = [
         new Date(),
         name,
         email,
         phone,
         message,
         otpVerified  // Column F: OTP verification status (TRUE/FALSE)
-      ]);
+      ];
+      Logger.log('✅ Data to append: ' + JSON.stringify(rowData));
       
-      sheetSaved = true;
-      Logger.log('✅ Data saved to Google Sheet successfully - OTP Verified: ' + otpVerified);
+      // Append data to Google Sheet
+      // IMPORTANT: Save ALL leads regardless of OTP verification status
+      // Structure: Date, Name, Email, Phone, Message, OTP Verified
+      try {
+        sheet.appendRow(rowData);
+        
+        // Verify the row was added
+        var lastRowAfter = sheet.getLastRow();
+        Logger.log('✅ Last row AFTER append: ' + lastRowAfter);
+        
+        if (lastRowAfter > lastRowBefore) {
+          sheetSaved = true;
+          Logger.log('✅ Data saved to Google Sheet successfully - OTP Verified: ' + otpVerified);
+          Logger.log('✅ New row number: ' + lastRowAfter);
+          
+          // Verify the data is actually in the sheet
+          var savedName = sheet.getRange(lastRowAfter, 2).getValue(); // Column B (Name)
+          Logger.log('✅ Verified saved name: ' + savedName);
+          
+          if (savedName !== name) {
+            Logger.log('⚠️ WARNING: Saved name does not match! Expected: ' + name + ', Got: ' + savedName);
+          }
+        } else {
+          throw new Error('Row was not added! Last row before: ' + lastRowBefore + ', after: ' + lastRowAfter);
+        }
+      } catch (appendError) {
+        Logger.log('❌ Error in appendRow: ' + appendError.toString());
+        Logger.log('Stack trace: ' + (appendError.stack || 'No stack trace'));
+        throw appendError; // Re-throw to be caught by outer catch
+      }
       
       // Apply formatting based on OTP status (optional - helps visually identify verified leads)
       try {
@@ -239,6 +272,74 @@ function doPost(e) {
         stack: error.stack
       }))
       .setMimeType(ContentService.MimeType.JSON);
+  }
+}
+
+/**
+ * DEBUG FUNCTION - Test sheet access directly
+ * Run this to verify the script can access and write to the sheet
+ */
+function debugSheetAccess() {
+  try {
+    Logger.log('=== DEBUG SHEET ACCESS ===');
+    
+    var SHEET_ID = '1fK1THMHpGLpETVSa5Uh3IqBAL-4eOfmWmSqhSBByeSU';
+    Logger.log('Sheet ID: ' + SHEET_ID);
+    
+    // Try to open spreadsheet
+    var spreadsheet = SpreadsheetApp.openById(SHEET_ID);
+    Logger.log('✅ Spreadsheet opened: ' + spreadsheet.getName());
+    Logger.log('✅ Spreadsheet ID: ' + spreadsheet.getId());
+    
+    // List all sheets
+    var allSheets = spreadsheet.getSheets();
+    Logger.log('Available sheets:');
+    for (var i = 0; i < allSheets.length; i++) {
+      Logger.log('  - ' + allSheets[i].getName() + ' (ID: ' + allSheets[i].getSheetId() + ')');
+    }
+    
+    // Try to get Sheet1
+    var sheet = spreadsheet.getSheetByName('Sheet1');
+    if (!sheet) {
+      Logger.log('❌ Sheet "Sheet1" not found!');
+      return;
+    }
+    
+    Logger.log('✅ Sheet found: ' + sheet.getName());
+    Logger.log('✅ Sheet ID: ' + sheet.getSheetId());
+    
+    // Check current last row
+    var lastRow = sheet.getLastRow();
+    Logger.log('✅ Current last row: ' + lastRow);
+    
+    // Try to append a test row
+    var testData = [
+      new Date(),
+      'DEBUG TEST',
+      'debug@test.com',
+      '9999999999',
+      'This is a debug test',
+      false
+    ];
+    
+    Logger.log('Attempting to append: ' + JSON.stringify(testData));
+    sheet.appendRow(testData);
+    
+    // Verify it was added
+    var newLastRow = sheet.getLastRow();
+    Logger.log('✅ New last row: ' + newLastRow);
+    
+    if (newLastRow > lastRow) {
+      Logger.log('✅ SUCCESS: Row was added!');
+      var savedName = sheet.getRange(newLastRow, 2).getValue();
+      Logger.log('✅ Verified saved name: ' + savedName);
+    } else {
+      Logger.log('❌ FAILED: Row was NOT added!');
+    }
+    
+  } catch (error) {
+    Logger.log('❌ ERROR: ' + error.toString());
+    Logger.log('Stack: ' + error.stack);
   }
 }
 
