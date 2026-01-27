@@ -8,6 +8,36 @@ import Image from "next/image";
 // Blog posts data
 const blogPosts = [
   {
+    id: 17,
+    title: "Apartments for Sale in Pune | 4, 3 & 2 BHK Flats at Best Price",
+    excerpt:
+      "Experience modern living in Pune with spacious homes, premium amenities, prime connectivity, and thoughtfully designed residences for long-term comfort.",
+    category: "Real Estate",
+    date: "January 15, 2026",
+    image: "/images/blog3.jpeg",
+    slug: "apartments-for-sale-in-pune",
+  },
+  {
+    id: 16,
+    title: "2 BHK Flats in Bavdhan Pune Price Location Best Deals",
+    excerpt:
+      "Explore the best 2 BHK flats in Bavdhan, Pune. Uncover pricing details, prime locations, and exclusive offers to secure your perfect living space.",
+    category: "Real Estate",
+    date: "January 20, 2026",
+    image: "/images/blog2.jpeg",
+    slug: "2-bhk-flats-in-bavdhan-pune-price-location-best-deals",
+  },
+  {
+    id: 15,
+    title: "Spacious 3 BHK in Bavdhan, Pune – Luxury Living Near Kothrud",
+    excerpt:
+      "Discover luxury living in Bavdhan, Pune with our spacious 3 BHK apartments. Enjoy modern amenities and proximity to Kothrud for a vibrant lifestyle.",
+    category: "Real Estate",
+    date: "January 27, 2026",
+    image: "/images/blog5.jpeg",
+    slug: "spacious-3-bhk-in-bavdhan-pune-luxury-living-near-kothrud",
+  },
+  {
     id: 14,
     title: "Your Q4 Power Move: The First-Time Homebuyer's Guide to Maximum Tax Planning and High ROI",
     excerpt:
@@ -151,6 +181,24 @@ const blogPosts = [
 ];
 
 const recentPosts = [
+  {
+    id: 17,
+    title: "Apartments for Sale in Pune | 4, 3 & 2 BHK Flats at Best Price",
+    date: "January 15, 2026",
+    slug: "apartments-for-sale-in-pune",
+  },
+  {
+    id: 16,
+    title: "2 BHK Flats in Bavdhan Pune Price Location Best Deals",
+    date: "January 20, 2026",
+    slug: "2-bhk-flats-in-bavdhan-pune-price-location-best-deals",
+  },
+  {
+    id: 15,
+    title: "Spacious 3 BHK in Bavdhan, Pune – Luxury Living Near Kothrud",
+    date: "January 27, 2026",
+    slug: "spacious-3-bhk-in-bavdhan-pune-luxury-living-near-kothrud",
+  },
   {
     id: 14,
     title: "Your Q4 Power Move: The First-Time Homebuyer's Guide to Maximum Tax Planning and High ROI",
