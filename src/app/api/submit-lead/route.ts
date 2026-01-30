@@ -95,13 +95,13 @@ function extractUserMetadata(request: NextRequest): UserMetadata {
   const headers = request.headers;
   
   // Get real IP from Cloudflare headers first
-  let userIp = headers.get('cf-connecting-ip') || 
+  const userIp = headers.get('cf-connecting-ip') || 
                headers.get('x-forwarded-for')?.split(',')[0]?.trim() || 
                'unknown';
   
   // Get location data from Cloudflare headers
-  let country = headers.get('cf-ipcountry') || 'unknown';
-  let city = headers.get('cf-ipcity') || 'unknown';
+  const country = headers.get('cf-ipcountry') || 'unknown';
+  const city = headers.get('cf-ipcity') || 'unknown';
   
   return {
     user_ip: userIp,
@@ -176,7 +176,10 @@ export async function POST(request: NextRequest) {
     if (userMetadata.user_ip === 'unknown' || userMetadata.user_ip === '::1' || userMetadata.user_ip === '127.0.0.1') {
       const realIp = await getRealIpAddress();
       if (realIp !== 'unknown') {
-        userMetadata.user_ip = realIp;
+        userMetadata = {
+          ...userMetadata,
+          user_ip: realIp
+        };
       }
     }
     
