@@ -42,6 +42,61 @@ function doPost(e) {
     const phone = data.phone || '';
     const message = data.message || '';
     
+    // Extract user metadata fields
+    let user_ip = data.user_ip || 'unknown';
+    let country = data.country || 'unknown';
+    let city = data.city || 'unknown';
+    let latitude = data.latitude || '';
+    let longitude = data.longitude || '';
+    
+    // If IP is private/local, get public IP
+    if (user_ip === 'unknown' || user_ip === '::1' || user_ip === '127.0.0.1' || user_ip.startsWith('192.168.') || user_ip.startsWith('10.') || user_ip.startsWith('172.')) {
+      try {
+        const publicIpResponse = UrlFetchApp.fetch('https://api.ipify.org?format=json', {
+          method: 'GET',
+          muteHttpExceptions: true
+        });
+        
+        if (publicIpResponse.getResponseCode() === 200) {
+          const publicIpData = JSON.parse(publicIpResponse.getContentText());
+          user_ip = publicIpData.ip;
+          Logger.log('Got public IP: ' + user_ip);
+        }
+      } catch (ipError) {
+        Logger.log('Error getting public IP: ' + ipError.toString());
+      }
+    }
+    
+    // Always try to get geolocation data from the IP
+    if (user_ip !== 'unknown' && user_ip !== '::1' && user_ip !== '127.0.0.1') {
+      try {
+        const geoResponse = UrlFetchApp.fetch(`https://ipapi.co/${user_ip}/json/`, {
+          method: 'GET',
+          muteHttpExceptions: true
+        });
+        
+        if (geoResponse.getResponseCode() === 200) {
+          const geoData = JSON.parse(geoResponse.getContentText());
+          country = geoData.country || 'unknown';
+          city = geoData.city || 'unknown';
+          latitude = geoData.latitude || '';
+          longitude = geoData.longitude || '';
+          
+          Logger.log('Geolocation data fetched: ' + JSON.stringify(geoData));
+        } else {
+          Logger.log('Geolocation API failed with status: ' + geoResponse.getResponseCode());
+        }
+      } catch (geoError) {
+        Logger.log('Error fetching geolocation: ' + geoError.toString());
+      }
+    }
+    
+    // Combine IP and location into a single location field for display
+    const location = `${city}, ${country} (${latitude}, ${longitude})`.trim();
+    
+    // Log final data for debugging
+    Logger.log('Final metadata - IP: ' + user_ip + ', Location: ' + location);
+    
     // Validate required fields
     if (!name || !email || !phone || !message) {
       Logger.log('Missing required fields');
@@ -61,15 +116,31 @@ function doPost(e) {
     // ============================================
     try {
       // OPTION 1: If script is bound to the sheet, use this:
-      const sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName('leads');
+      // const sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName('leads');
       
       // OPTION 2: If script is standalone, use Sheet ID (uncomment and replace):
-      // const SHEET_ID = 'YOUR_SHEET_ID';
-      // const sheet = SpreadsheetApp.openById(SHEET_ID).getSheetByName('leads');
+      const SHEET_ID = '1fK1THMHpGLpETVSa5Uh3lqBAL-MeOfmWmSqhSBByeSU';
+      const spreadsheet = SpreadsheetApp.openById(SHEET_ID);
+      let sheet = spreadsheet.getSheetByName('leads');
       
-      // Add headers if this is the first row
-      if (sheet.getLastRow() === 0) {
-        sheet.appendRow(['Timestamp', 'Name', 'Email', 'Phone', 'Message']);
+      // If 'leads' sheet doesn't exist, use the first sheet
+      if (!sheet) {
+        sheet = spreadsheet.getSheets()[0];
+        Logger.log('Using first sheet instead of "leads" sheet');
+      }
+      
+      // Ensure headers exist and are correct
+      const headers = ['Timestamp', 'Name', 'Email', 'Phone', 'Message', 'IP Address', 'Location'];
+      const existingHeaders = sheet.getRange(1, 1, 1, sheet.getLastColumn()).getValues()[0];
+      
+      // Check if headers need to be added/updated
+      if (sheet.getLastRow() === 0 || JSON.stringify(existingHeaders) !== JSON.stringify(headers)) {
+        if (sheet.getLastRow() > 0) {
+          // Insert new header row at the top
+          sheet.insertRowsBefore(1, 1);
+        }
+        sheet.getRange(1, 1, 1, headers.length).setValues([headers]);
+        Logger.log('Headers updated: ' + JSON.stringify(headers));
       }
       
       // Append the form data
@@ -78,13 +149,19 @@ function doPost(e) {
         name,
         email,
         phone,
-        message
+        message,
+        user_ip,
+        location
       ]);
       
       Logger.log('Data saved to Google Sheet');
+      Logger.log('Sheet name used: ' + sheet.getName());
     } catch (sheetError) {
       Logger.log('Error saving to sheet: ' + sheetError.toString());
-      // Continue even if sheet save fails - still try to send email
+      Logger.log('Stack trace: ' + sheetError.stack);
+      
+      // Try to continue with email notification
+      Logger.log('Continuing with email notification despite sheet error...');
     }
     
     // ============================================
@@ -100,6 +177,8 @@ function doPost(e) {
     <p><b>Email:</b> ${email}</p>
     <p><b>Phone:</b> ${phone}</p>
     <p><b>Message:</b> ${message}</p>
+    <p><b>IP Address:</b> ${user_ip}</p>
+    <p><b>Location:</b> ${location}</p>
     <br>
     <p>This lead was submitted via your website form.</p>
       `;
@@ -149,18 +228,46 @@ function doPost(e) {
 }
 
 /**
- * OPTIONAL: Test function to verify your setup
+ * Function to force authorization for all required permissions
+ * Run this function first to trigger the authorization dialog
+ */
+function forceAuthorization() {
+  // This will trigger external request permission
+  const response = UrlFetchApp.fetch('https://api.ipify.org?format=json');
+  Logger.log('External request test: ' + response.getContentText());
+  
+  // This will trigger spreadsheet permission
+  const sheet = SpreadsheetApp.openById('1fK1THMHpGLpETVSa5Uh3lqBAL-MeOfmWmSqhSBByeSU');
+  Logger.log('Sheet access test: ' + sheet.getName());
+  
+  // This will trigger email permission
+  MailApp.sendEmail({
+    to: Session.getEffectiveUser().getEmail(),
+    subject: 'Authorization Test',
+    body: 'Permissions test successful'
+  });
+  
+  Logger.log('All permissions authorized successfully!');
+}
+
+/**
+ * Test function to verify your setup
  * Run this function from the Google Apps Script editor to test
  */
 function testScript() {
-  // Create a test event object
+  // Create a test event object with real metadata
   const testEvent = {
     postData: {
       contents: JSON.stringify({
         name: 'Test User',
         email: 'test@example.com',
         phone: '1234567890',
-        message: 'This is a test message'
+        message: 'This is a test message',
+        user_ip: '203.0.113.1',
+        country: 'US',
+        city: 'New York',
+        latitude: '40.7128',
+        longitude: '-74.0060'
       })
     },
     parameter: {}
