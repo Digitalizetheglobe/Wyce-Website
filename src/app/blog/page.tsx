@@ -15,7 +15,7 @@ const blogPosts = [ {
     date: "February 20, 2026",
     language: "en",
     hasTranslations: true,
-    image: "/images/guruji12.jpg",
+    image: "/images/guruji1.png",
     slug: "golden-presence-pujya-acharya-bhuvanbhushan-surishvarji-wyce-exclucity",
   },{
     id: 25,

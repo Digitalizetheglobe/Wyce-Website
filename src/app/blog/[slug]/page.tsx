@@ -489,7 +489,7 @@ const blogContent: Record<string, BlogData> = {
     date: "February 20, 2026",
     category: "Spiritual",
     author: "WYCE Team",
-    image: "/images/guruji12.jpg",
+    image: "/images/guruji1.png",
     content: `
 
 
