@@ -18,14 +18,15 @@
     "framer-motion": "^12.23.24",
     "lucide-react": "^0.545.0",
     "motion": "^12.23.22",
-    "next": "^15.5.7",
-    "react": "^19.2.1",
-    "react-dom": "^19.2.1",
+    "next": "^16.1.6",
+    "package": "^1.0.1",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
     "react-icons": "^5.5.0",
     "tailwind-merge": "^3.3.1"
   },
   "devDependencies": {
-    "@eslint/eslintrc": "^3",
+    "@eslint/eslintrc": "^3.3.3",
     "@tailwindcss/postcss": "^4.1.14",
     "@tailwindcss/typography": "^0.5.19",
     "@types/node": "^20",
@@ -33,10 +34,15 @@
     "@types/react-dom": "^19",
     "autoprefixer": "^10.4.21",
     "cross-env": "^10.1.0",
-    "eslint": "^9",
-    "eslint-config-next": "15.5.7",
+    "eslint": "^9.21.0",
+    "eslint-config-next": "^16.1.6",
     "postcss": "^8.5.6",
     "tailwindcss": "^4.1.14",
     "typescript": "^5"
+  },
+  "overrides": {
+    "ajv": ">=8.18.0",
+    "minimatch": ">=10.2.2",
+    "eslint": "^9.21.0"
   }
 }

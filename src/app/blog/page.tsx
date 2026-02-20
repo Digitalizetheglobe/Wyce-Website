@@ -8,6 +8,18 @@ import Image from "next/image";
 // Blog posts data
 const blogPosts = [
   {
+    id: 18,
+    title: "A Golden Presence: Pujya Acharya Bhagwant Bhuvanbhushan Surishvarji Maharaj Saheb at WYCE Exclucity",
+    excerpt:
+      "A spiritually significant visit by Pujya Acharya Bhagwant Bhuvanbhushan Surishvarji Maharaj Saheb at WYCE Exclucity, Bavdhan, marking the vision for a Shwetambar Murtipujak Jain Mandir within the community.",
+    category: "Spiritual",
+    date: "February 20, 2026",
+    language: "en",
+    hasTranslations: true,
+    image: "/images/guruji7.png",
+    slug: "golden-presence-pujya-acharya-bhuvanbhushan-surishvarji-wyce-exclucity",
+  },
+  {
     id: 17,
     title: "Apartments for Sale in Pune | 4, 3 & 2 BHK Flats at Best Price",
     excerpt:
@@ -182,6 +194,12 @@ const blogPosts = [
 
 const recentPosts = [
   {
+    id: 18,
+    title: "Golden Presence at WYCE Exclucity Bavdhan | Jain Temple Vision",
+    date: "February 20, 2026",
+    slug: "golden-presence-pujya-acharya-bhuvanbhushan-surishvarji-wyce-exclucity",
+  },
+  {
     id: 17,
     title: "Apartments for Sale in Pune | 4, 3 & 2 BHK Flats at Best Price",
     date: "January 15, 2026",
@@ -305,11 +323,16 @@ const recentPosts = [
 
 export default function BlogPage() {
   const [searchQuery, setSearchQuery] = useState("");
+  const [selectedLanguages, setSelectedLanguages] = useState<Record<string, string>>({});
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
     // Handle search functionality
     console.log("Searching for:", searchQuery);
+  };
+
+  const handleLanguageChange = (slug: string, lang: string) => {
+    setSelectedLanguages(prev => ({ ...prev, [slug]: lang }));
   };
 
   return (
@@ -328,10 +351,10 @@ export default function BlogPage() {
           {/* Content placeholder for future additions */}
         </div>
       </section>
-      
+
       <div className="min-h-screen bg-black py-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-     
+
           {/* Main Content Grid */}
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             {/* Left Side - Blog Posts */}
@@ -342,7 +365,7 @@ export default function BlogPage() {
                   className="bg-[#121212] overflow-hidden hover:shadow-xl transition-shadow duration-300"
                 >
                   {/* Blog Card Image */}
-                  <Link href={`/blog/${post.slug}`}>
+                  <Link href={`/blog/${post.slug}${selectedLanguages[post.slug] && selectedLanguages[post.slug] !== 'en' ? `?lang=${selectedLanguages[post.slug]}` : ''}`}>
                     <div className="relative h-120 bg-gray-200 overflow-hidden cursor-pointer">
                       <Image
                         src={post.image}
@@ -355,7 +378,7 @@ export default function BlogPage() {
 
                   {/* Blog Card Content */}
                   <div className="p-6">
-                    <Link href={`/blog/${post.slug}`}>
+                    <Link href={`/blog/${post.slug}${selectedLanguages[post.slug] && selectedLanguages[post.slug] !== 'en' ? `?lang=${selectedLanguages[post.slug]}` : ''}`}>
                       <h2 className="text-2xl font-bold text-white mb-3 hover:text-[#B7AC88] transition-colors cursor-pointer">
                         {post.title}
                       </h2>
@@ -375,11 +398,27 @@ export default function BlogPage() {
                         </span>
                         <span className="text-sm text-gray-500">{post.date}</span>
                       </div>
-                      <Link href={`/blog/${post.slug}`}>
-                        <button className="px-2 py-2 bg-[#B7AC88] text-white hover:bg-[#121212] hover:text-[#B7AC88] hover:border hover:border-[#B7AC88] transition-colors duration-300 font-medium cursor-pointer">
-                          Read More
-                        </button>
-                      </Link>
+                      <div className="flex items-center space-x-2">
+                        {/* {(post as any).hasTranslations ? (
+                          <select
+                            name="language"
+                            id={`language-${post.id}`}
+                            value={selectedLanguages[post.slug] || "en"}
+                            onChange={(e) => handleLanguageChange(post.slug, e.target.value)}
+                            className="px-2 py-2 bg-[#B7AC88] text-white hover:bg-[#121212] hover:text-[#B7AC88] hover:border hover:border-[#B7AC88] transition-colors duration-300 font-medium cursor-pointer"
+                          >
+                            <option className="bg-[#121212] text-white" value="en">English</option>
+                            <option className="bg-[#121212] text-white" value="mr">Marathi</option>
+                            <option className="bg-[#121212] text-white" value="hi">Hindi</option>
+                            </select>
+                        ) : null} */}
+                        <Link href={`/blog/${post.slug}${selectedLanguages[post.slug] && selectedLanguages[post.slug] !== 'en' ? `?lang=${selectedLanguages[post.slug]}` : ''}`}>
+                          <button className="px-2 py-1.5 bg-[#B7AC88] text-white hover:bg-[#121212] hover:text-[#B7AC88] hover:border hover:border-[#B7AC88] transition-colors duration-300 font-medium cursor-pointer">
+                            Read More
+                          </button>
+                        </Link>
+                      </div>
+
                     </div>
                   </div>
                 </div>
@@ -389,51 +428,51 @@ export default function BlogPage() {
             {/* Right Side - Sidebar */}
             <div className="lg:col-span-1">
               <div className="sticky top-24 space-y-6 self-start">
-              {/* Search Form */}
-              <div className="bg-[#121212] shadow-md p-6">
-                <h3 className="text-xl text-white mb-4">
-                  Blog Search
-                </h3>
-                <form onSubmit={handleSearch} className="relative">
-                  <input
-                    type="text"
-                    placeholder="Search articles..."
-                    value={searchQuery}
-                    onChange={(e) => setSearchQuery(e.target.value)}
-                    className="w-full px-4 py-3 pr-12 border border-[#B7AC88] rounded-lg bg-black text-white placeholder-gray-400 focus:text-[#B7AC88] focus:outline-none focus:ring-2 focus:ring-[#B7AC88] focus:border-transparent"
-                  />
-                  <button
-                    type="submit"
-                    className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-[#B7AC88] transition-colors"
-                  >
-                    <Search className="w-5 h-5" />
-                  </button>
-                </form>
-              </div>
-
-              {/* Recent Posts */}
-              <div className="bg-[#121212] shadow-md p-6">
-                <h3 className="text-xl text-[#fff] mb-6">
-                  Recent Posts
-                </h3>
-                <div className="space-y-4">
-                  {recentPosts.map((post, index) => (
-                    <div key={post.id}>
-                      <Link href={`/blog/${post.slug}`}>
-                        <div className="group cursor-pointer">
-                          <h4 className="font-semibold text-[#fff] group-hover:text-[#B7AC88] transition-colors mb-1 overflow-hidden" style={{display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical'}}>
-                            {post.title}
-                          </h4>
-                          <p className="text-sm text-gray-500">{post.date}</p>
-                        </div>
-                      </Link>
-                      {index < recentPosts.length - 1 && (
-                        <div className="border-b border-[#D9D9D933] mt-4"></div>
-                      )}
-                    </div>
-                  ))}
+                {/* Search Form */}
+                <div className="bg-[#121212] shadow-md p-6">
+                  <h3 className="text-xl text-white mb-4">
+                    Blog Search
+                  </h3>
+                  <form onSubmit={handleSearch} className="relative">
+                    <input
+                      type="text"
+                      placeholder="Search articles..."
+                      value={searchQuery}
+                      onChange={(e) => setSearchQuery(e.target.value)}
+                      className="w-full px-4 py-3 pr-12 border border-[#B7AC88] rounded-lg bg-black text-white placeholder-gray-400 focus:text-[#B7AC88] focus:outline-none focus:ring-2 focus:ring-[#B7AC88] focus:border-transparent"
+                    />
+                    <button
+                      type="submit"
+                      className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-[#B7AC88] transition-colors"
+                    >
+                      <Search className="w-5 h-5" />
+                    </button>
+                  </form>
                 </div>
-              </div>
+
+                {/* Recent Posts */}
+                <div className="bg-[#121212] shadow-md p-6">
+                  <h3 className="text-xl text-[#fff] mb-6">
+                    Recent Posts
+                  </h3>
+                  <div className="space-y-4">
+                    {recentPosts.map((post, index) => (
+                      <div key={post.id}>
+                        <Link href={`/blog/${post.slug}`}>
+                          <div className="group cursor-pointer">
+                            <h4 className="font-semibold text-[#fff] group-hover:text-[#B7AC88] transition-colors mb-1 overflow-hidden" style={{ display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical' }}>
+                              {post.title}
+                            </h4>
+                            <p className="text-sm text-gray-500">{post.date}</p>
+                          </div>
+                        </Link>
+                        {index < recentPosts.length - 1 && (
+                          <div className="border-b border-[#D9D9D933] mt-4"></div>
+                        )}
+                      </div>
+                    ))}
+                  </div>
+                </div>
 
 
               </div>

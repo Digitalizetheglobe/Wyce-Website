@@ -3,9 +3,10 @@ import { Calendar, Tag, ArrowLeft } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import BlogSidebar from "@/app/blog/[slug]/BlogSidebar";
+import LanguageSwitcher from "@/app/blog/[slug]/LanguageSwitcher";
 import type { Metadata } from "next";
 
-// Blog content data
+// Blog content data interface
 interface BlogData {
   title: string;
   metaTitle?: string;
@@ -16,9 +17,417 @@ interface BlogData {
   author: string;
   image: string;
   content: string;
+  translations?: Record<string, Partial<BlogData>>;
 }
 
+// Note: In Next.js 15, these are PROMISES and must be awaited.
+type PageProps = {
+  params: Promise<{ slug: string }>;
+  searchParams: Promise<{ lang?: string }>;
+};
+
 const blogContent: Record<string, BlogData> = {
+  "golden-presence-pujya-acharya-bhuvanbhushan-surishvarji-wyce-exclucity": {
+    title: "A Golden Presence: Welcoming Pujya Acharya Bhagwant Bhuvanbhushan Surishvarji Maharaj Saheb to our Site Wyce Exclucity in Bavdhan",
+    metaTitle: "Golden Presence at WYCE Exclucity Bavdhan | Jain Temple Vision",
+    metaDescription: "Pujya Acharya Bhagwant Bhuvanbhushan Surishvarji Maharaj divine visit to WYCE Exclucity Bavdhan marks the spiritual beginning of a Shwetambar Jain Temple vision.",
+    keywords: " Pujya Acharya Surishvarji Maharaj, WYCE Exclucity Bavdhan project, Shwetambar Jain Temple Bavdhan, Jain Temple construction Pune, Jain community Bavdhan Pune, Jain community, Jain Shasan temple vision, Center for Prayer Bavdhan, Bavdhan religious project, Maharashtra Jain Acharya visit",
+    date: "February 20, 2026",
+    category: "Spiritual",
+    author: "WYCE Team",
+    image: "/images/guruji7.png",
+    content: `
+
+
+ {/* Images */}
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+    <div className="w-full h-[500px]">
+      <img
+        src="/images/guruji1.png"
+        alt="Guruji Ceremony"
+        className="w-full h-full object-cover"
+      />
+    </div>
+
+    <div className="w-full h-[500px]">
+      <img
+        src="/images/guruji2.png"
+        alt="Guruji Visit Site"
+        className="w-full h-full object-cover"
+      />
+    </div>
+  </div>
+
+// <p>Guruji's path to spiritual leadership began with a simple, pious childhood and evolved into a lifetime of
+// profound dedication to the Jain Shasan.</p>
+
+<p>We are profoundly blessed to host Pujya Acharya Bhagwant Bhuvanbhushan Surishvarji
+Maharaj Saheb at our WYCE Exclucity site office. His presence marks a significant spiritual
+milestone for our community, especially as he arrives with a vision to address the long-
+standing absence of a Shwetambar Murtipujak Jain Mandir in this area.</p>
+
+<p>It is a moment of immense spiritual significance to host Pujya Acharya Bhagwant Bhuvanbhushan
+Surishvarji Maharaj at our WYCE Exclucity site office. His visit is not merely a formality but the
+beginning of a transformative journey for the Jain community.</p>
+
+ {/* Images */}
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+    <div className="w-full h-[500px]">
+      <img
+        src="/images/rangoli1.png"
+        alt="Guruji Ceremony"
+        className="w-full h-full object-cover"
+      />
+    </div>
+
+    <div className="w-full h-[500px]">
+      <img
+        src="/images/rangoli2.png"
+        alt="Guruji Visit Site"
+        className="w-full h-full object-cover"
+      />
+    </div>
+  </div>
+<b><p>A Life of Renunciation: The Journey of Pujya Acharya Bhagwant Bhuvanbhushan Surishvarji Maharaj Saheb</p></b>
+
+<p>Guruji's path to spiritual leadership began with a simple, pious childhood and evolved into a lifetime of
+profound dedication to the Jain Shasan.</p>
+
+<p>Early Life & Discipline: Known in his childhood as Shreyans, he was a soft-spoken boy with a passion
+for cricket and a brilliant academic record, consistently ranking first or second in his class</p>
+
+<p>Turning Point: His spiritual journey was ignited at a young age when he started staying in
+companionship of then Muni, Pujya Muniraj Mahabal Vijayji Maharaj(later Aacharya) and Pujya
+Muniraj Punyapal Vijayji Maharaj(later Aacharya). He became the first disciple of Pujya Muniraj
+Punyapal Vijayji Maharaj Saheb.
+</p>
+
+<p>Path of Monkhood: Guruji has now entered his golden 50th year of renunciation. Over these five
+decades, he has maintained unwavering discipline in his study, service, and monastic duties.</p>
+
+<b><p>Ascension to Leadership:</p></b>
+
+<b><p>Recognizing his immense capability, his Gurudevs elevated him through the monastic ranks
+of Gani, Panyas, and ultimately the highest position of Acharya.</p></b>
+
+<p>Legacy of Service: During his 14-year tenure supporting the Gachchhadhipati, he handled critical
+responsibilities including scriptural guidance to various sanghs, welfare work, and the protection of
+the Jain Shasan. He famously views the trust placed in him by his Gurudev as the "greatest wealth" of
+his life.</p>
+
+
+<p>It is a moment of immense spiritual significance to host Pujya Acharya Bhagwant Bhuvanbhushan
+Suriji at our WYCE Exclucity site office. His visit is not merely a formality but the beginning of a
+transformative journey for the local Jain community..</p>
+
+<b><h2>A Divine Vision:</h2></b>
+<b><p>We are profoundly blessed to have the presence of Pujya Acharya Bhagwant Bhuvanbhushan
+Surishvarji Maharaj Saheb at our site. As he enters his golden 50th year of renunciation, Guruji
+continues to lead with the same discipline and devotion that defined his journey from a brilliant
+student in Nashik to a revered Acharya of the Jain Shasan.
+</p></b>
+
+ {/* Images */}
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+    <div className="w-full h-[500px]">
+      <img
+        src="/images/guruji3.png"
+        alt="Guruji Ceremony"
+        className="w-full h-full object-cover"
+      />
+    </div>
+
+    <div className="w-full h-[500px]">
+      <img
+        src="/images/guruji4.png"
+        alt="Guruji Visit Site"
+        className="w-full h-full object-cover"
+      />
+    </div>
+    <div className="w-full h-[500px]">
+      <img
+        src="/images/guruji5.png"
+        alt="Guruji Visit Site"
+        className="w-full h-full object-cover"
+      />
+    </div>
+  </div>
+
+<h2>The Vision: A Sanctuary in the Spiritual Desert</h2>
+<p>Currently, our community faces a significant challenge: there is no Shwetambar Murti Pujak Mandir
+available within an 8km radius. This distance has long been a hurdle for devotees seeking daily
+Darshan, Pujan, and spiritual connection.</p>
+
+
+<b> <p>Gachchha-Saubhagya of more than 2100 Saints, Maharashtra Shardul, Pujya Aacharya Devesh
+Shrimad Vijay Punyapal Surishvarji's Disciple Pujya Aacharya Dev Shrimad Vijay
+Bhuvanbhushan Surishvarji's site visit for Shwetamber Jain Temple construction</p></b>
+
+ {/* Images */}
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+    <div className="w-full h-[500px]">
+      <img
+        src="/images/guruji6.png"
+        alt="Guruji Ceremony"
+        className="w-full h-full object-cover"
+      />
+    </div>
+
+    <div className="w-full h-[500px]">
+      <img
+        src="/images/guruji7.png"
+        alt="Guruji Visit Site"
+        className="w-full h-full object-cover"
+      />
+    </div>
+  </div>
+
+<p>Recognizing this void, Guruji has arrived with a powerful and compassionate vision: The creation of a
+new Mandir right here in Bavdhan at Wyce Exclucity
+</p>
+<p>The trust placed in me by my Gurudev is the greatest wealth of my life Pujya Acharya Bhagwant
+Bhuvanbhushan Surishvarji Maharaj Saheb</p>
+<p> Following the footsteps of his mentors, Pujya Mahabal Surishwarji Maharaj Saheb and Pujya Punyapal
+Surishwarji Maharaj Saheb, Guruji’s mission at WYCE Exclucity is to establish a Center for Prayer: A
+dedicated space where the local Sangh can gather, meditate, and perform rituals without the burden of
+long travel.
+</p>
+
+<p> Building a ‘Jain Temple' spirit on a grand scale, bringing together families under the umbrella of
+Shasan protection. <br/> Sanctify the Land: His presence at our site office marks the spiritual foundation of this project,
+ensuring it is built on the pillars of Ahimsa and Samyak Darshan.</p>
+
+`,
+    translations: {
+      mr: {
+        title: "स्वर्णिम उपस्थिति: बावधन स्थित WYCE Exclucity निर्माण परियोजना पर पूज्य. आचार्य भगवंत भुवनभूषण सुरिश्वरजी महाराज जी का आगमन",
+        metaTitle: "सुवर्ण उपस्थिती | WYCE Exclucity बावधन येथे आचार्य सुरिश्वरजी महाराज आगमन",
+        metaDescription: "बावधन येथील WYCE Exclucity बांधकाम प्रकल्पावर पूज्य आचार्य भगवंत भुवनभूषण सुरिश्वरजी महाराज साहेबांचे आगमन. श्वेतांबर जैन मंदिर निर्मितीच्या संकल्पाची सुरुवात.",
+        keywords: "आचार्य सुरीश्वरजी महाराज, बावधन श्वेतांबर जैन मंदिर, WYCE Exclucity बावधन, जैन मंदिर पुणे, जैन धर्म गुरु, बावधन जैन मंदिर, पुणे जैन समाज उपक्रम",
+        image: "/images/guruji7.png",
+        content: `
+
+
+ {/* Images */}
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+    <div className="w-full h-[500px]">
+      <img
+        src="/images/guruji1.png"
+        alt="Guruji Ceremony"
+        className="w-full h-full object-cover"
+      />
+    </div>
+
+    <div className="w-full h-[500px]">
+      <img
+        src="/images/guruji2.png"
+        alt="Guruji Visit Site"
+        className="w-full h-full object-cover"
+      />
+    </div>
+  </div>
+
+<p>आमच्या WYCE Exclucity प्रकल्प कार्यालयात पूज्य. आचार्य भगवंत भुवनभूषण सुरीश्वरजी महाराज साहेब यांचे आतिथ्य करण्याचा आम्हाला खूप आनंद आहे. त्यांची उपस्थिती आमच्या समुदायासाठी एक महत्त्वपूर्ण आध्यात्मिक मैलाचा दगड आहे, विशेषतः जेव्हा ते या भागात श्वेतांबर मूर्तिपूजक जैन मंदिराच्या दीर्घकाळापासून असलेल्या अनुपस्थितीची पूर्तता करण्याचे स्वप्न घेऊन येतात.</p>
+
+<p>आमच्या WYCE Exclucity प्रकल्प कार्यालयात पूज्य. आचार्य भगवंत भुवनभूषणसूरीश्वरजी महाराज साहेब यांचे स्वागत करणे हा अत्यंत आध्यात्मिक महत्त्वाचा क्षण होता. त्यांचा हा दौरा केवळ औपचारिकता नसून जैन समाजासाठी एका परिवर्तनकारी प्रवासाची सुरुवात आहे.</p>
+
+ {/* Images */}
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+    <div className="w-full h-[500px]">
+      <img
+        src="/images/rangoli1.png"
+        alt="Guruji Ceremony"
+        className="w-full h-full object-cover"
+      />
+    </div>
+
+    <div className="w-full h-[500px]">
+      <img
+        src="/images/rangoli2.png"
+        alt="Guruji Visit Site"
+        className="w-full h-full object-cover"
+      />
+    </div>
+  </div>
+
+<h2>त्यागमय जीवन: पूज्य. आचार्य भगवंत भुवनभूषण सुरिश्वरजी महाराजांचा प्रवास</h2>
+
+<p>गुरुजींचा आध्यात्मिक नेतृत्वाकडे जाणारा प्रवास साध्या व धर्मपरायण बालपणापासून सुरू झाला आणि पुढे जाऊन जैन शासनाप्रती आयुष्यभराच्या गाढ समर्पणात परिवर्तित झाला.</p>
+
+<p><strong>सुरुवातीचे जीवन आणि शिस्त:</strong> बालपणी श्रेयांस म्हणून ओळखले जाणारे, ते मृदूभाषी होते, त्यांना क्रिकेटची आवड होती आणि त्यांची शैक्षणिक कामगिरीही उत्तम होती. ते वर्गात सातत्याने पहिल्या किंवा दुसऱ्या क्रमांकावर येत असत.</p>
+
+<p><strong>निर्णायक वळण:</strong> त्यांच्या आध्यात्मिक प्रवासाला तरुण वयातच सुरुवात झाली, जेव्हा ते तत्कालीन मुनी पूज्य. मुनीराज महाबल विजयजी महाराज (नंतर आचार्य) आणि पूज्य. मुनीराज पुण्यपाल विजयजी महाराज (नंतर आचार्य) यांच्या सहवासात राहू लागले. ते पूज्य. मुनीराज पुण्यपाल विजयजी महाराजांचे पहिले शिष्य बनले.</p>
+
+<p><strong>संन्यासमार्ग:</strong> गुरुजी आता आपल्या त्यागाच्या सुवर्ण ५०व्या वर्षात प्रवेश केला आहे. या पाच दशकांत त्यांनी आपल्या अध्ययनात, सेवेत आणि संन्यासातील कर्तव्यांत अटळ शिस्त राखली आहे.</p>
+
+<h2> <p><strong>नेतृत्वाकडे वाटचाल :</strong> त्यांची अफाट क्षमता ओळखून, त्यांच्या गुरुदेवांनी त्यांना गणी, पन्यास आणि अखेरीस आचार्य या सर्वोच्च पदापर्यंत पोहोचवून विविध संन्यासी श्रेणींमध्ये उच्च स्थान दिले.</p>
+</h2>
+<p><strong>सेवेचा वारसा:</strong> गच्छधिपतींना पाठिंबा देण्याच्या त्यांच्या १४ वर्षांच्या कार्यकाळात त्यांनी विविध संघांना शास्त्रीय मार्गदर्शन, कल्याणकारी कार्य आणि जैन शासनाचे संरक्षण यांसारख्या महत्त्वाच्या जबाबदाऱ्या पार पाडल्या. ते त्यांच्या गुरुदेवांनी त्यांच्यावर ठेवलेला विश्वास आपल्या आयुष्यातील "सर्वात मोठी संपत्ती" मानतात.</p>
+
+<p>आमच्या WYCE Exclucity प्रकल्प कार्यालयात पूज्य. आचार्य भगवंत भुवनभूषण सुरीजी यांचे स्वागत करणे हा एक अत्यंत आध्यात्मिक महत्त्वाचा क्षण आहे. त्यांची भेट ही केवळ औपचारिकता नाही तर स्थानिक जैन समुदायासाठी एका परिवर्तनकारी प्रवासाची सुरुवात आहे.</p>
+
+<h2>एक दिव्य दृष्टी:</h2>
+
+<p>आमच्या ठिकाणी पूज्य. आचार्य भगवंत भुवनभूषण सुरीश्वरजी महाराज साहेब यांची उपस्थिती आम्हाला अत्यंत भाग्याची वाटते. त्यांच्या त्यागाच्या सुवर्ण ५०व्या वर्षात प्रवेश करत असताना, गुरुजी नाशिकमधील एका हुशार विद्यार्थ्यापासून जैन शासनाचे आदरणीय आचार्य होण्यापर्यंतचा प्रवास ज्या शिस्तीने आणि भक्तीने घडवला, त्याच शिस्तीने आणि भक्तीने आजही नेतृत्व करत आहेत.</p>
+
+ {/* Images */}
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+    <div className="w-full h-[500px]">
+      <img
+        src="/images/guruji3.png"
+        alt="Guruji Ceremony"
+        className="w-full h-full object-cover"
+      />
+    </div>
+
+    <div className="w-full h-[500px]">
+      <img
+        src="/images/guruji4.png"
+        alt="Guruji Visit Site"
+        className="w-full h-full object-cover"
+      />
+    </div>
+    <div className="w-full h-[500px]">
+      <img
+        src="/images/guruji5.png"
+        alt="Guruji Visit Site"
+        className="w-full h-full object-cover"
+      />
+    </div>
+  </div>
+
+<h2>दूरदृष्टी : आध्यात्मिक ओसाड भूमीत एक पवित्र आश्रयस्थान</h2>
+
+<p>सध्या आपल्या समुदायासमोर एक मोठे आव्हान उभे आहे: ८ किमीच्या परिघात श्वेतांबर मूर्तिपूजक मंदिर उपलब्ध नाही. दररोज दर्शन, पूजन आणि आध्यात्मिक जोडणीसाठी येणाऱ्या भाविकांसाठी हे अंतर दीर्घकाळापासून अडथळा ठरत आहे.</p>
+
+<b><p>२१०० हून अधिक संतांचे गच्छ-सौभाग्य लाभलेले, महाराष्ट्र शार्दूल, पूज्य. आचार्य देवेश श्रीमद् विजय पुण्यपाल सुरिश्वरजी यांचे शिष्य, पूज्य. आचार्य देव श्रीमद् विजय भुवनभूषण सुरिश्वरजी यांची श्वेतांबर जैन मंदिराच्या बांधकामासाठी स्थळी भेट.</p>
+</b>
+ {/* Images */}
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+    <div className="w-full h-[500px]">
+      <img
+        src="/images/guruji6.png"
+        alt="Guruji Ceremony"
+        className="w-full h-full object-cover"
+      />
+    </div>
+
+    <div className="w-full h-[500px]">
+      <img
+        src="/images/guruji7.png"
+        alt="Guruji Visit Site"
+        className="w-full h-full object-cover"
+      />
+    </div>
+  </div>
+
+<p>ही पोकळी ओळखून, गुरुजी एक शक्तिशाली आणि करुणामय दृष्टीकोन घेऊन आले आहेत: बावधन येथील WYCE Exclucity येथे नवीन मंदिराची निर्मिती.</p>
+
+<p>माझ्या गुरुदेवांनी माझ्यावर ठेवलेला विश्वास ही माझ्या जीवनातील सर्वात मोठी संपत्ती आहे पूज्य. आचार्य भगवंत भुवनभूषण सुरीश्वरजी महाराज साहेब</p>
+
+<p>त्यांचे मार्गदर्शक पूज्य. महाबल सुरिश्वरजी महाराज साहेब आणि पूज्य. पुण्यपाल सुरिश्वरजी महाराज साहेब यांच्या पावलावर पाऊल ठेवत, WYCE Exclucity येथे गुरुजींचे ध्येय एक प्रार्थना केंद्र स्थापन करण्याचे आहे: असे समर्पित स्थान जिथे स्थानिक संघ दीर्घ प्रवासाच्या अडचणीशिवाय एकत्र येऊन ध्यान करू शकतील आणि धार्मिक विधी पार पाडू शकतील.</p>
+
+<p>‘जैन मंदिर’ची भावना भव्य स्तरावर उभारणे आणि शासनाच्या संरक्षणछत्राखाली कुटुंबांना एकत्र आणणे.</p>
+
+<p><strong>भूमी पवित्र करणारा शुभ क्षण:</strong> आमच्या प्रकल्प कार्यालयात त्यांच्या पावन उपस्थितीमुळे या प्रकल्पाची आध्यात्मिक पायाभरणी झाली असून, तो अहिंसा आणि सम्यक दर्शनाच्या मूल्यांवर उभारला जात आहे.</p>
+
+`
+      },
+      hi: {
+        title: "स्वर्णिम उपस्थिति: बावधन स्थित WYCE Exclucity निर्माण परियोजना पर पूज्य. आचार्य भगवंत भुवनभूषण सुरिश्वरजी महाराज जी का आगमन",
+        metaTitle: "सुवर्ण उपस्थिति | WYCE Exclucity बावधन में आचार्य सुरिश्वरजी महाराज का आगमन",
+        metaDescription: "बावधन स्थित WYCE Exclucity निर्माण परियोजना में पूज्य आचार्य भगवंत भुवनभूषण सुरिश्वरजी महाराज का आगमन। श्वेतांबर जैन मंदिर निर्माण के पावन संकल्प की शुभ शुरुआत।",
+        keywords: "आचार्य भुवनभूषण सुरिश्वरजी महाराज, बावधन श्वेतांबर जैन मंदिर, WYCE Exclucity बावधन, जैन मंदिर पुणे, पुणे जैन समाज, बावधन जैन मंदिर निर्माण, जैन धर्म गुरु महाराष्ट्र, श्वेतांबर जैन मंदिर पुणे, जैन धार्मिक उपक्रम पुणे",
+        image: "/images/guruji7.png",
+        content: `
+
+
+{/* Images */}
+<div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+  <div className="w-full h-[500px]">
+    <img src="/images/guruji1.png" alt="Guruji Ceremony" className="w-full h-full object-cover"/>
+  </div>
+  <div className="w-full h-[500px]">
+    <img src="/images/guruji2.png" alt="Guruji Visit Site" className="w-full h-full object-cover"/>
+  </div>
+</div>
+
+<p>हमें अपने WYCE Exclucity परियोजना कार्यालय में पूज्य. आचार्य भगवंत भुवनभूषण सुरीश्वरजी महाराज साहेब का आतिथ्य करने का सौभाग्य प्राप्त हुआ, इसका हमें अत्यंत आनंद है। उनकी उपस्थिति हमारे समुदाय के लिए एक महत्वपूर्ण आध्यात्मिक मील का पत्थर है, विशेष रूप से तब जब वे इस क्षेत्र में लंबे समय से श्वेतांबर मूर्तिपूजक जैन मंदिर की अनुपस्थिति को पूर्ण करने के पवित्र स्वप्न के साथ पधारे हैं।</p>
+
+<p>हमारे WYCE Exclucity परियोजना कार्यालय में पूज्य. आचार्य भगवंत भुवनभूषणसूरीश्वरजी महाराज जी का स्वागत करना अत्यंत आध्यात्मिक और महत्व का क्षण था। उनका यह दौरा मात्र एक औपचारिकता नहीं, बल्कि जैन समाज के लिए एक परिवर्तनकारी यात्रा की मंगलमय शुरुआत है।</p>
+
+{/* Images */}
+<div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+  <div className="w-full h-[500px]">
+    <img src="/images/rangoli1.png" alt="Guruji Ceremony" className="w-full h-full object-cover"/>
+  </div>
+  <div className="w-full h-[500px]">
+    <img src="/images/rangoli2.png" alt="Guruji Visit Site" className="w-full h-full object-cover"/>
+  </div>
+</div>
+
+<h2>त्यागमय जीवन: आचार्य भगवंत भुवनभूषण सुरिश्वरजी महाराज का आध्यात्मिक सफर</h2>
+
+<p>गुरुजी का आध्यात्मिक नेतृत्व की ओर बढ़ता हुआ यह सफर एक सरल और धर्मपरायण बाल्यकाल से प्रारंभ हुआ, जो आगे चलकर जैन शासन के प्रति आजीवन गहन समर्पण में परिवर्तित हो गया।</p>
+
+<p><strong>प्रारंभिक जीवन और अनुशासन :</strong> बाल्यकाल में श्रेयांस के नाम से जाने जाने वाले वे स्वभाव से अत्यंत मृदुभाषी थे। उन्हें क्रिकेट का विशेष शौक था और पढ़ाई में भी उनकी उपलब्धियाँ उत्कृष्ट रहीं। वे अपनी कक्षा में लगातार प्रथम या द्वितीय स्थान प्राप्त करते थे।</p>
+
+<p><strong>निर्णायक मोड़:</strong> उनके आध्यात्मिक सफर की शुरुआत युवावस्था में ही हो गई, जब वे तत्कालीन मुनि पूज्य. महाबल विजयजी महाराज (जो बाद में आचार्य बने) तथा पूज्य. पुण्यपाल विजयजी महाराज (जो आगे चलकर आचार्य बने) के सान्निध्य में रहने लगे। वे पूज्य. मुनिराज पुण्यपाल विजयजी महाराज के प्रथम शिष्य बने।</p>
+
+<p><strong>संन्यास मार्ग :</strong> गुरुजी अब अपने त्यागपूर्ण जीवन के स्वर्णिम 50वें वर्ष में प्रवेश कर चुके हैं। इन पाँच दशकों के दौरान उन्होंने अध्ययन, सेवा और संन्यास के कर्तव्यों में अटूट अनुशासन और समर्पण बनाए रखा है।</p>
+
+<h2>नेतृत्व की ओर अग्रसर</h2>
+
+<p>उनकी अद्वितीय क्षमता को पहचानते हुए, उनके गुरुदेव ने उन्हें गणी, पन्यास और अंततः आचार्य जैसे सर्वोच्च पदों से अलंकृत किया, तथा उन्हें विभिन्न संन्यासी श्रेणियों में उच्च स्थान प्रदान किया।</p>
+
+<p><strong>सेवा की विरासत :</strong> गच्छाधिपति को सहयोग देने के अपने 14 वर्षों के कार्यकाल में उन्होंने विभिन्न संघों को शास्त्रीय मार्गदर्शन प्रदान किया, कल्याणकारी कार्यों का संचालन किया तथा जैन शासन के संरक्षण जैसी महत्वपूर्ण जिम्मेदारियाँ निभाईं। वे अपने गुरुदेव द्वारा उन पर किए गए विश्वास को अपने जीवन की “सबसे बड़ी संपत्ति” मानते हैं।</p>
+
+<p>हमारे WYCE Exclucity परियोजना कार्यालय में पूज्य. आचार्य भगवंत भुवनभूषण सुरीजी का स्वागत करना अत्यंत आध्यात्मिक महत्व का क्षण है। उनका यह आगमन मात्र औपचारिकता नहीं, बल्कि स्थानीय जैन समुदाय के लिए एक परिवर्तनकारी यात्रा की पावन शुरुआत है।</p>
+
+<h2>एक दिव्य दृष्टि:</h2>
+
+<p>हमारे यहाँ पूज्य. आचार्य भगवंत भुवनभूषण सुरीश्वरजी महाराज साहेब की उपस्थिति हमारे लिए अत्यंत सौभाग्य का विषय है। अपने त्यागपूर्ण जीवन के स्वर्णिम 50वें वर्ष में प्रवेश करते हुए, गुरुजी ने नासिक के एक बुद्धिमान विद्यार्थी से जैन शासन के आदरणीय आचार्य बनने तक का जो अनुशासित और भक्तिमय सफर तय किया है, उसी शिस्त और भक्ति के साथ वे आज भी अपना नेतृत्व प्रदान कर रहे हैं।</p>
+
+{/* Images */}
+<div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+  <div className="w-full h-[500px]">
+    <img src="/images/guruji3.png" alt="Guruji Ceremony" className="w-full h-full object-cover"/>
+  </div>
+  <div className="w-full h-[500px]">
+    <img src="/images/guruji4.png" alt="Guruji Visit Site" className="w-full h-full object-cover"/>
+  </div>
+</div>
+
+<h2>दूरदृष्टि: आध्यात्मिक वीरान भूमि में एक पवित्र आश्रयस्थल</h2>
+
+<p>वर्तमान में हमारे समुदाय के सामने एक बड़ी चुनौती खड़ी है: 8 किलोमीटर के दायरे में कोई श्वेतांबर मूर्तिपूजक जैन मंदिर उपलब्ध नहीं है। प्रतिदिन दर्शन, पूजन और आध्यात्मिक जुड़ाव के लिए आने वाले श्रद्धालुओं के लिए यह दूरी लंबे समय से एक बाधा बनी हुई है।</p>
+
+<p>२१०० से अधिक संतों के गच्छ-सौभाग्य से अलंकृत, महाराष्ट्र शार्दूल, पूज्य. विजय पुण्यपाल सुरिश्वरजी के शिष्य, पूज्य. विजय भुवनभूषण सुरिश्वरजी द्वारा श्वेतांबर जैन मंदिर के निर्माण हेतु स्थल का पावन निरीक्षण किया गया।</p>
+
+{/* Images */}
+<div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+  <div className="w-full h-[500px]">
+    <img src="/images/guruji6.png" alt="Guruji Ceremony" className="w-full h-full object-cover"/>
+  </div>
+  <div className="w-full h-[500px]">
+    <img src="/images/guruji7.png" alt="Guruji Visit Site" className="w-full h-full object-cover"/>
+  </div>
+</div>
+
+<p>इस अभाव को पहचानते हुए, गुरुजी एक सशक्त और करुणामय दृष्टिकोण के साथ आगे आए हैं: बावधन स्थित WYCE Exclucity में एक नए श्वेतांबर जैन मंदिर का निर्माण।</p>
+
+<p>मेरे गुरुदेव ने मुझ पर जो विश्वास रखा है, वही मेरे जीवन की सबसे बड़ी संपत्ति है। पूज्य. आचार्य भगवंत भुवनभूषण सुरीश्वरजी महाराज साहेब</p>
+
+<p>अपने मार्गदर्शक पूज्य. महाबल सुरिश्वरजी महाराज साहेब और पूज्य. पुण्यपाल सुरिश्वरजी महाराज साहेब के पदचिन्हों पर चलते हुए, गुरुजी का ध्येय WYCE Exclucity में एक प्रार्थना केंद्र स्थापित करना है। यह ऐसा समर्पित स्थल होगा जहाँ स्थानीय संघ बिना लंबी यात्रा की कठिनाइयों के एकत्र होकर ध्यान कर सकें और धार्मिक विधियाँ संपन्न कर सकें।</p>
+
+<p>‘जैन मंदिर’ की भावना को भव्य स्तर पर स्थापित करना और शासन के संरक्षणछत्र के अंतर्गत परिवारों को एकजुट करना।</p>
+
+<p><strong>भूमि को पवित्र करने वाला शुभ क्षण :</strong> हमारे परियोजना कार्यालय में उनकी पावन उपस्थिति से इस परियोजना की आध्यात्मिक आधारशिला स्थापित हुई है। यह संकल्प अहिंसा और सम्यक दर्शन के मूल्यों पर निर्मित किया जा रहा है।</p>
+
+`}
+    }
+  },
+
   "apartments-for-sale-in-pune": {
     title: "Apartments for Sale in Pune | 4, 3 & 2 BHK Flats at Best Price",
     metaTitle: "Apartments for Sale in Pune | 4, 3 & 2 BHK Flats at Best Price",
@@ -1036,6 +1445,12 @@ const blogContent: Record<string, BlogData> = {
 
 const recentPosts = [
   {
+    id: 18,
+    title: "Pune's Real Estate Boom: Why Investors Are Flocking to Bavdhan",
+    date: "February 20, 2026",
+    slug: "punes-real-estate-boom-why-investors-are-flocking-to-bavdhan",
+  },
+  {
     id: 14,
     title: "Your Q4 Power Move: The First-Time Homebuyer's Guide to Maximum Tax Planning and High ROI",
     date: "December 16, 2025",
@@ -1139,14 +1554,22 @@ const recentPosts = [
   // },
 ];
 
+
+// Requirement 4: Add generateStaticParams for static generation
+export async function generateStaticParams() {
+  return Object.keys(blogContent).map((slug) => ({
+    slug,
+  }));
+}
+
 // Generate metadata for each blog post
 export async function generateMetadata({
   params,
-}: {
-  params: Promise<{ slug: string }>;
-}): Promise<Metadata> {
-  const resolvedParams = await params;
-  const post = blogContent[resolvedParams.slug];
+  searchParams,
+}: PageProps): Promise<Metadata> {
+  const { slug } = await params;
+  const { lang = "en" } = await searchParams;
+  let post = blogContent[slug];
 
   if (!post) {
     return {
@@ -1155,26 +1578,70 @@ export async function generateMetadata({
     };
   }
 
+  // Swap to translation if available
+  if (lang !== "en" && post.translations?.[lang]) {
+    post = { ...post, ...post.translations[lang] };
+  }
+
+  const title = post.metaTitle || post.title;
+  const description = post.metaDescription || "";
+
   return {
-    title: post.metaTitle || post.title,
-    description: post.metaDescription || "",
+    title,
+    description,
     keywords: post.keywords || "",
-    robots: "index, follow",
-    authors: [{ name: "WYCE Corp" }],
-    publisher: "WYCE Corp",
+    // Requirement 5: Use proper object format for robots
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        "max-video-preview": -1,
+        "max-image-preview": "large",
+        "max-snippet": -1,
+      },
+    },
+    // Requirement 6: Add canonical URL using alternates.canonical
     alternates: {
-      canonical: `https://www.wycecorp.com/blog/${resolvedParams.slug}`,
+      canonical: `https://www.wycecorp.com/blog/${slug}${lang !== 'en' ? `?lang=${lang}` : ''}`,
+    },
+    // Requirement 7: Add Open Graph metadata
+    openGraph: {
+      title,
+      description,
+      url: `https://www.wycecorp.com/blog/${slug}${lang !== 'en' ? `?lang=${lang}` : ''}`,
+      siteName: "WYCE Corp",
+      images: [
+        {
+          url: post.image,
+          width: 1200,
+          height: 630,
+          alt: title,
+        },
+      ],
+      type: "article",
+      publishedTime: post.date,
+      authors: [post.author],
+    },
+    // Open Graph for Twitter
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [post.image],
     },
   };
 }
 
-export default async function BlogPostPage({ 
-  params 
-}: { 
-  params: Promise<{ slug: string }> 
-}) {
-  const resolvedParams = await params;
-  const post = blogContent[resolvedParams.slug];
+// Requirement 1: The page MUST be a Server Component (NO "use client")
+export default async function BlogPostPage({
+  params,
+  searchParams
+}: PageProps) {
+  const { slug } = await params;
+  const { lang = "en" } = await searchParams;
+  let post = blogContent[slug];
 
   if (!post) {
     return (
@@ -1191,6 +1658,11 @@ export default async function BlogPostPage({
         </div>
       </div>
     );
+  }
+
+  // Swap to translation if available
+  if (lang !== "en" && post.translations?.[lang]) {
+    post = { ...post, ...post.translations[lang] };
   }
 
   return (
@@ -1233,6 +1705,13 @@ export default async function BlogPostPage({
                     {post.date}
                   </span>
                   <span className="text-sm text-gray-400">By {post.author}</span>
+
+                  {/* Language Switcher - Only show if translations exist */}
+                  {post.translations && (
+                    <div className="ml-auto">
+                      <LanguageSwitcher currentLang={lang} />
+                    </div>
+                  )}
                 </div>
 
                 {/* Title */}
@@ -1244,13 +1723,11 @@ export default async function BlogPostPage({
                 <div className="border-t border-[#D9D9D933] mb-8"></div>
 
                 {/* Article Body */}
+                {/* Requirement 8: Ensure metadata renders server-side (Metadata system handles this) */}
                 <div
                   className="blog-content max-w-none"
                   dangerouslySetInnerHTML={{ __html: post.content }}
                 />
-
-
-
               </div>
             </article>
           </div>
@@ -1264,4 +1741,5 @@ export default async function BlogPostPage({
     </div>
   );
 }
+
 
