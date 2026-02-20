@@ -658,7 +658,7 @@ ensuring it is built on the pillars of Ahimsa and Samyak Darshan.</p>
         metaTitle: "सुवर्ण उपस्थिती | WYCE Exclucity बावधन येथे आचार्य सुरिश्वरजी महाराज आगमन",
         metaDescription: "बावधन येथील WYCE Exclucity बांधकाम प्रकल्पावर पूज्य आचार्य भगवंत भुवनभूषण सुरिश्वरजी महाराज साहेबांचे आगमन. श्वेतांबर जैन मंदिर निर्मितीच्या संकल्पाची सुरुवात.",
         keywords: "आचार्य सुरीश्वरजी महाराज, बावधन श्वेतांबर जैन मंदिर, WYCE Exclucity बावधन, जैन मंदिर पुणे, जैन धर्म गुरु, बावधन जैन मंदिर, पुणे जैन समाज उपक्रम",
-        image: "/images/guruji7.png",
+        image: "/images/guruji1.png",
         content: `
 
 
@@ -792,7 +792,7 @@ ensuring it is built on the pillars of Ahimsa and Samyak Darshan.</p>
         metaTitle: "सुवर्ण उपस्थिति | WYCE Exclucity बावधन में आचार्य सुरिश्वरजी महाराज का आगमन",
         metaDescription: "बावधन स्थित WYCE Exclucity निर्माण परियोजना में पूज्य आचार्य भगवंत भुवनभूषण सुरिश्वरजी महाराज का आगमन। श्वेतांबर जैन मंदिर निर्माण के पावन संकल्प की शुभ शुरुआत।",
         keywords: "आचार्य भुवनभूषण सुरिश्वरजी महाराज, बावधन श्वेतांबर जैन मंदिर, WYCE Exclucity बावधन, जैन मंदिर पुणे, पुणे जैन समाज, बावधन जैन मंदिर निर्माण, जैन धर्म गुरु महाराष्ट्र, श्वेतांबर जैन मंदिर पुणे, जैन धार्मिक उपक्रम पुणे",
-        image: "/images/guruji7.png",
+        image: "/images/guruji1.png",
         content: `
 
 
