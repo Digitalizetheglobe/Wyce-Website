@@ -6,9 +6,8 @@ import Link from "next/link";
 import Image from "next/image";
 
 // Blog posts data
-const blogPosts = [
-  {
-    id: 18,
+const blogPosts = [ {
+    id: 23,
     title: "A Golden Presence: Pujya Acharya Bhagwant Bhuvanbhushan Surishvarji Maharaj Saheb at WYCE Exclucity",
     excerpt:
       "A spiritually significant visit by Pujya Acharya Bhagwant Bhuvanbhushan Surishvarji Maharaj Saheb at WYCE Exclucity, Bavdhan, marking the vision for a Shwetambar Murtipujak Jain Mandir within the community.",
@@ -16,9 +15,86 @@ const blogPosts = [
     date: "February 20, 2026",
     language: "en",
     hasTranslations: true,
-    image: "/images/guruji7.png",
+    image: "/images/guruji12.jpg",
     slug: "golden-presence-pujya-acharya-bhuvanbhushan-surishvarji-wyce-exclucity",
+  },{
+    id: 25,
+    title: "Why 2026 is the Best Year to Invest in a 3 BHK in Bavdhan, Pune",
+    excerpt:
+      "Understand why 2026 is a pivotal year to invest in a 3 BHK in Bavdhan, Pune, with aligned infrastructure, rising demand for larger homes, and long-term growth potential.",
+    category: "Real Estate",
+    date: "February 20, 2026",
+    image: "/images/blog11.jpeg",
+    slug: "why-2026-best-year-invest-3-bhk-in-bavdhan-pune",
   },
+  {
+    id: 24,
+    title: "4 BHK Luxury Flats in Pune: Project Overview, Location & Design Details",
+    excerpt:
+      "Explore how 4 BHK luxury flats in Bavdhan, Pune—especially at Wyce Exclucity—combine spacious layouts, green planning, and strategic connectivity for long-term value.",
+    category: "Luxury Real Estate",
+    date: "February 20, 2026",
+    image: "/images/blog7.jpeg",
+    slug: "4-bhk-luxury-flats-in-pune-project-overview-location-design-details",
+  },
+ 
+  {
+    id: 22,
+    title:
+      'The "Reverse Migration" Trend: Why HNIs are Moving from Baner/Kothrud to Bavdhan',
+    excerpt:
+      "HNIs and discerning professionals are quietly moving away from congested hubs like Baner and Kothrud to Bavdhan's low-density, hillside luxury—discover why Wyce Residences has become the premium choice in West Pune.",
+    category: "Real Estate",
+    date: "February 20, 2026",
+    image: "/images/blog10.jpeg",
+    slug: "reverse-migration-hnis-baner-kothrud-to-bavdhan",
+  },
+  {
+    id: 21,
+    title:
+      'The "Wellness-First" Architecture: Beyond Gyms to Bio-Luminous Spaces in Wyce Residences',
+    excerpt:
+      "Wyce Residences in Bavdhan redefines luxury with wellness-first, bio-luminous architecture that maximizes natural light, ventilation, biophilic design, and acoustic comfort for holistic well-being.",
+    category: "Design & Wellness",
+    date: "February 20, 2026",
+    image: "/images/blog9.jpeg",
+    slug: "wellness-first-architecture-bio-luminous-wyce-residences",
+  },
+  {
+    id: 20,
+    title:
+      "Smart Home 2.0: Predictive Automation for the Global Indian at Wyce Residences",
+    excerpt:
+      "Go beyond basic automation with Wyce's AI-enabled luxury residences in Bavdhan, where Smart Home 2.0 predicts your preferences, optimizes energy, and delivers effortless, connected living.",
+    category: "Technology & Lifestyle",
+    date: "February 20, 2026",
+    image: "/images/blog8.jpeg",
+    slug: "smart-home-2-0-predictive-automation-wyce-residences",
+  },
+  {
+    id: 19,
+    title:
+      'The "Micro-Hub" Advantage: Bavdhan’s 15-Minute Lifestyle at Wyce Residences',
+    excerpt:
+      "Explore how Bavdhan has evolved into Pune's most desirable micro-hub, where Wyce Residences offers a true 15-minute lifestyle with schools, healthcare, dining, and nature all within easy reach.",
+    category: "Lifestyle & Location",
+    date: "February 20, 2026",
+    image: "/images/blog71.jpeg",
+    slug: "micro-hub-advantage-bavdhan-15-minute-lifestyle",
+  },
+  {
+    id: 18,
+    title:
+      'Transitioning from "Asset" to "Legacy": The Rise of 4.5 BHK & Multi-Generational Suites at Wyce Residences',
+    excerpt:
+      "Discover why HNIs and NRIs are choosing Wyce’s intelligently designed 4.5 BHK and multi-generational suites in Bavdhan to create future-ready homes and lasting family legacies.",
+    category: "Real Estate & Family Living",
+    date: "February 20, 2026",
+    image: "/images/blog6.jpeg",
+    slug: "asset-to-legacy-rise-of-4-5-bhk-wyce-residences",
+  },
+  
+
   {
     id: 17,
     title: "Apartments for Sale in Pune | 4, 3 & 2 BHK Flats at Best Price",
