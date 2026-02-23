@@ -493,21 +493,21 @@ const blogContent: Record<string, BlogData> = {
     content: `
 
 
- {/* Images */}
-  <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
-    <div className="w-full h-[500px]">
+ <!-- Images Gallery -->
+  <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-10">
+    <div class="group overflow-hidden rounded-xl shadow-md border border-[#D9D9D933]">
       <img
         src="/images/guruji1.png"
         alt="Guruji Ceremony"
-        className="w-full h-full object-cover"
+        class="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500"
       />
     </div>
 
-    <div className="w-full h-[500px]">
+    <div class="group overflow-hidden rounded-xl shadow-md border border-[#D9D9D933]">
       <img
         src="/images/guruji2.png"
         alt="Guruji Visit Site"
-        className="w-full h-full object-cover"
+        class="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500"
       />
     </div>
   </div>
@@ -524,21 +524,21 @@ standing absence of a Shwetambar Murtipujak Jain Mandir in this area.</p>
 Surishvarji Maharaj at our WYCE Exclucity site office. His visit is not merely a formality but the
 beginning of a transformative journey for the Jain community.</p>
 
- {/* Images */}
-  <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
-    <div className="w-full h-[500px]">
+ <!-- Images Gallery -->
+  <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-10">
+    <div class="group overflow-hidden rounded-xl shadow-md border border-[#D9D9D933]">
       <img
         src="/images/rangoli1.png"
         alt="Guruji Ceremony"
-        className="w-full h-full object-cover"
+        class="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500"
       />
     </div>
 
-    <div className="w-full h-[500px]">
+    <div class="group overflow-hidden rounded-xl shadow-md border border-[#D9D9D933]">
       <img
         src="/images/rangoli2.png"
         alt="Guruji Visit Site"
-        className="w-full h-full object-cover"
+        class="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500"
       />
     </div>
   </div>
@@ -581,28 +581,28 @@ continues to lead with the same discipline and devotion that defined his journey
 student in Nashik to a revered Acharya of the Jain Shasan.
 </p></b>
 
- {/* Images */}
-  <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
-    <div className="w-full h-[500px]">
+ <!-- Images Gallery -->
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
+    <div class="group overflow-hidden rounded-xl shadow-md border border-[#D9D9D933]">
       <img
         src="/images/guruji3.png"
         alt="Guruji Ceremony"
-        className="w-full h-full object-cover"
+        class="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500"
       />
     </div>
 
-    <div className="w-full h-[500px]">
+    <div class="group overflow-hidden rounded-xl shadow-md border border-[#D9D9D933]">
       <img
         src="/images/guruji4.png"
         alt="Guruji Visit Site"
-        className="w-full h-full object-cover"
+        class="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500"
       />
     </div>
-    <div className="w-full h-[500px]">
+    <div class="group overflow-hidden rounded-xl shadow-md border border-[#D9D9D933]">
       <img
         src="/images/guruji5.png"
         alt="Guruji Visit Site"
-        className="w-full h-full object-cover"
+        class="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500"
       />
     </div>
   </div>
@@ -617,21 +617,21 @@ Darshan, Pujan, and spiritual connection.</p>
 Shrimad Vijay Punyapal Surishvarji's Disciple Pujya Aacharya Dev Shrimad Vijay
 Bhuvanbhushan Surishvarji's site visit for Shwetamber Jain Temple construction</p></b>
 
- {/* Images */}
-  <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
-    <div className="w-full h-[500px]">
+ <!-- Images Gallery -->
+  <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-10">
+    <div class="group overflow-hidden rounded-xl shadow-md border border-[#D9D9D933]">
       <img
         src="/images/guruji6.png"
         alt="Guruji Ceremony"
-        className="w-full h-full object-cover"
+        class="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500"
       />
     </div>
 
-    <div className="w-full h-[500px]">
+    <div class="group overflow-hidden rounded-xl shadow-md border border-[#D9D9D933]">
       <img
         src="/images/guruji7.png"
         alt="Guruji Visit Site"
-        className="w-full h-full object-cover"
+        class="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500"
       />
     </div>
   </div>
@@ -662,21 +662,21 @@ ensuring it is built on the pillars of Ahimsa and Samyak Darshan.</p>
         content: `
 
 
- {/* Images */}
-  <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
-    <div className="w-full h-[500px]">
+ <!-- Images Gallery -->
+  <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-10">
+    <div class="group overflow-hidden rounded-xl shadow-md border border-[#D9D9D933]">
       <img
         src="/images/guruji1.png"
         alt="Guruji Ceremony"
-        className="w-full h-full object-cover"
+        class="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500"
       />
     </div>
 
-    <div className="w-full h-[500px]">
+    <div class="group overflow-hidden rounded-xl shadow-md border border-[#D9D9D933]">
       <img
         src="/images/guruji2.png"
         alt="Guruji Visit Site"
-        className="w-full h-full object-cover"
+        class="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500"
       />
     </div>
   </div>
@@ -685,21 +685,21 @@ ensuring it is built on the pillars of Ahimsa and Samyak Darshan.</p>
 
 <p>आमच्या WYCE Exclucity प्रकल्प कार्यालयात पूज्य. आचार्य भगवंत भुवनभूषणसूरीश्वरजी महाराज साहेब यांचे स्वागत करणे हा अत्यंत आध्यात्मिक महत्त्वाचा क्षण होता. त्यांचा हा दौरा केवळ औपचारिकता नसून जैन समाजासाठी एका परिवर्तनकारी प्रवासाची सुरुवात आहे.</p>
 
- {/* Images */}
-  <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
-    <div className="w-full h-[500px]">
+ <!-- Images Gallery -->
+  <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-10">
+    <div class="group overflow-hidden rounded-xl shadow-md border border-[#D9D9D933]">
       <img
         src="/images/rangoli1.png"
         alt="Guruji Ceremony"
-        className="w-full h-full object-cover"
+        class="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500"
       />
     </div>
 
-    <div className="w-full h-[500px]">
+    <div class="group overflow-hidden rounded-xl shadow-md border border-[#D9D9D933]">
       <img
         src="/images/rangoli2.png"
         alt="Guruji Visit Site"
-        className="w-full h-full object-cover"
+        class="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500"
       />
     </div>
   </div>
@@ -724,28 +724,28 @@ ensuring it is built on the pillars of Ahimsa and Samyak Darshan.</p>
 
 <p>आमच्या ठिकाणी पूज्य. आचार्य भगवंत भुवनभूषण सुरीश्वरजी महाराज साहेब यांची उपस्थिती आम्हाला अत्यंत भाग्याची वाटते. त्यांच्या त्यागाच्या सुवर्ण ५०व्या वर्षात प्रवेश करत असताना, गुरुजी नाशिकमधील एका हुशार विद्यार्थ्यापासून जैन शासनाचे आदरणीय आचार्य होण्यापर्यंतचा प्रवास ज्या शिस्तीने आणि भक्तीने घडवला, त्याच शिस्तीने आणि भक्तीने आजही नेतृत्व करत आहेत.</p>
 
- {/* Images */}
-  <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
-    <div className="w-full h-[500px]">
+ <!-- Images Gallery -->
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
+    <div class="group overflow-hidden rounded-xl shadow-md border border-[#D9D9D933]">
       <img
         src="/images/guruji3.png"
         alt="Guruji Ceremony"
-        className="w-full h-full object-cover"
+        class="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500"
       />
     </div>
 
-    <div className="w-full h-[500px]">
+    <div class="group overflow-hidden rounded-xl shadow-md border border-[#D9D9D933]">
       <img
         src="/images/guruji4.png"
         alt="Guruji Visit Site"
-        className="w-full h-full object-cover"
+        class="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500"
       />
     </div>
-    <div className="w-full h-[500px]">
+    <div class="group overflow-hidden rounded-xl shadow-md border border-[#D9D9D933]">
       <img
         src="/images/guruji5.png"
         alt="Guruji Visit Site"
-        className="w-full h-full object-cover"
+        class="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500"
       />
     </div>
   </div>
@@ -756,21 +756,21 @@ ensuring it is built on the pillars of Ahimsa and Samyak Darshan.</p>
 
 <b><p>२१०० हून अधिक संतांचे गच्छ-सौभाग्य लाभलेले, महाराष्ट्र शार्दूल, पूज्य. आचार्य देवेश श्रीमद् विजय पुण्यपाल सुरिश्वरजी यांचे शिष्य, पूज्य. आचार्य देव श्रीमद् विजय भुवनभूषण सुरिश्वरजी यांची श्वेतांबर जैन मंदिराच्या बांधकामासाठी स्थळी भेट.</p>
 </b>
- {/* Images */}
-  <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
-    <div className="w-full h-[500px]">
+ <!-- Images Gallery -->
+  <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-10">
+    <div class="group overflow-hidden rounded-xl shadow-md border border-[#D9D9D933]">
       <img
         src="/images/guruji6.png"
         alt="Guruji Ceremony"
-        className="w-full h-full object-cover"
+        class="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500"
       />
     </div>
 
-    <div className="w-full h-[500px]">
+    <div class="group overflow-hidden rounded-xl shadow-md border border-[#D9D9D933]">
       <img
         src="/images/guruji7.png"
         alt="Guruji Visit Site"
-        className="w-full h-full object-cover"
+        class="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500"
       />
     </div>
   </div>
@@ -796,13 +796,13 @@ ensuring it is built on the pillars of Ahimsa and Samyak Darshan.</p>
         content: `
 
 
-{/* Images */}
-<div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
-  <div className="w-full h-[500px]">
-    <img src="/images/guruji1.png" alt="Guruji Ceremony" className="w-full h-full object-cover"/>
+<!-- Images Gallery -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-10">
+  <div class="group overflow-hidden rounded-xl shadow-md border border-[#D9D9D933]">
+    <img src="/images/guruji1.png" alt="Guruji Ceremony" class="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500"/>
   </div>
-  <div className="w-full h-[500px]">
-    <img src="/images/guruji2.png" alt="Guruji Visit Site" className="w-full h-full object-cover"/>
+  <div class="group overflow-hidden rounded-xl shadow-md border border-[#D9D9D933]">
+    <img src="/images/guruji2.png" alt="Guruji Visit Site" class="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500"/>
   </div>
 </div>
 
@@ -810,13 +810,13 @@ ensuring it is built on the pillars of Ahimsa and Samyak Darshan.</p>
 
 <p>हमारे WYCE Exclucity परियोजना कार्यालय में पूज्य. आचार्य भगवंत भुवनभूषणसूरीश्वरजी महाराज जी का स्वागत करना अत्यंत आध्यात्मिक और महत्व का क्षण था। उनका यह दौरा मात्र एक औपचारिकता नहीं, बल्कि जैन समाज के लिए एक परिवर्तनकारी यात्रा की मंगलमय शुरुआत है।</p>
 
-{/* Images */}
-<div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
-  <div className="w-full h-[500px]">
-    <img src="/images/rangoli1.png" alt="Guruji Ceremony" className="w-full h-full object-cover"/>
+<!-- Images Gallery -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-10">
+  <div class="group overflow-hidden rounded-xl shadow-md border border-[#D9D9D933]">
+    <img src="/images/rangoli1.png" alt="Guruji Ceremony" class="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500"/>
   </div>
-  <div className="w-full h-[500px]">
-    <img src="/images/rangoli2.png" alt="Guruji Visit Site" className="w-full h-full object-cover"/>
+  <div class="group overflow-hidden rounded-xl shadow-md border border-[#D9D9D933]">
+    <img src="/images/rangoli2.png" alt="Guruji Visit Site" class="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500"/>
   </div>
 </div>
 
@@ -842,13 +842,13 @@ ensuring it is built on the pillars of Ahimsa and Samyak Darshan.</p>
 
 <p>हमारे यहाँ पूज्य. आचार्य भगवंत भुवनभूषण सुरीश्वरजी महाराज साहेब की उपस्थिति हमारे लिए अत्यंत सौभाग्य का विषय है। अपने त्यागपूर्ण जीवन के स्वर्णिम 50वें वर्ष में प्रवेश करते हुए, गुरुजी ने नासिक के एक बुद्धिमान विद्यार्थी से जैन शासन के आदरणीय आचार्य बनने तक का जो अनुशासित और भक्तिमय सफर तय किया है, उसी शिस्त और भक्ति के साथ वे आज भी अपना नेतृत्व प्रदान कर रहे हैं।</p>
 
-{/* Images */}
-<div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
-  <div className="w-full h-[500px]">
-    <img src="/images/guruji3.png" alt="Guruji Ceremony" className="w-full h-full object-cover"/>
+<!-- Images Gallery -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-10">
+  <div class="group overflow-hidden rounded-xl shadow-md border border-[#D9D9D933]">
+    <img src="/images/guruji3.png" alt="Guruji Ceremony" class="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500"/>
   </div>
-  <div className="w-full h-[500px]">
-    <img src="/images/guruji4.png" alt="Guruji Visit Site" className="w-full h-full object-cover"/>
+  <div class="group overflow-hidden rounded-xl shadow-md border border-[#D9D9D933]">
+    <img src="/images/guruji4.png" alt="Guruji Visit Site" class="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500"/>
   </div>
 </div>
 
@@ -858,13 +858,13 @@ ensuring it is built on the pillars of Ahimsa and Samyak Darshan.</p>
 
 <p>२१०० से अधिक संतों के गच्छ-सौभाग्य से अलंकृत, महाराष्ट्र शार्दूल, पूज्य. विजय पुण्यपाल सुरिश्वरजी के शिष्य, पूज्य. विजय भुवनभूषण सुरिश्वरजी द्वारा श्वेतांबर जैन मंदिर के निर्माण हेतु स्थल का पावन निरीक्षण किया गया।</p>
 
-{/* Images */}
-<div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
-  <div className="w-full h-[500px]">
-    <img src="/images/guruji6.png" alt="Guruji Ceremony" className="w-full h-full object-cover"/>
+<!-- Images Gallery -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-10">
+  <div class="group overflow-hidden rounded-xl shadow-md border border-[#D9D9D933]">
+    <img src="/images/guruji6.png" alt="Guruji Ceremony" class="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500"/>
   </div>
-  <div className="w-full h-[500px]">
-    <img src="/images/guruji7.png" alt="Guruji Visit Site" className="w-full h-full object-cover"/>
+  <div class="group overflow-hidden rounded-xl shadow-md border border-[#D9D9D933]">
+    <img src="/images/guruji7.png" alt="Guruji Visit Site" class="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500"/>
   </div>
 </div>
 
