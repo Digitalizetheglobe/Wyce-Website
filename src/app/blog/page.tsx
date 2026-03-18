@@ -6,7 +6,98 @@ import Link from "next/link";
 import Image from "next/image";
 
 // Blog posts data
-const blogPosts = [ {
+const blogPosts = [
+  {
+    id: 35,
+    title: "The Science of Jain Architecture: Energy & Vibrations of the Ghabara",
+    excerpt: "Discover the spiritual engineering behind Jain temples. Learn how the Ghabara manipulates energy, sound, and light to elevate the human soul.",
+    category: "Spiritual",
+    date: "March 18, 2026",
+    image: "/images/blog-18mar1.jpeg",
+    slug: "science-jain-architecture-energy-vibrations-ghabara",
+  },
+  {
+    id: 34,
+    title: "Luxury Apartments in Pune – Experience Wyce Exclucity, Bavdhan's Most Prestigious Address",
+    excerpt: "Searching for luxury apartments in Pune? Wyce Exclucity in Bavdhan offers premium 2, 3 & 4 BHK residences on 11 acres with world-class amenities.",
+    category: "Real Estate",
+    date: "March 18, 2026",
+    image: "/images/blog-17Mar9.jpeg",
+    slug: "luxury-apartments-in-pune",
+  },
+  {
+    id: 33,
+    title: "3 BHK Apartment in Pune – Discover Wyce Exclucity, Bavdhan's Most Prestigious Address",
+    excerpt: "Looking for a 3 BHK apartment in Pune? Wyce Exclucity in Bavdhan offers luxury residences on 11 acres with Miyawaki Forest, premium amenities & easy connectivity.",
+    category: "Real Estate",
+    date: "March 18, 2026",
+    image: "/images/blog-17Mar8.jpeg",
+    slug: "3-bhk-apartment-in-pune",
+  },
+  {
+    id: 32,
+    title: "3 BHK vs. 4 BHK in a Low-Density Project: Maximizing Your Investment with Wyce Corp",
+    excerpt: "Deciding between a 3 BHK and 4 BHK in Bavdhan? Learn how to maximize your ROI and lifestyle goals in a luxury low-density project by Wyce Corp.",
+    category: "Investment Guide",
+    date: "March 17, 2026",
+    image: "/images/blog-17Mar7.jpeg",
+    slug: "3-bhk-vs-4-bhk-maximizing-investment-low-density-project",
+  },
+  {
+    id: 31,
+    title: "A Cultural Homecoming: Why NRIs are Choosing Societies with a Jain Mandir in Bavdhan",
+    excerpt: "Join the exclusive community at Wyce Residences in Bavdhan, featuring a on-site Jain Mandir. Ideal for NRIs seeking a cultural connection back home.",
+    category: "Spiritual",
+    date: "March 17, 2026",
+    image: "/images/blog-17Mar6.jpeg",
+    slug: "cultural-homecoming-nris-jain-mandir-societies-bavdhan",
+  },
+  {
+    id: 30,
+    title: "The 2026 NRI Guide to Pune Real Estate: Why Bavdhan is the Ultimate Safe Haven",
+    excerpt: "Discover why Bavdhan is the safest real estate investment for NRIs in 2026. Explore premium 3 & 4 BHK homes by Wyce Corp offering high ROI.",
+    category: "NRI Guide",
+    date: "March 17, 2026",
+    image: "/images/blog-17Mar5.jpeg",
+    slug: "2026-nri-guide-pune-real-estate-bavdhan-safe-haven",
+  },
+  {
+    id: 29,
+    title: "Beyond the Clubhouse: 5 Rare Amenities That Define Wyce's Premium Residences in Bavdhan",
+    excerpt: "Explore 5 rare luxury amenities that redefine premium living in Bavdhan Pune. Discover Wyce Corp’s low density residences with smart homes.",
+    category: "Luxury Living",
+    date: "March 17, 2026",
+    image: "/images/blog-17Mar1st.jpeg",
+    slug: "5-rare-luxury-amenities-define-wyce-premium-residences",
+  },
+  {
+    id: 28,
+    title: "The True Cost of Crowds: Why Your Next Home Must Be a Low Density Project in Pune",
+    excerpt: "Discover why Wyce Corp's low density project in Pune beats crowded townships — higher land share, exclusive amenities, and capital appreciation.",
+    category: "Real Estate",
+    date: "March 17, 2026",
+    image: "/images/blog-17Mar1.jpeg",
+    slug: "true-cost-of-crowds-low-density-project-pune",
+  },
+  {
+    id: 27,
+    title: "Finding Your Tribe: The Social and Cultural Perks of Wyce’s Low Density Project in Bavdhan",
+    excerpt: "Escape crowded townships. Wyce Corp's low density project in Bavdhan offers privacy, uncrowded amenities, and an exclusive community.",
+    category: "Lifestyle",
+    date: "March 17, 2026",
+    image: "/images/blog-17Mar2.jpeg",
+    slug: "finding-your-tribe-low-density-project-bavdhan",
+  },
+  {
+    id: 26,
+    title: "The Spiritual Sanctuary: Why a Jain Mandir in Society in Bavdhan is the Ultimate Luxury",
+    excerpt: "Find a home that honors your faith. Wyce Residences in Bavdhan features a dedicated Jain Mandir in society — perfect for spiritual family living.",
+    category: "Spiritual",
+    date: "March 17, 2026",
+    image: "/images/blog-17Mar3.jpeg",
+    slug: "spiritual-sanctuary-jain-mandir-society-bavdhan",
+  },
+  {
     id: 23,
     title: "A Golden Presence: Pujya Acharya Bhagwant Bhuvanbhushan Surishvarji Maharaj Saheb at WYCE Exclucity",
     excerpt:
@@ -17,7 +108,8 @@ const blogPosts = [ {
     hasTranslations: true,
     image: "/images/guruji1.png",
     slug: "golden-presence-pujya-acharya-bhuvanbhushan-surishvarji-wyce-exclucity",
-  },{
+  },
+  {
     id: 25,
     title: "Why 2026 is the Best Year to Invest in a 3 BHK in Bavdhan, Pune",
     excerpt:
@@ -37,7 +129,7 @@ const blogPosts = [ {
     image: "/images/blog7.jpeg",
     slug: "4-bhk-luxury-flats-in-pune-project-overview-location-design-details",
   },
- 
+
   {
     id: 22,
     title:
@@ -93,7 +185,7 @@ const blogPosts = [ {
     image: "/images/blog6.jpeg",
     slug: "asset-to-legacy-rise-of-4-5-bhk-wyce-residences",
   },
-  
+
 
   {
     id: 17,
@@ -270,49 +362,67 @@ const blogPosts = [ {
 
 const recentPosts = [
   {
+    id: 35,
+    title: "The Science of Jain Architecture: Energy & Vibrations of the Ghabara",
+    date: "March 18, 2026",
+    slug: "science-jain-architecture-energy-vibrations-ghabara",
+  },
+  {
+    id: 34,
+    title: "Luxury Apartments in Pune – Experience Wyce Exclucity, Bavdhan's Most Prestigious Address",
+    date: "March 18, 2026",
+    slug: "luxury-apartments-in-pune",
+  },
+  {
+    id: 33,
+    title: "3 BHK Apartment in Pune – Discover Wyce Exclucity, Bavdhan's Most Prestigious Address",
+    date: "March 18, 2026",
+    slug: "3-bhk-apartment-in-pune",
+  },
+  {
+    id: 32,
+    title: "3 BHK vs. 4 BHK in a Low-Density Project: Maximizing Your Investment with Wyce Corp",
+    date: "March 17, 2026",
+    slug: "3-bhk-vs-4-bhk-maximizing-investment-low-density-project",
+  },
+  {
+    id: 31,
+    title: "A Cultural Homecoming: Why NRIs are Choosing Societies with a Jain Mandir in Bavdhan",
+    date: "March 17, 2026",
+    slug: "cultural-homecoming-nris-jain-mandir-societies-bavdhan",
+  },
+  {
+    id: 30,
+    title: "The 2026 NRI Guide to Pune Real Estate: Why Bavdhan is the Ultimate Safe Haven",
+    date: "March 17, 2026",
+    slug: "2026-nri-guide-pune-real-estate-bavdhan-safe-haven",
+  },
+  {
+    id: 29,
+    title: "Beyond the Clubhouse: 5 Rare Amenities That Define Wyce's Premium Residences in Bavdhan",
+    date: "March 17, 2026",
+    slug: "5-rare-luxury-amenities-define-wyce-premium-residences",
+  },
+  {
+    id: 28,
+    title: "The True Cost of Crowds: Why Your Next Home Must Be a Low Density Project in Pune",
+    date: "March 17, 2026",
+    slug: "true-cost-of-crowds-low-density-project-pune",
+  },
+  {
+    id: 27,
+    title: "Finding Your Tribe: The Social and Cultural Perks of Wyce’s Low Density Project in Bavdhan",
+    date: "March 17, 2026",
+    slug: "finding-your-tribe-low-density-project-bavdhan",
+  },
+  {
+    id: 26,
+    title: "The Spiritual Sanctuary: Why a Jain Mandir in Society in Bavdhan is the Ultimate Luxury",
+    date: "March 17, 2026",
+    slug: "spiritual-sanctuary-jain-mandir-society-bavdhan",
+  },
+  {
     id: 18,
-    title: "Golden Presence at WYCE Exclucity Bavdhan | Jain Temple Vision",
-    date: "February 20, 2026",
-    slug: "golden-presence-pujya-acharya-bhuvanbhushan-surishvarji-wyce-exclucity",
-  },
-  {
-    id: 17,
-    title: "Apartments for Sale in Pune | 4, 3 & 2 BHK Flats at Best Price",
-    date: "January 15, 2026",
-    slug: "apartments-for-sale-in-pune",
-  },
-  {
-    id: 16,
-    title: "2 BHK Flats in Bavdhan Pune Price Location Best Deals",
-    date: "January 20, 2026",
-    slug: "2-bhk-flats-in-bavdhan-pune-price-location-best-deals",
-  },
-  {
-    id: 15,
-    title: "Spacious 3 BHK in Bavdhan, Pune – Luxury Living Near Kothrud",
-    date: "January 27, 2026",
-    slug: "spacious-3-bhk-in-bavdhan-pune-luxury-living-near-kothrud",
-  },
-  {
-    id: 14,
-    title: "Your Q4 Power Move: The First-Time Homebuyer's Guide to Maximum Tax Planning and High ROI",
-    date: "December 16, 2025",
-    slug: "q4-home-buying-guide-tax-savings-high-roi-first-time-buyers",
-  },
-  {
-    id: 13,
-    title: "The NRI's Guide to Hassle-Free Property Management in Pune: From Purchase to Payout",
-    date: "December 13, 2025",
-    slug: "nri-property-management-in-pune-hassle-free-investment-guide",
-  },
-  {
-    id: 12,
-    title: "Decoding the Dollar-Rupee Advantage: Why NRI Investments in Pune are Surging",
-    date: "December 11, 2025",
-    slug: "decoding-the-dollar-rupee-advantage-why-nri-investments-in-pune-are-surging",
-  },
-  {
-    id: 11,
     title: "The New Rule of 5: How Infrastructure is Redefining Pune's Property ROI Game",
     date: "December 10, 2025",
     slug: "the-new-rule-of-5-how-infrastructure-is-redefining-punes-property-roi-game",
