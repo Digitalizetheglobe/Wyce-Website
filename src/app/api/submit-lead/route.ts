@@ -258,18 +258,101 @@ export async function POST(request: NextRequest) {
       deviceInfo,
     });
 
+    // External API URL for lead submission
+    const externalApiUrl = "https://wyce-backend.wycecorp.in/api/leads/external-submit";
+    
+    // Prepare payload for external API
+    const externalApiPayload = {
+      name: name,
+      phone: phone,
+      email: email,
+      status: "Warm", // Default status
+      leadVerificationStatus: "Verified", // Default verification status
+      verificationType: "Phone Number", // Default verification type
+      remark: messageToSend || "Requested brochure" // Use message as remark or default
+    };
+    
+    console.log("📤 Sending to external API:", externalApiPayload);
+
+    // Submit to external API (CRM)
+    let externalApiSuccess = false;
+    let externalApiError = "";
+    
+    try {
+      const response = await fetch(externalApiUrl, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Origin": "https://wycecorp.com", // Add Origin header for authorization
+        },
+        body: JSON.stringify(externalApiPayload),
+        signal: AbortSignal.timeout(10000), // 10 second timeout
+      });
+
+      const status = response.status;
+      const statusText = response.statusText;
+      
+      console.log(`External API response: ${status} ${statusText}`);
+
+      if (response.ok) {
+        try {
+          const data = await response.json();
+          console.log("✅ External API response data:", data);
+          externalApiSuccess = true;
+        } catch {
+          // Response might be text or empty - still consider success if status is ok
+          const text = await response.text();
+          console.log("✅ External API response (non-JSON):", text.substring(0, 200));
+          externalApiSuccess = true;
+        }
+      } else {
+        const errorText = await response.text();
+        console.error(`❌ External API error (${status}):`, errorText.substring(0, 200));
+        externalApiError = `CRM API error: ${errorText.substring(0, 100)}`;
+      }
+    } catch (externalApiError: unknown) {
+      const errorMessage = externalApiError instanceof Error ? externalApiError.message : String(externalApiError);
+      console.error("❌ External API call failed:", errorMessage);
+      externalApiError = "Failed to connect to CRM API";
+    }
+
+    // Now submit to Google Sheets
+    console.log("📤 Also sending to Google Sheets:", {
+      name,
+      email,
+      phone,
+      message: messageToSend,
+      otpVerified: isOtpVerified,
+      userMetadata: completeUserMetadata,
+      deviceInfo,
+    });
+
     // Google Apps Script Web App URL from environment variables
     const scriptUrl = process.env.GOOGLE_APPS_SCRIPT_URL;
     
     if (!scriptUrl) {
       console.error("GOOGLE_APPS_SCRIPT_URL is not configured");
-      return NextResponse.json(
-        { success: false, error: "Submission service is not configured" },
-        { status: 500 }
-      );
+      // Still return success if CRM worked, otherwise error
+      if (externalApiSuccess) {
+        return NextResponse.json({
+          success: true,
+          method: "CRM API only (Google Sheets not configured)",
+          externalApiSuccess: true,
+          googleSheetsSuccess: false,
+          message: "Submitted to CRM successfully (Google Sheets not available)"
+        });
+      } else {
+        return NextResponse.json(
+          { success: false, error: "Both CRM API and Google Sheets not configured" },
+          { status: 500 }
+        );
+      }
     }
 
-    // Try JSON first
+    let googleSheetsSuccess = false;
+    let googleSheetsError = "";
+
+    // Try JSON first for Google Sheets
     try {
       const response = await fetch(scriptUrl, {
         method: "POST",
@@ -303,146 +386,161 @@ export async function POST(request: NextRequest) {
       if (response.ok) {
         try {
           const data = await response.json();
-          console.log("Google Apps Script response data:", data);
-          return NextResponse.json({
-            success: true,
-            method: "JSON",
-            data,
-            status,
-          });
+          console.log("✅ Google Apps Script response data:", data);
+          googleSheetsSuccess = true;
         } catch {
           // Response might be HTML or empty - still consider success if status is ok
           const text = await response.text();
-          console.log("Google Apps Script response (non-JSON):", text.substring(0, 200));
-          return NextResponse.json({
-            success: true,
-            method: "JSON",
-            message: "Submitted successfully (no JSON response body)",
-            status,
-          });
+          console.log("✅ Google Apps Script response (non-JSON):", text.substring(0, 200));
+          googleSheetsSuccess = true;
         }
       } else {
         const errorText = await response.text();
-        console.error(`Google Apps Script error (${status}):`, errorText.substring(0, 200));
+        console.error(`❌ Google Apps Script error (${status}):`, errorText.substring(0, 200));
+        googleSheetsError = `Google Sheets error: ${errorText.substring(0, 100)}`;
       }
     } catch (jsonError: unknown) {
       const errorMessage = jsonError instanceof Error ? jsonError.message : String(jsonError);
-      console.error("JSON method failed:", errorMessage);
+      console.error("❌ Google Sheets JSON method failed:", errorMessage);
+      googleSheetsError = "Google Sheets JSON method failed";
     }
 
-    // Try FormData as fallback
-    try {
-      const formData = new FormData();
-      formData.append("name", name);
-      formData.append("email", email);
-      formData.append("phone", phone);
-      formData.append("message", messageToSend);
-      formData.append("otpVerified", isOtpVerified ? "true" : "false");
-      formData.append("user_ip", completeUserMetadata.user_ip);
-      formData.append("country", completeUserMetadata.country);
-      formData.append("city", completeUserMetadata.city);
-      formData.append("latitude", completeUserMetadata.latitude?.toString() || "");
-      formData.append("longitude", completeUserMetadata.longitude?.toString() || "");
-      formData.append("userAgent", deviceInfo.userAgent);
-      formData.append("deviceType", deviceInfo.deviceType);
-      formData.append("browser", deviceInfo.browser);
-      formData.append("os", deviceInfo.os);
-
-      const response = await fetch(scriptUrl, {
-        method: "POST",
-        body: formData,
-        redirect: "follow",
-      });
-
-      const status = response.status;
-      const statusText = response.statusText;
-      
-      console.log(`Google Apps Script FormData response: ${status} ${statusText}`);
-
-      if (response.ok) {
-        try {
-          const data = await response.json();
-          console.log("Google Apps Script FormData response data:", data);
-          return NextResponse.json({
-            success: true,
-            method: "FormData",
-            data,
-            status,
-          });
-        } catch {
-          // Response might be HTML, text, or empty
-          const text = await response.text();
-          console.log("Google Apps Script FormData response (non-JSON):", text.substring(0, 500));
-          
-          // Check if it's an error message
-          if (text.toLowerCase().includes('error') || text.toLowerCase().includes('exception')) {
-            console.error("⚠️ Google Apps Script may have returned an error:", text.substring(0, 200));
-          }
-          
-          return NextResponse.json({
-            success: true,
-            method: "FormData",
-            message: "Submitted successfully (no JSON response body)",
-            responseText: text.substring(0, 200), // Include first 200 chars for debugging
-            status,
-          });
-        }
-      } else {
-        const errorText = await response.text();
-        console.error(`Google Apps Script FormData error (${status}):`, errorText.substring(0, 200));
-      }
-    } catch (formError: unknown) {
-      const errorMessage = formError instanceof Error ? formError.message : String(formError);
-      console.error("FormData method failed:", errorMessage);
-    }
-
-    // Try URL-encoded as last resort
-    const params = new URLSearchParams();
-    params.append("name", name);
-    params.append("email", email);
-    params.append("phone", phone);
-    params.append("message", messageToSend);
-    params.append("otpVerified", isOtpVerified ? "true" : "false");
-    params.append("user_ip", completeUserMetadata.user_ip);
-    params.append("country", completeUserMetadata.country);
-    params.append("city", completeUserMetadata.city);
-    params.append("latitude", completeUserMetadata.latitude?.toString() || "");
-    params.append("longitude", completeUserMetadata.longitude?.toString() || "");
-    params.append("userAgent", deviceInfo.userAgent);
-    params.append("deviceType", deviceInfo.deviceType);
-    params.append("browser", deviceInfo.browser);
-    params.append("os", deviceInfo.os);
-
-    const response = await fetch(scriptUrl, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/x-www-form-urlencoded",
-      },
-      body: params.toString(),
-      redirect: "follow",
-    });
-
-    if (response.ok) {
+    // Try FormData as fallback for Google Sheets
+    if (!googleSheetsSuccess) {
       try {
-        const data = await response.json();
-        return NextResponse.json({
-          success: true,
-          method: "URL-encoded",
-          data,
+        const formData = new FormData();
+        formData.append("name", name);
+        formData.append("email", email);
+        formData.append("phone", phone);
+        formData.append("message", messageToSend);
+        formData.append("otpVerified", isOtpVerified ? "true" : "false");
+        formData.append("user_ip", completeUserMetadata.user_ip);
+        formData.append("country", completeUserMetadata.country);
+        formData.append("city", completeUserMetadata.city);
+        formData.append("latitude", completeUserMetadata.latitude?.toString() || "");
+        formData.append("longitude", completeUserMetadata.longitude?.toString() || "");
+        formData.append("userAgent", deviceInfo.userAgent);
+        formData.append("deviceType", deviceInfo.deviceType);
+        formData.append("browser", deviceInfo.browser);
+        formData.append("os", deviceInfo.os);
+
+        const response = await fetch(scriptUrl, {
+          method: "POST",
+          body: formData,
+          redirect: "follow",
         });
-      } catch {
-        return NextResponse.json({
-          success: true,
-          method: "URL-encoded",
-          message: "Submitted successfully (no response body)",
-        });
+
+        const status = response.status;
+        const statusText = response.statusText;
+        
+        console.log(`Google Apps Script FormData response: ${status} ${statusText}`);
+
+        if (response.ok) {
+          try {
+            const data = await response.json();
+            console.log("✅ Google Apps Script FormData response data:", data);
+            googleSheetsSuccess = true;
+          } catch {
+            const text = await response.text();
+            console.log("✅ Google Apps Script FormData response (non-JSON):", text.substring(0, 500));
+            googleSheetsSuccess = true;
+          }
+        } else {
+          const errorText = await response.text();
+          console.error(`❌ Google Apps Script FormData error (${status}):`, errorText.substring(0, 200));
+          if (!googleSheetsError) {
+            googleSheetsError = `Google Sheets FormData error: ${errorText.substring(0, 100)}`;
+          }
+        }
+      } catch (formError: unknown) {
+        const errorMessage = formError instanceof Error ? formError.message : String(formError);
+        console.error("❌ Google Sheets FormData method failed:", errorMessage);
+        if (!googleSheetsError) {
+          googleSheetsError = "Google Sheets FormData method failed";
+        }
       }
     }
 
-    return NextResponse.json(
-      { success: false, error: "All submission methods failed" },
-      { status: 500 }
-    );
+    // Try URL-encoded as last resort for Google Sheets
+    if (!googleSheetsSuccess) {
+      try {
+        const params = new URLSearchParams();
+        params.append("name", name);
+        params.append("email", email);
+        params.append("phone", phone);
+        params.append("message", messageToSend);
+        params.append("otpVerified", isOtpVerified ? "true" : "false");
+        params.append("user_ip", completeUserMetadata.user_ip);
+        params.append("country", completeUserMetadata.country);
+        params.append("city", completeUserMetadata.city);
+        params.append("latitude", completeUserMetadata.latitude?.toString() || "");
+        params.append("longitude", completeUserMetadata.longitude?.toString() || "");
+        params.append("userAgent", deviceInfo.userAgent);
+        params.append("deviceType", deviceInfo.deviceType);
+        params.append("browser", deviceInfo.browser);
+        params.append("os", deviceInfo.os);
+
+        const response = await fetch(scriptUrl, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/x-www-form-urlencoded",
+          },
+          body: params.toString(),
+          redirect: "follow",
+        });
+
+        if (response.ok) {
+          try {
+            const data = await response.json();
+            console.log("✅ Google Apps Script URL-encoded response data:", data);
+            googleSheetsSuccess = true;
+          } catch {
+            console.log("✅ Google Apps Script URL-encoded submitted successfully");
+            googleSheetsSuccess = true;
+          }
+        } else {
+          const errorText = await response.text();
+          console.error(`❌ Google Apps Script URL-encoded error:`, errorText.substring(0, 200));
+          if (!googleSheetsError) {
+            googleSheetsError = "All Google Sheets methods failed";
+          }
+        }
+      } catch (urlError: unknown) {
+        const errorMessage = urlError instanceof Error ? urlError.message : String(urlError);
+        console.error("❌ Google Sheets URL-encoded method failed:", errorMessage);
+        if (!googleSheetsError) {
+          googleSheetsError = "All Google Sheets methods failed";
+        }
+      }
+    }
+
+    // Return combined result
+    const overallSuccess = externalApiSuccess || googleSheetsSuccess;
+    const successMessage = [];
+    const errors = [];
+
+    if (externalApiSuccess) {
+      successMessage.push("CRM API");
+    } else if (externalApiError) {
+      errors.push(externalApiError);
+    }
+
+    if (googleSheetsSuccess) {
+      successMessage.push("Google Sheets");
+    } else if (googleSheetsError) {
+      errors.push(googleSheetsError);
+    }
+
+    return NextResponse.json({
+      success: overallSuccess,
+      method: "Multiple APIs",
+      externalApiSuccess,
+      googleSheetsSuccess,
+      message: overallSuccess 
+        ? `Submitted successfully to: ${successMessage.join(", ")}`
+        : "All submission methods failed",
+      errors: errors.length > 0 ? errors : undefined,
+    });
   } catch (error: unknown) {
     const errorMessage = error instanceof Error ? error.message : "Internal server error";
     console.error("Error in submit-lead API:", error);
@@ -452,4 +550,3 @@ export async function POST(request: NextRequest) {
     );
   }
 }
-

@@ -83,7 +83,7 @@ const Contact = () => {
             <div className="w-full h-64 flex flex-col items-center justify-center text-center bg-[#0a0a0a] border-b border-white/20 px-4">
                 <h1 className="text-2xl font-semibold mb-2">Contact Us</h1>
                 <p className="text-gray-200 text-sm md:text-base w-200  ">
-                    At WIDE Corp, we believe a home is more than bricks and beams<br />
+                    At WISE Corp, we believe a home is more than bricks and beams<br />
                     it&apos;s the space where your most beautiful moments begin.
                 </p>
             </div>

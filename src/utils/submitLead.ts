@@ -1,6 +1,5 @@
 /**
- * Utility function to submit lead form data to Google Apps Script Web App
- * Uses Next.js API route to avoid CORS issues
+ * Utility function to submit lead form data to external API via backend
  * @param formData - Object containing name, email, phone, message, and otpVerified
  * @param onSuccess - Optional callback when submission succeeds
  * @param onError - Optional callback when submission fails
@@ -25,7 +24,7 @@ export async function submitLead(
     message: formData.message || "",
     otpVerified: formData.otpVerified ?? false,
   };
-  console.log("📤 Submitting lead with OTP status:", payload);
+  console.log("📤 Submitting lead via backend API:", payload);
   
   // Fire and forget - don't wait for response
   fetch("/api/submit-lead", {
@@ -40,25 +39,8 @@ export async function submitLead(
 
       if (data.success) {
         console.log(`✅ Form submitted successfully via ${data.method || "API route"}`);
-        
-        // If Google Apps Script returned a response, log it
-        if (data.data) {
-          if (data.data.result === "error") {
-            console.error("⚠️ Google Apps Script returned an error:", data.data.error);
-            if (onError) {
-              onError("Submission received but failed to process. Please try again.");
-            }
-          } else if (data.data.result === "success") {
-            console.log("✅ Google Apps Script confirmed success!");
-            if (onSuccess) {
-              onSuccess();
-            }
-          }
-        } else {
-          // No response data, assume success
-          if (onSuccess) {
-            onSuccess();
-          }
+        if (onSuccess) {
+          onSuccess();
         }
       } else {
         console.error("❌ Form submission failed:", data.error);
