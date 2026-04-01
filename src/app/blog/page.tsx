@@ -8,6 +8,186 @@ import Image from "next/image";
 // Blog posts data
 const blogPosts = [
   {
+    id: 35,
+    title: "The Science of Jain Architecture: Energy & Vibrations of the Ghabara",
+    excerpt: "Discover the spiritual engineering behind Jain temples. Learn how the Ghabara manipulates energy, sound, and light to elevate the human soul.",
+    category: "Spiritual",
+    date: "March 18, 2026",
+    image: "/images/blog-18mar1.jpeg",
+    slug: "science-jain-architecture-energy-vibrations-ghabara",
+  },
+  {
+    id: 34,
+    title: "Luxury Apartments in Pune – Experience Wyce Exclucity, Bavdhan's Most Prestigious Address",
+    excerpt: "Searching for luxury apartments in Pune? Wyce Exclucity in Bavdhan offers premium 2, 3 & 4 BHK residences on 11 acres with world-class amenities.",
+    category: "Real Estate",
+    date: "March 18, 2026",
+    image: "/images/blog-17Mar9.jpeg",
+    slug: "luxury-apartments-in-pune",
+  },
+  {
+    id: 33,
+    title: "3 BHK Apartment in Pune – Discover Wyce Exclucity, Bavdhan's Most Prestigious Address",
+    excerpt: "Looking for a 3 BHK apartment in Pune? Wyce Exclucity in Bavdhan offers luxury residences on 11 acres with Miyawaki Forest, premium amenities & easy connectivity.",
+    category: "Real Estate",
+    date: "March 18, 2026",
+    image: "/images/blog-17Mar8.jpeg",
+    slug: "3-bhk-apartment-in-pune",
+  },
+  {
+    id: 32,
+    title: "3 BHK vs. 4 BHK in a Low-Density Project: Maximizing Your Investment with Wyce Corp",
+    excerpt: "Deciding between a 3 BHK and 4 BHK in Bavdhan? Learn how to maximize your ROI and lifestyle goals in a luxury low-density project by Wyce Corp.",
+    category: "Investment Guide",
+    date: "March 17, 2026",
+    image: "/images/blog-17Mar7.jpeg",
+    slug: "3-bhk-vs-4-bhk-maximizing-investment-low-density-project",
+  },
+  {
+    id: 31,
+    title: "A Cultural Homecoming: Why NRIs are Choosing Societies with a Jain Mandir in Bavdhan",
+    excerpt: "Join the exclusive community at Wyce Residences in Bavdhan, featuring a on-site Jain Mandir. Ideal for NRIs seeking a cultural connection back home.",
+    category: "Spiritual",
+    date: "March 17, 2026",
+    image: "/images/blog-17Mar6.jpeg",
+    slug: "cultural-homecoming-nris-jain-mandir-societies-bavdhan",
+  },
+  {
+    id: 30,
+    title: "The 2026 NRI Guide to Pune Real Estate: Why Bavdhan is the Ultimate Safe Haven",
+    excerpt: "Discover why Bavdhan is the safest real estate investment for NRIs in 2026. Explore premium 3 & 4 BHK homes by Wyce Corp offering high ROI.",
+    category: "NRI Guide",
+    date: "March 17, 2026",
+    image: "/images/blog-17Mar5.jpeg",
+    slug: "2026-nri-guide-pune-real-estate-bavdhan-safe-haven",
+  },
+  {
+    id: 29,
+    title: "Beyond the Clubhouse: 5 Rare Amenities That Define Wyce's Premium Residences in Bavdhan",
+    excerpt: "Explore 5 rare luxury amenities that redefine premium living in Bavdhan Pune. Discover Wyce Corp’s low density residences with smart homes.",
+    category: "Luxury Living",
+    date: "March 17, 2026",
+    image: "/images/blog-17Mar1st.jpeg",
+    slug: "5-rare-luxury-amenities-define-wyce-premium-residences",
+  },
+  {
+    id: 28,
+    title: "The True Cost of Crowds: Why Your Next Home Must Be a Low Density Project in Pune",
+    excerpt: "Discover why Wyce Corp's low density project in Pune beats crowded townships — higher land share, exclusive amenities, and capital appreciation.",
+    category: "Real Estate",
+    date: "March 17, 2026",
+    image: "/images/blog-17Mar1.jpeg",
+    slug: "true-cost-of-crowds-low-density-project-pune",
+  },
+  {
+    id: 27,
+    title: "Finding Your Tribe: The Social and Cultural Perks of Wyce’s Low Density Project in Bavdhan",
+    excerpt: "Escape crowded townships. Wyce Corp's low density project in Bavdhan offers privacy, uncrowded amenities, and an exclusive community.",
+    category: "Lifestyle",
+    date: "March 17, 2026",
+    image: "/images/blog-17Mar2.jpeg",
+    slug: "finding-your-tribe-low-density-project-bavdhan",
+  },
+  {
+    id: 26,
+    title: "The Spiritual Sanctuary: Why a Jain Mandir in Society in Bavdhan is the Ultimate Luxury",
+    excerpt: "Find a home that honors your faith. Wyce Residences in Bavdhan features a dedicated Jain Mandir in society — perfect for spiritual family living.",
+    category: "Spiritual",
+    date: "March 17, 2026",
+    image: "/images/blog-17Mar3.jpeg",
+    slug: "spiritual-sanctuary-jain-mandir-society-bavdhan",
+  },
+  {
+    id: 23,
+    title: "A Golden Presence: Pujya Acharya Bhagwant Bhuvanbhushan Surishvarji Maharaj Saheb at WYCE Exclucity",
+    excerpt:
+      "A spiritually significant visit by Pujya Acharya Bhagwant Bhuvanbhushan Surishvarji Maharaj Saheb at WYCE Exclucity, Bavdhan, marking the vision for a Shwetambar Murtipujak Jain Mandir within the community.",
+    category: "Spiritual",
+    date: "February 20, 2026",
+    language: "en",
+    hasTranslations: true,
+    image: "/images/guruji1.png",
+    slug: "golden-presence-pujya-acharya-bhuvanbhushan-surishvarji-wyce-exclucity",
+  },
+  {
+    id: 25,
+    title: "Why 2026 is the Best Year to Invest in a 3 BHK in Bavdhan, Pune",
+    excerpt:
+      "Understand why 2026 is a pivotal year to invest in a 3 BHK in Bavdhan, Pune, with aligned infrastructure, rising demand for larger homes, and long-term growth potential.",
+    category: "Real Estate",
+    date: "February 20, 2026",
+    image: "/images/blog11.jpeg",
+    slug: "why-2026-best-year-invest-3-bhk-in-bavdhan-pune",
+  },
+  {
+    id: 24,
+    title: "4 BHK Luxury Flats in Pune: Project Overview, Location & Design Details",
+    excerpt:
+      "Explore how 4 BHK luxury flats in Bavdhan, Pune—especially at Wyce Exclucity—combine spacious layouts, green planning, and strategic connectivity for long-term value.",
+    category: "Luxury Real Estate",
+    date: "February 20, 2026",
+    image: "/images/blog7.jpeg",
+    slug: "4-bhk-luxury-flats-in-pune-project-overview-location-design-details",
+  },
+
+  {
+    id: 22,
+    title:
+      'The "Reverse Migration" Trend: Why HNIs are Moving from Baner/Kothrud to Bavdhan',
+    excerpt:
+      "HNIs and discerning professionals are quietly moving away from congested hubs like Baner and Kothrud to Bavdhan's low-density, hillside luxury—discover why Wyce Residences has become the premium choice in West Pune.",
+    category: "Real Estate",
+    date: "February 20, 2026",
+    image: "/images/blog10.jpeg",
+    slug: "reverse-migration-hnis-baner-kothrud-to-bavdhan",
+  },
+  {
+    id: 21,
+    title:
+      'The "Wellness-First" Architecture: Beyond Gyms to Bio-Luminous Spaces in Wyce Residences',
+    excerpt:
+      "Wyce Residences in Bavdhan redefines luxury with wellness-first, bio-luminous architecture that maximizes natural light, ventilation, biophilic design, and acoustic comfort for holistic well-being.",
+    category: "Design & Wellness",
+    date: "February 20, 2026",
+    image: "/images/blog9.jpeg",
+    slug: "wellness-first-architecture-bio-luminous-wyce-residences",
+  },
+  {
+    id: 20,
+    title:
+      "Smart Home 2.0: Predictive Automation for the Global Indian at Wyce Residences",
+    excerpt:
+      "Go beyond basic automation with Wyce's AI-enabled luxury residences in Bavdhan, where Smart Home 2.0 predicts your preferences, optimizes energy, and delivers effortless, connected living.",
+    category: "Technology & Lifestyle",
+    date: "February 20, 2026",
+    image: "/images/blog8.jpeg",
+    slug: "smart-home-2-0-predictive-automation-wyce-residences",
+  },
+  {
+    id: 19,
+    title:
+      'The "Micro-Hub" Advantage: Bavdhan’s 15-Minute Lifestyle at Wyce Residences',
+    excerpt:
+      "Explore how Bavdhan has evolved into Pune's most desirable micro-hub, where Wyce Residences offers a true 15-minute lifestyle with schools, healthcare, dining, and nature all within easy reach.",
+    category: "Lifestyle & Location",
+    date: "February 20, 2026",
+    image: "/images/blog71.jpeg",
+    slug: "micro-hub-advantage-bavdhan-15-minute-lifestyle",
+  },
+  {
+    id: 18,
+    title:
+      'Transitioning from "Asset" to "Legacy": The Rise of 4.5 BHK & Multi-Generational Suites at Wyce Residences',
+    excerpt:
+      "Discover why HNIs and NRIs are choosing Wyce’s intelligently designed 4.5 BHK and multi-generational suites in Bavdhan to create future-ready homes and lasting family legacies.",
+    category: "Real Estate & Family Living",
+    date: "February 20, 2026",
+    image: "/images/blog6.jpeg",
+    slug: "asset-to-legacy-rise-of-4-5-bhk-wyce-residences",
+  },
+
+
+  {
     id: 17,
     title: "Apartments for Sale in Pune | 4, 3 & 2 BHK Flats at Best Price",
     excerpt:
@@ -182,43 +362,67 @@ const blogPosts = [
 
 const recentPosts = [
   {
-    id: 17,
-    title: "Apartments for Sale in Pune | 4, 3 & 2 BHK Flats at Best Price",
-    date: "January 15, 2026",
-    slug: "apartments-for-sale-in-pune",
+    id: 35,
+    title: "The Science of Jain Architecture: Energy & Vibrations of the Ghabara",
+    date: "March 18, 2026",
+    slug: "science-jain-architecture-energy-vibrations-ghabara",
   },
   {
-    id: 16,
-    title: "2 BHK Flats in Bavdhan Pune Price Location Best Deals",
-    date: "January 20, 2026",
-    slug: "2-bhk-flats-in-bavdhan-pune-price-location-best-deals",
+    id: 34,
+    title: "Luxury Apartments in Pune – Experience Wyce Exclucity, Bavdhan's Most Prestigious Address",
+    date: "March 18, 2026",
+    slug: "luxury-apartments-in-pune",
   },
   {
-    id: 15,
-    title: "Spacious 3 BHK in Bavdhan, Pune – Luxury Living Near Kothrud",
-    date: "January 27, 2026",
-    slug: "spacious-3-bhk-in-bavdhan-pune-luxury-living-near-kothrud",
+    id: 33,
+    title: "3 BHK Apartment in Pune – Discover Wyce Exclucity, Bavdhan's Most Prestigious Address",
+    date: "March 18, 2026",
+    slug: "3-bhk-apartment-in-pune",
   },
   {
-    id: 14,
-    title: "Your Q4 Power Move: The First-Time Homebuyer's Guide to Maximum Tax Planning and High ROI",
-    date: "December 16, 2025",
-    slug: "q4-home-buying-guide-tax-savings-high-roi-first-time-buyers",
+    id: 32,
+    title: "3 BHK vs. 4 BHK in a Low-Density Project: Maximizing Your Investment with Wyce Corp",
+    date: "March 17, 2026",
+    slug: "3-bhk-vs-4-bhk-maximizing-investment-low-density-project",
   },
   {
-    id: 13,
-    title: "The NRI's Guide to Hassle-Free Property Management in Pune: From Purchase to Payout",
-    date: "December 13, 2025",
-    slug: "nri-property-management-in-pune-hassle-free-investment-guide",
+    id: 31,
+    title: "A Cultural Homecoming: Why NRIs are Choosing Societies with a Jain Mandir in Bavdhan",
+    date: "March 17, 2026",
+    slug: "cultural-homecoming-nris-jain-mandir-societies-bavdhan",
   },
   {
-    id: 12,
-    title: "Decoding the Dollar-Rupee Advantage: Why NRI Investments in Pune are Surging",
-    date: "December 11, 2025",
-    slug: "decoding-the-dollar-rupee-advantage-why-nri-investments-in-pune-are-surging",
+    id: 30,
+    title: "The 2026 NRI Guide to Pune Real Estate: Why Bavdhan is the Ultimate Safe Haven",
+    date: "March 17, 2026",
+    slug: "2026-nri-guide-pune-real-estate-bavdhan-safe-haven",
   },
   {
-    id: 11,
+    id: 29,
+    title: "Beyond the Clubhouse: 5 Rare Amenities That Define Wyce's Premium Residences in Bavdhan",
+    date: "March 17, 2026",
+    slug: "5-rare-luxury-amenities-define-wyce-premium-residences",
+  },
+  {
+    id: 28,
+    title: "The True Cost of Crowds: Why Your Next Home Must Be a Low Density Project in Pune",
+    date: "March 17, 2026",
+    slug: "true-cost-of-crowds-low-density-project-pune",
+  },
+  {
+    id: 27,
+    title: "Finding Your Tribe: The Social and Cultural Perks of Wyce’s Low Density Project in Bavdhan",
+    date: "March 17, 2026",
+    slug: "finding-your-tribe-low-density-project-bavdhan",
+  },
+  {
+    id: 26,
+    title: "The Spiritual Sanctuary: Why a Jain Mandir in Society in Bavdhan is the Ultimate Luxury",
+    date: "March 17, 2026",
+    slug: "spiritual-sanctuary-jain-mandir-society-bavdhan",
+  },
+  {
+    id: 18,
     title: "The New Rule of 5: How Infrastructure is Redefining Pune's Property ROI Game",
     date: "December 10, 2025",
     slug: "the-new-rule-of-5-how-infrastructure-is-redefining-punes-property-roi-game",
@@ -305,11 +509,16 @@ const recentPosts = [
 
 export default function BlogPage() {
   const [searchQuery, setSearchQuery] = useState("");
+  const [selectedLanguages, setSelectedLanguages] = useState<Record<string, string>>({});
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
     // Handle search functionality
     console.log("Searching for:", searchQuery);
+  };
+
+  const handleLanguageChange = (slug: string, lang: string) => {
+    setSelectedLanguages(prev => ({ ...prev, [slug]: lang }));
   };
 
   return (
@@ -328,10 +537,10 @@ export default function BlogPage() {
           {/* Content placeholder for future additions */}
         </div>
       </section>
-      
+
       <div className="min-h-screen bg-black py-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-     
+
           {/* Main Content Grid */}
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             {/* Left Side - Blog Posts */}
@@ -342,7 +551,7 @@ export default function BlogPage() {
                   className="bg-[#121212] overflow-hidden hover:shadow-xl transition-shadow duration-300"
                 >
                   {/* Blog Card Image */}
-                  <Link href={`/blog/${post.slug}`}>
+                  <Link href={`/blog/${post.slug}${selectedLanguages[post.slug] && selectedLanguages[post.slug] !== 'en' ? `?lang=${selectedLanguages[post.slug]}` : ''}`}>
                     <div className="relative h-120 bg-gray-200 overflow-hidden cursor-pointer">
                       <Image
                         src={post.image}
@@ -355,7 +564,7 @@ export default function BlogPage() {
 
                   {/* Blog Card Content */}
                   <div className="p-6">
-                    <Link href={`/blog/${post.slug}`}>
+                    <Link href={`/blog/${post.slug}${selectedLanguages[post.slug] && selectedLanguages[post.slug] !== 'en' ? `?lang=${selectedLanguages[post.slug]}` : ''}`}>
                       <h2 className="text-2xl font-bold text-white mb-3 hover:text-[#B7AC88] transition-colors cursor-pointer">
                         {post.title}
                       </h2>
@@ -375,11 +584,27 @@ export default function BlogPage() {
                         </span>
                         <span className="text-sm text-gray-500">{post.date}</span>
                       </div>
-                      <Link href={`/blog/${post.slug}`}>
-                        <button className="px-2 py-2 bg-[#B7AC88] text-white hover:bg-[#121212] hover:text-[#B7AC88] hover:border hover:border-[#B7AC88] transition-colors duration-300 font-medium cursor-pointer">
-                          Read More
-                        </button>
-                      </Link>
+                      <div className="flex items-center space-x-2">
+                        {/* {(post as any).hasTranslations ? (
+                          <select
+                            name="language"
+                            id={`language-${post.id}`}
+                            value={selectedLanguages[post.slug] || "en"}
+                            onChange={(e) => handleLanguageChange(post.slug, e.target.value)}
+                            className="px-2 py-2 bg-[#B7AC88] text-white hover:bg-[#121212] hover:text-[#B7AC88] hover:border hover:border-[#B7AC88] transition-colors duration-300 font-medium cursor-pointer"
+                          >
+                            <option className="bg-[#121212] text-white" value="en">English</option>
+                            <option className="bg-[#121212] text-white" value="mr">Marathi</option>
+                            <option className="bg-[#121212] text-white" value="hi">Hindi</option>
+                            </select>
+                        ) : null} */}
+                        <Link href={`/blog/${post.slug}${selectedLanguages[post.slug] && selectedLanguages[post.slug] !== 'en' ? `?lang=${selectedLanguages[post.slug]}` : ''}`}>
+                          <button className="px-2 py-1.5 bg-[#B7AC88] text-white hover:bg-[#121212] hover:text-[#B7AC88] hover:border hover:border-[#B7AC88] transition-colors duration-300 font-medium cursor-pointer">
+                            Read More
+                          </button>
+                        </Link>
+                      </div>
+
                     </div>
                   </div>
                 </div>
@@ -389,51 +614,51 @@ export default function BlogPage() {
             {/* Right Side - Sidebar */}
             <div className="lg:col-span-1">
               <div className="sticky top-24 space-y-6 self-start">
-              {/* Search Form */}
-              <div className="bg-[#121212] shadow-md p-6">
-                <h3 className="text-xl text-white mb-4">
-                  Blog Search
-                </h3>
-                <form onSubmit={handleSearch} className="relative">
-                  <input
-                    type="text"
-                    placeholder="Search articles..."
-                    value={searchQuery}
-                    onChange={(e) => setSearchQuery(e.target.value)}
-                    className="w-full px-4 py-3 pr-12 border border-[#B7AC88] rounded-lg bg-black text-white placeholder-gray-400 focus:text-[#B7AC88] focus:outline-none focus:ring-2 focus:ring-[#B7AC88] focus:border-transparent"
-                  />
-                  <button
-                    type="submit"
-                    className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-[#B7AC88] transition-colors"
-                  >
-                    <Search className="w-5 h-5" />
-                  </button>
-                </form>
-              </div>
-
-              {/* Recent Posts */}
-              <div className="bg-[#121212] shadow-md p-6">
-                <h3 className="text-xl text-[#fff] mb-6">
-                  Recent Posts
-                </h3>
-                <div className="space-y-4">
-                  {recentPosts.map((post, index) => (
-                    <div key={post.id}>
-                      <Link href={`/blog/${post.slug}`}>
-                        <div className="group cursor-pointer">
-                          <h4 className="font-semibold text-[#fff] group-hover:text-[#B7AC88] transition-colors mb-1 overflow-hidden" style={{display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical'}}>
-                            {post.title}
-                          </h4>
-                          <p className="text-sm text-gray-500">{post.date}</p>
-                        </div>
-                      </Link>
-                      {index < recentPosts.length - 1 && (
-                        <div className="border-b border-[#D9D9D933] mt-4"></div>
-                      )}
-                    </div>
-                  ))}
+                {/* Search Form */}
+                <div className="bg-[#121212] shadow-md p-6">
+                  <h3 className="text-xl text-white mb-4">
+                    Blog Search
+                  </h3>
+                  <form onSubmit={handleSearch} className="relative">
+                    <input
+                      type="text"
+                      placeholder="Search articles..."
+                      value={searchQuery}
+                      onChange={(e) => setSearchQuery(e.target.value)}
+                      className="w-full px-4 py-3 pr-12 border border-[#B7AC88] rounded-lg bg-black text-white placeholder-gray-400 focus:text-[#B7AC88] focus:outline-none focus:ring-2 focus:ring-[#B7AC88] focus:border-transparent"
+                    />
+                    <button
+                      type="submit"
+                      className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-[#B7AC88] transition-colors"
+                    >
+                      <Search className="w-5 h-5" />
+                    </button>
+                  </form>
                 </div>
-              </div>
+
+                {/* Recent Posts */}
+                <div className="bg-[#121212] shadow-md p-6">
+                  <h3 className="text-xl text-[#fff] mb-6">
+                    Recent Posts
+                  </h3>
+                  <div className="space-y-4">
+                    {recentPosts.map((post, index) => (
+                      <div key={post.id}>
+                        <Link href={`/blog/${post.slug}`}>
+                          <div className="group cursor-pointer">
+                            <h4 className="font-semibold text-[#fff] group-hover:text-[#B7AC88] transition-colors mb-1 overflow-hidden" style={{ display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical' }}>
+                              {post.title}
+                            </h4>
+                            <p className="text-sm text-gray-500">{post.date}</p>
+                          </div>
+                        </Link>
+                        {index < recentPosts.length - 1 && (
+                          <div className="border-b border-[#D9D9D933] mt-4"></div>
+                        )}
+                      </div>
+                    ))}
+                  </div>
+                </div>
 
 
               </div>
