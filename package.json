@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack",
+    "dev": "next dev --port 4200 --turbopack",
     "build": "cross-env CI=true next build --turbopack",
     "build:production": "cross-env CI=true NODE_ENV=production next build --turbopack",
     "start": "next start",
