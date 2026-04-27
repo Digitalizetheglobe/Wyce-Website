@@ -777,12 +777,12 @@ const blogContent: Record<string, BlogData> = {
 
         <h2>Luxury Sector in Pune Flourishes, Bavdhan At The Hub</h2>
         
-        <p>The story of real estate in Pune has undergone a massive transformation in past few years. Pune no longer remains an affordable alternative to Mumbai. In the first six months of 2025 itself, Pune has recorded the sale of as many as 44,000 units, with analysts predicting capital appreciation of the city's property market at 5-10% per annum over the coming years till at least 2026.</p>
+        <p>The story of real estate in Pune has undergone a massive transformation in past few years. Pune no longer remains an affordable alternative to Mumbai. In the first six months of 2026 itself, Pune has recorded the sale of as many as 44,000 units, with analysts predicting capital appreciation of the city's property market at 5-10% per annum over the coming years till at least 2026.</p>
         
         <div class="stats-grid">
           <div class="stat-card">
             <span class="stat-number">44,000</span>
-            <span class="stat-label">Units Sold in H1 2025</span>
+            <span class="stat-label">Units Sold in H1 2026</span>
           </div>
           <div class="stat-card">
             <span class="stat-number">5-10%</span>
@@ -971,7 +971,7 @@ const blogContent: Record<string, BlogData> = {
   "2-bhk-flat-in-bavdhan-smart-choice-first-time-buyers": {
     title: "2 BHK Flat in Bavdhan: The Smart Choice for First-Time Homebuyers in Pune",
     metaTitle: "2 BHK Flat in Bavdhan: Smart Choice for First-Time Buyers",
-    metaDescription: "Looking for a 2 BHK flat in Bavdhan, Pune? Discover why Bavdhan is the smartest choice for first-time homebuyers in 2025 — location, value & lifestyle.",
+    metaDescription: "Looking for a 2 BHK flat in Bavdhan, Pune? Discover why Bavdhan is the smartest choice for first-time homebuyers in 2026 — location, value & lifestyle.",
     keywords: "2 BHK flat in Bavdhan, flats for sale in Bavdhan Pune, budget-friendly flats in Bavdhan Pune, residential projects in Bavdhan, property in Bavdhan Pune, first-time homebuyers in Pune, 2 BHK flats in Bavdhan near Hinjewadi",
     date: "April 14, 2026",
     category: "Real Estate",
@@ -1116,11 +1116,11 @@ const blogContent: Record<string, BlogData> = {
       <div class="blog-content">
         <h1>2 BHK Flat in Bavdhan: The Smart Choice for First-Time Homebuyers in Pune</h1>
         
-        <h2>Why Bavdhan Should Be Your Next Choice for Home Buying in 2025, Pune</h2>
+        <h2>Why Bavdhan Should Be Your Next Choice for Home Buying in 2026, Pune</h2>
         
         <p>The property market of Pune has been lively for quite some time now, but there is one locality that is slowly making its mark on smart home buyers - Bavdhan. This locality has been located on the western side of Pune and boasts a unique combination of urban life and serene ambiance. If you are planning to buy a 2 BHK flat in Bavdhan, this is the perfect time for you.</p>
         
-        <p>There has been an increase in infrastructure development, IT hubs, and luxury residential projects. Bavdhan is one of the most popular localities when it comes to buying a property for first-time home buyers in 2025.</p>
+        <p>There has been an increase in infrastructure development, IT hubs, and luxury residential projects. Bavdhan is one of the most popular localities when it comes to buying a property for first-time home buyers in 2026.</p>
 
         <h2>What Do First-time Homebuyers Really Want In Pune?</h2>
         
@@ -1248,7 +1248,7 @@ const blogContent: Record<string, BlogData> = {
         
         <p>These plans aim to ease the financial strain and secure today's price rates before they increase in the future.</p>
 
-        <h2>Is 2 BHK Flat in Bavdhan a Good Investment in 2025?</h2>
+        <h2>Is 2 BHK Flat in Bavdhan a Good Investment in 2026?</h2>
         
         <p>Absolutely, and here's why. With regular yearly appreciation due to the proximity to Hinjewadi, better road connectivity, and social infrastructural development, buying budget-friendly flats in Bavdhan Pune currently means getting into a profitable investment opportunity while it's still at a rising stage.</p>
         
