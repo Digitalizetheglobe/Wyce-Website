@@ -8,6 +8,42 @@ import Image from "next/image";
 // Blog posts data
 const blogPosts = [
   {
+    id: 39,
+    title: "Jain Mandir in Pune: Why Families Want On-Site Mandirs",
+    excerpt: "Discover why Jain families prioritize a Jain mandir in Pune when buying homes, and how on-site temples shape community living and decisions.",
+    category: "Real Estate",
+    date: "April 21, 2026",
+    image: "/images/blog-21-04.jpeg",
+    slug: "jain-mandir-in-pune-why-families-want-on-site-mandirs",
+  },
+  {
+    id: 38,
+    title: "Luxury Real Estate Pune: Where Vastu Meets Modern Design",
+    excerpt: "Explore how luxury real estate Pune blends Vastu Shastra with modern architecture. Find homes designed for harmony, light, and elevated Pune living.",
+    category: "Real Estate",
+    date: "April 17, 2026",
+    image: "/images/blog-17-04.jpeg",
+    slug: "luxury-real-estate-pune-vastu-modern-design",
+  },
+  {
+    id: 37,
+    title: "Luxury 4 BHK in Bavdhan: What's Driving Demand in Pune",
+    excerpt: "Explore why luxury 4 BHK in Bavdhan is Pune's hottest real estate trend. Know the key factors driving demand & why now is the right time to invest.",
+    category: "Real Estate",
+    date: "April 14, 2026",
+    image: "/images/blog-14-04-2026.jpeg",
+    slug: "luxury-4-bhk-in-bavdhan-driving-demand-pune",
+  },
+  {
+    id: 36,
+    title: "2 BHK Flat in Bavdhan: Smart Choice for First-Time Buyers",
+    excerpt: "Looking for a 2 BHK flat in Bavdhan, Pune? Discover why Bavdhan is the smartest choice for first-time homebuyers in 2025 — location, value & lifestyle.",
+    category: "Real Estate",
+    date: "April 14, 2026",
+    image: "/images/blog-14-04.jpeg",
+    slug: "2-bhk-flat-in-bavdhan-smart-choice-first-time-buyers",
+  },
+  {
     id: 35,
     title: "The Science of Jain Architecture: Energy & Vibrations of the Ghabara",
     excerpt: "Discover the spiritual engineering behind Jain temples. Learn how the Ghabara manipulates energy, sound, and light to elevate the human soul.",
@@ -361,6 +397,30 @@ const blogPosts = [
 ];
 
 const recentPosts = [
+  {
+    id: 39,
+    title: "Jain Mandir in Pune: Why Families Want On-Site Mandirs",
+    date: "April 21, 2026",
+    slug: "jain-mandir-in-pune-why-families-want-on-site-mandirs",
+  },
+  {
+    id: 38,
+    title: "Luxury Real Estate Pune: Where Vastu Meets Modern Design",
+    date: "April 17, 2026",
+    slug: "luxury-real-estate-pune-vastu-modern-design",
+  },
+  {
+    id: 37,
+    title: "Luxury 4 BHK in Bavdhan: What's Driving Demand in Pune",
+    date: "April 14, 2026",
+    slug: "luxury-4-bhk-in-bavdhan-driving-demand-pune",
+  },
+  {
+    id: 36,
+    title: "2 BHK Flat in Bavdhan: Smart Choice for First-Time Buyers",
+    date: "April 14, 2026",
+    slug: "2-bhk-flat-in-bavdhan-smart-choice-first-time-buyers",
+  },
   {
     id: 35,
     title: "The Science of Jain Architecture: Energy & Vibrations of the Ghabara",
